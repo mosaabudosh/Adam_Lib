@@ -1,0 +1,125 @@
+{
+    "general": {
+        "search": "Search ...",
+        "action": "Action",
+        "placeholder": "Type here",
+        "save": "Save",
+        "cancel": "Cancel",
+        "back": "Back",
+        "ok": "Ok",
+        "success": "Success",
+        "error": "Error",
+        "confirmation": "Confirmation",
+        "close": "Close",
+        "addSuccess": "Added {{ name }} Successfully",
+        "UpdateSuccess": "Update {{ name }} Successfully",
+        "deleteSuccess": "Delete {{ name }} Successfully",
+        "pleaseSelect": "Please Select",
+        "confirmationMessage": "Are you sure you want to do this action ?",
+        "uploade": "Uploade",
+        "removeAll": "Remove All"
+    },
+    "userList": {
+        "title": "Users",
+        "name": "Name",
+        "email": "Email",
+        "phoneNumber": "Phone Number",
+        "gender": "Gender",
+        "address": "Address",
+        "isLock": "Lock",
+        "active": "Active",
+        "age": "Age",
+        "profileImage": "Profile Image",
+        "allUser": "All user",
+        "custumer": "Custumer",
+        "lockUser": "Lock User",
+        "clint": "Clint"
+    },
+    "userPopup": {
+        "title": "Add User",
+        "edit": "Edit User",
+        "firstName": "First Name",
+        "socundName": "Socund Name",
+        "email": "Email",
+        "userName": "User Name",
+        "phoneNumber": "Phone Number",
+        "gender": "Gender",
+        "address": "Address",
+        "languge": "Languge",
+        "userType": "User Type",
+        "dateOfBirth": "Date Of Birth",
+        "userImage": "User Image"
+    },
+    "itemsList": {
+        "title": "Items",
+        "itemName": "Name",
+        "itemCode": "Code",
+        "description": "Description",
+        "category": "Category"
+    },
+    "itemPopup": {
+        "title": "Add Item",
+        "edit": "Edit Item",
+        "itemName": "Name",
+        "itemCode": "Code",
+        "itemBarCode": "Item Barcode",
+        "description": "Description",
+        "category": "Category"
+    },
+    "itemCategories": {
+        "title": "Item Categories",
+        "name": "Name",
+        "code": "Code"
+    },
+    "notifications": {
+        "title": "Suggestions"
+    },
+    "itemCategoryPopup": {
+        "title": "Add Item Category",
+        "edit": "Edit Item Category",
+        "name": "Name",
+        "code": "Code"
+    },
+    "menu": {
+        "itemCategories": "Item Categories",
+        "items": "Items",
+        "home": "Home",
+        "users": "Users",
+        "logOut": "LogOut",
+        "alNashamaApp": "Al-Nashama-App",
+        "suggestions": "Suggestions",
+        "adamChatApp": "Adam-Chat-App",
+        "shared": "Adam Shared lib",
+        "dms": "Adam DMS",
+        "chats": "Chats"
+    },
+    "validations": {
+        "requiredValidation": " {{ model }} is required",
+        "emailValidation": "Enter a valid email address",
+        "urlValidation": "Enter a valid URL",
+        "websiteValidation": "Enter a valid website",
+        "minlengthValidation": "Minimum length is {{ model }} characters",
+        "lengthValidation": "{{ name }} must be between {{ min }} and {{ max }}",
+        "phoneNumberValidation": "Enter a valid phone number",
+        "nameValidation": "{{model}} is required",
+        "fromTimeValidation": "It should be from time less than to time",
+        "toTimeValidation": "It must be to time greater than from time"
+    },
+    "home": {
+        "title": "Home",
+        "users": "Users",
+        "active": "Active",
+        "inActive": "InActive",
+        "block": "Block",
+        "items": "Items",
+        "orders": "Orders"
+    },
+    "header": {
+        "languge": "Languge",
+        "darkMode": "Dark Mode",
+        "normalMode": "Normal Mode",
+        "myProfile": "Profile",
+        "logOut": "LogOut",
+        "userName": "User Name"
+    }
+}

@@ -1,0 +1,30 @@
+@import "./../../../assets/styles/styles.scss";
+
+.p-checkbox-label {
+    @include margin-start(0.5rem);
+    color: var(--main-text-color) !important;
+}
+
+.checkbox {
+    &.primary {
+        .p-checkbox .p-checkbox-box.p-highlight {
+            border-color: #3B82F6 !important;
+            background: #3B82F6 !important;
+        }
+    }
+
+    &.dangerous {
+        .p-checkbox .p-checkbox-box.p-highlight {
+            border-color: red !important;
+            background: red !important;
+        }
+    }
+
+    &.waring {
+        .p-checkbox .p-checkbox-box.p-highlight {
+            border-color: orange !important;
+            background: orange !important;
+        }
+    }
+
+}

@@ -1,0 +1,47 @@
+@import "./../../../assets/styles/styles.scss";
+
+
+lib-adam-calendar {
+  min-width: 100% !important;
+  font-size: var(--small-font-size) !important;
+  font-family: var(--font-family) !important;
+  color: var(--main-text-color) !important;
+
+  .adam-calendar .p-calendar {
+    min-width: 100% !important;
+    @include text-align-left;
+
+  }
+
+  .adam-calendar:hover {
+    border: 1px solid var(--main-background) !important;
+  }
+}
+
+.invalid-border-style {
+  .p-datepicker {
+    border: 1px solid var(--not-valid-color) !important;
+  }
+}
+
+.ng-touched.ng-pristine.ng-invalid[reqpred] {
+  border: 1px solid var(--not-valid-color) !important;
+}
+
+.calendar-panel-style {
+  font-size: var(--small-font-size) !important;
+  font-family: var(--font-family) !important;
+  color: var(--main-text-color) !important;
+}
+
+.calendar-style {
+  width: 100% !important;
+  height: 100% !important;
+  font-size: var(--small-font-size) !important;
+  font-family: var(--font-family) !important;
+  color: var(--main-text-color) !important;
+}
+
+.calendar-style .p-calendar.p-calendar-w-btn .p-inputtext {
+  width: 100% !important;
+}

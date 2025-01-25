@@ -1,0 +1,57 @@
+{
+    "general": {
+        "search": "Search ...",
+        "action": "Action",
+        "placeholder": "Type here",
+        "save": "Save",
+        "cancel": "Cancel",
+        "back": "Back",
+        "ok": "Ok",
+        "success": "Success",
+        "error": "Error",
+        "confirmation": "Confirmation",
+        "close": "Close",
+        "addSuccess": "Added {{ name }} Successfully",
+        "UpdateSuccess": "Update {{ name }} Successfully",
+        "deleteSuccess": "Delete {{ name }} Successfully",
+        "pleaseSelect": "Please Select",
+        "confirmationMessage": "Are you sure you want to do this action ?",
+        "uploade": "Uploade",
+        "removeAll": "Remove All"
+    },
+    "menu": {
+        "itemCategories": "Item Categories",
+        "items": "Items",
+        "home": "Home",
+        "users": "Users",
+        "logOut": "LogOut",
+        "alNashamaApp": "Al-Nashama-App",
+        "suggestions": "Suggestions",
+        "adamChatApp": "Adam-Chat-App",
+        "shared": "Adam Shared lib",
+        "dms": "Adam DMS",
+        "chats": "Chats"
+    },
+    "validations": {
+        "requiredValidation": " {{ model }} is required",
+        "emailValidation": "Enter a valid email address",
+        "urlValidation": "Enter a valid URL",
+        "websiteValidation": "Enter a valid website",
+        "minlengthValidation": "Minimum length is {{ model }} characters",
+        "lengthValidation": "{{ name }} must be between {{ min }} and {{ max }}",
+        "phoneNumberValidation": "Enter a valid phone number",
+        "nameValidation": "{{model}} is required",
+        "fromTimeValidation": "It should be from time less than to time",
+        "toTimeValidation": "It must be to time greater than from time"
+    },
+    "header": {
+        "languge": "Languge",
+        "darkMode": "Dark Mode",
+        "normalMode": "Normal Mode",
+        "myProfile": "Profile",
+        "logOut": "LogOut",
+        "userName": "User Name",
+        "chat": "Chats",
+        "settings": "Settings"
+    }
+}

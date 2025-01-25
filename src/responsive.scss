@@ -1,0 +1,72 @@
+@import "./variables.scss";
+@import "./adam.lib.scss";
+
+@media screen and (min-width: 1800px)  {
+    .main-content {
+        width: 88.25% !important;
+        @include margin-start(11.75%);
+        transition: all 0.5s linear;
+        height: 90vh !important;
+      }
+      
+      .larg-main-content {
+        width: 96.25% !important;
+        height: 90vh !important;
+        @include margin-start(3.75%);
+        position: relative;
+        transition: all 0.5s linear;
+      }
+      
+      .x-larg-main-content {
+        width: 99.75% !important;
+        height: 90vh !important;
+        @include margin-start(0.125%);
+        position: relative;
+        transition: all 0.5s linear;
+      }
+}
+
+@media screen and (min-width: 1500px) and (max-width: 2000px) {
+    .chats-style {
+        margin-left: 0.25% !important;
+        margin-right: 0.25% !important;
+        height: 740px !important;
+    }
+
+    .body-messages-style {
+        height: 85% !important;
+
+        .no-messages-style {
+            min-height: 620px !important;
+            max-height: 620px !important;
+        }
+    }
+
+    .main-content {
+        max-width: 86.25% !important;
+        @include margin-start(13.5%);
+        transition: all 0.5s linear;
+        height: 90vh !important;
+    }
+
+    .panel-menu-large {
+        width: 13.25% !important;
+        @include margin-start(0.5%);
+    }
+
+    .larg-main-content {
+        width: 96.25% !important;
+        height: 90vh !important;
+        @include margin-start(3.5%);
+        position: relative;
+        transition: all 0.5s linear;
+      }
+      
+      .x-larg-main-content {
+        width: 99.75% !important;
+        height: 90vh !important;
+        @include margin-start(0.125%);
+        position: relative;
+        transition: all 0.5s linear;
+      }
+}

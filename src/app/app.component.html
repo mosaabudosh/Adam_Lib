@@ -1,0 +1,16 @@
+<div [ngClass]="isDarkMode ? 'dark-mode' : 'normal-mode'">
+
+  <body dir="{{ 'dir' | translate }}">
+
+    <adam-lib-header [headerDataModel]="headerDataModel" (onMenuClicked)="onMenuClick()"></adam-lib-header>
+
+    <adam-lib-side-menu *ngIf="isViewMenu" [items]="menuItem" [isClosedMenu]="isClosedMenu" [isSimpelMenu]="true"
+      (onChangeClosedMenu)="onChangeClosedMenu($event)" [isEnabelTooltip]="false"></adam-lib-side-menu>
+
+    <div [ngClass]="isViewMenu ? (isClosedMenu ? 'larg-main-content':'main-content') : 'x-larg-main-content'">
+      <router-outlet></router-outlet>
+    </div>
+  </body>
+</div>
+
+<adam-lib-toast></adam-lib-toast>

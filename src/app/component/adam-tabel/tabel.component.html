@@ -1,0 +1,27 @@
+<div>
+    <adam-tabel [columns]="columns" [products]="items" [isShowSearch]="false" [sort]="false" [enableCheckbox]="false"
+        (onClickAdd)='addUser()' [rowsNumber]="5" [isShowSearch]="true" [commands]="[
+              {columnHeader:'Action', elementRef:action}]"></adam-tabel>
+
+    <ng-template #action let-dataItem="dataItem">
+        <div class="adam-flex-row adam-space-between">
+            <adam-lib-icons [icons]="dataItem?.icons"></adam-lib-icons>
+        </div>
+    </ng-template>
+
+</div>
+
+
+
+<div>
+    <adam-tabel [columns]="columns2" [products]="items2" [isShowSearch]="false" [sort]="false" [enableCheckbox]="false"
+        (onClickAdd)='addUser()' [rowsNumber]="5" [isShowSearch]="true" [commands]="[
+              {columnHeader:'Action', elementRef:action}]"></adam-tabel>
+
+    <ng-template #action let-dataItem="dataItem">
+        <div class="adam-flex-row adam-space-between">
+            <adam-lib-icons [icons]="dataItem?.icons"></adam-lib-icons>
+        </div>
+    </ng-template>
+
+</div>

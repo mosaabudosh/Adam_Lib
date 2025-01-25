@@ -1,0 +1,6 @@
+<div dir="{{ 'dir' | translate }}">
+    <div class="checkbox {{ color }} ">
+        <p-checkbox (onChange)="handelChange($event)" value="{{ value }}" label="{{ label }}" name="{{ name }}"
+            [(ngModel)]="checked" [binary]="true" [disabled]="disabled" [readonly]="isReadOnly"></p-checkbox>
+    </div>
+</div>

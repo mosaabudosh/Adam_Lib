@@ -1,0 +1,74 @@
+<div class="table-card">
+    <p-table #dt [value]="products" [rows]="rowsNumber" [paginator]="paginator"
+        [globalFilterFields]="globalFilterFields" [(selection)]="selection" [rowHover]="true" dataKey="id"
+        [showCurrentPageReport]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+        [rowsPerPageOptions]="[5,10, 25, 50]">
+
+        <ng-template pTemplate="caption">
+            <div class="adam-flex adam-flex-row adam-space-between caption-table-style">
+                <div class="adam-flex-column adam-start-start search-box-style adam-center-center">
+                    <!-- <app-search-box *ngIf="isShowSearch" [icon]="'pi pi-search'" [width]="'100%'" [height]="'35px'"
+                        (input)="dt.filterGlobal($event.target.value, 'contains')"
+                        [placeholder]="'Search ...'"></app-search-box> -->
+                </div>
+                <div class="adam-flex-column adam-start-start">
+                    <adam-lib-icons *ngIf="isShowaddNew" [icons]="generateIcons()"></adam-lib-icons>
+
+                </div>
+            </div>
+
+        </ng-template>
+
+        <ng-template pTemplate="header" *ngIf="sort">
+            <tr class="header">
+                <th style="width: 3rem" *ngIf="enableCheckbox">
+                    <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                </th>
+                <th *ngFor="let col of columns" [pSortableColumn]="col.field"
+                    [style]="{'display': col.visible == false? 'none':'table-cel'}" [style.width]="col.width">
+                    {{ col.header }}
+                    <p-sortIcon [field]="col.field"></p-sortIcon>
+                </th>
+                <th *ngFor="let col of commands">
+                    {{ col.columnHeader }}
+                </th>
+            </tr>
+        </ng-template>
+
+        <ng-template pTemplate="header" *ngIf="!sort">
+            <tr>
+                <th style="width: 3rem" *ngIf="enableCheckbox">
+                    <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                </th>
+                <th *ngFor="let col of columns" [style.width]="col.width"
+                    [style]="{'display': col.visible == false ?'none':'table-cel'}">
+                    {{ col.header }}
+                </th>
+                <th *ngFor="let col of commands">
+                    {{ col.columnHeader }}
+                </th>
+            </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-product>
+            <tr class="tr-body-style">
+                <td *ngIf="enableCheckbox">
+                    <p-tableCheckbox [value]="product"></p-tableCheckbox>
+                </td>
+                <td *ngFor="let col of columns" [style]="{'display': col.visible == false ?'none':'table-cel'}">
+                    <img *ngIf="col.isHasImage && col.imagePath && product[col.imagePath]" class="image-row"
+                        src="{{product[col.imagePath]}}">
+                    {{ formatTableCellValue(product[col.field], col.dataType, col.format) }}
+                </td>
+                <ng-container *ngIf="commands && commands.length > 0">
+                    <td *ngFor="let col of commands">
+
+                        <ng-container *ngTemplateOutlet=" col?.elementRef; context: { dataItem: product }">
+                        </ng-container>
+                    </td>
+                </ng-container>
+
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

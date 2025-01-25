@@ -1,0 +1,17 @@
+<div dir="{{ 'dir' | translate }}" class="adam-flex adam-flex-row text-box-style" style="--margin-end: {{marginEnd}}"
+    [ngStyle]="getStyles()" [ngClass]="{'invalid-border-style': !getIsValid(),'required': required}">
+    <div *ngIf="_icons && _icons.length > 0 && isDisplayIconStart" class="adam-flex adam-flex-row">
+        <span *ngFor="let icon of _icons" [class]="icon.icon" (click)="icon.command()" [pTooltip]="icon.tooltip"
+            [tooltipPosition]="icon.tooltipPosition"></span>
+    </div>
+
+    <input type="{{ type }}" id="{{ id }}" name="{{ name }}" minlength={{minLength}} maxlength={{maxLength}} ngModel
+        value="{{ textValue }}" [required]="required" (change)="handelChange($event)" placeholder="{{ placeholder }}"
+        class="{{class}} {{ heightClass }}Size {{ widthClass }}Width " [attr.disabled]="disabled ? '' : null"
+        (blur)="onblur($event)" (input)="onTextChanged($event)" #input min="{{minValue}}" max="{{maxValue}}" />
+
+    <div *ngIf="_icons && _icons.length > 0 && !isDisplayIconStart" class="adam-flex adam-flex-row">
+        <span *ngFor="let icon of _icons" [class]="icon.icon" (click)="icon.command()" [pTooltip]="icon.tooltip"
+            [tooltipPosition]="icon.tooltipPosition"></span>
+    </div>
+</div>

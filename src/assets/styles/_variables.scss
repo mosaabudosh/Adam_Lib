@@ -1,0 +1,49 @@
+/* Font Color Palette */
+
+:root {
+  --border-radius: 5px !important;
+  --border-size: 1px !important;
+  --font-family: 'DroidArabicKufiRegular' Arial, sans-serif !important;
+
+
+  .dark-mode {
+    --main-background: #202124 !important;
+    --secondary-background: rgba(0, 0, 0, 0.502) !important;
+    --background-rgba: rgba(11, 13, 9, 0.65) !important;
+    --main-text-color: rgba(255, 255, 255, .7) !important;
+    --border: 1px solid #fff !important;
+    --btn-background: #0B0D09 !important;
+    --btn-color: #fff !important;
+    --icon-color: #fff !important;
+    --box-shadow: #3b3b3b 0px 0px 5px 3px !important;
+    // --background-image: url("../assets/images/dark-background-image.jpg") !important;
+    --white-color: white !important;
+    --black-color: black !important;
+    --box-shadow:
+      0 0 8rem 0 rgba(black, 0.1),
+      0rem 2rem 4rem -3rem rgba(black, 0.5);
+    --secondary-box-shadow: 0 0 10px 0 white,
+      0rem 2rem 4rem -3rem white !important;
+  }
+
+  .normal-mode {
+    // --main-background: #18dcff !important;
+    --main-background: #fff !important;
+    --secondary-background: #18dcff !important;
+    --background-rgba: rgba(255, 255, 255, 0.65) !important;
+    --main-text-color: #0B0D09 !important;
+    --border: 1px solid #0B0D09 !important;
+    --btn-background: rgb(24, 236, 251) !important;
+    --btn-color: rgb(30, 31, 31) !important;
+    --icon-color: #0B0D09 !important;
+    --box-shadow: #3b3b3b 0px 0px 5px 3px !important;
+    // --background-image: url("../assets/images/normal-background-image.jpg") !important;
+    --black-color: white !important;
+    --white-color: black !important;
+    --box-shadow:
+      0 0 8rem 0 rgba(#18dcff, 0.1),
+      0rem 2rem 4rem -3rem rgba(#18dcff, 0.5);
+    --secondary-box-shadow: 0 0 10px 0 #18dcff,
+      0rem 2rem 4rem -3rem #18dcff !important;
+  }
+}
