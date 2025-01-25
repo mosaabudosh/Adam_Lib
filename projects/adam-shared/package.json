@@ -1,0 +1,22 @@
+{
+  "name": "adam-shared",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^17.0.0",
+    "@angular/core": "^17.0.0",
+    "primeicons": "^6.0.1",
+    "primeng": "^17.3.1",
+    "@ngx-translate/core": "^15.0.0",
+    "@ngx-translate/http-loader": "^8.0.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "allowedNonPeerDependencies": [
+    "primeicons",
+    "primeng",
+    "@ngx-translate/core",
+    "@ngx-translate/http-loader"
+  ],
+  "sideEffects": false
+}

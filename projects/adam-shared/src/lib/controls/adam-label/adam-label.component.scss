@@ -1,0 +1,15 @@
+@import "./../../../assets/styles/styles.scss";
+
+label {
+    font-family: var(--font-family) !important;
+    font-size: var(--small-font-size) !important;
+    @include margin-start(4px);
+    margin-bottom: 8px !important;
+    margin-top: 8px !important;
+}
+
+.required:after {
+    content: '\2731' !important;
+    color: var(--not-valid-color) !important;
+    margin: 3px !important;
+}

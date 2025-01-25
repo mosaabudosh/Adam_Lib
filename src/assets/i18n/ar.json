@@ -1,0 +1,124 @@
+{
+    "general": {
+        "search": "بحث ...",
+        "action": "الإجراء",
+        "placeholder": "أكتب هنا",
+        "save": "حفظ",
+        "cancel": "إلغاء",
+        "back": "رجوع",
+        "ok": "موافق",
+        "success": "نجاح",
+        "error": "خطأ",
+        "confirmation": "تأكيد",
+        "close": "إغلاق",
+        "addSuccess": "Added {{ name }} Successfully",
+        "UpdateSuccess": "Update {{ name }} Successfully",
+        "deleteSuccess": "Delete {{ name }} Successfully",
+        "pleaseSelect": "الرجاء الاختيار",
+        "confirmationMessage": "هل أنت متأكد أنك تريد القيام بهذا الإجراء؟",
+        "uploade": "تحميل",
+        "removeAll": "حذف الكل"
+    },
+    "userList": {
+        "title": "المستخدمين",
+        "name": "الاسم",
+        "email": "البريد الإلكتروني",
+        "phoneNumber": "رقم الهاتف",
+        "gender": "الجنس",
+        "address": "العنوان",
+        "isLock": "مقفل",
+        "age": "العمر",
+        "profileImage": "الصورة الشخصية",
+        "allUser": "All user",
+        "custumer": "Custumer",
+        "lockUser": "Lock User",
+        "clint": "Clint"
+    },
+    "userPopup": {
+        "title": "أضافة مستخدم جديد",
+        "edit": "تعديل مستخدم جديد",
+        "firstName": "الأسم الاول",
+        "socundName": "الأسم التاني",
+        "email": "البريد الإلكتروني",
+        "userName": "أسم المستخدم",
+        "phoneNumber": "رقم الهاتف",
+        "gender": "الجنس",
+        "address": "العنوان",
+        "languge": "اللغة",
+        "userType": "نوع المستخدم",
+        "dateOfBirth": "تاريخ الميلاد",
+        "userImage": "صورة المستخدم"
+    },
+    "itemsList": {
+        "title": "المواد",
+        "itemName": "الأسم",
+        "itemCode": "الرمز",
+        "description": "الوصف",
+        "category": "الفئة"
+    },
+    "itemPopup": {
+        "title": "أضافة مادة",
+        "edit": "تعديل مادة",
+        "itemName": "الأسم",
+        "itemCode": "الرمز",
+        "itemBarCode": "الباركود",
+        "description": "الوصف",
+        "category": "الفئة"
+    },
+    "itemCategories": {
+        "title": "فئات العناصر",
+        "name": "الاسم",
+        "code": "الرمز"
+    },
+    "itemCategoryPopup": {
+        "title": "أضافة فئة عنصر",
+        "edit": "تعديل فئة العنصر",
+        "name": "الاسم",
+        "code": "الرمز"
+    },
+    "menu": {
+        "itemCategories": "فئات العناصر",
+        "items": "العناصر",
+        "home": "الرئيسية",
+        "users": "المستخدمين",
+        "logOut": "تسجيل الخروج",
+        "alNashamaApp": "النشامى",
+        "suggestions": "الاقتراحات",
+        "adamChatApp": "محادثات آدم",
+        "shared": "مكتبة آدم",
+        "dms": "آدم نظام إدارة الوثائق",
+        "chats": "الدردشات"
+    },
+    "validations": {
+        "requiredValidation": " {{model}} مطلوب",
+        "emailValidation": "أدخل عنوان بريد إلكتروني صالح",
+        "urlValidation": "أدخل عنوان URL صالحًا",
+        "websiteValidation": "أدخل موقع ويب صالحًا",
+        "minlengthValidation": "الحد الأدنى للطول هو {{model}} حرفًا",
+        "lengthValidation": "{{name}} يجب أن يكون بين {{min}} و {{max}}",
+        "phoneNumberValidation": "أدخل رقم هاتف صالح",
+        "nameValidation": "{{model}} مطلوب",
+        "fromTimeValidation": "يجب أن يكون من وقت أقل من الى وقت",
+        "toTimeValidation": "يجب أن يكون الى وقت أكبر من  من وقت"
+    },
+    "home": {
+        "title": "الرئيسية",
+        "users": "المستخدمين",
+        "active": "فعال",
+        "inActive": "غير فعال",
+        "block": "محظور",
+        "items": "العناصر",
+        "orders": "الطلبات"
+    },
+    "notifications": {
+        "title": "الاقتراحات"
+    },
+    "header": {
+        "languge": "اللغة",
+        "darkMode": "الوضع المظلم",
+        "normalMode": "الوضع الطبيعي",
+        "myProfile": "الملف الشخصي",
+        "logOut": "تسجيل الخروج",
+        "userName": "أسم المستخدم"
+    }
+}

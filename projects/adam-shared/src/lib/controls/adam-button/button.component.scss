@@ -1,0 +1,168 @@
+@import "./../../../assets/styles/styles.scss";
+
+@mixin adam-btn-style($background, $foreground, $border) {
+  border: 1px solid $border !important;
+  color: $foreground !important;
+  background-color: $background !important;
+}
+
+@mixin border-radius($border-radius) {
+  border-radius: $border-radius !important;
+}
+
+@mixin btn-color {
+  &.builder {
+    @include adam-btn-style(var(--btn-builder), var(--white), var(--btn-builder));
+  }
+
+  &.primary {
+    @include adam-btn-style(var(--btn-primary), var(--white), var(--btn-primary));
+  }
+
+  &.dangerous {
+    @include adam-btn-style(var(--btn-dangerous), var(--white), var(--btn-dangerous));
+  }
+
+  &.positive {
+    @include adam-btn-style(var(--btn-positive), var(--white), var(--btn-positive));
+  }
+
+  &.blue {
+    @include adam-btn-style(var(--btn-blue), var(--white), var(--btn-blue));
+  }
+
+  &.waring {
+    @include adam-btn-style(var(--btn-warning), var(--white), var(--btn-warning));
+  }
+
+  &.info {
+    @include adam-btn-style(var(--btn-info), var(--white), var(--btn-info));
+  }
+
+  &.primary-reverse {
+    @include adam-btn-style(var(--white), var(--btn-primary), var(--btn-primary));
+  }
+
+  &.dangerous-reverse {
+    @include adam-btn-style(var(--white), var(--btn-dangerous), var(--btn-dangerous));
+  }
+
+  &.positive-reverse {
+    @include adam-btn-style(var(--white), var(--btn-positive), var(--btn-positive));
+  }
+
+  &.blue-reverse {
+    @include adam-btn-style(var(--white), var(--btn-blue), var(--btn-blue));
+  }
+
+  &.waring-reverse {
+    @include adam-btn-style(var(--white), var(--btn-warning), var(--btn-warning));
+  }
+
+  &.info-reverse {
+    @include adam-btn-style(var(--white), var(--btn-info), var(--btn-info));
+  }
+
+  &.none,
+  &.cancel {
+    @include adam-btn-style(var(--white), var(--btn-none), var(--btn-none));
+  }
+
+  &.link {
+    @include adam-btn-style(var(--btn-gray), var(--btn-link-outline), var(--btn-link-outline));
+  }
+
+  &.tag {
+    @include adam-btn-style(var(--btn-gray), var(--btn-link-outline), var(--none));
+  }
+
+  &.makeError {
+    @include adam-btn-style(var(--white), var(--btn-dangerous), var(--btn-dangerous));
+  }
+
+  &.advance-search {
+    @include adam-btn-style(var(--btn-advance-search), var(--white), var(--btn-advance-search));
+  }
+
+  &.back {
+    display: inline-flex;
+    border: var(--none);
+    @include adam-btn-style(var(--btn-gray), var(--btn-none), var(--none));
+  }
+
+  &.back::before {
+    display: inline-flex;
+    @include padding-end(15px);
+    @include padding-start(20px);
+    content: "\f060";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    color: var(--btn-none);
+    font-size: 18px;
+    background-color: var(--btn-gray) !important;
+  }
+
+  &.rounded {
+    @include border-radius(var(--border-radius-rounded));
+  }
+
+  &.flat {
+    @include adam-btn-style(var(--none), var(--btn-primary), var(--none));
+  }
+}
+
+button .ui-button,
+.ui-widget,
+.ui-state-default,
+.ui-corner-all,
+.ui-button-text-only {
+  height: 100% !important;
+}
+
+.ui-button .ui-button-text {
+  display: contents !important;
+  line-height: normal !important;
+}
+
+button {
+  @include btn-color;
+  @include border-radius(var(--border-radius));
+
+  >span {
+    padding: 0 !important;
+    font-family: var(--font-family) !important;
+    font-size: var(--small-font-size) !important;
+  }
+}
+
+button .ui-widget-header .ui-button,
+.ui-widget-content .ui-button,
+.ui-widget.ui-button,
+.ui-button,
+.ui-inputgroup .ui-widget-header .ui-button,
+.ui-inputgroup .ui-widget-content .ui-button,
+.ui-inputgroup .ui-widget.ui-button,
+.ui-inputgroup .ui-button,
+.ui-inputgroup .ui-button:hover,
+.ui-widget-header .ui-button:enabled:hover,
+.ui-widget-header .ui-button:focus,
+.ui-widget-content .ui-button:enabled:hover,
+.ui-widget-content .ui-button:focus,
+.ui-widget.ui-button:enabled:hover,
+.ui-widget.ui-button:focus,
+.ui-button:enabled:hover,
+.ui-button:enabled:focus .ui-button:focus {
+  background-color: Transparent !important;
+  background-repeat: no-repeat !important;
+  color: inherit !important;
+  width: 100% !important;
+  border: none !important;
+  box-shadow: none !important;
+  cursor: pointer !important;
+  overflow: hidden !important;
+  outline: none !important;
+
+
+}

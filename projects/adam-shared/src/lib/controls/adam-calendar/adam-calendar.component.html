@@ -1,0 +1,13 @@
+<div dir="{{ 'dir' | translate }}" class="adam-calendar adam-flex-row"
+  [ngClass]="{'invalid-border-style': !getIsValid(),'required': required}" [ngStyle]="getContainerStyle()">
+  <p-calendar [(ngModel)]="date" [name]="name" [showIcon]="showIcon && !isReadOnly" [icon]="'pi pi-calendar'"
+    [inline]="inline" [showTime]="showTime" [dateFormat]="calenderDateFormat" [timeOnly]="timeOnly"
+    [ngStyle]="getStyles()" [hourFormat]="hourFormat" [showOtherMonths]="!isReadOnly" [showOnFocus]="!isReadOnly"
+    [readonlyInput]="isReadOnly" [iconDisplay]="'input'" placeholder="{{ placeholder }}" [disabled]="calenderDisabled"
+    id="{{ id }}" [maxDate]="_maxDate" [minDate]="_minDate" #myCalender [required]="required" class="calendar-style"
+    [panelStyleClass]="'calendar-panel-style'" [locale]="localeLang" [autoZIndex]="true" [baseZIndex]="9999999"
+    [appendTo]="'body'" [monthNavigator]="!isReadOnly" [yearNavigator]="!isReadOnly" [yearRange]="_yearRange"
+    [showButtonBar]="showButtonBar" (onInput)="!isReadOnly && input(date)" (onBlur)="!isReadOnly && blured($event)"
+    (onClearClick)="clearClicked(myCalender)" (onTodayClick)="todayClick(myCalender)"
+    (onSelect)="!isReadOnly && selectedChanged($event)" />
+</div>

@@ -1,0 +1,97 @@
+/* Font Color Palette */
+:root {
+  --border-radius: 5px !important;
+  --border-size: 1px !important;
+  --font-family: 'DroidArabicKufiRegular' Arial, sans-serif !important;
+  --not-valid-color: red !important;
+  --small-font-size: 12px !important;
+  --med-font-size: 20px !important;
+  --larg-font-size: 30px !important;
+  --icon-font-size: 40px !important;
+
+  .dark-mode {
+    --main-background: #202124 !important;
+    --secondary-background: #1e272e !important;
+    --background-rgba: rgba(11, 13, 9, 0.7) !important;
+    --main-text-color: #fff !important;
+    --border: 1px solid #fff !important;
+    --btn-background: #0B0D09 !important;
+    --btn-color: #fff !important;
+    --icon-color: #fff !important;
+    // --background-image: url("../assets/images/dark-background-image.jpg") !important;
+    --white-color: white !important;
+    --black-color: black !important;
+    --box-shadow:
+      0 0 8rem 0 rgba(black, 0.1),
+      0rem 2rem 2rem -rgb(7, 6, 6)rgba(black, 0.5);
+    // --secondary-box-shadow: 0 0 10px 0 white,
+    //   0rem 2rem 4rem -3rem white !important;
+
+    --secondary-box-shadow: 0 0 3px 0 black,
+      0rem 2rem 2rem -2rem black !important;
+
+    --background: #202124 !important;
+    --received-messages-background: #000000 !important;
+    --send-messages-background: #1f2c30 !important;
+    --un-read-user-row-color: #2196f3 !important;
+    --hover-row-color: rgba(11, 13, 9) !important;
+    --btn-primary: #355d9b !important;
+    --white: white !important;
+    --btn-dangerous: #df3351 !important;
+    --btn-positive: #45a6ac !important;
+    --btn-none: #49505d !important;
+    --btn-gray: #f4f4f4 !important;
+    --btn-link-outline: #365d9e !important;
+    --none: none !important;
+    --back: #dddddd !important;
+    --btn-blue: #3D83F9 !important;
+    --border-radius-rounded: 25px !important;
+    --margin: 8px !important;
+    --btn-warning: #F0AD4E;
+    --btn-info: #5CB85C;
+    --btn-builder: #007bff;
+    --btn-advance-search: #9C27B0;
+    --input-background: rgba(11, 13, 9, 0.9) !important;
+  }
+
+  .normal-mode {
+    --main-background: white !important;
+    --secondary-background: #18dcff !important;
+    --background-rgba: rgba(202, 254, 249, 0.7) !important;
+    --main-text-color: #0B0D09 !important;
+    --border: 1px solid #0B0D09 !important;
+    --btn-background: rgb(24, 236, 251) !important;
+    --btn-color: rgb(30, 31, 31) !important;
+    --icon-color: #0B0D09 !important;
+    // --background-image: url("../assets/images/normal-background-image.jpg") !important;
+    --black-color: white !important;
+    --white-color: black !important;
+    --box-shadow:
+      0 0 8rem 0 rgba(#18dcff, 0.1),
+      0rem 2rem 4rem -3rem rgba(#18dcff, 0.5);
+    --secondary-box-shadow: 0 0 3px 0 black,
+      0rem 2rem 2rem -2rem black !important;
+    --background: #18dcff !important;
+    --received-messages-background: #00cec9 !important;
+    --send-messages-background: #81ecec !important;
+    --un-read-user-row-color: #2196f3 !important;
+    --hover-row-color: #81ecec !important;
+    --btn-primary: #355d9b !important;
+    --white: white !important;
+    --btn-dangerous: #df3351 !important;
+    --btn-positive: #45a6ac !important;
+    --btn-none: #49505d !important;
+    --btn-gray: #f4f4f4 !important;
+    --btn-link-outline: #365d9e !important;
+    --none: none !important;
+    --back: #dddddd !important;
+    --btn-blue: #3D83F9 !important;
+    --border-radius-rounded: 25px !important;
+    --margin: 8px !important;
+    --btn-warning: #F0AD4E;
+    --btn-info: #5CB85C;
+    --btn-builder: #007bff;
+    --btn-advance-search: #9C27B0;
+    --input-background: white !important;
+  }
+}

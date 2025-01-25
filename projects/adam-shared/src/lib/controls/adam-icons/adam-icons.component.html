@@ -1,0 +1,7 @@
+<div class="adam-flex-row">
+    <div *ngFor="let icon of _icons"
+        [ngClass]="_icons && _icons.length > 1 ? 'span-multi-icon-style' : 'span-icon-style' ">
+        <span *ngIf="icon.visible" class="{{icon.icon}} {{icon.color}}" (click)="icon.command()"
+            [pTooltip]="icon.tooltip" tooltipPosition="top"></span>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<nav dir="{{ 'dir' | translate }}" class="header-style">
+    <div class="adam-flex-row header-contant-style adam-space-between">
+        <div class="adam-flex-column adam-start-start">
+            <div class="adam-flex-row">
+                <div *ngIf="_headerDataModel.isViewMenu" class="adam-flex-column header-col-style header-menu-style">
+                    <i (click)="menuClicked()" class="pi pi-align-justify "></i>
+                </div>
+                <div *ngIf="_headerDataModel.isViewLogo" class="adam-flex-column  logo-app-style">
+                    <img [src]="_headerDataModel.logoApp" />
+                </div>
+            </div>
+        </div>
+
+        <div class="adam-flex-column">
+            <div class="adam-flex-row">
+                <div *ngFor="let icon of _headerDataModel.icons">
+                    <div *ngIf="icon.visible" [pTooltip]="icon.tooltip" tooltipPosition="{{icon.tooltipPosition}}"
+                        class="adam-flex-column adam-end-end header-col-style header-icons-style"
+                        (click)="onIconClick(icon)">
+                        <i *ngIf="!icon?.badge || icon?.badge == '0'" [class]="icon.icon"> </i>
+                        <i *ngIf="icon.badge && icon.badge != '0'" [class]="icon.icon" pBadge [value]="icon.badge"> </i>
+                    </div>
+                </div>
+
+                <div class="adam-flex-column adam-end-end header-col-style">
+                    <p-menu #menu [popup]="true" [model]="_headerDataModel.items"
+                        [styleClass]="'header-menu-item-style'"></p-menu>
+                    <button id="menu" (click)="menu.toggle($event)" class="btn-menu-style">
+                        {{_headerDataModel && _headerDataModel.userName ? _headerDataModel.userName : 'header.userName'|
+                        translate}}
+                        <i class="pi pi-angle-down"></i>
+                    </button>
+                </div>
+                <div class="adam-flex-column adam-end-end header-col-style">
+                    <div class="avatar" *ngIf="_headerDataModel.avatarImage">
+                        <img [src]="_headerDataModel.avatarImage" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>

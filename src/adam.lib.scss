@@ -1,0 +1,161 @@
+.adam-flex-row {
+    display: flex !important;
+    flex-direction: row !important;
+}
+
+.adam-flex-column {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.adam-space-between {
+    justify-content: space-between !important;
+}
+
+.adam-center-center {
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.adam-start-start {
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+}
+
+.adam-end-end {
+    justify-content: flex-end !important;
+    align-items: flex-end !important;
+}
+
+@mixin margin-start($unit) {
+    :dir(rtl) & {
+        margin-right: $unit !important;
+    }
+
+    :dir(ltr) & {
+        margin-left: $unit !important;
+    }
+}
+
+@mixin margin-end($unit) {
+    :dir(rtl) & {
+        margin-left: $unit !important;
+    }
+
+    :dir(ltr) & {
+        margin-right: $unit !important;
+    }
+}
+
+@mixin padding-end($unit) {
+    :dir(rtl) & {
+        padding-left: $unit !important;
+    }
+
+    :dir(ltr) & {
+        padding-right: $unit !important;
+    }
+}
+
+@mixin padding-start($unit) {
+    :dir(rtl) & {
+        padding-right: $unit !important;
+    }
+
+    :dir(ltr) & {
+        padding-left: $unit !important;
+    }
+}
+
+@mixin float-left {
+    :dir(rtl) & {
+        float: right;
+    }
+
+    :dir(ltr) & {
+        float: left;
+    }
+
+}
+
+@mixin float-right {
+    :dir(rtl) & {
+        float: left;
+    }
+
+    :dir(ltr) & {
+        float: right;
+    }
+}
+
+@mixin text-align-left {
+    :dir(rtl) & {
+        text-align: right !important;
+    }
+
+    :dir(ltr) & {
+        text-align: left !important;
+    }
+}
+
+@mixin text-align-right {
+    :dir(ltr) & {
+        text-align: right !important;
+    }
+
+    :dir(rtl) & {
+        text-align: left !important;
+    }
+}
+
+@mixin right($unit) {
+
+    :dir(rtl) & {
+        left: $unit !important;
+
+    }
+
+    :dir(ltr) & {
+        right: $unit !important;
+    }
+
+}
+
+@mixin left ($unit) {
+    :dir(rtl) & {
+        right: $unit !important;
+
+    }
+
+    :dir(ltr) & {
+        left: $unit !important;
+
+    }
+
+}
+
+@mixin border-start ($unit, $style: null, $color: null) {
+    :dir(rtl) & {
+        border-right: $unit $style $color !important;
+
+    }
+
+    :dir(ltr) & {
+        border-left: $unit $style $color !important;
+
+    }
+
+}
+
+@mixin border-end ($unit, $style: null, $color: null) {
+    :dir(rtl) & {
+        border-left: $unit $style $color !important;
+
+    }
+
+    :dir(ltr) & {
+        border-right: $unit $style $color !important;
+
+    }
+
+}

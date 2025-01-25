@@ -1,0 +1,21 @@
+<div dir="{{'dir' | translate}}" class="dropdown adam-flex-row" [ngStyle]="getContainerStyle()"
+    [ngClass]="{'invalid-border-style': !getIsValid(),'required': required}">
+    <p-dropdown [options]="dataSource" [placeholder]="placeholder" [readonly]="readOnly"
+        (onChange)="handelChange($event)" [disabled]="dropdoenDisabled" [filter]="filter" [(ngModel)]="_selectedValue"
+        [ngStyle]="getStyles()" [required]="required" (onBlur)="handleOnBlur($event)" (onFocus)="handleOnFocus($event)"
+        emptyFilterMessage="{{emptyFilterMessage}}" (onShow)="handleOnShow($event)" (onHide)="handleOnHide($event)"
+        [group]="group">
+
+        <ng-template let-group pTemplate="group">
+            <div>
+                <span>{{ group.label }}</span>
+            </div>
+        </ng-template>
+
+        <ng-template let-dropdown pTemplate="dropdown">
+            <span class="dropdown">
+                {{ dropdown.label }}
+            </span>
+        </ng-template>
+    </p-dropdown>
+</div>

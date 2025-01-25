@@ -1,0 +1,231 @@
+@import './../../../assets/styles/styles.scss';
+
+p-table {
+  box-shadow: var(--secondary-box-shadow) !important;
+  font-size: var(--small-font-size) !important;
+  font-family: var(--font-family) !important;
+}
+
+::placeholder {
+  color: var(--main-text-color) !important;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: var(--main-text-color) !important;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: var(--main-text-color) !important;
+}
+
+.add {
+  background-color: var(--btn-background) !important;
+  // margin: 1rem !important;
+  color: var(--btn-color) !important;
+  width: 50px !important;
+  height: 40px !important;
+  border-radius: var(--border-radius) !important;
+  border: none !important;
+  cursor: pointer !important;
+
+  // i {
+  //   margin: 0 auto !important;
+  //   font-weight: bold !important
+  // }
+}
+
+.p-input-icon-left>i,
+.p-input-icon-right>i {
+  @include margin-start(1rem);
+  color: var(--main-text-color) !important;
+
+}
+
+.p-datatable .p-datatable-header {
+  background-color: var(--background-rgba) !important;
+  color: var(--main-text-color) !important;
+  border: none !important;
+  border-top-left-radius: 10px !important;
+  border-top-right-radius: 10px !important;
+  font-size: var(--small-font-size) !important;
+  font-family: var(--font-family) !important;
+}
+
+.p-paginator {
+  background-color: var(--background-rgba) !important;
+  color: var(--main-text-color) !important;
+  justify-content: center !important;
+  border: none !important;
+  border-bottom-left-radius: 10px !important;
+  border-bottom-right-radius: 10px !important;
+  font-size: var(--small-font-size) !important;
+  font-family: var(--font-family) !important;
+}
+
+.p-datatable .p-datatable-thead {
+  tr>th {
+    text-align: center !important;
+    background-color: var(--background-rgba) !important;
+    color: var(--main-text-color) !important;
+    font-weight: bold !important;
+    font-size: var(--small-font-size) !important;
+    font-family: var(--font-family) !important;
+  }
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+  margin: 0 auto !important;
+  background-color: var(--background-rgba) !important;
+  color: var(--main-text-color) !important;
+  border: none !important;
+  font-size: var(--small-font-size) !important;
+  font-family: var(--font-family) !important;
+}
+
+
+.p-paginator-current {
+  color: var(--icon-color) !important;
+  font-size: var(--small-font-size) !important;
+}
+
+// ::ng-deep app-tabel .ui-datatable-scrollable-view .ui-datatable-scrollable-body {
+//   min-height: 27vh;
+// }
+
+.p-datatable .p-datatable-tbody {
+  border: 1px solid var(--background-rgba) !important;
+  font-size: var(--small-font-size) !important;
+  font-family: var(--font-family) !important;
+  text-align: center !important;
+  cursor: pointer !important;
+  min-width: 100% !important;
+
+  tr {
+    background-color: var(--main-background) !important;
+    border-bottom: 1px solid var(--background-rgba) !important;
+  }
+
+  td {
+    text-align: center !important;
+    color: var(--main-text-color) !important;
+  }
+}
+
+.p-datatable .p-datatable-tbody>tr:not(.p-highlight):not(.p-disabled):hover {
+  box-shadow: inset 0px 0px 10px 10px var(--box-shadow-rgba) !important;
+  border-radius: var(--border-radius) !important;
+}
+
+.p-paginator-bottom {
+  color: var(--main-text-color) !important;
+}
+
+.p-paginator-first,
+.p-paginator-prev,
+.p-paginator-next,
+.p-paginator-last {
+  color: var(--main-text-color) !important;
+
+  :dir(rtl) & {
+    rotate: 180deg !important;
+  }
+}
+
+.p-datatable-footer {
+  background-color: var(--main-background) !important;
+  color: var(--main-text-color) !important;
+}
+
+.table-card {
+  color: var(--main-text-color) !important;
+  padding: 1rem !important;
+
+  .caption-table-style {
+    max-height: 40px !important;
+    // padding: 0.25rem !important;
+  }
+
+  app-search-box {
+    font-size: var(--small-font-size) !important;
+    font-family: var(--font-family) !important;
+    min-width: 100% !important;
+
+    span {
+      :dir(ltr) & {
+        margin-right: -40px !important;
+        rotate: 360deg !important;
+      }
+
+      :dir(rtl) & {
+        margin-left: -40px !important;
+      }
+    }
+  }
+}
+
+.image-row {
+  width: 50px !important;
+  height: 50px !important;
+  margin: 0 auto !important;
+  margin-inline-start: 10px !important;
+  border-radius: 10% !important;
+}
+
+.p-datatable-wrapper {
+  border: none !important;
+  overflow-y: hidden !important;
+}
+
+.p-dropdown {
+  width: 100% !important;
+  height: 100% !important;
+  background: var(--input-background) !important;
+  color: var(--main-text-color) !important;
+}
+
+
+.p-dropdown-items-wrapper::-webkit-scrollbar {
+  width: 10px !important;
+  background: var(--background-rgba) !important;
+}
+
+.p-dropdown-items-wrapper::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 10px var(--background-rgba) !important;
+  border-radius: 10px !important;
+}
+
+.p-dropdown-items-wrapper::-webkit-scrollbar-thumb {
+  border-radius: 10px !important;
+  -webkit-box-shadow: inset 0 0 10px var(--main-text-color) !important;
+}
+
+.p-overlay,
+.p-dropdown-panel,
+.p-dropdown-items-wrapper .p-dropdown-items {
+  text-align: center !important;
+  font-size: var(--small-font-size) !important;
+  font-family: var(--font-family) !important;
+  color: var(--main-text-color) !important;
+  background: var(--input-background) !important;
+  max-width: 50px !important;
+  border-radius: var(--border-radius) !important;
+}
+
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item:not(.p-highlight):not(.p-disabled):hover {
+  font-size: var(--small-font-size) !important;
+  font-family: var(--font-family) !important;
+  color: var(--main-text-color) !important;
+  background: var(--input-background) !important;
+  border-radius: var(--border-radius) !important;
+}
+
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item {
+  @include margin-start(-20px);
+  border-radius: var(--border-radius) !important;
+}
+
+.search-box-style {
+  min-width: 95% !important;
+}
