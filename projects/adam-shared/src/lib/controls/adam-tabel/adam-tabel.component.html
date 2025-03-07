@@ -1,19 +1,25 @@
 <div class="table-card">
-    <p-table #dt [value]="products" [rows]="rowsNumber" [paginator]="paginator"
-        [globalFilterFields]="globalFilterFields" [(selection)]="selection" [rowHover]="true" dataKey="id"
-        [showCurrentPageReport]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-        [rowsPerPageOptions]="[5,10, 25, 50]">
+    <p-table #dt [value]="_products" [rows]="rowsNumber" [paginator]="paginator && _products && _products.length > 0"
+        [columns]="columns" [globalFilterFields]="globalFilterFields" [(selection)]="selection" [rowHover]="rowHover"
+        dataKey="id" [showCurrentPageReport]="showCurrentPageReport"
+        [currentPageReportTemplate]="currentPageReportTemplate" [rowsPerPageOptions]="rowsPerPageOptions"
+        [totalRecords]="120" [showFirstLastIcon]="false" [showCurrentPageReport]="true" [paginatorPosition]="'bottom'"
+        [responsive]="true" [first]="first" [pageLinks]="5" [selectionMode]="selectionMode" [scrollable]="scrollable"
+        crollHeight="200px" [totalRecords]="totalRecords" [lazy]="lazy" [loading]="loading"
+        (onRowSelect)="onRowSelect($event)" (onPage)="OnPaginateChange($event)" (onRowUnselect)="rowUnselected($event)"
+        (onHeaderCheckboxToggle)="headerCheckboxToggle($event)" (onLazyLoad)="loadLazy($event)">
 
         <ng-template pTemplate="caption">
             <div class="adam-flex adam-flex-row adam-space-between caption-table-style">
-                <div class="adam-flex-column adam-start-start search-box-style adam-center-center">
-                    <!-- <app-search-box *ngIf="isShowSearch" [icon]="'pi pi-search'" [width]="'100%'" [height]="'35px'"
-                        (input)="dt.filterGlobal($event.target.value, 'contains')"
-                        [placeholder]="'Search ...'"></app-search-box> -->
+                <div class="adam-flex-column adam-start-start">
+                    <adam-search-box *ngIf="isShowSearch" [icon]="'pi pi-search'" [width]="searchWidth"
+                        [height]="searchHeight" (input)="filterGlobal($event, 'contains',dt)"
+                        [placeholder]="searchPlaceholder"></adam-search-box>
                 </div>
                 <div class="adam-flex-column adam-start-start">
-                    <adam-lib-icons *ngIf="isShowaddNew" [icons]="generateIcons()"></adam-lib-icons>
-
+                    <adam-lib-button *ngIf="isShowaddNew" [text]="''" [class]="'pi pi-plus add-lib-button'"
+                        [height]="'30px'" [pTooltip]="tooltipAdd" tooltipPosition="top"
+                        (click)="addNew()"></adam-lib-button>
                 </div>
             </div>
 
@@ -68,6 +74,25 @@
                     </td>
                 </ng-container>
 
+            </tr>
+        </ng-template>
+
+        <ng-template *ngIf="isViewFooter" pTemplate="footer" let-columns>
+            <tr class="footer-style">
+                <td
+                    [attr.colspan]="(columns ? getColumnLength(columns) : 0) + ( commands ? commands.length : 0) + (enableSelection ? 1 : 0)">
+                    <ng-container *ngTemplateOutlet="footerElementRef">
+                    </ng-container>
+                </td>
+            </tr>
+        </ng-template>
+
+        <ng-template pTemplate="emptymessage" let-columns>
+            <tr *ngIf="_products != null && _products.length == 0">
+                <td class="empty-message-table"
+                    [attr.colspan]="(columns ? getColumnLength(columns) : 0) + ( commands ? commands.length : 0) + (enableSelection ? 1 : 0)">
+                    {{emptyData}}
+                </td>
             </tr>
         </ng-template>
     </p-table>

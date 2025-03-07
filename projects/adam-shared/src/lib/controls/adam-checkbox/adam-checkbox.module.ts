@@ -1,6 +1,5 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CheckboxModule } from 'primeng/checkbox';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -12,7 +11,6 @@ import { AdamCheckboxComponent } from './adam-checkbox.component';
 @NgModule({
   declarations: [AdamCheckboxComponent],
   imports: [
-    BrowserModule,
     BrowserAnimationsModule,
     CommonModule,
     CheckboxModule,

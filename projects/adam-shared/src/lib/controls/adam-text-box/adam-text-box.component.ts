@@ -36,15 +36,15 @@ export class AdamTextBoxComponent implements OnInit, ControlValueAccessor, Valid
   @Input() textValue: string | null = null;
   @Input() noWhitespace: boolean = false;
   @Input() minLength: string;
-  @Input() maxLength: string;
-  @Input() icon: string;
+  @Input() maxLength: string = '50';
+  @Input() icon: string | null = null;
   @Input() isDisableValidationAfterSubmit: boolean = false;
   @Input() isDisplayIconStart: boolean = false;
   _submitted: boolean;
   @Input() set submitted(value: boolean) {
     this._submitted = value
   };
-  marginEnd: string = '50px';
+  marginEnd: string = this.icon != null ? '50px' : '60px';
 
   _icons: any[] = [];
   @Input() set icons(value: any[]) {

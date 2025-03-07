@@ -7,8 +7,6 @@ import { MessageService } from 'primeng/api';
 import { AdamMessageService } from './services/adam.message.service';
 import { FormsModule } from '@angular/forms';
 import { FileUploadModule } from "primeng/fileupload";
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BrowserModule } from '@angular/platform-browser';
 import { IntInputDirective } from './directive/int-input.directive';
 import { DecimalInputDirective } from './directive/decimal-input.directive';
 import { UrlValidatorDirective } from './directive/validators/urlValidatorDirective';
@@ -41,6 +39,8 @@ import { AdamTabelComponent } from './controls/adam-tabel/adam-tabel.component';
 import { AdamTextBoxComponent } from './controls/adam-text-box/adam-text-box.component';
 import { AdamToastComponent } from './controls/adam-toast/adam-toast.component';
 import { SideMenuComponent } from './controls/side-menu/side-menu.component';
+import { AdamSearchBoxComponent } from './controls/adam-search-box/adam-search-box.component';
+import { AdamSearchBoxModule } from './controls/adam-search-box/adam-search-box.module';
 
 @NgModule({
   declarations: [
@@ -56,10 +56,9 @@ import { SideMenuComponent } from './controls/side-menu/side-menu.component';
     MathPipe,
   ],
   imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
     FormsModule,
     CommonModule,
+
     MenuModule,
     TooltipModule,
     InputSwitchModule,
@@ -75,7 +74,8 @@ import { SideMenuComponent } from './controls/side-menu/side-menu.component';
     AdamTabelModule,
     AdamTextBoxModule,
     AdamToastModule,
-    AdamSideMenuModule
+    AdamSideMenuModule,
+    AdamSearchBoxModule
   ],
   exports: [
     IntInputDirective,
@@ -99,7 +99,8 @@ import { SideMenuComponent } from './controls/side-menu/side-menu.component';
     AdamTabelComponent,
     AdamTextBoxComponent,
     AdamToastComponent,
-    SideMenuComponent
+    SideMenuComponent,
+    AdamSearchBoxComponent
   ],
   providers: [MessageService, AdamMessageService],
   schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA]

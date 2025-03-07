@@ -1,0 +1,19 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/adam-http",
+  "lib": {
+    "entryFile": "src/public-api.ts"
+  },
+  "allowedNonPeerDependencies": [
+    "ngx-toastr",
+    "rxjs",
+    "rxjs-compat",
+    "@angular/common",
+    "@angular/platform-browser",
+    "@angular/platform-browser-dynamic",
+    "@angular/router",
+    "jwt-decode",
+    "@angular/animations",
+    "@angular/core"
+  ]
+}

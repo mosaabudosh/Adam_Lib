@@ -1,14 +1,12 @@
-import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'adam-lib-side-menu',
-  standalone: false,
   templateUrl: './side-menu.component.html',
-  styleUrl: './side-menu.component.scss',
-  encapsulation: ViewEncapsulation.None
+  styleUrl: './side-menu.component.scss'
 })
 export class SideMenuComponent {
-  serachText: any;
+  serachText: any ;
   @Input() isEnabelTooltip: boolean = true;
   @Input() isSimpelMenu: boolean = false;
 
@@ -21,7 +19,6 @@ export class SideMenuComponent {
   }
   _items: any[] = [];
   @Input() set items(value: any[]) {
-    console.log(value)
     value?.map(p => {
       if (p.isActive || p.items.find((a: any) => a.isActive) || (p.items.find((a: any) => a.items != null && a.items.find((x: any) => x.isActive)))) {
         p.expanded = true;
@@ -40,6 +37,11 @@ export class SideMenuComponent {
   }
 
   onMenuClick(item: any) {
-    console.log(item)
+    // console.log(item)
   }
+
+  onSearchChange(event: any) {
+    console.log(event)
+  }
+
 }

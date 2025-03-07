@@ -22,7 +22,7 @@ export class ButtonComponent implements OnInit, OnDestroy {
   @Input() label: string;
   @Input() icon: string;
   @Input() iconPos: any = "left";
-  @Input() height: string = "35px";
+  @Input() height: string = "38px";
   @Input() width: string = "100px";
   @Input() disabled = false;
   @Input() class: string;
