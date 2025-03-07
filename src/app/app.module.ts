@@ -1,7 +1,6 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AppComponent } from './app.component';
-import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AdamToastComponent } from './component/adam-toast/adam-toast.component';
@@ -17,6 +16,7 @@ import { AdamSharedModule } from 'adam-shared';
 import { FormsModule } from '@angular/forms';
 import { AdamCheckboxComponent } from './component/adam-checkbox/adam-checkbox.component';
 import { AdamCalendarComponent } from './component/adam-calendar/adam-calendar.component';
+import { AdamHTTPService } from 'adam-http';
 
 @NgModule({
   declarations: [
@@ -31,7 +31,6 @@ import { AdamCalendarComponent } from './component/adam-calendar/adam-calendar.c
   imports: [
     CommonModule,
     FormsModule,
-    BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
     AdamSharedModule,
@@ -43,6 +42,9 @@ import { AdamCalendarComponent } from './component/adam-calendar/adam-calendar.c
         deps: [HttpClient]
       },
     }),
+  ],
+  providers: [
+    AdamHTTPService,
   ],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA]

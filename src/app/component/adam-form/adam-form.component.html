@@ -50,7 +50,7 @@
         <div class="adam-flex-column">
             <adam-lib-label [text]="'Text Box'"></adam-lib-label>
             <adam-lib-text-box name="textBox1" [required]="true" [width]="'250px'" [height]="'35px'"
-                [(ngModel)]="textBox" [submitted]="form.submitted" #textBox1="ngModel"
+                [(ngModel)]="textBox" [submitted]="form.submitted" #textBox1="ngModel" [icon]="'pi pi-file'"
                 ngDefaultControl></adam-lib-text-box>
             <adam-lib-label *ngIf="form.submitted && textBox1?.errors?.required" class="not-valid"
                 [text]="'Text Box is required'"></adam-lib-label>
@@ -93,6 +93,10 @@
         </div>
     </div>
 
+    <div class="adam-flex-row adam-row-gap">
+        <adam-search-box [icon]="'pi pi-search'" [width]="'250px'" [height]="'35px'"
+            [placeholder]="'Search ...'"></adam-search-box>
+    </div>
     <div class="adam-flex-row adam-space-between adam-row-gap">
         <adam-lib-button [type]="'submit'" [color]="'primary-reverse'" [text]="'Submited'"></adam-lib-button>
     </div>

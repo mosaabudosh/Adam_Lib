@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AdamLibTestService } from '../../service/adam-lib-test.service';
 
 @Component({
   selector: 'tabel',
@@ -13,8 +14,11 @@ export class TabelComponent {
 
   columns2: any[] = [];
   items2: any[] = [];
+  items3: any[] = [];
 
-  constructor() {
+
+  constructor(private adamLibTestService: AdamLibTestService) {
+    this.getUsers();
     this.columns = [
       { field: "Col1", header: "Col 1" },
       { field: "Col2", header: "Col 2" },
@@ -41,9 +45,9 @@ export class TabelComponent {
 
     this.columns2 = [
       { field: "imagePath", header: "Image", isHasImage: true, imagePath: 'image' },
-      { field: "Col2", header: "Col 2" },
-      { field: "Col3", header: "Col 3" },
-      { field: "Col4", header: "Col 4" },
+      { field: "mobileNumber", header: "Col 2" },
+      { field: "firstName", header: "Col 3" },
+      { field: "email", header: "Col 4" },
       { field: "Col5", header: "Col 5" },
     ];
     this.items2 = [
@@ -64,7 +68,16 @@ export class TabelComponent {
     ]
   }
   addUser() {
+    console.log('addUser')
+  }
 
+
+  getUsers() {
+    this.adamLibTestService.getUsers().subscribe(response => {
+      console.log('response => ', response.dataObject)
+      this.items3 = response.dataObject;
+    }
+    )
   }
 
 

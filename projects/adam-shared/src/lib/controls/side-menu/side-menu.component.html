@@ -1,6 +1,12 @@
 <div *ngIf="isSimpelMenu" dir="{{ 'dir' | translate }}"
     [ngClass]="_isClosedMenu ? 'panel-menu panel-menu-style':'panel-menu-large panel-menu-style'">
 
+    <div *ngIf="!_isClosedMenu" class="adam-flex adam-flex-row search-panel-menu-style">
+        <adam-search-box [icon]="'pi pi-search'" [height]="'35px'" [width]="'240px'"
+            (onChange)="onSearchChange($event)"></adam-search-box>
+    </div>
+
+
     <div class="adam-side-menu" *ngFor="let item of _items">
         <div class="adam-side-menu-row" [ngClass]="item?.isActive ? 'active-adam-side-menu-row':''">
             <div class=" adam-flex-row" (click)="item.command(item);onMenuClick(item);">

@@ -12,14 +12,14 @@ input {
         padding: 10px !important;
         font-size: var(--small-font-size) !important;
         font-family: var(--font-family) !important;
-        color: var(--main-text-color) !important;
+        color: var(--text-color) !important;
         border: 1px solid lightgray !important;
         border-radius: var(--border-radius) !important;
-        background: var(--input-background) !important;
+        // background: var(--input-background) !important;
     }
 
     input::placeholder {
-        color: var(--main-text-color) !important;
+        color: var(--placeholder-text-color) !important;
         font-size: var(--small-font-size) !important;
         font-family: var(--font-family) !important;
         margin: 10px !important;
@@ -44,4 +44,8 @@ input {
     input {
         border: 1px solid var(--not-valid-color) !important;
     }
+}
+
+.icon-span{
+    @include margin-end(-10px);
 }

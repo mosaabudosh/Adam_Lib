@@ -21,6 +21,7 @@
     "@ng-bootstrap/ng-bootstrap": "^16.0.0",
     "@ngx-translate/core": "^15.0.0",
     "@ngx-translate/http-loader": "^8.0.0",
+    "adam-http": "file:dist/adam-http/adam-http-0.0.1.tgz",
     "adam-shared": "file:dist/adam-shared/adam-shared-0.0.1.tgz",
     "bootstrap": "^5.3.3",
     "primeicons": "^6.0.1",

@@ -7,8 +7,11 @@
 
     <input type="{{ type }}" id="{{ id }}" name="{{ name }}" minlength={{minLength}} maxlength={{maxLength}} ngModel
         value="{{ textValue }}" [required]="required" (change)="handelChange($event)" placeholder="{{ placeholder }}"
-        class="{{class}} {{ heightClass }}Size {{ widthClass }}Width " [attr.disabled]="disabled ? '' : null"
-        (blur)="onblur($event)" (input)="onTextChanged($event)" #input min="{{minValue}}" max="{{maxValue}}" />
+        class="{{class}} {{ heightClass }} Size {{ widthClass }} Width {{(!_icons || _icons.length == 0) && icon != null ? icon  : '' }}"
+        [attr.disabled]="disabled ? '' : null" (blur)="onblur($event)" (input)="onTextChanged($event)" #input
+        min="{{minValue}}" max="{{maxValue}}" />
+
+    <span *ngIf="(!_icons || _icons.length == 0) && icon != null " class="{{icon}} icon-span"></span>
 
     <div *ngIf="_icons && _icons.length > 0 && !isDisplayIconStart" class="adam-flex adam-flex-row">
         <span *ngFor="let icon of _icons" [class]="icon.icon" (click)="icon.command()" [pTooltip]="icon.tooltip"

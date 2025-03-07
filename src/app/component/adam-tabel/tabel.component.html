@@ -1,6 +1,6 @@
 <div>
-    <adam-tabel [columns]="columns" [products]="items" [isShowSearch]="false" [sort]="false" [enableCheckbox]="false"
-        (onClickAdd)='addUser()' [rowsNumber]="5" [isShowSearch]="true" [commands]="[
+    <adam-tabel [columns]="columns" [products]="items" [sort]="false" [enableCheckbox]="false" (onClickAdd)='addUser()'
+        [rowsNumber]="5" [isShowSearch]="true" [paginator]="false" [commands]="[
               {columnHeader:'Action', elementRef:action}]"></adam-tabel>
 
     <ng-template #action let-dataItem="dataItem">
@@ -14,9 +14,9 @@
 
 
 <div>
-    <adam-tabel [columns]="columns2" [products]="items2" [isShowSearch]="false" [sort]="false" [enableCheckbox]="false"
-        (onClickAdd)='addUser()' [rowsNumber]="5" [isShowSearch]="true" [commands]="[
-              {columnHeader:'Action', elementRef:action}]"></adam-tabel>
+    <adam-tabel [columns]="columns2" [products]="items3" [sort]="false" [enableCheckbox]="false"
+        (onClickAdd)='addUser()' [rowsNumber]="10" [isShowSearch]="true" [commands]="[
+              {columnHeader:'Action', elementRef:action}]" [searchWidth]="'400px'"></adam-tabel>
 
     <ng-template #action let-dataItem="dataItem">
         <div class="adam-flex-row adam-space-between">

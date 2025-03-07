@@ -129,6 +129,7 @@ button .ui-button,
 button {
   @include btn-color;
   @include border-radius(var(--border-radius));
+  cursor: pointer !important;
 
   >span {
     padding: 0 !important;
@@ -163,6 +164,4 @@ button .ui-widget-header .ui-button,
   cursor: pointer !important;
   overflow: hidden !important;
   outline: none !important;
-
-
 }

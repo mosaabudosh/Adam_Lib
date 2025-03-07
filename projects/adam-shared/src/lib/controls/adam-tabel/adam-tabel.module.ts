@@ -1,10 +1,10 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TableModule } from 'primeng/table';
 import { AdamTabelComponent } from './adam-tabel.component';
 import { AdamIconsModule } from '../adam-icons/adam-icons.module';
+import { TooltipModule } from 'primeng/tooltip';
+import { AdamSearchBoxModule } from '../adam-search-box/adam-search-box.module';
 
 
 
@@ -13,9 +13,12 @@ import { AdamIconsModule } from '../adam-icons/adam-icons.module';
   imports: [
     CommonModule,
     TableModule,
-    AdamIconsModule
+    AdamIconsModule,
+    TooltipModule,
+    AdamSearchBoxModule
   ],
   exports: [AdamTabelComponent],
   providers: [],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
 })
 export class AdamTabelModule { }
