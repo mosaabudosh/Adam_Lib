@@ -41,6 +41,8 @@ import { AdamToastComponent } from './controls/adam-toast/adam-toast.component';
 import { SideMenuComponent } from './controls/side-menu/side-menu.component';
 import { AdamSearchBoxComponent } from './controls/adam-search-box/adam-search-box.component';
 import { AdamSearchBoxModule } from './controls/adam-search-box/adam-search-box.module';
+import { ComponentFactoryResolverService } from './services/component-factory-resolver.service';
+import { AdamSheardPopupComponent } from './controls/adam-sheard-popup/adam-sheard-popup.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +56,7 @@ import { AdamSearchBoxModule } from './controls/adam-search-box/adam-search-box.
     ArabicNumberPipe,
     NumberPipe,
     MathPipe,
+    AdamSheardPopupComponent
   ],
   imports: [
     FormsModule,
@@ -100,9 +103,11 @@ import { AdamSearchBoxModule } from './controls/adam-search-box/adam-search-box.
     AdamTextBoxComponent,
     AdamToastComponent,
     SideMenuComponent,
-    AdamSearchBoxComponent
+    AdamSearchBoxComponent,
+    AdamSheardPopupComponent
   ],
-  providers: [MessageService, AdamMessageService],
+  providers: [MessageService, AdamMessageService, ComponentFactoryResolverService],
+
   schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA]
 
 })

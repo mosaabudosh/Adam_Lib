@@ -94,7 +94,7 @@ body {
     font-family: var(--font-family) !important;
 }
 
-adam-lib-label{
+adam-lib-label {
     color: var(--main-text-color) !important;
 }
 
@@ -227,6 +227,35 @@ adam-lib-label{
     :dir(ltr) & {
         border-right: $unit $style $color !important;
 
+    }
+
+}
+
+
+.main-screen {
+    padding: 0.5% !important;
+    min-height: 90% !important;
+    display: block !important;
+    background: var(--main-screen) !important;
+    border-radius: 10px !important;
+    margin: 0 0.5% 0 0.5% !important;
+
+    .screen-title {
+
+        div,
+        label {
+            font-family: var(--font-family) !important;
+            font-size: var(--larg-font-size) !important;
+            color: var(--main-text-color);
+            font-weight: bold !important;
+            @include margin-start(25px);
+        }
+
+
+    }
+
+    .screen-body {
+        min-height: 80vh !important;
     }
 
 }

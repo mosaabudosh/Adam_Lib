@@ -84,8 +84,11 @@ export class AppComponent {
             console.log(isEn)
             if (isEn) {
               this.translateservice.use('ar');
+              document.documentElement.dir = "rtl";
             } else {
               this.translateservice.use('en');
+              document.documentElement.dir = "ltr";
+
             }
             console.log('languge')
           }
