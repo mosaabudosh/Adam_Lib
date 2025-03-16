@@ -1,0 +1,30 @@
+<ng-template #content let-modal>
+    <form #form novalidate (ngSubmit)="save()">
+        <div class="adam-flex-row adam-space-between modal-header">
+            <div class="adam-flex-column adam-start-start">
+                <adam-lib-label [text]="'Text Box'"></adam-lib-label>
+            </div>
+            <div class="adam-flex-column adam-end-end">
+                <button (click)="modal.close()">
+                    <i class="pi pi-times"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="modal-body">
+            <div class="adam-flex-row adam-space-between adam-row-gap">
+
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <div class="adam-flex-row button-footer">
+                <adam-lib-button [type]="'submit'" [color]="'primary-reverse'" [text]="'Submited'"></adam-lib-button>
+
+                <adam-lib-button [color]="'dangerous-reverse'" [text]="'Cancel'"
+                    (onClick)="modal.close('Save click')"></adam-lib-button>
+            </div>
+        </div>
+
+    </form>
+</ng-template>

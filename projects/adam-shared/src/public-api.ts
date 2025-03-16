@@ -15,9 +15,13 @@ export * from './lib/controls/adam-icons/adam-icons.component';
 export * from './lib/controls/adam-calendar/adam-calendar.component';
 export * from './lib/controls/adam-checkbox/adam-checkbox.component';
 export * from './lib/controls/adam-search-box/adam-search-box.component';
+export * from './lib/controls/adam-sheard-popup/adam-sheard-popup.component';
+
 
 export * from './lib/services/adam.message.service';
 export * from './lib/services/math-service.service';
+export * from './lib/services/component-factory-resolver.service';
+
 
 export * from './lib/pipe/arabic-number.pipe';
 export * from './lib/pipe/numbers.pipe';

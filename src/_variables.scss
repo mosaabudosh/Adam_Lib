@@ -10,6 +10,7 @@
   --icon-font-size: 40px !important;
 
   .dark-mode {
+    --main-screen: #2e2e2e !important;
     --main-background: #202124 !important;
     --secondary-background: #1e272e !important;
     --background-rgba: rgba(11, 13, 9, 0.7) !important;
@@ -55,6 +56,7 @@
   }
 
   .normal-mode {
+    --main-screen: #e0fdff !important;
     // --main-background: #18dcff !important;
     --main-background: #fff !important;
     --secondary-background: #18dcff !important;

@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { AdamCheckboxComponent } from './component/adam-checkbox/adam-checkbox.component';
 import { AdamCalendarComponent } from './component/adam-calendar/adam-calendar.component';
 import { AdamHTTPService } from 'adam-http';
+import { AdamPopupComponent } from './component/adam-popup/adam-popup.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { AdamHTTPService } from 'adam-http';
     AdamFormComponent,
     TabelComponent,
     AdamCheckboxComponent,
-    AdamCalendarComponent
+    AdamCalendarComponent,
+    AdamPopupComponent
   ],
   imports: [
     CommonModule,

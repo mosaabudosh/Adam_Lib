@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewContainerRef } from '@angular/core';
+import { AdamMessageService, ComponentFactoryResolverService } from 'adam-shared';
+import { AdamPopupComponent } from '../adam-popup/adam-popup.component';
 
 @Component({
   selector: 'app-adam-form',
@@ -53,5 +55,22 @@ export class AdamFormComponent {
   ]
   fromDate: Date;
 
+  constructor(
+    private componentFactoryResolverService: ComponentFactoryResolverService,
+    public viewContainerRef: ViewContainerRef,
+    private _adamMessageService: AdamMessageService) {
 
+  }
+
+  openPopup() {
+    let adamPopupComponent = <AdamPopupComponent>this.componentFactoryResolverService.createPopup(AdamPopupComponent, this.viewContainerRef);
+    adamPopupComponent.open();
+    let adamPopupComponentSubscription = adamPopupComponent.onSubmitted.subscribe(response => {
+      this._adamMessageService.showSuccess();
+      this._adamMessageService.showError();
+      this._adamMessageService.showWarn();
+      this._adamMessageService.showInfo();
+      adamPopupComponentSubscription.unsubscribe();
+    });
+  }
 }
