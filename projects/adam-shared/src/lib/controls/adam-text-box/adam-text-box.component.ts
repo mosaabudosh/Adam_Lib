@@ -52,6 +52,7 @@ export class AdamTextBoxComponent implements OnInit, ControlValueAccessor, Valid
     if (this._icons.length > 0)
       this.marginEnd = `${this._icons.length * 40}px`
   };
+  @Input() readOnly?: boolean = false;
 
   @Output() blur = new EventEmitter();
   @Output() onTextChange = new EventEmitter();

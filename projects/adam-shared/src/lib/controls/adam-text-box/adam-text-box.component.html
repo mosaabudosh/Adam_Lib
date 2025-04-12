@@ -9,7 +9,7 @@
         value="{{ textValue }}" [required]="required" (change)="handelChange($event)" placeholder="{{ placeholder }}"
         class="{{class}} {{ heightClass }} Size {{ widthClass }} Width {{(!_icons || _icons.length == 0) && icon != null ? icon  : '' }}"
         [attr.disabled]="disabled ? '' : null" (blur)="onblur($event)" (input)="onTextChanged($event)" #input
-        min="{{minValue}}" max="{{maxValue}}" />
+        min="{{minValue}}" max="{{maxValue}}" [readonly]="readOnly" />
 
     <span *ngIf="(!_icons || _icons.length == 0) && icon != null " class="{{icon}} icon-span"></span>
 

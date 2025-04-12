@@ -1,0 +1,22 @@
+@import "./../../../assets/styles/styles.scss";
+
+
+.confirmation-description {
+    height: 100px !important;
+    @include text-align-left;
+    text-decoration: none !important;
+    font-family: var(--Arial-font) !important;
+    font-size: 18px !important;
+    vertical-align: middle !important;
+    display: table-cell !important;
+    line-height: 1.5 !important;
+    padding: 12px !important;
+}
+
+.icon-confirmation-style {
+    margin: 20px !important;
+    img {
+        width: 100px !important;
+        height: 100px !important;
+    }
+}

@@ -1,0 +1,130 @@
+@import "./../../../assets/styles/styles.scss";
+
+// .p-fileUpload {
+//     width: 100% !important;
+//     height: 100% !important;
+//     @include text-align-left;
+// }
+
+// lib-adam-file-uploader {
+//     min-width: 100% !important;
+// }
+
+.item-row-style {
+    padding: 5px !important;
+    border: 1px solid var(--btn-primary) !important;
+    border-radius: 15px !important;
+    margin: 5px !important;
+}
+
+.horizontal-files {
+    display: flex !important;
+    flex-direction: row !important;
+    margin: 5px !important;
+}
+
+.attachment:hover {
+    background-color: #06dffc !important;
+
+    .attachment-text-style {
+        color: #000 !important;
+    }
+}
+
+.attachment .attachment-icon {
+    float: left;
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+.attachment-text-style {
+    font-weight: bold !important;
+    font-family: var(--font-family) !important;
+    width: 100% !important;
+    margin-top: 15px !important;
+    color: var(--white-color) !important;
+}
+
+.attachment-content {
+    display: inline-block !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    cursor: pointer !important;
+    height: 70px !important;
+}
+
+.attachment-icon>img {
+    width: 50px !important;
+    height: 60px !important;
+    border-radius: 15px !important;
+}
+
+.attachment-icon-style {
+    float: right !important;
+    margin: 15px !important;
+    font-size: 25px !important;
+    cursor: pointer !important;
+}
+
+.delete-icon {
+    color: red !important;
+}
+
+.edit-icon {
+    color: var(--btn-primary) !important;
+}
+
+
+.disabled-choose .p-fileupload-choose {
+    display: none !important;
+}
+
+
+.adam-file-upload .p-fileupload .p-fileupload-buttonbar {
+    display: inline-flex !important;
+    width: 100% !important;
+
+    button {
+        width: 120px !important;
+        margin: 5px !important;
+        height: 40px !important;
+        background: white !important;
+        color: var(--btn-primary) !important;
+        margin-top: 10px !important;
+    }
+}
+
+.adam-file-upload .p-fileupload-choose,
+.adam-file-upload .p-fileupload-choose:hover {
+
+    border: 1px solid var(--btn-primary) !important;
+    color: var(--btn-primary) !important;
+    background-color: var(--white) !important;
+    height: 40px !important;
+    margin-top: 10px !important;
+}
+
+.adam-file-upload .p-fileupload-choose,
+.adam-file-upload .p-button-label {
+    font-family: var(--Arial-font) !important;
+    font-size: var(--font-size-field) !important;
+    border-radius: 6px !important;
+}
+
+p-fileupload.adam-file-upload>div {
+    width: 100% !important;
+}
+
+.p-fileupload-buttonbar {
+    background-color: var(--background-rgba) !important;
+}
+
+.p-fileupload-content {
+    background: transparent !important;
+    padding: 0px !important;
+    min-height: 0px !important;
+
+    ul {
+        padding-right: 2rem;
+    }
+}

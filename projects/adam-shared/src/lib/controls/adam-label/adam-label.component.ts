@@ -2,7 +2,6 @@ import { Component, OnInit, Input, ViewEncapsulation } from "@angular/core";
 
 @Component({
   selector: 'adam-lib-label',
-  standalone: false,
   templateUrl: './adam-label.component.html',
   styleUrl: './adam-label.component.scss',
   encapsulation: ViewEncapsulation.None

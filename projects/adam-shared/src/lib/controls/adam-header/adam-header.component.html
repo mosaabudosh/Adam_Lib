@@ -5,7 +5,8 @@
                 <div *ngIf="_headerDataModel.isViewMenu" class="adam-flex-column header-col-style header-menu-style">
                     <i (click)="menuClicked()" class="pi pi-align-justify "></i>
                 </div>
-                <div *ngIf="_headerDataModel.isViewLogo" class="adam-flex-column  logo-app-style">
+                <div *ngIf="_headerDataModel.isViewLogo && _headerDataModel?.logoApp"
+                    class="adam-flex-column  logo-app-style">
                     <img [src]="_headerDataModel.logoApp" />
                 </div>
             </div>
@@ -32,7 +33,7 @@
                     </button>
                 </div>
                 <div class="adam-flex-column adam-end-end header-col-style">
-                    <div class="avatar" *ngIf="_headerDataModel.avatarImage">
+                    <div class="avatar" *ngIf="_headerDataModel?.avatarImage">
                         <img [src]="_headerDataModel.avatarImage" />
                     </div>
                 </div>

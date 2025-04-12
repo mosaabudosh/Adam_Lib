@@ -1,5 +1,5 @@
 import { HttpClient, HttpParams } from "@angular/common/http";
-import { Observable } from "rxjs";
+import { Observable, of } from "rxjs";
 import { catchError, map } from "rxjs/operators";
 import { Injectable } from "@angular/core";
 import { Parameter } from "../models/adam-query-option";
@@ -38,7 +38,10 @@ export class HTTPHandlerManagement {
         params: this.options
       }).pipe(
         map(data => data),
-        catchError(error => error)
+        catchError(error => {
+          console.error("logout => ", error)
+          return of(false);
+        })
       );
   }
 
@@ -56,7 +59,10 @@ export class HTTPHandlerManagement {
         params: this.options
       }).pipe(
         map(data => data),
-        catchError(error => error)
+        catchError(error => {
+          console.error("logout => ", error)
+          return of(false);
+        })
       );
   }
 
@@ -70,7 +76,10 @@ export class HTTPHandlerManagement {
         params: this.options
       }).pipe(
         map(data => data),
-        catchError(error => error)
+        catchError(error => {
+          console.error("logout => ", error)
+          return of(false);
+        })
       );
   }
 
@@ -84,7 +93,10 @@ export class HTTPHandlerManagement {
         params: this.options
       }).pipe(
         map(data => data),
-        catchError(error => error)
+        catchError(error => {
+          console.error("logout => ", error)
+          return of(false);
+        })
       );
   }
 
@@ -98,7 +110,10 @@ export class HTTPHandlerManagement {
         params: this.options
       }).pipe(
         map(data => data),
-        catchError(error => error)
+        catchError(error => {
+          console.error("logout => ", error)
+          return of(false);
+        })
       );
   }
 

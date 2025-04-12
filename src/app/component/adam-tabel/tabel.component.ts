@@ -19,7 +19,7 @@ export class TabelComponent {
   items3: any[] = [];
 
 
-  constructor(private adamLibTestService: AdamLibTestService, 
+  constructor(private adamLibTestService: AdamLibTestService,
     private componentFactoryResolverService: ComponentFactoryResolverService,
     public viewContainerRef: ViewContainerRef,
     private _adamMessageService: AdamMessageService) {
@@ -38,6 +38,7 @@ export class TabelComponent {
         'Col3': "Col11",
         'Col4': "Col11",
         'Col5': "Col11",
+        "icons": this.generateIcons()
       },
       {
         'Col1': "Col11",
@@ -45,6 +46,7 @@ export class TabelComponent {
         'Col3': "Col11",
         'Col4': "Col11",
         'Col5': "Col11",
+        "icons": this.generateIcons()
       }
     ];
 
@@ -71,6 +73,57 @@ export class TabelComponent {
         'Col5': "Col11",
       }
     ]
+  }
+
+  generateIcons(info?: any) {
+    let icons = [
+      {
+        icon: 'pi pi-eye',
+        tooltip: "View",
+        color: 'white',
+        visible: true,
+        // command: (event: any) => {
+        //   this.viewUser(info.userId)
+        // }
+      },
+      {
+        icon: 'pi pi-user-edit',
+        tooltip: "Edit",
+        color: 'waring',
+        visible: true,
+        // command: (event: any) => {
+        //   this.editUser(info.userId)
+        // }
+      },
+      {
+        icon: 'pi pi-lock',
+        tooltip: "Lock",
+        // color: 'waring',
+        visible: true,
+        // command: (event: any) => {
+        //   this.lockUnLockUser(info.userId)
+        // }
+      },
+      {
+        icon: 'pi pi-unlock',
+        tooltip: "Unlock",
+        // color: 'info',
+        visible: true,
+        // command: (event: any) => {
+        //   this.lockUnLockUser(info.userId)
+        // }
+      },
+      {
+        icon: 'pi pi-trash',
+        tooltip: "Delete",
+        color: 'dangerous',
+        visible: true,
+        // command: (event: any) => {
+        //   this.deleteUser(info.userId)
+        // }
+      }
+    ];
+    return icons.filter(p => p.visible);
   }
 
   addUser() {

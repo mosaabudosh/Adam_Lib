@@ -1,0 +1,10 @@
+<div class="main-screen">
+
+    <adam-lib-label class="screen-title" [text]="'File Uploader'"></adam-lib-label>
+
+    <div class="adam-flex-row adam-row-gap">
+        <lib-adam-file-uploader [uploadedFiles]="uploadedFiles" (onFileUploaded)="fileUploaded($event)"
+            [accept]="'image/*,application/pdf, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.openxmlformats-officedocument.wordprocessingml.document'"></lib-adam-file-uploader>
+    </div>
+
+</div>

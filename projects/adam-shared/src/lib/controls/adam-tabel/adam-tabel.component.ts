@@ -31,7 +31,7 @@ export class AdamTabelComponent implements OnInit {
   @Input() isShowSummary: boolean = true;
   @Input("commands") commands: any[] = [];
 
-  @Input() rowsPerPageOptions: number[] = [10, 20, 50, 100];
+  @Input() rowsPerPageOptions: number[] = [5, 10, 20, 50, 100];
   @Input() export: boolean;
   @Input() enableSelection: boolean;
   @Input() enableHeaderSelection: boolean = true;
@@ -63,6 +63,9 @@ export class AdamTabelComponent implements OnInit {
       this.first = 0;
     }
   }
+  @Input() isViewHeader: boolean = false;
+  @Input("headerElementRef") headerElementRef?: any;
+
   @Input() isEnableReorderRecords: boolean = false;
   @Input() isDisplayReorderColumn: boolean = false;
   @Input() tooltipAdd: string = 'Add';

@@ -1,15 +1,16 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'adam-lib-side-menu',
   templateUrl: './side-menu.component.html',
-  styleUrl: './side-menu.component.scss'
+  styleUrl: './side-menu.component.scss',
+  encapsulation: ViewEncapsulation.None,
 })
 export class SideMenuComponent {
-  serachText: any ;
+  serachText: any;
   @Input() isEnabelTooltip: boolean = true;
   @Input() isSimpelMenu: boolean = false;
-
+  @Input() emptyMessage: any = "No data available , check server connection";
   _isClosedMenu: boolean;
   @Input() set isClosedMenu(value: boolean) {
     this._isClosedMenu = value;

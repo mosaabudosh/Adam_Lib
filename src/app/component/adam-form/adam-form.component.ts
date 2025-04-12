@@ -1,5 +1,5 @@
 import { Component, ViewContainerRef } from '@angular/core';
-import { AdamMessageService, ComponentFactoryResolverService } from 'adam-shared';
+import { AdamMessageService, ComponentFactoryResolverService, ConfirmationPopupComponent } from 'adam-shared';
 import { AdamPopupComponent } from '../adam-popup/adam-popup.component';
 
 @Component({
@@ -71,6 +71,37 @@ export class AdamFormComponent {
       this._adamMessageService.showWarn();
       this._adamMessageService.showInfo();
       adamPopupComponentSubscription.unsubscribe();
+    });
+  }
+
+  openConfirmationPopup() {
+    let confimationPopup = <ConfirmationPopupComponent>(this.componentFactoryResolverService.createPopup(ConfirmationPopupComponent, this.viewContainerRef));
+    confimationPopup.open();
+    let confimationPopupSubscribtion = confimationPopup.onConfirmClick.subscribe(() => {
+      console.log('onConfirmClick')
+      confimationPopupSubscribtion.unsubscribe();
+    });
+    let cancelSubscribtion = confimationPopup.onCancelClick.subscribe(() => {
+      console.log('onCancelClick')
+      cancelSubscribtion.unsubscribe();
+    });
+  }
+
+  openDeleteConfirmationPopup() {
+    let deleteConfimationPopup = <ConfirmationPopupComponent>(this.componentFactoryResolverService.createPopup(ConfirmationPopupComponent, this.viewContainerRef));
+    deleteConfimationPopup.title = 'Delete';
+    deleteConfimationPopup.confirmLabel = 'Delete';
+    deleteConfimationPopup.cancelLabel = 'Close';
+    deleteConfimationPopup.confirmButtonColor = 'dangerous';
+    deleteConfimationPopup.icon = 'assets/images/delete.png';
+    deleteConfimationPopup.open();
+    let deleteSubscribtion = deleteConfimationPopup.onConfirmClick.subscribe(() => {
+      console.log('onConfirmClick')
+      deleteSubscribtion.unsubscribe();
+    });
+    let cancelSubscribtion = deleteConfimationPopup.onCancelClick.subscribe(() => {
+      console.log('onCancelClick')
+      cancelSubscribtion.unsubscribe();
     });
   }
 }

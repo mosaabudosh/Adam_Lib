@@ -17,3 +17,40 @@
     // color: var(--main-text-color) !important;
     // border: 1px solid var(--main-text-color) !important;
 }
+
+.modal-open {
+    color: var(--main-text-color) !important;
+
+    .modal-header {
+        background-color: var(--main-background) !important;
+        border-bottom: none !important;
+
+        adam-lib-label,
+        label {
+
+            font-size: 24px !important;
+            font-weight: bold !important;
+        }
+
+        button {
+            border: none !important;
+            background: none !important;
+            color: var(--main-text-color) !important;
+
+        }
+    }
+
+    .modal-footer {
+        border-top: none !important;
+        background-color: var(--main-background) !important;
+
+        adam-lib-button {
+            margin-left: 5px !important;
+            margin-right: 5px !important;
+        }
+    }
+
+    .modal-body {
+        background: var(--main-screen) !important;
+    }
+}

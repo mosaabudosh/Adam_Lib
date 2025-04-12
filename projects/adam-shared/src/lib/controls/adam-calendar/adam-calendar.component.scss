@@ -1,21 +1,20 @@
 @import "./../../../assets/styles/styles.scss";
 
+.p-calendar {
+  width: 100% !important;
+  height: 100% !important;
+  @include text-align-left;
+}
+
+.adam-calendar {
+  @include margin-end(var(--margin-end));
+}
 
 lib-adam-calendar {
   min-width: 100% !important;
   font-size: var(--small-font-size) !important;
   font-family: var(--font-family) !important;
   color: var(--main-text-color) !important;
-
-  .adam-calendar .p-calendar {
-    min-width: 100% !important;
-    @include text-align-left;
-
-  }
-
-  .adam-calendar:hover {
-    border: 1px solid var(--main-background) !important;
-  }
 }
 
 .invalid-border-style {
@@ -31,17 +30,18 @@ lib-adam-calendar {
 .calendar-panel-style {
   font-size: var(--small-font-size) !important;
   font-family: var(--font-family) !important;
-  color: var(--main-text-color) !important;
+  // color: var(--main-text-color) !important;
+  z-index: 99999 !important;
 }
 
 .calendar-style {
-  width: 100% !important;
-  height: 100% !important;
+  // width: 100% !important;
+  // height: 100% !important;
   font-size: var(--small-font-size) !important;
   font-family: var(--font-family) !important;
   color: var(--main-text-color) !important;
 }
 
-.calendar-style .p-calendar.p-calendar-w-btn .p-inputtext {
-  width: 100% !important;
-}
+// .calendar-style .p-calendar.p-calendar-w-btn .p-inputtext {
+//   width: 100% !important;
+// }

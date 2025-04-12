@@ -1,93 +1,99 @@
 <div *ngIf="isSimpelMenu" dir="{{ 'dir' | translate }}"
     [ngClass]="_isClosedMenu ? 'panel-menu panel-menu-style':'panel-menu-large panel-menu-style'">
+    <div *ngIf="_items && _items.length > 0">
 
-    <div *ngIf="!_isClosedMenu" class="adam-flex adam-flex-row search-panel-menu-style">
-        <adam-search-box [icon]="'pi pi-search'" [height]="'35px'" [width]="'240px'"
-            (onChange)="onSearchChange($event)"></adam-search-box>
-    </div>
-
-
-    <div class="adam-side-menu" *ngFor="let item of _items">
-        <div class="adam-side-menu-row" [ngClass]="item?.isActive ? 'active-adam-side-menu-row':''">
-            <div class=" adam-flex-row" (click)="item.command(item);onMenuClick(item);">
-                <div class="menu-icon-style">
-                    <i [class]="item.icon"></i>
-                </div>
-                <div *ngIf="!_isClosedMenu" [pTooltip]="isEnabelTooltip ? item.label :''"
-                    class="adam-flex-column adam-start-start adam-side-menu-row-label">
-                    {{item.label}}
-                </div>
-                <div *ngIf="!_isClosedMenu && item.items && item.items.length > 0" class="adam-end-end">
-                    <i *ngIf="!item.expanded" class="pi pi-angle-right angle-right-icon-style "></i>
-                    <i *ngIf="item.expanded" class="pi pi-angle-down angle-down-icon-style "></i>
-                </div>
-            </div>
+        <div *ngIf="!_isClosedMenu" class="adam-flex adam-flex-row search-panel-menu-style">
+            <adam-search-box [icon]="'pi pi-search'" [height]="'35px'" [width]="'240px'"
+                (onChange)="onSearchChange($event)"></adam-search-box>
         </div>
 
-        <div class="adam-side-menu-panal"
-            *ngIf="!_isClosedMenu && item.items && item.items.length > 0 && item.expanded">
-            <div class="adam-flex adam-flex-row adam-side-menu" *ngFor="let subItem of item.items">
-                <div class="adam-side-menu-row" [ngClass]="subItem?.isActive ? 'active-adam-side-menu-row':''">
-                    <div class="adam-flex-row" (click)="subItem.command(subItem);onMenuClick(item);">
-                        <div class="adam-flex-column adam-start-start menu-icon-style">
-                            <i [class]="subItem.icon"></i>
-                        </div>
-                        <div *ngIf="!_isClosedMenu" [pTooltip]="isEnabelTooltip ? subItem.label:''"
-                            class="adam-flex-column adam-start-start adam-side-menu-row-label">
-                            {{subItem.label}}
-                        </div>
-                        <div *ngIf="!_isClosedMenu && subItem.items && subItem.items.length > 0"
-                            class="adam-flex-column adam-end-end">
-                            <div class="adam-flex adam-flex-row adam-space-between">
-                                <i *ngIf="!subItem.expanded" class="pi pi-angle-right angle-right-icon-style "></i>
-                                <i *ngIf="subItem.expanded" class="pi pi-angle-down angle-down-icon-style "></i>
-                            </div>
-                        </div>
-
+        <div class="adam-side-menu" *ngFor="let item of _items">
+            <div class="adam-side-menu-row" [ngClass]="item?.isActive ? 'active-adam-side-menu-row':''">
+                <div class=" adam-flex-row" (click)="item.command(item);onMenuClick(item);">
+                    <div class="menu-icon-style">
+                        <i [class]="item.icon"></i>
+                    </div>
+                    <div *ngIf="!_isClosedMenu" [pTooltip]="isEnabelTooltip ? item.label :''"
+                        class="adam-flex-column adam-start-start adam-side-menu-row-label">
+                        {{item.label}}
+                    </div>
+                    <div *ngIf="!_isClosedMenu && item.items && item.items.length > 0" class="adam-end-end">
+                        <i *ngIf="!item.expanded" class="pi pi-angle-right angle-right-icon-style "></i>
+                        <i *ngIf="item.expanded" class="pi pi-angle-down angle-down-icon-style "></i>
                     </div>
                 </div>
+            </div>
 
-                <div class="adam-side-sub-menu-panal"
-                    *ngIf="subItem.items && subItem.items.length > 0 && subItem.expanded">
-                    <div class="adam-flex adam-flex-row adam-side-menu" *ngFor="let subItemChild of subItem.items">
-                        <div class="adam-side-menu-row"
-                            [ngClass]="subItemChild?.isActive ? 'active-adam-side-menu-row':''">
-                            <div class="adam-flex-row" (click)="subItemChild.command(subItemChild);onMenuClick(item);">
-                                <div class="adam-flex-column adam-start-start menu-icon-style">
-                                    <i [class]="subItemChild.icon"></i>
+            <div class="adam-side-menu-panal"
+                *ngIf="!_isClosedMenu && item.items && item.items.length > 0 && item.expanded">
+                <div class="adam-flex adam-flex-row adam-side-menu" *ngFor="let subItem of item.items">
+                    <div class="adam-side-menu-row" [ngClass]="subItem?.isActive ? 'active-adam-side-menu-row':''">
+                        <div class="adam-flex-row" (click)="subItem.command(subItem);onMenuClick(item);">
+                            <div class="adam-flex-column adam-start-start menu-icon-style">
+                                <i [class]="subItem.icon"></i>
+                            </div>
+                            <div *ngIf="!_isClosedMenu" [pTooltip]="isEnabelTooltip ? subItem.label:''"
+                                class="adam-flex-column adam-start-start adam-side-menu-row-label">
+                                {{subItem.label}}
+                            </div>
+                            <div *ngIf="!_isClosedMenu && subItem.items && subItem.items.length > 0"
+                                class="adam-flex-column adam-end-end">
+                                <div class="adam-flex adam-flex-row adam-space-between">
+                                    <i *ngIf="!subItem.expanded" class="pi pi-angle-right angle-right-icon-style "></i>
+                                    <i *ngIf="subItem.expanded" class="pi pi-angle-down angle-down-icon-style "></i>
                                 </div>
-                                <div *ngIf="!_isClosedMenu" [pTooltip]="isEnabelTooltip ? subItemChild.label:''"
-                                    class="adam-flex-column adam-start-start adam-side-menu-row-label">
-                                    {{subItemChild.label}}
-                                </div>
-                                <div *ngIf="!_isClosedMenu && subItemChild.items && subItemChild.items.length > 0"
-                                    class="adam-flex-column adam-end-end">
-                                    <div class="adam-flex adam-flex-row adam-space-between">
-                                        <i *ngIf="!subItemChild.expanded"
-                                            class="pi pi-angle-right angle-right-icon-style "></i>
-                                        <i *ngIf="subItemChild.expanded"
-                                            class="pi pi-angle-down angle-down-icon-style "></i>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="adam-side-sub-menu-panal"
+                        *ngIf="subItem.items && subItem.items.length > 0 && subItem.expanded">
+                        <div class="adam-flex adam-flex-row adam-side-menu" *ngFor="let subItemChild of subItem.items">
+                            <div class="adam-side-menu-row"
+                                [ngClass]="subItemChild?.isActive ? 'active-adam-side-menu-row':''">
+                                <div class="adam-flex-row"
+                                    (click)="subItemChild.command(subItemChild);onMenuClick(item);">
+                                    <div class="adam-flex-column adam-start-start menu-icon-style">
+                                        <i [class]="subItemChild.icon"></i>
+                                    </div>
+                                    <div *ngIf="!_isClosedMenu" [pTooltip]="isEnabelTooltip ? subItemChild.label:''"
+                                        class="adam-flex-column adam-start-start adam-side-menu-row-label">
+                                        {{subItemChild.label}}
+                                    </div>
+                                    <div *ngIf="!_isClosedMenu && subItemChild.items && subItemChild.items.length > 0"
+                                        class="adam-flex-column adam-end-end">
+                                        <div class="adam-flex adam-flex-row adam-space-between">
+                                            <i *ngIf="!subItemChild.expanded"
+                                                class="pi pi-angle-right angle-right-icon-style "></i>
+                                            <i *ngIf="subItemChild.expanded"
+                                                class="pi pi-angle-down angle-down-icon-style "></i>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
 
             </div>
+        </div>
 
+        <div class="adam-flex adam-flex-row adam-side-menu open-close-icon-style">
+            <div class="adam-flex-row" (click)="openClose()">
+                <div class="adam-flex-column adam-start-start ">
+                    <i *ngIf="_isClosedMenu" [pTooltip]="isEnabelTooltip ? ('menu.openMenu' | translate) : ''"
+                        [class]="'pi pi-angle-double-right'"></i>
+                    <i *ngIf="!_isClosedMenu" [pTooltip]="isEnabelTooltip ? ('menu.closeMenu' | translate):''"
+                        [class]="'pi pi-angle-double-left'"></i>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="adam-flex adam-flex-row adam-side-menu open-close-icon-style">
-        <div class="adam-flex-row" (click)="openClose()">
-            <div class="adam-flex-column adam-start-start ">
-                <i *ngIf="_isClosedMenu" [pTooltip]="isEnabelTooltip ? ('menu.openMenu' | translate) : ''"
-                    [class]="'pi pi-angle-double-right'"></i>
-                <i *ngIf="!_isClosedMenu" [pTooltip]="isEnabelTooltip ? ('menu.closeMenu' | translate):''"
-                    [class]="'pi pi-angle-double-left'"></i>
-            </div>
-        </div>
+    <div *ngIf="!_items || _items.length == 0" class="menu-empty-message-style">
+        {{emptyMessage}}
     </div>
 
 </div>

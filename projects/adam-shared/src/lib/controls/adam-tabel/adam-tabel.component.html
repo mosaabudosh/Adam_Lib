@@ -9,6 +9,16 @@
         (onRowSelect)="onRowSelect($event)" (onPage)="OnPaginateChange($event)" (onRowUnselect)="rowUnselected($event)"
         (onHeaderCheckboxToggle)="headerCheckboxToggle($event)" (onLazyLoad)="loadLazy($event)">
 
+        <ng-template *ngIf="isViewHeader" pTemplate="header" let-columns>
+            <tr class="footer-style">
+                <td
+                    [attr.colspan]="(columns ? getColumnLength(columns) : 0) + ( commands ? commands.length : 0) + (enableSelection ? 1 : 0)">
+                    <ng-container *ngTemplateOutlet="headerElementRef">
+                    </ng-container>
+                </td>
+            </tr>
+        </ng-template>
+
         <ng-template pTemplate="caption">
             <div class="adam-flex adam-flex-row adam-space-between caption-table-style">
                 <div class="adam-flex-column adam-start-start">

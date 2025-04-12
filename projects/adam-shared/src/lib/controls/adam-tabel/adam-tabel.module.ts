@@ -2,7 +2,6 @@ import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/cor
 import { CommonModule } from '@angular/common';
 import { TableModule } from 'primeng/table';
 import { AdamTabelComponent } from './adam-tabel.component';
-import { AdamIconsModule } from '../adam-icons/adam-icons.module';
 import { TooltipModule } from 'primeng/tooltip';
 import { AdamSearchBoxModule } from '../adam-search-box/adam-search-box.module';
 
@@ -13,7 +12,6 @@ import { AdamSearchBoxModule } from '../adam-search-box/adam-search-box.module';
   imports: [
     CommonModule,
     TableModule,
-    AdamIconsModule,
     TooltipModule,
     AdamSearchBoxModule
   ],
