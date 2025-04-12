@@ -1,0 +1,54 @@
+<div dir="{{ 'dir' | translate }}" [ngStyle]="getContainerStyle()">
+    <p-fileUpload class="adam-flex adam-flex-row adam-file-upload" url="''" mode="advanced" [customUpload]="true"
+        [auto]="auto" (uploadHandler)="attachmentsHandler($event)" [files]="fileSource" 
+        [invalidFileTypeMessageDetail]="invalidFileTypeMessageDetail" [disabled]="uploaderDisabled"
+        [showUploadButton]="!isReadOnly" [showCancelButton]="!isReadOnly" [accept]="accept" [chooseLabel]="chooseLabel"
+        [maxFileSize]="maxFileSize" [invalidFileSizeMessageDetail]="invalidFileSizeMessageDetail" [multiple]="multiple"
+        [ngClass]="{
+        'ng-invalid': !hasSelectedFile,
+        'ng-valid': hasSelectedFile,
+        'disabled-choose':(isChooseButtonDisabled || isReadOnly)
+  }">
+
+        <ng-template let-file pTemplate="uploadedFiles">
+            <div></div>
+        </ng-template>
+        <ng-template let-file pTemplate="toolbar">
+            <div class="adam-flex adam-flex-row ">
+                <adam-lib-button *ngIf="isScanningAllowed && !isReadOnly" [disabled]="uploaderDisabled" (click)="scan()"
+                    [text]="scanText" [class]="'pi pi-plus'" [color]="'primary-reverse'">
+                </adam-lib-button>
+                <button id="submitScannedDocuments" style="display:none;" (click)="addScannedFiles()"></button>
+                <adam-lib-button *ngIf="isShowCancelButton && !isReadOnly" [disabled]="uploaderDisabled"
+                    [color]="'dangerous-reverse'" (click)="removeAll()" [text]="removeAllText"
+                    [class]="'pi pi-trash text-white'">
+                </adam-lib-button>
+            </div>
+
+        </ng-template>
+        <ng-template pTemplate="content">
+            <ul [class.horizontal-files]="horizontalFiles">
+                <li class="adam-flex adam-flex-row item-row-style attachment"
+                    [ngClass]="{'attachment-content': !horizontalFiles}"
+                    *ngFor="let file of _uploadedFiles; let i = index">
+                    <div class="attachment-icon adam-flex-column" (click)="preview(file)">
+                        <img [src]="_DomSanitizer.bypassSecurityTrustUrl(getIcon(file))">
+                    </div>
+                    <div *ngIf="isShowFileName" class="attachment-text-style adam-flex-column">
+                        {{file.name}}
+                    </div>
+                    <i *ngIf="isAllowEdit && !isReadOnly" [attr.disabled]="uploaderDisabled" [pTooltip]="'Edit'"
+                        tooltipPosition="bottom"
+                        class="pi pi-pen-to-square edit-icon attachment-icon-style adam-flex-column"
+                        (click)="editAttachment(i)">
+                    </i>
+                    <i [attr.disabled]="uploaderDisabled" [pTooltip]="'Delete'" tooltipPosition="bottom"
+                        *ngIf="!isReadOnly" class="pi pi-trash delete-icon attachment-icon-style adam-flex-column"
+                        (click)="removeAttachment(i)">
+                    </i>
+
+                </li>
+            </ul>
+        </ng-template>
+    </p-fileUpload>
+</div>

@@ -1,0 +1,36 @@
+<ng-template #content let-modal rounded-0 dir="{{ 'dir' | translate }}">
+
+    <form id="confirmationForm" novalidate #form>
+        <div class="adam-flex-row adam-space-between modal-header">
+            <div class="adam-flex-column adam-start-start">
+                <adam-lib-label [text]="title"></adam-lib-label>
+            </div>
+            <div class="adam-flex-column adam-end-end">
+                <button (click)="cancelClicked();modal.dismiss();">
+                    <i class="pi pi-times"></i>
+                </button>
+            </div>
+        </div>
+
+
+        <div class="modal-body">
+            <div *ngIf="icon" class="adam-flex adam-flex-row adam-center-center icon-confirmation-style">
+                <img [src]="icon" />
+            </div>
+
+            <div class="adam-flex adam-flex-row adam-center-center">
+                <p class="confirmation-description"> {{message}}</p>
+            </div>
+        </div>
+
+        <div class="modal-footer adam-flex-row">
+            <adam-lib-button [text]="confirmLabel " [color]="confirmButtonColor" (click)="confirmClicked();"
+                [height]="'45px'" [width]="'125px'">
+            </adam-lib-button>
+            <adam-lib-button [text]="cancelLabel" [color]="cancelButtonColor" (click)="cancelClicked();"
+                [height]="'45px'" [width]="'125px'">
+            </adam-lib-button>
+        </div>
+    </form>
+
+</ng-template>

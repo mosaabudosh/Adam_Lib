@@ -60,7 +60,13 @@ export class AdamCalendarComponent implements OnInit, ControlValueAccessor, OnDe
   @Input() timeOnly: boolean = false;
   @Input() showButtonBar: boolean = true;
   @Input() id?: string = "test";
-  @Input() width: string;
+  _width: string;
+  @Input() set width(value: string) {
+    if (value) {
+      this._width = value;
+    }
+  };
+
   @Input() height: string;
   @Input() placeholder: string = "DD/MM/YYYY";
   @Input() calenderDateFormat?: string = "dd/mm/yy";
@@ -88,7 +94,7 @@ export class AdamCalendarComponent implements OnInit, ControlValueAccessor, OnDe
       this._yearRange = value;
     }
   }
-  @Input() isReadOnly: boolean = false;
+  @Input() readOnly: boolean = false;
   @Input() delayTimer?: any = 0;
   @Input() isAllowDelay: boolean = false;
   @Input() isDisplayPeriod: boolean = false;
@@ -118,9 +124,15 @@ export class AdamCalendarComponent implements OnInit, ControlValueAccessor, OnDe
     }
   }
 
+  getMarginEnd() {
+    return this.required ? '37px' : '60px';
+  }
+
+
   getStyles() {
     return {
-      'width': this.width,
+      'min-width': this._width,
+      'max-width': this._width,
       'max-height': this.height,
       'display': 'inline-flex'
     };

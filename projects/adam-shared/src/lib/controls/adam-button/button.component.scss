@@ -132,9 +132,14 @@ button {
   cursor: pointer !important;
 
   >span {
-    padding: 0 !important;
     font-family: var(--font-family) !important;
     font-size: var(--small-font-size) !important;
+  }
+}
+
+button {
+  .p-button-label {
+    margin: 10px !important;
   }
 }
 

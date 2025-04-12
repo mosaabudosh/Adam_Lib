@@ -1,10 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'adam-lib-icons',
   standalone: false,
   templateUrl: './adam-icons.component.html',
-  styleUrl: './adam-icons.component.scss'
+  styleUrl: './adam-icons.component.scss',
+  encapsulation: ViewEncapsulation.None,
 })
 export class AdamIconsComponent {
   _icons: any[] = [];

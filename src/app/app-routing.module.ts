@@ -6,6 +6,7 @@ import { AdamFormComponent } from './component/adam-form/adam-form.component';
 import { TabelComponent } from './component/adam-tabel/tabel.component';
 import { AdamCalendarComponent } from './component/adam-calendar/adam-calendar.component';
 import { AdamCheckboxComponent } from './component/adam-checkbox/adam-checkbox.component';
+import { FileUploadComponent } from './component/file-upload/file-upload.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/form', pathMatch: 'full' },
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: "checkbox",
     component: AdamCheckboxComponent,
+  },
+  {
+    path: "file-uploader",
+    component: FileUploadComponent,
   },
 ];
 

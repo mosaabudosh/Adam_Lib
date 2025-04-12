@@ -87,6 +87,10 @@ export class AdamDropdownComponent {
 
   constructor() { }
 
+  getMarginEnd() {
+    return this.required ? '37px' : '60px';
+  }
+
   getStyles() {
     return {
       width: this._width,

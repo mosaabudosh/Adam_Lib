@@ -25,6 +25,14 @@
                 </lib-adam-calendar>
             </div>
 
+            <div class="adam-flex-column" style="width: 500px">
+                <adam-lib-label [text]="'From Date'"></adam-lib-label>
+                <lib-adam-calendar [id]="'selectedFromDate'" name="selectedFromDate" [(ngModel)]="fromDate"
+                    ngDefaultControl [showIcon]="true" [icon]="'pi pi-calendar text-muted bg-white'" [showTime]="false"
+                    [width]="'100%'" [height]="'35px'">
+                </lib-adam-calendar>
+            </div>
+
         </div>
 
         <div class="adam-flex-row adam-row-gap">
@@ -44,7 +52,7 @@
                     [(ngModel)]="citiyId" [submitted]="form.submitted" ngDefaultControl></adam-lib-dropdown>
             </div>
 
-            <div class="adam-flex-column" style="width: 500px; margin-left: 20px;">
+            <div class="adam-flex-column" style="width: 500px">
                 <adam-lib-label [text]="'Dropdown'"></adam-lib-label>
                 <adam-lib-dropdown name="dropdown3" [dropdown]="cities" [width]="'100%'" [height]="'35px'"
                     [(ngModel)]="citiyId" [submitted]="form.submitted" ngDefaultControl></adam-lib-dropdown>
@@ -102,15 +110,31 @@
             <adam-search-box [icon]="'pi pi-search'" [width]="'250px'" [height]="'35px'"
                 [placeholder]="'Search ...'"></adam-search-box>
         </div>
+
         <div class="adam-flex-row adam-row-gap">
-            <div class="adam-flex-column" style="width: 250px;">
-                <adam-lib-button [type]="'submit'" [color]="'primary-reverse'" [text]="'Submited'"></adam-lib-button>
+            <adam-search-box [icon]="'pi pi-search'" [width]="'500px'" [height]="'35px'"
+                [placeholder]="'Search ...'"></adam-search-box>
+        </div>
+
+        <div class="adam-flex-row adam-row-gap">
+            <div class="adam-flex-column" style="width: 350px;">
+                <adam-lib-button [type]="'submit'" [color]="'primary-reverse'" [width]="'250px'" [text]="'Submited'"></adam-lib-button>
 
             </div>
-            <div class="adam-flex-column">
-                <adam-lib-button [color]="'primary-reverse'" [width]="'150px'" [text]="'Open Popup'"
+            <div class="adam-flex-column"  style="width: 350px;">
+                <adam-lib-button [color]="'primary-reverse'" [width]="'250px'" [text]="'Open Popup'"
                     (onClick)="openPopup()"></adam-lib-button>
 
+            </div>
+
+            <div class="adam-flex-column" style="width: 350px;">
+                <adam-lib-button [color]="'primary-reverse'" [width]="'250px'" [text]="'Open Confirmation Popup'"
+                    (onClick)="openConfirmationPopup()"></adam-lib-button>
+            </div>
+
+            <div class="adam-flex-column" style="width: 350px;">
+                <adam-lib-button [color]="'dangerous-reverse'" [width]="'250px'" [text]="'Delete Confirmation Popup'"
+                    (onClick)="openDeleteConfirmationPopup()"></adam-lib-button>
             </div>
 
         </div>

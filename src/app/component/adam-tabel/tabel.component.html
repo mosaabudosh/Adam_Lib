@@ -1,10 +1,10 @@
 <div>
     <adam-tabel [columns]="columns" [products]="items" [sort]="false" [enableCheckbox]="false" (onClickAdd)='addUser()'
-        [rowsNumber]="5" [isShowSearch]="true" [paginator]="false" [commands]="[
+        [rowsNumber]="5" [isShowSearch]="true" [paginator]="true" [commands]="[
               {columnHeader:'Action', elementRef:action}]"></adam-tabel>
 
     <ng-template #action let-dataItem="dataItem">
-        <div class="adam-flex-row adam-space-between">
+        <div class="adam-flex-row adam-center-center">
             <adam-lib-icons [icons]="dataItem?.icons"></adam-lib-icons>
         </div>
     </ng-template>

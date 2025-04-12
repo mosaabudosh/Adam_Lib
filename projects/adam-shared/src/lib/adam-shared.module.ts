@@ -43,6 +43,12 @@ import { AdamSearchBoxComponent } from './controls/adam-search-box/adam-search-b
 import { AdamSearchBoxModule } from './controls/adam-search-box/adam-search-box.module';
 import { ComponentFactoryResolverService } from './services/component-factory-resolver.service';
 import { AdamSheardPopupComponent } from './controls/adam-sheard-popup/adam-sheard-popup.component';
+import { AdamFileUploaderModule } from './controls/adam-file-uploader/adam-file-uploader.module';
+import { AdamFileUploaderComponent } from './controls/adam-file-uploader/adam-file-uploader.component';
+import { ConfirmationPopupComponent } from './controls/confirmation-popup/confirmation-popup.component';
+import { HttpClient } from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -56,7 +62,8 @@ import { AdamSheardPopupComponent } from './controls/adam-sheard-popup/adam-shea
     ArabicNumberPipe,
     NumberPipe,
     MathPipe,
-    AdamSheardPopupComponent
+    AdamSheardPopupComponent,
+    ConfirmationPopupComponent
   ],
   imports: [
     FormsModule,
@@ -78,7 +85,15 @@ import { AdamSheardPopupComponent } from './controls/adam-sheard-popup/adam-shea
     AdamTextBoxModule,
     AdamToastModule,
     AdamSideMenuModule,
-    AdamSearchBoxModule
+    AdamSearchBoxModule,
+    AdamFileUploaderModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      },
+    }),
   ],
   exports: [
     IntInputDirective,
@@ -104,12 +119,14 @@ import { AdamSheardPopupComponent } from './controls/adam-sheard-popup/adam-shea
     AdamToastComponent,
     SideMenuComponent,
     AdamSearchBoxComponent,
-    AdamSheardPopupComponent
+    AdamSheardPopupComponent,
+    AdamFileUploaderComponent,
+    ConfirmationPopupComponent
   ],
-  providers: [MessageService, AdamMessageService, ComponentFactoryResolverService],
-
+  providers: [MessageService, AdamMessageService, ComponentFactoryResolverService, TranslateService],
   schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA]
-
 })
 export class AdamSharedModule { }
-
+function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/');
+}

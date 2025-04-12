@@ -26,6 +26,11 @@ export class AppComponent {
     this.loadHeaderData();
     this.loadMenuData();
     this.primengConfig.ripple = true;
+    if (this.isDarkMode) {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.add('normal-mode');
+    }
   }
 
   loadHeaderData() {
@@ -100,7 +105,13 @@ export class AppComponent {
           tooltipPosition: 'bottom',
           visible: this.isDarkMode,
           command: (event: any) => {
-            this.isDarkMode = false;
+            this.isDarkMode = !this.isDarkMode;
+            if (this.isDarkMode) {
+              document.body.classList.replace('normal-mode', 'dark-mode');
+            } else {
+              document.body.classList.replace('dark-mode', 'normal-mode');
+            }
+            this.loadHeaderData();
             this.loadHeaderData();
             console.log('Normal Mode')
           }
@@ -125,238 +136,6 @@ export class AppComponent {
     this.menuItem = [
       {
         label: "Menu 1",
-        icon: 'pi pi-home',
-        expanded: false,
-        isActive: false,
-        id: 'Master1',
-        items: [
-          {
-            label: 'Level 2',
-            icon: 'pi pi-home',
-            id: 'Child2',
-            parentId: 'Master1',
-            isActive: false,
-            expanded: false,
-            command: (event: any) => {
-              this.onMenuCommandClick(event);
-            }
-          },
-          {
-            label: 'Level 2',
-            icon: 'pi pi-home',
-            id: 'Child1',
-            parentId: 'Master1',
-            expanded: false,
-            isActive: false,
-            items: [
-              {
-                label: 'Level 3',
-                icon: 'pi pi-home',
-                id: 'Child1',
-                parentId: 'Child1',
-                isActive: false,
-                expanded: false,
-                command: (event: any) => {
-                  this.onMenuCommandClick(event);
-                }
-              },
-              {
-                label: 'Level 3',
-                icon: 'pi pi-home',
-                id: 'Child2',
-                parentId: 'Child1',
-                isActive: false,
-                expanded: false,
-                command: (event: any) => {
-                  this.onMenuCommandClick(event);
-                }
-              },
-            ],
-            command: (event: any) => {
-              this.onMenuCommandClick(event);
-            }
-          }
-        ],
-        command: (event: any) => {
-          this.onMenuCommandClick(event);
-        }
-      },
-      {
-        label: "Menu 2",
-        icon: 'pi pi-home',
-        expanded: false,
-        isActive: false,
-        id: 'Master1',
-        items: [
-          {
-            label: 'Level 2',
-            icon: 'pi pi-home',
-            id: 'Child2',
-            parentId: 'Master1',
-            isActive: false,
-            expanded: false,
-            command: (event: any) => {
-              this.onMenuCommandClick(event);
-            }
-          },
-          {
-            label: 'Level 2',
-            icon: 'pi pi-home',
-            id: 'Child1',
-            parentId: 'Master1',
-            expanded: false,
-            isActive: false,
-            items: [
-              {
-                label: 'Level 3',
-                icon: 'pi pi-home',
-                id: 'Child1',
-                parentId: 'Child1',
-                isActive: false,
-                expanded: false,
-                command: (event: any) => {
-                  this.onMenuCommandClick(event);
-                }
-              },
-              {
-                label: 'Level 3',
-                icon: 'pi pi-home',
-                id: 'Child2',
-                parentId: 'Child1',
-                isActive: false,
-                expanded: false,
-                command: (event: any) => {
-                  this.onMenuCommandClick(event);
-                }
-              },
-            ],
-            command: (event: any) => {
-              this.onMenuCommandClick(event);
-            }
-          }
-        ],
-        command: (event: any) => {
-          this.onMenuCommandClick(event);
-        }
-      },
-      {
-        label: "Menu 3",
-        icon: 'pi pi-home',
-        expanded: false,
-        isActive: false,
-        id: 'Master1',
-        items: [
-          {
-            label: 'Level 2',
-            icon: 'pi pi-home',
-            id: 'Child2',
-            parentId: 'Master1',
-            isActive: false,
-            expanded: false,
-            command: (event: any) => {
-              this.onMenuCommandClick(event);
-            }
-          },
-          {
-            label: 'Level 2',
-            icon: 'pi pi-home',
-            id: 'Child1',
-            parentId: 'Master1',
-            expanded: false,
-            isActive: false,
-            items: [
-              {
-                label: 'Level 3',
-                icon: 'pi pi-home',
-                id: 'Child1',
-                parentId: 'Child1',
-                isActive: false,
-                expanded: false,
-                command: (event: any) => {
-                  this.onMenuCommandClick(event);
-                }
-              },
-              {
-                label: 'Level 3',
-                icon: 'pi pi-home',
-                id: 'Child2',
-                parentId: 'Child1',
-                isActive: false,
-                expanded: false,
-                command: (event: any) => {
-                  this.onMenuCommandClick(event);
-                }
-              },
-            ],
-            command: (event: any) => {
-              this.onMenuCommandClick(event);
-            }
-          }
-        ],
-        command: (event: any) => {
-          this.onMenuCommandClick(event);
-        }
-      },
-      {
-        label: "Menu 4",
-        icon: 'pi pi-home',
-        expanded: false,
-        isActive: false,
-        id: 'Master1',
-        items: [
-          {
-            label: 'Level 2',
-            icon: 'pi pi-home',
-            id: 'Child2',
-            parentId: 'Master1',
-            isActive: false,
-            expanded: false,
-            command: (event: any) => {
-              this.onMenuCommandClick(event);
-            }
-          },
-          {
-            label: 'Level 2',
-            icon: 'pi pi-home',
-            id: 'Child1',
-            parentId: 'Master1',
-            expanded: false,
-            isActive: false,
-            items: [
-              {
-                label: 'Level 3',
-                icon: 'pi pi-home',
-                id: 'Child1',
-                parentId: 'Child1',
-                isActive: false,
-                expanded: false,
-                command: (event: any) => {
-                  this.onMenuCommandClick(event);
-                }
-              },
-              {
-                label: 'Level 3',
-                icon: 'pi pi-home',
-                id: 'Child2',
-                parentId: 'Child1',
-                isActive: false,
-                expanded: false,
-                command: (event: any) => {
-                  this.onMenuCommandClick(event);
-                }
-              },
-            ],
-            command: (event: any) => {
-              this.onMenuCommandClick(event);
-            }
-          }
-        ],
-        command: (event: any) => {
-          this.onMenuCommandClick(event);
-        }
-      },
-      {
-        label: "Menu 5",
         icon: 'pi pi-home',
         expanded: false,
         isActive: false,
@@ -491,6 +270,18 @@ export class AppComponent {
             isActive: false,
             expanded: false,
             url: '/checkbox',
+            command: (event: any) => {
+              this.onMenuCommandClick(event);
+            }
+          },
+          {
+            label: 'File Uploader',
+            icon: 'pi pi-upload',
+            id: 'file-uploader',
+            parentId: 'Controles',
+            isActive: false,
+            expanded: false,
+            url: '/file-uploader',
             command: (event: any) => {
               this.onMenuCommandClick(event);
             }

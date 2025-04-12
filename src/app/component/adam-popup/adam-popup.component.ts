@@ -10,7 +10,15 @@ import { AdamSheardPopupComponent } from 'adam-shared';
 })
 export class AdamPopupComponent extends AdamSheardPopupComponent implements OnInit {
   @Output() onSubmitted: EventEmitter<any> = new EventEmitter();
+  citiyId: number | null = null;
 
+  cities = [
+    { label: 'New York', value: 1 },
+    { label: 'Rome', value: 2 },
+    { label: 'London', value: 3 },
+    { label: 'Istanbul', value: 4 },
+    { label: 'Paris', value: 5 }
+  ];
   constructor(
     modalService: NgbModal
   ) {

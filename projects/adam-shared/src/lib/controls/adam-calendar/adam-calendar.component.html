@@ -1,13 +1,14 @@
-<div dir="{{ 'dir' | translate }}" class="adam-calendar adam-flex-row"
-  [ngClass]="{'invalid-border-style': !getIsValid(),'required': required}" [ngStyle]="getContainerStyle()">
-  <p-calendar [(ngModel)]="date" [name]="name" [showIcon]="showIcon && !isReadOnly" [icon]="'pi pi-calendar'"
+<div dir="{{ 'dir' | translate }}" class="adam-flex adam-flex-row  adam-calendar"
+  [ngClass]="{'invalid-border-style': !getIsValid(),'required': required}" [ngStyle]="getContainerStyle()"
+  style="--margin-end: {{getMarginEnd()}}">
+  <p-calendar [(ngModel)]="date" [name]="name" [showIcon]="showIcon && !readOnly" [icon]="'pi pi-calendar'"
     [inline]="inline" [showTime]="showTime" [dateFormat]="calenderDateFormat" [timeOnly]="timeOnly"
-    [ngStyle]="getStyles()" [hourFormat]="hourFormat" [showOtherMonths]="!isReadOnly" [showOnFocus]="!isReadOnly"
-    [readonlyInput]="isReadOnly" [iconDisplay]="'input'" placeholder="{{ placeholder }}" [disabled]="calenderDisabled"
+    [ngStyle]="getStyles()" [hourFormat]="hourFormat" [showOtherMonths]="!readOnly" [showOnFocus]="!readOnly"
+    [readonlyInput]="readOnly" [iconDisplay]="'input'" placeholder="{{ placeholder }}" [disabled]="calenderDisabled"
     id="{{ id }}" [maxDate]="_maxDate" [minDate]="_minDate" #myCalender [required]="required" class="calendar-style"
     [panelStyleClass]="'calendar-panel-style'" [locale]="localeLang" [autoZIndex]="true" [baseZIndex]="9999999"
-    [appendTo]="'body'" [monthNavigator]="!isReadOnly" [yearNavigator]="!isReadOnly" [yearRange]="_yearRange"
-    [showButtonBar]="showButtonBar" (onInput)="!isReadOnly && input(date)" (onBlur)="!isReadOnly && blured($event)"
+    [appendTo]="'body'" [monthNavigator]="!readOnly" [yearNavigator]="!readOnly" [yearRange]="_yearRange"
+    [showButtonBar]="showButtonBar" (onInput)="!readOnly && input(date)" (onBlur)="!readOnly && blured($event)"
     (onClearClick)="clearClicked(myCalender)" (onTodayClick)="todayClick(myCalender)"
-    (onSelect)="!isReadOnly && selectedChanged($event)" />
+    (onSelect)="!readOnly && selectedChanged($event)" />
 </div>

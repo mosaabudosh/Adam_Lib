@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -19,7 +19,8 @@ import { AdamLabelComponent } from './adam-label.component';
     }),
   ],
   exports: [AdamLabelComponent],
-  providers: [TranslateService]
+  providers: [TranslateService],
+  schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AdamLabelModule { }
 function HttpLoaderFactory(http: HttpClient) {

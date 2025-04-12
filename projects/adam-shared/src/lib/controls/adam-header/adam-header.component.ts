@@ -3,7 +3,6 @@ import { HeaderDataModel } from '../../model/headerDataModel';
 
 @Component({
   selector: 'adam-lib-header',
-  standalone: false,
   templateUrl: './adam-header.component.html',
   styleUrl: './adam-header.component.scss',
   encapsulation: ViewEncapsulation.None
@@ -12,8 +11,8 @@ export class AdamHeaderComponent {
   _headerDataModel: HeaderDataModel = {};
   @Input() set headerDataModel(value: any) {
     this._headerDataModel = {
-      avatarImage: value.avatarImage,
-      logoApp: value.logoApp,
+      avatarImage: value?.avatarImage,
+      logoApp: value?.logoApp,
       isViewMenu: value.isViewMenu,
       isViewLogo: value.isViewLogo,
       userName: value.userName,
