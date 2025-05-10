@@ -14,8 +14,12 @@
     color: var(--btn-positive) !important;
     cursor: pointer !important;
     font-size: var(--med-font-size) !important;
-    width: 30px !important;
-    height: 30px !important;
+    width: 40px !important;
+    height: 40px !important;
+    background: var(--hover-row-color) !important;
+    border-radius: var(--border-radius) !important;
+    margin: 3px !important;
+    padding: 3px !important;
 }
 
 .span-icon-style:hover {

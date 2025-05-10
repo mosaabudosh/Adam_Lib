@@ -1,3 +1,4 @@
 <button pButton pRipple icon="{{ icon }}" [disabled]="disabled" [ngStyle]="getStyles()" (click)="onButtonClick($event)"
     type="{{type}}" label="{{ text }}" [loading]="_isLoading"
-    class="{{ size }} {{ color }} {{ action }} {{ rounded }} {{ class }}" pTooltip="{{ text }}" tooltipPosition="top"></button>
+    class="{{ size }} {{ color }} {{ action }} {{ rounded }} {{ class }}" pTooltip="{{ tooltip ? tooltip : text }}"
+    tooltipPosition="{{tooltipPosition}}"></button>

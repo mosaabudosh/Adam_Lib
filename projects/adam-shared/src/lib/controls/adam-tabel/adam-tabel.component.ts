@@ -82,7 +82,6 @@ export class AdamTabelComponent implements OnInit {
   constructor(private datePipe: DatePipe, private decimalPipe: DecimalPipe) { }
 
   ngOnInit() {
-
   }
 
   addNew() {

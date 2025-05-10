@@ -1,0 +1,14 @@
+@import "./../../../assets/styles/styles.scss";
+
+.textarea {
+    display: flex !important;
+    flex-direction: row !important;
+    padding: 10px !important;
+    border-radius: var(--border-radius) !important;
+}
+
+.textarea::placeholder {
+    color: var(--placeholder-text-color) !important;
+    font-size: var(--small-font-size) !important;
+    font-family: var(--font-family) !important;
+}

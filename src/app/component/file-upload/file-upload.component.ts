@@ -9,10 +9,8 @@ export class FileUploadComponent {
 
   uploadedFiles: any[] = [];
 
-
   fileUploaded(event: any) {
     this.uploadedFiles = event;
   }
-
 
 }

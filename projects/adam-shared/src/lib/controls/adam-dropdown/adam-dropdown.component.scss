@@ -89,7 +89,7 @@ app-dropdown {
   font-size: var(--small-font-size) !important;
   font-family: var(--font-family) !important;
   color: var(--main-text-color) !important;
-  background: var(--background-rgba) !important;
+  background: var(--hover-row-color) !important;
   min-width: max-content !important;
   border-radius: var(--border-radius) !important;
 }
@@ -98,7 +98,7 @@ app-dropdown {
   font-size: var(--small-font-size) !important;
   font-family: var(--font-family) !important;
   color: var(--main-text-color) !important;
-  background: var(--background-rgba) !important;
+  background: var(--hover-row-color) !important;
   min-width: max-content !important;
   border-radius: var(--border-radius) !important;
 }

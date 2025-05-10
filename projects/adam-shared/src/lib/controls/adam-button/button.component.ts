@@ -2,7 +2,6 @@ import { Component, OnInit, Input, ViewEncapsulation, Output, EventEmitter, OnDe
 
 @Component({
   selector: 'adam-lib-button',
-  standalone: false,
   templateUrl: './button.component.html',
   styleUrl: './button.component.scss',
   encapsulation: ViewEncapsulation.None
@@ -26,7 +25,8 @@ export class ButtonComponent implements OnInit, OnDestroy {
   @Input() width: string = "100px";
   @Input() disabled = false;
   @Input() class: string;
-
+  @Input() tooltip: string;
+  @Input() tooltipPosition: string;
 
   @Input() set isLoading(value: boolean) {
     this._isLoading = value;

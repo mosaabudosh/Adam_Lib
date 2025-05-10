@@ -1,27 +1,38 @@
-<div>
-    <adam-tabel [columns]="columns" [products]="items" [sort]="false" [enableCheckbox]="false" (onClickAdd)='addUser()'
-        [rowsNumber]="5" [isShowSearch]="true" [paginator]="true" [commands]="[
-              {columnHeader:'Action', elementRef:action}]"></adam-tabel>
+<div class="main-screen">
 
-    <ng-template #action let-dataItem="dataItem">
-        <div class="adam-flex-row adam-center-center">
-            <adam-lib-icons [icons]="dataItem?.icons"></adam-lib-icons>
-        </div>
-    </ng-template>
+    <adam-lib-label class="screen-title" [text]="'app-tabel'"></adam-lib-label>
 
-</div>
+    <div>
+        <adam-tabel [columns]="columns" [products]="items" [sort]="false" [enableCheckbox]="false"
+            (onClickAdd)='addUser()' [rowsNumber]="5" [isShowSearch]="false" [paginator]="true" [commands]="[
+              {columnHeader:'Action', elementRef:action}]" [isViewHeader]="true"
+            [headerElementRef]="headerElement"></adam-tabel>
 
+        <ng-template #action let-dataItem="dataItem">
+            <div class="adam-flex-row adam-center-center adam-space-between">
+                <adam-lib-icons [icons]="dataItem?.icons"></adam-lib-icons>
+            </div>
+        </ng-template>
 
+        <ng-template #headerElement>
+            <div class="adam-flex-row adam-center-center">
+                <adam-lib-button [text]="'defult'" [class]="'pi pi-plus'"></adam-lib-button>
+            </div>
+        </ng-template>
 
-<div>
-    <adam-tabel [columns]="columns2" [products]="items3" [sort]="false" [enableCheckbox]="false"
-        (onClickAdd)='addUser()' [rowsNumber]="10" [isShowSearch]="true" [commands]="[
+    </div>
+
+    <div>
+        <adam-tabel [columns]="columns2" [products]="items3" [sort]="false" [enableCheckbox]="false"
+            (onClickAdd)='addUser()' [rowsNumber]="10" [isShowSearch]="true" [commands]="[
               {columnHeader:'Action', elementRef:action}]" [searchWidth]="'400px'"></adam-tabel>
 
-    <ng-template #action let-dataItem="dataItem">
-        <div class="adam-flex-row adam-space-between">
-            <adam-lib-icons [icons]="dataItem?.icons"></adam-lib-icons>
-        </div>
-    </ng-template>
+        <ng-template #action let-dataItem="dataItem">
+            <div class="adam-flex-row adam-space-between">
+                <adam-lib-icons [icons]="dataItem?.icons"></adam-lib-icons>
+            </div>
+        </ng-template>
+
+    </div>
 
 </div>

@@ -3,15 +3,15 @@
         [columns]="columns" [globalFilterFields]="globalFilterFields" [(selection)]="selection" [rowHover]="rowHover"
         dataKey="id" [showCurrentPageReport]="showCurrentPageReport"
         [currentPageReportTemplate]="currentPageReportTemplate" [rowsPerPageOptions]="rowsPerPageOptions"
-        [totalRecords]="120" [showFirstLastIcon]="false" [showCurrentPageReport]="true" [paginatorPosition]="'bottom'"
-        [responsive]="true" [first]="first" [pageLinks]="5" [selectionMode]="selectionMode" [scrollable]="scrollable"
-        crollHeight="200px" [totalRecords]="totalRecords" [lazy]="lazy" [loading]="loading"
-        (onRowSelect)="onRowSelect($event)" (onPage)="OnPaginateChange($event)" (onRowUnselect)="rowUnselected($event)"
+        [showFirstLastIcon]="false" [showCurrentPageReport]="true" [paginatorPosition]="'bottom'" [responsive]="true"
+        [first]="first" [pageLinks]="5" [selectionMode]="selectionMode" [scrollable]="scrollable" crollHeight="200px"
+        [totalRecords]="totalRecords" [lazy]="lazy" [loading]="loading" (onRowSelect)="onRowSelect($event)"
+        (onPage)="OnPaginateChange($event)" (onRowUnselect)="rowUnselected($event)"
         (onHeaderCheckboxToggle)="headerCheckboxToggle($event)" (onLazyLoad)="loadLazy($event)">
 
-        <ng-template *ngIf="isViewHeader" pTemplate="header" let-columns>
-            <tr class="footer-style">
-                <td
+        <ng-template *ngIf="isViewHeader" pTemplate="caption">
+            <tr class="adam-flex adam-flex-row table-header-style">
+                <td class="adam-flex adam-flex-row td-table-header-style"
                     [attr.colspan]="(columns ? getColumnLength(columns) : 0) + ( commands ? commands.length : 0) + (enableSelection ? 1 : 0)">
                     <ng-container *ngTemplateOutlet="headerElementRef">
                     </ng-container>
@@ -19,7 +19,7 @@
             </tr>
         </ng-template>
 
-        <ng-template pTemplate="caption">
+        <ng-template pTemplate="caption" *ngIf="!isViewHeader">
             <div class="adam-flex adam-flex-row adam-space-between caption-table-style">
                 <div class="adam-flex-column adam-start-start">
                     <adam-search-box *ngIf="isShowSearch" [icon]="'pi pi-search'" [width]="searchWidth"
