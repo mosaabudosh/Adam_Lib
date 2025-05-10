@@ -12,34 +12,28 @@
   --placeholder-text-color: #414141 !important;
   --input-background: white !important;
 
-
-
   .dark-mode {
-    --main-background: #202124 !important;
-    --secondary-background: #1e272e !important;
-    --background-rgba: rgba(11, 13, 9, 0.7) !important;
+    --main-screen: #1b1b1b !important;
+    --main-background: #0e0e0e !important;
+    --secondary-background: #2e2e2e !important;
+    --background-rgba: #1b1b1b !important;
     --main-text-color: #fff !important;
     --border: 1px solid #fff !important;
     --btn-background: #0B0D09 !important;
     --btn-color: #fff !important;
     --icon-color: #fff !important;
-    // --background-image: url("../assets/images/dark-background-image.jpg") !important;
     --white-color: white !important;
     --black-color: black !important;
     --box-shadow:
       0 0 8rem 0 rgba(black, 0.1),
       0rem 2rem 2rem -rgb(7, 6, 6)rgba(black, 0.5);
-    // --secondary-box-shadow: 0 0 10px 0 white,
-    //   0rem 2rem 4rem -3rem white !important;
-
     --secondary-box-shadow: 0 0 3px 0 black,
       0rem 2rem 2rem -2rem black !important;
-
     --background: #202124 !important;
     --received-messages-background: #000000 !important;
     --send-messages-background: #1f2c30 !important;
     --un-read-user-row-color: #2196f3 !important;
-    --hover-row-color: rgba(11, 13, 9) !important;
+    --hover-row-color: #1b1b1b !important;
     --btn-primary: #355d9b !important;
     --white: white !important;
     --btn-dangerous: #df3351 !important;
@@ -52,35 +46,37 @@
     --btn-blue: #3D83F9 !important;
     --border-radius-rounded: 25px !important;
     --margin: 8px !important;
-    --btn-warning: #F0AD4E;
-    --btn-info: #5CB85C;
-    --btn-builder: #007bff;
-    --btn-advance-search: #9C27B0;
-    // --input-background: rgba(11, 13, 9, 0.9) !important;
+    --btn-warning: #F0AD4E !important;
+    --btn-info: #5CB85C !important;
+    --btn-builder: #007bff !important;
+    --btn-advance-search: #9C27B0 !important;
+    --btn-dark: #0e0e0e !important;
+    --input-background: rgba(11, 13, 9) !important;
+    --box-shadow-rgba: rgba(114, 114, 114, 0.5) !important;
   }
 
   .normal-mode {
-    --main-background: white !important;
-    --secondary-background: #18dcff !important;
-    --background-rgba: #81ecec !important;
+    --main-screen: #fff !important;
+    --main-background: #a0d3e8 !important;
+    --secondary-background: #fff !important;
+    --background-rgba: #fff !important;
     --main-text-color: #0B0D09 !important;
     --border: 1px solid #0B0D09 !important;
-    --btn-background: rgb(24, 236, 251) !important;
+    --btn-background: #f7f2fc !important;
     --btn-color: rgb(30, 31, 31) !important;
     --icon-color: #0B0D09 !important;
-    // --background-image: url("../assets/images/normal-background-image.jpg") !important;
     --black-color: white !important;
     --white-color: black !important;
     --box-shadow:
-      0 0 8rem 0 rgba(#18dcff, 0.1),
-      0rem 2rem 4rem -3rem rgba(#18dcff, 0.5);
+      0 0 8rem 0 rgba(#a3c1e0, 0.1),
+      0rem 2rem 4rem -3rem rgba(#a3c1e0, 0.5);
     --secondary-box-shadow: 0 0 3px 0 black,
       0rem 2rem 2rem -2rem black !important;
-    --background: #18dcff !important;
+    --background: #a3c1e0 !important;
     --received-messages-background: #00cec9 !important;
     --send-messages-background: #81ecec !important;
     --un-read-user-row-color: #2196f3 !important;
-    --hover-row-color: #81ecec !important;
+    --hover-row-color: #4a9fc0 !important;
     --btn-primary: #355d9b !important;
     --white: white !important;
     --btn-dangerous: #df3351 !important;
@@ -93,10 +89,12 @@
     --btn-blue: #3D83F9 !important;
     --border-radius-rounded: 25px !important;
     --margin: 8px !important;
-    --btn-warning: #F0AD4E;
-    --btn-info: #5CB85C;
-    --btn-builder: #007bff;
-    --btn-advance-search: #9C27B0;
-    // --input-background: white !important;
+    --btn-warning: #F0AD4E !important;
+    --btn-info: #5CB85C !important;
+    --btn-builder: #007bff !important;
+    --btn-advance-search: #9C27B0 !important;
+    --btn-dark: #a0d3e8 !important;
+    --input-background: rgba(115, 243, 252) !important;
+    --box-shadow-rgba: rgba(255, 255, 255, 0.7) !important;
   }
 }

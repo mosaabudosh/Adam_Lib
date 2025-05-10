@@ -15,6 +15,9 @@ export class AdamLibTestService {
 
   getUsers(): Observable<any> {
     this._adamHTTPService.setProperties("UserManagement/users", "UserService", 'http://localhost:5065/api');
-    return this._adamHTTPService.get();
+    this.parameter.queryParameters = {};
+    this.parameter.queryParameters['pageNumber'] = 0;
+    this.parameter.queryParameters['pageSize'] = 100;
+    return this._adamHTTPService.get(this.parameter);
   }
 }

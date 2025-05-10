@@ -6,7 +6,7 @@
                     <i (click)="menuClicked()" class="pi pi-align-justify "></i>
                 </div>
                 <div *ngIf="_headerDataModel.isViewLogo && _headerDataModel?.logoApp"
-                    class="adam-flex-column  logo-app-style">
+                    class="adam-flex-column  logo-app-style" (click)="logoClicked()">
                     <img [src]="_headerDataModel.logoApp" />
                 </div>
             </div>

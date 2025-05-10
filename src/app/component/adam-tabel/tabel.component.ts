@@ -89,7 +89,7 @@ export class TabelComponent {
       {
         icon: 'pi pi-user-edit',
         tooltip: "Edit",
-        color: 'waring',
+        color: 'white',
         visible: true,
         // command: (event: any) => {
         //   this.editUser(info.userId)
@@ -98,7 +98,7 @@ export class TabelComponent {
       {
         icon: 'pi pi-lock',
         tooltip: "Lock",
-        // color: 'waring',
+        color: 'white',
         visible: true,
         // command: (event: any) => {
         //   this.lockUnLockUser(info.userId)
@@ -107,7 +107,7 @@ export class TabelComponent {
       {
         icon: 'pi pi-unlock',
         tooltip: "Unlock",
-        // color: 'info',
+        color: 'white',
         visible: true,
         // command: (event: any) => {
         //   this.lockUnLockUser(info.userId)
@@ -127,7 +127,6 @@ export class TabelComponent {
   }
 
   addUser() {
-    console.log('addUser')
     let adamPopupComponent = <AdamPopupComponent>this.componentFactoryResolverService.createPopup(AdamPopupComponent, this.viewContainerRef);
     adamPopupComponent.open();
     let adamPopupComponentSubscription = adamPopupComponent.onSubmitted.subscribe(response => {
@@ -142,7 +141,6 @@ export class TabelComponent {
 
   getUsers() {
     this.adamLibTestService.getUsers().subscribe(response => {
-      console.log('response => ', response.dataObject)
       this.items3 = response.dataObject;
     }
     )

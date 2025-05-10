@@ -39,6 +39,10 @@
     @include adam-btn-style(var(--btn-info), var(--white), var(--btn-info));
   }
 
+  &.dark {
+    @include adam-btn-style(var(--btn-dark), var(--white), var(--white));
+  }
+
   &.primary-reverse {
     @include adam-btn-style(var(--white), var(--btn-primary), var(--btn-primary));
   }
@@ -61,6 +65,10 @@
 
   &.info-reverse {
     @include adam-btn-style(var(--white), var(--btn-info), var(--btn-info));
+  }
+
+  &.dark-reverse {
+    @include adam-btn-style(var(--white), var(--btn-dark), var(--btn-dark));
   }
 
   &.none,

@@ -18,6 +18,7 @@ export * from './lib/controls/adam-search-box/adam-search-box.component';
 export * from './lib/controls/adam-sheard-popup/adam-sheard-popup.component';
 export * from './lib/controls/adam-file-uploader/adam-file-uploader.component';
 export * from './lib/controls/confirmation-popup/confirmation-popup.component';
+export * from './lib/controls/adam-textarea/adam-textarea.component';
 
 
 export * from './lib/services/adam.message.service';

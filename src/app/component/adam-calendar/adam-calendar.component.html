@@ -1,49 +1,53 @@
-<form #form="ngForm" novalidate (ngSubmit)="form.valid">
-    <div class="adam-flex-row adam-row-gap">
-        <div class="adam-flex-column">
-            <adam-lib-label [text]="'Required Date'"></adam-lib-label>
-            <lib-adam-calendar [id]="'selectedFromDate'" name="selectedFromDate" [(ngModel)]="date"
-                #selectedFromDate="ngModel" [showIcon]="true" [showTime]="false" [required]="true"
-                [submitted]="form.submitted" [width]="'250px'" [height]="'35px'">
-            </lib-adam-calendar>
-            <adam-lib-label *ngIf="form.submitted && selectedFromDate?.errors?.required" class="not-valid"
-                [text]="'Required From Date is required'"></adam-lib-label>
+<div class="main-screen">
+
+    <adam-lib-label class="screen-title" [text]="'app-calendar'"></adam-lib-label>
+    <form #form="ngForm" novalidate (ngSubmit)="form.valid">
+        <div class="adam-flex-row adam-row-gap">
+            <div class="adam-flex-column">
+                <adam-lib-label [text]="'Required Date'"></adam-lib-label>
+                <lib-adam-calendar [id]="'selectedFromDate'" name="selectedFromDate" [(ngModel)]="date"
+                    #selectedFromDate="ngModel" [showIcon]="true" [showTime]="false" [required]="true"
+                    [submitted]="form.submitted" [width]="'250px'" [height]="'35px'">
+                </lib-adam-calendar>
+                <adam-lib-label *ngIf="form.submitted && selectedFromDate?.errors?.required" class="not-valid"
+                    [text]="'Required From Date is required'"></adam-lib-label>
+            </div>
+
         </div>
 
-    </div>
-
-    <div class="adam-flex-row adam-row-gap">
-        <div class="adam-flex-column">
-            <adam-lib-label [text]="'Date'"></adam-lib-label>
-            <lib-adam-calendar [id]="'selectedFromDate'" name="selectedFromDate" [(ngModel)]="date"
-                #selectedFromDate="ngModel" [showIcon]="true" [icon]="'pi pi-calendar text-muted bg-white'"
-                [showTime]="false" [width]="'250px'" [height]="'35px'">
-            </lib-adam-calendar>
+        <div class="adam-flex-row adam-row-gap">
+            <div class="adam-flex-column">
+                <adam-lib-label [text]="'Date'"></adam-lib-label>
+                <lib-adam-calendar [id]="'selectedFromDate'" name="selectedFromDate" [(ngModel)]="date"
+                    #selectedFromDate="ngModel" [showIcon]="true" [icon]="'pi pi-calendar text-muted bg-white'"
+                    [showTime]="false" [width]="'250px'" [height]="'35px'">
+                </lib-adam-calendar>
+            </div>
         </div>
-    </div>
 
-    <div class="adam-flex-row adam-row-gap">
-        <div class="adam-flex-column">
-            <adam-lib-label [text]="'Date'"></adam-lib-label>
-            <lib-adam-calendar [id]="'selectedFromDate'" name="selectedFromDate" [(ngModel)]="date"
-                #selectedFromDate="ngModel" [showIcon]="true" [icon]="'pi pi-calendar text-muted bg-white'"
-                [showTime]="false" [width]="'500px'" [height]="'35px'">
-            </lib-adam-calendar>
+        <div class="adam-flex-row adam-row-gap">
+            <div class="adam-flex-column">
+                <adam-lib-label [text]="'Date'"></adam-lib-label>
+                <lib-adam-calendar [id]="'selectedFromDate'" name="selectedFromDate" [(ngModel)]="date"
+                    #selectedFromDate="ngModel" [showIcon]="true" [icon]="'pi pi-calendar text-muted bg-white'"
+                    [showTime]="false" [width]="'500px'" [height]="'35px'">
+                </lib-adam-calendar>
+            </div>
         </div>
-    </div>
 
-    <div class="adam-flex-row adam-row-gap">
-        <div class="adam-flex-column">
-            <adam-lib-label [text]="'Date'"></adam-lib-label>
-            <lib-adam-calendar [id]="'selectedFromDate'" name="selectedFromDate" [(ngModel)]="date"
-                #selectedFromDate="ngModel" [showIcon]="false" [icon]="'pi pi-calendar text-muted bg-white'"
-                [showTime]="false" [width]="'500px'" [height]="'35px'">
-            </lib-adam-calendar>
+        <div class="adam-flex-row adam-row-gap">
+            <div class="adam-flex-column">
+                <adam-lib-label [text]="'Date'"></adam-lib-label>
+                <lib-adam-calendar [id]="'selectedFromDate'" name="selectedFromDate" [(ngModel)]="date"
+                    #selectedFromDate="ngModel" [showIcon]="false" [icon]="'pi pi-calendar text-muted bg-white'"
+                    [showTime]="false" [width]="'500px'" [height]="'35px'">
+                </lib-adam-calendar>
+            </div>
         </div>
-    </div>
 
-    <div class="adam-flex-row adam-space-between adam-row-gap">
-        <adam-lib-button [type]="'submit'" [color]="'primary-reverse'" [text]="'Submited'"></adam-lib-button>
-    </div>
+        <div class="adam-flex-row adam-space-between adam-row-gap">
+            <adam-lib-button [type]="'submit'" [color]="'primary-reverse'" [text]="'Submited'"></adam-lib-button>
+        </div>
 
-</form>
+    </form>
+</div>

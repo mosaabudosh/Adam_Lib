@@ -1,0 +1,4 @@
+<textarea [readOnly]="readOnly" name="test" [rows]="rowsNumber" autoResize="autoResize" [(ngModel)]="textValue"
+    (change)="handelChange($event)" [attr.required]="required?'':null" pInputTextarea placeholder="{{ placeholder }}"
+    [ngStyle]="getStyles()" [disabled]="disabled" (blur)="onblur($event)" class="{{ ngClass }} textarea"
+    maxlength="{{maxLength}}" [style.resize]="!resizable ? 'none' :''"></textarea>

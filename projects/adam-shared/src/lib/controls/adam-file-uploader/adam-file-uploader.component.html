@@ -1,6 +1,6 @@
-<div dir="{{ 'dir' | translate }}" [ngStyle]="getContainerStyle()">
+<div [ngStyle]="getContainerStyle()">
     <p-fileUpload class="adam-flex adam-flex-row adam-file-upload" url="''" mode="advanced" [customUpload]="true"
-        [auto]="auto" (uploadHandler)="attachmentsHandler($event)" [files]="fileSource" 
+        [auto]="auto" (uploadHandler)="attachmentsHandler($event)" [files]="fileSource"
         [invalidFileTypeMessageDetail]="invalidFileTypeMessageDetail" [disabled]="uploaderDisabled"
         [showUploadButton]="!isReadOnly" [showCancelButton]="!isReadOnly" [accept]="accept" [chooseLabel]="chooseLabel"
         [maxFileSize]="maxFileSize" [invalidFileSizeMessageDetail]="invalidFileSizeMessageDetail" [multiple]="multiple"
@@ -16,12 +16,11 @@
         <ng-template let-file pTemplate="toolbar">
             <div class="adam-flex adam-flex-row ">
                 <adam-lib-button *ngIf="isScanningAllowed && !isReadOnly" [disabled]="uploaderDisabled" (click)="scan()"
-                    [text]="scanText" [class]="'pi pi-plus'" [color]="'primary-reverse'">
+                    [text]="scanText" [class]="'pi pi-plus'" [color]="'dark'">
                 </adam-lib-button>
                 <button id="submitScannedDocuments" style="display:none;" (click)="addScannedFiles()"></button>
                 <adam-lib-button *ngIf="isShowCancelButton && !isReadOnly" [disabled]="uploaderDisabled"
-                    [color]="'dangerous-reverse'" (click)="removeAll()" [text]="removeAllText"
-                    [class]="'pi pi-trash text-white'">
+                    [color]="'dark'" (click)="removeAll()" [text]="removeAllText" [class]="'pi pi-trash'">
                 </adam-lib-button>
             </div>
 

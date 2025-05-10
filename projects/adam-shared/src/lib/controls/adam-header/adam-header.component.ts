@@ -22,7 +22,7 @@ export class AdamHeaderComponent {
   };
 
   @Output() onMenuClicked = new EventEmitter<any>();
-
+  @Output() onLogoClicked = new EventEmitter<any>();
   menuClicked() {
     this.onMenuClicked.emit();
   }
@@ -31,4 +31,7 @@ export class AdamHeaderComponent {
     info.command(info);
   }
 
+  logoClicked() {
+    this.onLogoClicked.emit();
+  }
 }

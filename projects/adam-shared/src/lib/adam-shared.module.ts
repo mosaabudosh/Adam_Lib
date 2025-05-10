@@ -49,6 +49,7 @@ import { ConfirmationPopupComponent } from './controls/confirmation-popup/confir
 import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
+import { AdamTextareaComponent } from './controls/adam-textarea/adam-textarea.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-transla
     NumberPipe,
     MathPipe,
     AdamSheardPopupComponent,
-    ConfirmationPopupComponent
+    ConfirmationPopupComponent,
+    AdamTextareaComponent
   ],
   imports: [
     FormsModule,
@@ -121,7 +123,8 @@ import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-transla
     AdamSearchBoxComponent,
     AdamSheardPopupComponent,
     AdamFileUploaderComponent,
-    ConfirmationPopupComponent
+    ConfirmationPopupComponent,
+    AdamTextareaComponent
   ],
   providers: [MessageService, AdamMessageService, ComponentFactoryResolverService, TranslateService],
   schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA]

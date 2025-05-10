@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { AdamFileUploaderComponent } from './adam-file-uploader.component';
+import { AdamFileUploaderModule } from './adam-file-uploader.module';
 
 describe('AdamFileUploaderComponent', () => {
   let component: AdamFileUploaderComponent;
@@ -8,10 +8,11 @@ describe('AdamFileUploaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AdamFileUploaderComponent]
+      declarations: [AdamFileUploaderComponent],
+      imports: [AdamFileUploaderModule],
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(AdamFileUploaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

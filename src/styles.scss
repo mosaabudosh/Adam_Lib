@@ -1,17 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+// @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+/* You can add global styles to this file, and also import other style files */
 @import "primeng/resources/themes/lara-light-blue/theme.css";
 @import "primeng/resources/primeng.css";
 @import "./variables.scss";
 @import "./adam.lib.scss";
-@import "primeicons/primeicons.css";
+// @import "primeicons/primeicons.css";
 @import "./responsive.scss";
 
 html,
 body {
     background: var(--main-background) !important;
-    width: 100% !important;
+    display: block !important;
+    box-sizing: border-box !important;
     height: 100vh !important;
-    transition: all 1s linear !important;
+    // transition: all 1s linear !important;
+    margin: 0 !important;
 }
 
 .main-content {
@@ -53,11 +57,13 @@ body {
 .adam-flex-row {
     display: flex !important;
     flex-direction: row !important;
+
 }
 
 .adam-flex-column {
     display: flex !important;
     flex-direction: column !important;
+
 }
 
 .adam-space-between {
@@ -80,7 +86,7 @@ body {
 }
 
 .adam-row-gap {
-    margin: 2rem !important;
+    margin: 1rem 1rem 1rem 1rem !important;
 }
 
 .adam-column-gap {
@@ -98,140 +104,6 @@ adam-lib-label {
     color: var(--main-text-color) !important;
 }
 
-@mixin margin-start($unit) {
-    :dir(rtl) & {
-        margin-right: $unit !important;
-    }
-
-    :dir(ltr) & {
-        margin-left: $unit !important;
-    }
-}
-
-@mixin margin-end($unit) {
-    :dir(rtl) & {
-        margin-left: $unit !important;
-    }
-
-    :dir(ltr) & {
-        margin-right: $unit !important;
-    }
-}
-
-@mixin padding-end($unit) {
-    :dir(rtl) & {
-        padding-left: $unit !important;
-    }
-
-    :dir(ltr) & {
-        padding-right: $unit !important;
-    }
-}
-
-@mixin padding-start($unit) {
-    :dir(rtl) & {
-        padding-right: $unit !important;
-    }
-
-    :dir(ltr) & {
-        padding-left: $unit !important;
-    }
-}
-
-@mixin float-left {
-    :dir(rtl) & {
-        float: right;
-    }
-
-    :dir(ltr) & {
-        float: left;
-    }
-
-}
-
-@mixin float-right {
-    :dir(rtl) & {
-        float: left;
-    }
-
-    :dir(ltr) & {
-        float: right;
-    }
-}
-
-@mixin text-align-left {
-    :dir(rtl) & {
-        text-align: right !important;
-    }
-
-    :dir(ltr) & {
-        text-align: left !important;
-    }
-}
-
-@mixin text-align-right {
-    :dir(ltr) & {
-        text-align: right !important;
-    }
-
-    :dir(rtl) & {
-        text-align: left !important;
-    }
-}
-
-@mixin right($unit) {
-
-    :dir(rtl) & {
-        left: $unit !important;
-
-    }
-
-    :dir(ltr) & {
-        right: $unit !important;
-    }
-
-}
-
-@mixin left ($unit) {
-    :dir(rtl) & {
-        right: $unit !important;
-
-    }
-
-    :dir(ltr) & {
-        left: $unit !important;
-
-    }
-
-}
-
-@mixin border-start ($unit, $style: null, $color: null) {
-    :dir(rtl) & {
-        border-right: $unit $style $color !important;
-
-    }
-
-    :dir(ltr) & {
-        border-left: $unit $style $color !important;
-
-    }
-
-}
-
-@mixin border-end ($unit, $style: null, $color: null) {
-    :dir(rtl) & {
-        border-left: $unit $style $color !important;
-
-    }
-
-    :dir(ltr) & {
-        border-right: $unit $style $color !important;
-
-    }
-
-}
-
-
 .main-screen {
     padding: 0.5% !important;
     min-height: 90% !important;
@@ -239,15 +111,16 @@ adam-lib-label {
     background: var(--main-screen) !important;
     border-radius: 10px !important;
     margin: 0 0.5% 0 0.5% !important;
+    border: 1px solid #fff !important;
 
     .screen-title {
-
         div,
         label {
             font-family: var(--font-family) !important;
             font-size: var(--larg-font-size) !important;
             color: var(--main-text-color);
             font-weight: bold !important;
+            margin-top:20px !important;
             @include margin-start(25px);
         }
 
@@ -260,8 +133,12 @@ adam-lib-label {
 
 }
 
-.modal-open {
+
+// modal-sm  // modal-lg // modal-xl
+.modal-open,
+.modal-content {
     color: var(--main-text-color) !important;
+    border: 1px solid #fff !important;
 
     .modal-header {
         background-color: var(--main-background) !important;
@@ -295,4 +172,24 @@ adam-lib-label {
     .modal-body {
         background: var(--main-screen) !important;
     }
+}
+
+.not-implemented-style {
+    text-align: center !important;
+
+    adam-lib-label,
+    label {
+        width: 100% !important;
+        font-size: 24px !important;
+        font-weight: bold !important;
+    }
+}
+
+.header-tabel-filter-style {
+    min-width: 100% !important;
+    padding: 20px !important;
+}
+
+.close-button-style{
+    border: 1px solid white !important;
 }
