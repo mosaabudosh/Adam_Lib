@@ -4,7 +4,6 @@ import { PrimeNGConfig } from 'primeng/api';
 
 @Component({
   selector: 'lib-AdamShared',
-  standalone: false,
   template: `
     <p>
       adam-shared works!

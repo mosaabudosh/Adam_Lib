@@ -4,7 +4,6 @@ import { AdamPopupComponent } from '../adam-popup/adam-popup.component';
 
 @Component({
   selector: 'app-adam-form',
-  standalone: false,
   templateUrl: './adam-form.component.html',
   styleUrl: './adam-form.component.scss'
 })

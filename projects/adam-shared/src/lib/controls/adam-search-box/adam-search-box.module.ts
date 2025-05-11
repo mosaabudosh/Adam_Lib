@@ -7,23 +7,23 @@ import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 
-@NgModule({
-  declarations: [AdamSearchBoxComponent],
-  imports: [
-    CommonModule,
-    FormsModule,
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
-      },
-    }),
-  ],
-  exports: [AdamSearchBoxComponent],
-  providers: [TranslateService],
-})
+// @NgModule({
+//   declarations: [AdamSearchBoxComponent],
+//   imports: [
+//     CommonModule,
+//     FormsModule,
+//     TranslateModule.forRoot({
+//       loader: {
+//         provide: TranslateLoader,
+//         useFactory: HttpLoaderFactory,
+//         deps: [HttpClient]
+//       },
+//     }),
+//   ],
+//   exports: [AdamSearchBoxComponent],
+//   providers: [TranslateService],
+// })
 export class AdamSearchBoxModule { }
-function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/');
-}
+// function HttpLoaderFactory(http: HttpClient) {
+//   return new TranslateHttpLoader(http, './assets/i18n/');
+// }

@@ -15,7 +15,6 @@ export enum PeriodTypes {
 
 @Component({
   selector: 'lib-adam-calendar',
-  standalone: false,
   templateUrl: './adam-calendar.component.html',
   styleUrl: './adam-calendar.component.scss',
   encapsulation: ViewEncapsulation.None,

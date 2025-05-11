@@ -13,11 +13,11 @@ export class AdamHeaderComponent {
     this._headerDataModel = {
       avatarImage: value?.avatarImage,
       logoApp: value?.logoApp,
-      isViewMenu: value.isViewMenu,
-      isViewLogo: value.isViewLogo,
-      userName: value.userName,
-      items: value.items,
-      icons: value.icons,
+      isViewMenu: value?.isViewMenu,
+      isViewLogo: value?.isViewLogo,
+      userName: value?.userName,
+      items: value?.items,
+      icons: value?.icons,
     };
   };
 

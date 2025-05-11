@@ -3,7 +3,6 @@ import { AdamMessageService } from '../../../../projects/adam-shared/src/public-
 
 @Component({
   selector: 'app-adam-toast',
-  standalone: false,
   templateUrl: './adam-toast.component.html',
   styleUrl: './adam-toast.component.scss'
 })

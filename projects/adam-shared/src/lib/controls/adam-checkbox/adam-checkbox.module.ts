@@ -8,27 +8,27 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { FormsModule } from '@angular/forms';
 import { AdamCheckboxComponent } from './adam-checkbox.component';
 
-@NgModule({
-  declarations: [AdamCheckboxComponent],
-  imports: [
-    BrowserAnimationsModule,
-    CommonModule,
-    CheckboxModule,
-    FormsModule,
-    HttpClientModule,
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
-      },
-    }),
-  ],
-  exports: [AdamCheckboxComponent],
-  providers: [TranslateService],
-  schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA]
-})
+// @NgModule({
+//   declarations: [AdamCheckboxComponent],
+//   imports: [
+//     // BrowserAnimationsModule,
+//     CommonModule,
+//     CheckboxModule,
+//     FormsModule,
+//     // HttpClientModule,
+//     TranslateModule.forRoot({
+//       loader: {
+//         provide: TranslateLoader,
+//         useFactory: HttpLoaderFactory,
+//         deps: [HttpClient]
+//       },
+//     }),
+//   ],
+//   exports: [AdamCheckboxComponent],
+//   providers: [TranslateService],
+//   schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA]
+// })
 export class AdamCheckboxModule { }
-function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/');
-}
+// function HttpLoaderFactory(http: HttpClient) {
+//   return new TranslateHttpLoader(http, './assets/i18n/');
+// }

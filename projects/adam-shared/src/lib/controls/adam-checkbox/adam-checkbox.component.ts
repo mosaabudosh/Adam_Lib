@@ -2,7 +2,6 @@ import { Component, OnInit, Input, forwardRef, ViewEncapsulation, Output, EventE
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
 @Component({
   selector: 'lib-adam-checkbox',
-  standalone: false,
   templateUrl: './adam-checkbox.component.html',
   styleUrl: './adam-checkbox.component.scss',
   encapsulation: ViewEncapsulation.None,
@@ -19,12 +18,14 @@ export class AdamCheckboxComponent implements OnInit, ControlValueAccessor {
   @Input() label: string = "";
   @Input() name: string = "";
   @Input() checked: boolean = false;
-  @Output() change = new EventEmitter();
   @Input() disabled: boolean = false;
   @Input() isReadOnly: boolean = false;
   @Input() color: string = "primary";
+  @Output() change = new EventEmitter();
 
   constructor() { }
+
+  ngOnInit() { }
 
   handelChange(event: any) {
     this.checked = event.checked;
@@ -48,6 +49,5 @@ export class AdamCheckboxComponent implements OnInit, ControlValueAccessor {
 
   setDisabledState?(isDisabled: boolean): void { }
 
-  ngOnInit() { }
 
 }

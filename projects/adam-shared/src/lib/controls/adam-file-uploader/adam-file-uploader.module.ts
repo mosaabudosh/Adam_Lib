@@ -5,16 +5,16 @@ import { TooltipModule } from 'primeng/tooltip';
 import { AdamButtonModule } from '../adam-button/adam-button.module';
 import { FileUploadModule } from 'primeng/fileupload';
 
-@NgModule({
-  declarations: [AdamFileUploaderComponent],
-  imports: [
-    CommonModule,
-    TooltipModule,
-    AdamButtonModule,
-    FileUploadModule,
-  ],
-  exports: [AdamFileUploaderComponent],
-  providers: [],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
-})
+// @NgModule({
+//   declarations: [AdamFileUploaderComponent],
+//   imports: [
+//     CommonModule,
+//     TooltipModule,
+//     AdamButtonModule,
+//     FileUploadModule,
+//   ],
+//   exports: [AdamFileUploaderComponent],
+//   providers: [],
+//   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
+// })
 export class AdamFileUploaderModule { }

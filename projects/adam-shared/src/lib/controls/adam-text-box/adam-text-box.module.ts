@@ -7,25 +7,25 @@ import { FormsModule } from '@angular/forms';
 import { AdamTextBoxComponent } from './adam-text-box.component';
 import { TooltipModule } from 'primeng/tooltip';
 
-@NgModule({
-  declarations: [AdamTextBoxComponent],
-  imports: [
-    CommonModule,
-    TooltipModule,
-    FormsModule,
-    HttpClientModule,
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
-      },
-    }),
-  ],
-  exports: [AdamTextBoxComponent],
-  providers: [TranslateService],
-})
+// @NgModule({
+//   declarations: [AdamTextBoxComponent],
+//   imports: [
+//     CommonModule,
+//     TooltipModule,
+//     FormsModule,
+//     // HttpClientModule,
+//     TranslateModule.forRoot({
+//       loader: {
+//         provide: TranslateLoader,
+//         useFactory: HttpLoaderFactory,
+//         deps: [HttpClient]
+//       },
+//     }),
+//   ],
+//   exports: [AdamTextBoxComponent],
+//   providers: [TranslateService],
+// })
 export class AdamTextBoxModule { }
-function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/');
-}
+// function HttpLoaderFactory(http: HttpClient) {
+//   return new TranslateHttpLoader(http, './assets/i18n/');
+// }

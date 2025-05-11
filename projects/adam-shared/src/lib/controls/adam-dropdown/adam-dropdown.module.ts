@@ -8,26 +8,26 @@ import { AdamDropdownComponent } from './adam-dropdown.component';
 import { DropdownModule } from 'primeng/dropdown';
 
 
-@NgModule({
-  declarations: [AdamDropdownComponent],
-  imports: [
-    CommonModule,
-    DropdownModule,
-    FormsModule,
-    HttpClientModule,
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
-      },
-    }),
-  ],
-  exports: [AdamDropdownComponent],
-  providers: [TranslateService],
-  schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA]
-})
+// @NgModule({
+//   declarations: [AdamDropdownComponent],
+//   imports: [
+//     CommonModule,
+//     DropdownModule,
+//     FormsModule,
+//     // HttpClientModule,
+//     TranslateModule.forRoot({
+//       loader: {
+//         provide: TranslateLoader,
+//         useFactory: HttpLoaderFactory,
+//         deps: [HttpClient]
+//       },
+//     }),
+//   ],
+//   exports: [AdamDropdownComponent],
+//   providers: [TranslateService],
+//   schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA]
+// })
 export class AdamDropdownModule { }
-function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/');
-}
+// function HttpLoaderFactory(http: HttpClient) {
+//   return new TranslateHttpLoader(http, './assets/i18n/');
+// }

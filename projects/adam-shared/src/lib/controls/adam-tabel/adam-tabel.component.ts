@@ -5,7 +5,6 @@ import { DataTypes } from '../../enum/enums';
 
 @Component({
   selector: 'adam-tabel',
-  standalone: false,
   templateUrl: './adam-tabel.component.html',
   styleUrl: './adam-tabel.component.scss',
   encapsulation: ViewEncapsulation.None,
