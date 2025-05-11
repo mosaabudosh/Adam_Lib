@@ -5,7 +5,6 @@ import { AdamMessageService, ComponentFactoryResolverService } from 'adam-shared
 
 @Component({
   selector: 'tabel',
-  standalone: false,
   templateUrl: './tabel.component.html',
   styleUrl: './tabel.component.scss'
 })

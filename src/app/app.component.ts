@@ -3,10 +3,10 @@ import { TranslateService } from '@ngx-translate/core';
 import { HeaderDataModel } from '../../projects/adam-shared/src/lib/model/headerDataModel';
 import { Router } from '@angular/router';
 import { PrimeNGConfig } from 'primeng/api';
+import { Languge } from 'adam-shared/lib/enum/enums';
 
 @Component({
   selector: 'app-root',
-  standalone: false,
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -22,7 +22,8 @@ export class AppComponent {
     private router: Router,
     private primengConfig: PrimeNGConfig
   ) {
-    this.translateservice.use('en');
+    this.translateservice.setDefaultLang(Languge.en);
+    this.translateservice.use(Languge.en);
     this.loadHeaderData();
     this.loadMenuData();
     this.primengConfig.ripple = true;

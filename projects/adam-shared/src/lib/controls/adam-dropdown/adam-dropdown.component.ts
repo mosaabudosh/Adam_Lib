@@ -3,7 +3,6 @@ import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'adam-lib-dropdown',
-  standalone: false,
   templateUrl: './adam-dropdown.component.html',
   styleUrl: './adam-dropdown.component.scss',
   encapsulation: ViewEncapsulation.None,

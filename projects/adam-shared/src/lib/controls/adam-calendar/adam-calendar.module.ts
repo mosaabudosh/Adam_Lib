@@ -8,25 +8,25 @@ import { FormsModule } from '@angular/forms';
 import { AdamCalendarComponent } from './adam-calendar.component';
 
 
-@NgModule({
-  declarations: [AdamCalendarComponent],
-  imports: [
-    CommonModule,
-    CalendarModule,
-    FormsModule,
-    HttpClientModule,
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
-      },
-    }),
-  ],
-  exports: [AdamCalendarComponent],
-  providers: [TranslateService]
-})
+// @NgModule({
+//   declarations: [AdamCalendarComponent],
+//   imports: [
+//     CommonModule,
+//     CalendarModule,
+//     FormsModule,
+//     // HttpClientModule,
+//     TranslateModule.forRoot({
+//       loader: {
+//         provide: TranslateLoader,
+//         useFactory: HttpLoaderFactory,
+//         deps: [HttpClient]
+//       },
+//     }),
+//   ],
+//   exports: [AdamCalendarComponent],
+//   providers: [TranslateService]
+// })
 export class AdamCalendarModule { }
-function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/');
-}
+// function HttpLoaderFactory(http: HttpClient) {
+//   return new TranslateHttpLoader(http, './assets/i18n/');
+// }

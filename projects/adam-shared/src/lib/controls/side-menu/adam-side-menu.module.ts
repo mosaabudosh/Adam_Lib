@@ -8,27 +8,27 @@ import { TooltipModule } from 'primeng/tooltip';
 import { AdamSearchBoxModule } from '../adam-search-box/adam-search-box.module';
 import { FormsModule } from '@angular/forms';
 
-@NgModule({
-  declarations: [SideMenuComponent],
-  imports: [
-    CommonModule,
-    TooltipModule,
-    HttpClientModule,
-    FormsModule,
-    AdamSearchBoxModule,
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
-      },
-    }),
-  ],
-  exports: [SideMenuComponent],
-  providers: [TranslateService],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
-})
+// @NgModule({
+//   declarations: [SideMenuComponent],
+//   imports: [
+//     CommonModule,
+//     TooltipModule,
+//     // HttpClientModule,
+//     FormsModule,
+//     AdamSearchBoxModule,
+//     TranslateModule.forRoot({
+//       loader: {
+//         provide: TranslateLoader,
+//         useFactory: HttpLoaderFactory,
+//         deps: [HttpClient]
+//       },
+//     }),
+//   ],
+//   exports: [SideMenuComponent],
+//   providers: [TranslateService],
+//   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
+// })
 export class AdamSideMenuModule { }
-function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/');
-}
+// function HttpLoaderFactory(http: HttpClient) {
+//   return new TranslateHttpLoader(http, './assets/i18n/');
+// }

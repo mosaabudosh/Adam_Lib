@@ -2,10 +2,10 @@
     <div class="adam-flex-row header-contant-style adam-space-between">
         <div class="adam-flex-column adam-start-start">
             <div class="adam-flex-row">
-                <div *ngIf="_headerDataModel.isViewMenu" class="adam-flex-column header-col-style header-menu-style">
+                <div *ngIf="_headerDataModel?.isViewMenu" class="adam-flex-column header-col-style header-menu-style">
                     <i (click)="menuClicked()" class="pi pi-align-justify "></i>
                 </div>
-                <div *ngIf="_headerDataModel.isViewLogo && _headerDataModel?.logoApp"
+                <div *ngIf="_headerDataModel?.isViewLogo && _headerDataModel?.logoApp"
                     class="adam-flex-column  logo-app-style" (click)="logoClicked()">
                     <img [src]="_headerDataModel.logoApp" />
                 </div>
@@ -27,8 +27,7 @@
                     <p-menu #menu [popup]="true" [model]="_headerDataModel.items"
                         [styleClass]="'header-menu-item-style'"></p-menu>
                     <button id="menu" (click)="menu.toggle($event)" class="btn-menu-style">
-                        {{_headerDataModel && _headerDataModel.userName ? _headerDataModel.userName : 'header.userName'|
-                        translate}}
+                        {{_headerDataModel && _headerDataModel.userName ? _headerDataModel.userName : 'User Name'}}
                         <i class="pi pi-angle-down"></i>
                     </button>
                 </div>

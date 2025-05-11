@@ -7,16 +7,16 @@ import { AdamSearchBoxModule } from '../adam-search-box/adam-search-box.module';
 
 
 
-@NgModule({
-  declarations: [AdamTabelComponent],
-  imports: [
-    CommonModule,
-    TableModule,
-    TooltipModule,
-    AdamSearchBoxModule
-  ],
-  exports: [AdamTabelComponent],
-  providers: [],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
-})
+// @NgModule({
+//   declarations: [AdamTabelComponent],
+//   imports: [
+//     CommonModule,
+//     TableModule,
+//     TooltipModule,
+//     AdamSearchBoxModule
+//   ],
+//   exports: [AdamTabelComponent],
+//   providers: [],
+//   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
+// })
 export class AdamTabelModule { }

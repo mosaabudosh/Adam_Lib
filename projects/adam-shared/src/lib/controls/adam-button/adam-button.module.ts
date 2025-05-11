@@ -7,15 +7,15 @@ import { RippleModule } from 'primeng/ripple';
 
 
 
-@NgModule({
-  declarations: [ButtonComponent],
-  imports: [
-    CommonModule,
-    TooltipModule,
-    ButtonModule,
-    RippleModule
-  ],
-  exports: [ButtonComponent],
-  providers: [],
-})
+// @NgModule({
+//   declarations: [ButtonComponent],
+//   imports: [
+//     CommonModule,
+//     TooltipModule,
+//     ButtonModule,
+//     RippleModule
+//   ],
+//   exports: [ButtonComponent],
+//   providers: [],
+// })
 export class AdamButtonModule { }

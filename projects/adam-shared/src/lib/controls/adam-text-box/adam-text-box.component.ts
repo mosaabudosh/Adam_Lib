@@ -3,7 +3,6 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR, Validator, NG_VALIDATORS, Vali
 
 @Component({
   selector: 'adam-lib-text-box',
-  standalone: false,
   templateUrl: './adam-text-box.component.html',
   styleUrl: './adam-text-box.component.scss',
   encapsulation: ViewEncapsulation.None,

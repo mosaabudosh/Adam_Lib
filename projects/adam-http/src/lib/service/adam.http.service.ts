@@ -91,14 +91,15 @@ export class AdamHTTPService {
         }
     }
 
-    openUrl(url: string, counter?: number): XMLHttpRequest {
+    openUrl(url: string, counter?: number, accessToken?: string, defaultLanguageCode?: string): XMLHttpRequest {
         try {
             var request = new XMLHttpRequest();
             request.open("get", url, true);
             request.setRequestHeader("Content-type", "application/json");
-            request.setRequestHeader("Authorization", "Bearer " + this.storageService.getData(''));
+            request.setRequestHeader("Authorization", `Bearer ${accessToken}`);
             let timezoneOffset: number = new Date().getTimezoneOffset();
             request.setRequestHeader("TimeZone-Offset", timezoneOffset.toString());
+            request.setRequestHeader("Accept-Language", defaultLanguageCode ? defaultLanguageCode : 'en-US');
             request.onload = function () {
                 var jsonResponse = request.response;
                 var url = window.URL.createObjectURL(jsonResponse);
@@ -119,15 +120,16 @@ export class AdamHTTPService {
         }
     }
 
-    openReport(url: string, counter?: number): XMLHttpRequest {
+    openReport(url: string, counter?: number, accessToken?: string, defaultLanguageCode?: string): XMLHttpRequest {
         try {
             var request = new XMLHttpRequest();
             request.open("get", url, true);
             request.setRequestHeader("Content-type", "application/json");
-            request.setRequestHeader("Authorization", "Bearer " + this.storageService.getData(''));
+            request.setRequestHeader("Authorization", `Bearer ${accessToken}`);
             request.setRequestHeader("ResponeType", "report");
             let timezoneOffset: number = new Date().getTimezoneOffset();
             request.setRequestHeader("TimeZone-Offset", timezoneOffset.toString());
+            request.setRequestHeader("Accept-Language", defaultLanguageCode ? defaultLanguageCode : 'en-US');
             request.onload = function () {
                 var jsonResponse = request.response;
                 var url = window.URL.createObjectURL(jsonResponse);
@@ -148,15 +150,16 @@ export class AdamHTTPService {
         }
     }
 
-    openReportWithBody(url: string, body: any, counter?: number): XMLHttpRequest {
+    openReportWithBody(url: string, body: any, counter?: number, accessToken?: string, defaultLanguageCode?: string): XMLHttpRequest {
         try {
             var request = new XMLHttpRequest();
             request.open("post", url, true);
             request.setRequestHeader("Content-type", "application/json");
-            request.setRequestHeader("Authorization", "Bearer " + this.storageService.getData(''));
+            request.setRequestHeader("Authorization", `Bearer ${accessToken}`);
             request.setRequestHeader("ResponeType", "report");
             let timezoneOffset: number = new Date().getTimezoneOffset();
             request.setRequestHeader("TimeZone-Offset", timezoneOffset.toString());
+            request.setRequestHeader("Accept-Language", defaultLanguageCode ? defaultLanguageCode : 'en-US');
             request.onload = function () {
                 var jsonResponse = request.response;
                 var url = window.URL.createObjectURL(jsonResponse);
