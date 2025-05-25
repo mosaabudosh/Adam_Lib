@@ -3,7 +3,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { HeaderDataModel } from '../../projects/adam-shared/src/lib/model/headerDataModel';
 import { Router } from '@angular/router';
 import { PrimeNGConfig } from 'primeng/api';
-import { Languge } from 'adam-shared/lib/enum/enums';
+import { Languge } from '../../projects/adam-shared/src/lib/enum/enums';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +17,8 @@ export class AppComponent {
   isViewMenu: boolean = true;
   isClosedMenu: boolean;
   title: any;
+  currentLanguages: string;
+
   constructor(
     private translateservice: TranslateService,
     private router: Router,
@@ -24,8 +26,8 @@ export class AppComponent {
   ) {
     this.translateservice.setDefaultLang(Languge.en);
     this.translateservice.use(Languge.en);
-    this.loadHeaderData();
-    this.loadMenuData();
+    this.currentLanguages = Languge.en;
+    this.changeLanguage();
     this.primengConfig.ripple = true;
     if (this.isDarkMode) {
       document.body.classList.add('dark-mode');
@@ -86,16 +88,12 @@ export class AppComponent {
           tooltipPosition: 'bottom',
           visible: true,
           command: (event: any) => {
-            let isEn = this.translateservice.getLangs()[0] == "en";
-            console.log(isEn)
-            if (isEn) {
-              this.translateservice.use('ar');
-              document.documentElement.dir = "rtl";
+            if (this.currentLanguages == Languge.en) {
+              this.currentLanguages = Languge.ar;
             } else {
-              this.translateservice.use('en');
-              document.documentElement.dir = "ltr";
-
+              this.currentLanguages = Languge.en;
             }
+            this.changeLanguage();
             console.log('languge')
           }
         },
@@ -133,66 +131,22 @@ export class AppComponent {
     }
   }
 
+  changeLanguage() {
+    if (this.currentLanguages == Languge.ar) {
+      this.translateservice.setDefaultLang(Languge.ar);
+      this.translateservice.use(Languge.ar);
+      document.documentElement.dir = "rtl";
+    } else {
+      this.translateservice.setDefaultLang(Languge.en);
+      this.translateservice.use(Languge.en);
+      document.documentElement.dir = "ltr";
+    }
+    this.loadMenuData();
+    this.loadHeaderData();
+  }
+
   loadMenuData() {
     this.menuItem = [
-      {
-        label: "Menu 1",
-        icon: 'pi pi-home',
-        expanded: false,
-        isActive: false,
-        id: 'Master1',
-        items: [
-          {
-            label: 'Level 2',
-            icon: 'pi pi-home',
-            id: 'Child2',
-            parentId: 'Master1',
-            isActive: false,
-            expanded: false,
-            command: (event: any) => {
-              this.onMenuCommandClick(event);
-            }
-          },
-          {
-            label: 'Level 2',
-            icon: 'pi pi-home',
-            id: 'Child1',
-            parentId: 'Master1',
-            expanded: false,
-            isActive: false,
-            items: [
-              {
-                label: 'Level 3',
-                icon: 'pi pi-home',
-                id: 'Child1',
-                parentId: 'Child1',
-                isActive: false,
-                expanded: false,
-                command: (event: any) => {
-                  this.onMenuCommandClick(event);
-                }
-              },
-              {
-                label: 'Level 3',
-                icon: 'pi pi-home',
-                id: 'Child2',
-                parentId: 'Child1',
-                isActive: false,
-                expanded: false,
-                command: (event: any) => {
-                  this.onMenuCommandClick(event);
-                }
-              },
-            ],
-            command: (event: any) => {
-              this.onMenuCommandClick(event);
-            }
-          }
-        ],
-        command: (event: any) => {
-          this.onMenuCommandClick(event);
-        }
-      },
       {
         label: "Controles",
         icon: 'pi pi-folder',
@@ -283,6 +237,30 @@ export class AppComponent {
             isActive: false,
             expanded: false,
             url: '/file-uploader',
+            command: (event: any) => {
+              this.onMenuCommandClick(event);
+            }
+          },
+          {
+            label: 'Pick List',
+            icon: 'pi pi-bars',
+            id: 'pick-list',
+            parentId: 'Controles',
+            isActive: false,
+            expanded: false,
+            url: '/pick-list',
+            command: (event: any) => {
+              this.onMenuCommandClick(event);
+            }
+          },
+          {
+            label: 'Tabs',
+            icon: 'pi pi-clone',
+            id: 'tabs',
+            parentId: 'Controles',
+            isActive: false,
+            expanded: false,
+            url: '/tabs',
             command: (event: any) => {
               this.onMenuCommandClick(event);
             }

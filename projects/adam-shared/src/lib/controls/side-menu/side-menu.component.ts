@@ -7,7 +7,7 @@ import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angu
   encapsulation: ViewEncapsulation.None,
 })
 export class SideMenuComponent {
-  serachText: any;
+  searchText: any;
   @Input() isEnabelTooltip: boolean = true;
   @Input() isSimpelMenu: boolean = false;
   @Input() emptyMessage: any = "No data available , check server connection";
@@ -19,6 +19,8 @@ export class SideMenuComponent {
     // }
   }
   _items: any[] = [];
+  mainMenu: any[] = [];
+
   @Input() set items(value: any[]) {
     value?.map(p => {
       if (p.isActive || p.items.find((a: any) => a.isActive) || (p.items.find((a: any) => a.items != null && a.items.find((x: any) => x.isActive)))) {
@@ -28,7 +30,7 @@ export class SideMenuComponent {
       }
     })
     this._items = [...value];
-
+    this.mainMenu = this._items;
   }
   @Output() onChangeClosedMenu = new EventEmitter();
 
@@ -42,7 +44,7 @@ export class SideMenuComponent {
   }
 
   onSearchChange(event: any) {
-    console.log(event)
+    this.searchText = event.target.value;
   }
 
 }

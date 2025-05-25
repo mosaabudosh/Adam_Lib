@@ -1,6 +1,5 @@
-<div [ngClass]="isDarkMode ? 'dark-mode' : 'normal-mode'">
-
-  <body dir="{{ 'dir' | translate }}">
+<div [ngClass]="isDarkMode ? 'dark-mode' : 'normal-mode'" dir="{{ 'dir' | translate }}">
+  <body>
 
     <adam-lib-header [headerDataModel]="headerDataModel" (onMenuClicked)="onMenuClick()"></adam-lib-header>
 

@@ -19,6 +19,8 @@ export * from './lib/controls/adam-sheard-popup/adam-sheard-popup.component';
 export * from './lib/controls/adam-file-uploader/adam-file-uploader.component';
 export * from './lib/controls/confirmation-popup/confirmation-popup.component';
 export * from './lib/controls/adam-textarea/adam-textarea.component';
+export * from './lib/controls/adam-pick-list/adam-pick-list.component';
+export * from './lib/controls/adam-tabs/adam-tabs.component';
 
 
 export * from './lib/services/adam.message.service';
@@ -29,6 +31,7 @@ export * from './lib/services/component-factory-resolver.service';
 export * from './lib/pipe/arabic-number.pipe';
 export * from './lib/pipe/numbers.pipe';
 export * from './lib/pipe/math.pipe';
+export * from './lib/pipe/side-menu-filter.pipe';
 
 export * from './lib/directive/int-input.directive'
 export * from './lib/directive/decimal-input.directive'

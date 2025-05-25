@@ -1,0 +1,7 @@
+<p-tabView [(activeIndex)]="_activeIndex" (onChange)="onTabChanged($event)" [scrollable]="scrollable">
+    @for(tab of _tabs; track tab.value){
+    <p-tabPanel [header]="tab.title">
+
+    </p-tabPanel>
+    }
+</p-tabView>

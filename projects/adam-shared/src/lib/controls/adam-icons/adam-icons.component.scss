@@ -1,15 +1,5 @@
 @import './../../../assets/styles/styles.scss';
 
-.span-icon-style {
-    color: var(--btn-positive) !important;
-    cursor: pointer !important;
-    font-size: var(--med-font-size) !important;
-    width: 30px !important;
-    height: 30px !important;
-    margin-bottom: 8px !important;
-    padding-left: 6px !important;
-}
-
 .span-multi-icon-style {
     color: var(--btn-positive) !important;
     cursor: pointer !important;
@@ -20,11 +10,6 @@
     border-radius: var(--border-radius) !important;
     margin: 3px !important;
     padding: 3px !important;
-}
-
-.span-icon-style:hover {
-    border-radius: var(--border-radius) !important;
-    background: var(--main-background) !important;
 }
 
 .span-multi-icon-style:hover {
