@@ -1,5 +1,5 @@
 <div dir="{{ 'dir' | translate }}" class="adam-flex-row adam-search-box" [ngStyle]="getStyles()">
     <input type="text" [maxlength]="maxlength" tabindex="-1" placeholder="{{placeholder}}"
-        (change)="onTextChange($event)" ngModel value="{{ textValue }}" />
+        (input)="onTextChange($event)" ngModel value="{{ textValue }}" />
     <span *ngIf="icon" [class]="icon"></span>
 </div>

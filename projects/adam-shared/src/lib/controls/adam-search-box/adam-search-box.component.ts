@@ -56,7 +56,7 @@ export class AdamSearchBoxComponent implements OnInit {
   setDisabledState?(isDisabled: boolean): void { }
 
   onTextChange(event: any) {
-    this.textValue = event;
+    this.textValue = event.target.value;
     this.onChange.emit(event);
     this.propagateChange(this.textValue);
   }

@@ -5,26 +5,45 @@
     color: var(--main-text-color) !important;
 }
 
-.checkbox {
+@mixin checkbox-color {
     &.primary {
-        .p-checkbox .p-checkbox-box.p-highlight {
-            border-color: #3B82F6 !important;
-            background: #3B82F6 !important;
-        }
+        @include adam-checkbox-style(var(--btn-primary), var(--btn-primary));
     }
 
     &.dangerous {
-        .p-checkbox .p-checkbox-box.p-highlight {
-            border-color: red !important;
-            background: red !important;
-        }
+        @include adam-checkbox-style(var(--btn-dangerous), var(--btn-dangerous));
+    }
+
+    &.positive {
+        @include adam-checkbox-style(var(--btn-positive), var(--btn-positive));
+    }
+
+    &.blue {
+        @include adam-checkbox-style(var(--btn-blue), var(--btn-blue));
     }
 
     &.waring {
-        .p-checkbox .p-checkbox-box.p-highlight {
-            border-color: orange !important;
-            background: orange !important;
-        }
+        @include adam-checkbox-style(var(--btn-warning), var(--btn-warning));
     }
 
+    &.info {
+        @include adam-checkbox-style(var(--btn-info), var(--btn-info));
+    }
+
+    &.dark {
+        @include adam-checkbox-style(var(--btn-dark), var(--white));
+    }
+}
+
+@mixin adam-checkbox-style($background, $border) {
+    border-color: $border !important;
+    background-color: $background !important;
+}
+
+.checkbox {
+    .p-checkbox .p-checkbox-box.p-highlight {
+        @include checkbox-color;
+    }
+
+    cursor: pointer !important;
 }

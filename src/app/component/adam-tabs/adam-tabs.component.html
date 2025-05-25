@@ -1,0 +1,16 @@
+<div class="main-screen">
+    <adam-lib-label class="screen-title" [text]="'Tabs'"></adam-lib-label>
+
+    <lib-adam-tabs [tabs]="tabs" [activeIndex]="activeIndex"
+        (onSelectionChanged)="onSelectionChanged($event)"></lib-adam-tabs>
+
+    <div class="active-index-style" *ngIf="activeIndex == 0">
+        Tab 1 Content
+    </div>
+    <div class="active-index-style" *ngIf="activeIndex == 1">
+        Tab 2 Content
+    </div>
+    <div class="active-index-style" *ngIf="activeIndex == 2">
+        Tab 3 Content
+    </div>
+</div>

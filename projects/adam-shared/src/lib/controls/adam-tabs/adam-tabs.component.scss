@@ -1,0 +1,49 @@
+@import "./../../../assets/styles/styles.scss";
+
+
+.p-tabview-nav {
+    background: transparent !important;
+
+    a {
+        background: transparent !important;
+        color: transparent !important;
+
+        .p-tabview-title {
+            color: var(--main-text-color) !important;
+        }
+    }
+}
+
+.p-tabview .p-tabview-panels {
+    background: transparent !important;
+    padding: 0 !important;
+}
+
+.p-tabview .p-tabview-nav {
+    border: none !important;
+}
+
+.p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+    border-color: var(--main-text-color) !important;
+}
+
+.p-tabview .p-tabview-nav li .p-tabview-nav-link {
+    border-color: transparent transparent transparent transparent !important;
+    border-width: 0px 0 5px 0 !important;
+    border-radius: var(--border-radius) !important;
+    height: 40px !important;
+}
+
+// .p-tabview .p-tabview-nav li .p-tabview-nav-link {
+//     // border: solid red !important;
+//     // border-width: 0 0 2px 0 !important;
+//     border-color: transparent transparent transparent transparent !important;
+//     // background: red !important;
+//     // color: red !important;
+//     padding: 1.25rem !important;
+//     font-weight: 700 !important;
+//     border-top-right-radius: 6px !important;
+//     border-top-left-radius: 6px !important;
+//     transition: box-shadow 0.2s !important;
+//     margin: 0 0 -2px 0 !important;
+// }

@@ -1,6 +1,6 @@
 <div class="main-screen">
 
-    <adam-lib-label class="screen-title" [text]="'app-tabel'"></adam-lib-label>
+    <adam-lib-label class="screen-title" [text]="'Tabel'"></adam-lib-label>
 
     <div>
         <adam-tabel [columns]="columns" [products]="items" [sort]="false" [enableCheckbox]="false"
@@ -24,7 +24,7 @@
 
     <div>
         <adam-tabel [columns]="columns2" [products]="items3" [sort]="false" [enableCheckbox]="false"
-            (onClickAdd)='addUser()' [rowsNumber]="10" [isShowSearch]="true" [commands]="[
+            [isShowaddNew]='false' [rowsNumber]="10" [isShowSearch]="true" [commands]="[
               {columnHeader:'Action', elementRef:action}]" [searchWidth]="'400px'"></adam-tabel>
 
         <ng-template #action let-dataItem="dataItem">

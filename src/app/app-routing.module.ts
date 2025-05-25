@@ -1,18 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AdamToastComponent } from './component/adam-toast/adam-toast.component';
-import { AdamFormComponent } from './component/adam-form/adam-form.component';
-import { TabelComponent } from './component/adam-tabel/tabel.component';
-import { AdamCalendarComponent } from './component/adam-calendar/adam-calendar.component';
-import { AdamCheckboxComponent } from './component/adam-checkbox/adam-checkbox.component';
-import { FileUploadComponent } from './component/file-upload/file-upload.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/button', pathMatch: 'full' },
-  {
-    path: "toast",
-    component: AdamToastComponent,
-  },
+  { path: '', redirectTo: '/form', pathMatch: 'full' },
   {
     path: "button",
     loadChildren: () =>
@@ -21,24 +11,60 @@ const routes: Routes = [
       ).then((m) => m.AdamButtonModule),
   },
   {
+    path: "toast",
+    loadChildren: () =>
+      import(
+        "./component/adam-toast/adam-toast.module"
+      ).then((m) => m.AdamToastModule),
+  },
+  {
     path: "form",
-    component: AdamFormComponent,
+    loadChildren: () =>
+      import(
+        "./component/adam-form/adam-form.module"
+      ).then((m) => m.AdamFormModule),
   },
   {
     path: "tabel",
-    component: TabelComponent,
+    loadChildren: () =>
+      import(
+        "./component/adam-tabel/tabel.module"
+      ).then((m) => m.TabelModule),
   },
   {
     path: "calendar",
-    component: AdamCalendarComponent,
+    loadChildren: () =>
+      import(
+        "./component/adam-calendar/adam-calendar.module"
+      ).then((m) => m.AdamCalendarModule),
   },
   {
     path: "checkbox",
-    component: AdamCheckboxComponent,
+    loadChildren: () =>
+      import(
+        "./component/adam-checkbox/adam-checkbox.module"
+      ).then((m) => m.AdamCheckboxModule),
   },
   {
     path: "file-uploader",
-    component: FileUploadComponent,
+    loadChildren: () =>
+      import(
+        "./component/file-upload/file-upload.module"
+      ).then((m) => m.FileUploadModule),
+  },
+  {
+    path: "pick-list",
+    loadChildren: () =>
+      import(
+        "./component/adam-pick-list/adam-pick-list.module"
+      ).then((m) => m.AdamPickListModule),
+  },
+  {
+    path: "tabs",
+    loadChildren: () =>
+      import(
+        "./component/adam-tabs/adam-tabs.module"
+      ).then((m) => m.AdamTabsModule),
   },
 ];
 

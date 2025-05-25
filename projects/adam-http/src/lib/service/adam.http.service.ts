@@ -1,6 +1,6 @@
 import { AppConfig } from "../models/app.config";
 import { Parameter } from "../models/adam-query-option";
-import { Observable } from "rxjs";
+import { Observable, of } from "rxjs";
 import { Injectable } from "@angular/core";
 import { HTTPHandlerManagement } from "./HTTPHandlerManagement";
 import { StorageService } from "./storage.service";
@@ -39,7 +39,7 @@ export class AdamHTTPService {
         }
         catch (ex) {
             console.error('get => ', ex);
-            return new Observable;
+            return of();
         }
     }
 
@@ -49,7 +49,7 @@ export class AdamHTTPService {
         }
         catch (ex) {
             console.error('create => ', ex);
-            return new Observable;
+            return of();
         }
     }
 
@@ -59,7 +59,7 @@ export class AdamHTTPService {
         }
         catch (ex) {
             console.error('update => ', ex);
-            return new Observable;
+            return of();
         }
     }
 
@@ -69,7 +69,7 @@ export class AdamHTTPService {
         }
         catch (ex) {
             console.error('getById => ', ex);
-            return new Observable;
+            return of();
         }
     }
 
@@ -78,7 +78,8 @@ export class AdamHTTPService {
             return this._httpHandlerManagement.delete(id, parameters);
         }
         catch (ex) {
-            console.error('delete => ', ex)
+            console.error('delete => ', ex);
+            return of();
         }
     }
 
@@ -87,7 +88,8 @@ export class AdamHTTPService {
             return this._httpHandlerManagement.post(postBody, parameters);
         }
         catch (ex) {
-            console.error('post => ', ex)
+            console.error('post => ', ex);
+            return of();
         }
     }
 
@@ -108,7 +110,6 @@ export class AdamHTTPService {
                 let settings = counter ? ('height=' + 750 + ',width=' + 850 + ',top=' + topPosition + ',left=' + (leftPosition - (counter * 50)) + ',scrollbars=' + scroll + ',resizable') : ('height=' + 750 + ',width=' + 850 + ',top=' + topPosition + ',left=' + leftPosition + ',scrollbars=' + scroll + ',resizable')
                 let popUpWindow = counter ? ('popUpWindow' + counter) : 'popUpWindow';
                 window.open(url, popUpWindow, settings);
-
             };
             request.send(null);
             request.responseType = 'blob';
@@ -138,7 +139,6 @@ export class AdamHTTPService {
                 let settings = counter ? ('height=' + 750 + ',width=' + 850 + ',top=' + topPosition + ',left=' + (leftPosition - (counter * 50)) + ',scrollbars=' + scroll + ',resizable') : ('height=' + 750 + ',width=' + 850 + ',top=' + topPosition + ',left=' + leftPosition + ',scrollbars=' + scroll + ',resizable')
                 let popUpWindow = counter ? ('popUpWindow' + counter) : 'popUpWindow';
                 window.open(url, popUpWindow, settings);
-
             };
             request.send(null);
             request.responseType = 'blob';

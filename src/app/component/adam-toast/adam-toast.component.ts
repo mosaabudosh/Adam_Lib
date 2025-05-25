@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { AdamMessageService } from '../../../../projects/adam-shared/src/public-api';
 
 @Component({
   selector: 'app-adam-toast',
   templateUrl: './adam-toast.component.html',
-  styleUrl: './adam-toast.component.scss'
+  styleUrl: './adam-toast.component.scss',
+  encapsulation: ViewEncapsulation.None
 })
 export class AdamToastComponent {
 

@@ -43,6 +43,11 @@ import { CheckboxModule } from 'primeng/checkbox';
 import { DropdownModule } from 'primeng/dropdown';
 import { TableModule } from 'primeng/table';
 import { ToastModule } from 'primeng/toast';
+import { SideMenuFilterPipe } from './pipe/side-menu-filter.pipe';
+import { AdamPickListComponent } from './controls/adam-pick-list/adam-pick-list.component';
+import { TabViewModule } from 'primeng/tabview';
+import { PickListModule } from 'primeng/picklist';
+import { AdamTabsComponent } from './controls/adam-tabs/adam-tabs.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +61,7 @@ import { ToastModule } from 'primeng/toast';
     ArabicNumberPipe,
     NumberPipe,
     MathPipe,
+    SideMenuFilterPipe,
     AdamSheardPopupComponent,
     ConfirmationPopupComponent,
     AdamTextareaComponent,
@@ -72,7 +78,8 @@ import { ToastModule } from 'primeng/toast';
     SideMenuComponent,
     AdamSearchBoxComponent,
     AdamFileUploaderComponent,
-
+    AdamPickListComponent,
+    AdamTabsComponent
   ],
   imports: [
     CommonModule,
@@ -87,6 +94,8 @@ import { ToastModule } from 'primeng/toast';
     DropdownModule,
     TableModule,
     ToastModule,
+    PickListModule,
+    TabViewModule,
     TranslateModule
   ],
   exports: [
@@ -115,12 +124,16 @@ import { ToastModule } from 'primeng/toast';
     AdamSheardPopupComponent,
     AdamFileUploaderComponent,
     ConfirmationPopupComponent,
-    AdamTextareaComponent
+    AdamTextareaComponent,
+    AdamPickListComponent,
+    AdamTabsComponent
   ],
   providers: [MessageService, AdamMessageService, ComponentFactoryResolverService],
   schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA]
 })
-export class AdamSharedModule { }
+export class AdamSharedModule {
+
+}
 function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/');
 }

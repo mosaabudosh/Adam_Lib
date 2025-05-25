@@ -1,34 +1,23 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { AdamToastComponent } from './component/adam-toast/adam-toast.component';
 // import { AdamSharedModule } from '../../projects/adam-shared/src/lib/adam-shared.module';
-import { AdamFormComponent } from './component/adam-form/adam-form.component';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { TabelComponent } from './component/adam-tabel/tabel.component';
+import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 
 import { AdamSharedModule } from 'adam-shared';
 import { FormsModule } from '@angular/forms';
-import { AdamCheckboxComponent } from './component/adam-checkbox/adam-checkbox.component';
-import { AdamCalendarComponent } from './component/adam-calendar/adam-calendar.component';
 import { AdamHTTPService } from 'adam-http';
 import { AdamPopupComponent } from './component/adam-popup/adam-popup.component';
-import { FileUploadComponent } from './component/file-upload/file-upload.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { Languge } from '../../projects/adam-shared/src/lib/enum/enums';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AdamToastComponent,
-    AdamFormComponent,
-    TabelComponent,
-    AdamCheckboxComponent,
-    AdamCalendarComponent,
     AdamPopupComponent,
-    FileUploadComponent
   ],
   imports: [
     BrowserModule,
@@ -36,12 +25,29 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     AdamSharedModule,
     AppRoutingModule,
-    TranslateModule
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      },
+    }),
   ],
   providers: [
     AdamHTTPService,
+    TranslateService
   ],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(translate: TranslateService) {
+    translate.addLangs([Languge.en, Languge.ar]);
+    translate.setDefaultLang(Languge.en);
+    translate.use(Languge.en);
+  }
+}
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}

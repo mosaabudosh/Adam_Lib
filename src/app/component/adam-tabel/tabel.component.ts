@@ -1,4 +1,4 @@
-import { Component, ViewContainerRef } from '@angular/core';
+import { Component, ViewContainerRef, ViewEncapsulation } from '@angular/core';
 import { AdamLibTestService } from '../../service/adam-lib-test.service';
 import { AdamPopupComponent } from '../adam-popup/adam-popup.component';
 import { AdamMessageService, ComponentFactoryResolverService } from 'adam-shared';
@@ -6,7 +6,8 @@ import { AdamMessageService, ComponentFactoryResolverService } from 'adam-shared
 @Component({
   selector: 'tabel',
   templateUrl: './tabel.component.html',
-  styleUrl: './tabel.component.scss'
+  styleUrl: './tabel.component.scss',
+  encapsulation: ViewEncapsulation.None
 })
 export class TabelComponent {
   columns: any[] = [];
@@ -37,7 +38,7 @@ export class TabelComponent {
         'Col3': "Col11",
         'Col4': "Col11",
         'Col5': "Col11",
-        "icons": this.generateIcons()
+        "icons": this.generateIcons(true)
       },
       {
         'Col1': "Col11",
@@ -45,7 +46,7 @@ export class TabelComponent {
         'Col3': "Col11",
         'Col4': "Col11",
         'Col5': "Col11",
-        "icons": this.generateIcons()
+        "icons": this.generateIcons(false)
       }
     ];
 
@@ -89,7 +90,7 @@ export class TabelComponent {
         icon: 'pi pi-user-edit',
         tooltip: "Edit",
         color: 'white',
-        visible: true,
+        visible: info,
         // command: (event: any) => {
         //   this.editUser(info.userId)
         // }
@@ -98,7 +99,7 @@ export class TabelComponent {
         icon: 'pi pi-lock',
         tooltip: "Lock",
         color: 'white',
-        visible: true,
+        visible: info,
         // command: (event: any) => {
         //   this.lockUnLockUser(info.userId)
         // }
@@ -107,7 +108,7 @@ export class TabelComponent {
         icon: 'pi pi-unlock',
         tooltip: "Unlock",
         color: 'white',
-        visible: true,
+        visible: info,
         // command: (event: any) => {
         //   this.lockUnLockUser(info.userId)
         // }
@@ -116,7 +117,7 @@ export class TabelComponent {
         icon: 'pi pi-trash',
         tooltip: "Delete",
         color: 'dangerous',
-        visible: true,
+        visible: info,
         // command: (event: any) => {
         //   this.deleteUser(info.userId)
         // }

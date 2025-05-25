@@ -133,6 +133,8 @@
   width: 100% !important;
   height: 40px !important;
   @include margin-start(5px);
+  background-color: #fff !important;
+  border-radius: var(--border-radius) !important;
 
   img {
     width: 100% !important;

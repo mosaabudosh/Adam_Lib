@@ -1,6 +1,6 @@
-import { HttpClient, HttpParams } from "@angular/common/http";
+import { HttpClient, HttpErrorResponse, HttpParams } from "@angular/common/http";
 import { Observable, of } from "rxjs";
-import { catchError, map } from "rxjs/operators";
+import { catchError, switchMap } from "rxjs/operators";
 import { Injectable } from "@angular/core";
 import { Parameter } from "../models/adam-query-option";
 import { AppConfig } from "../models/app.config";
@@ -21,11 +21,18 @@ export class HTTPHandlerManagement {
     if (parameters) {
       this.setParameters(parameters);
     }
-    return this.http.get<T[]>(`${this.apiUrl}/${this.endpoint}`, { params: this.options, withCredentials: true });
-    // .pipe(
-    //   map(data => data),
-    //   catchError(error => error)
-    // );
+    return this.http.get<T[]>(`${this.apiUrl}/${this.endpoint}`, { params: this.options, withCredentials: true })
+      .pipe(
+        // map(data => data as T),
+        switchMap(() => {
+          return of((data: any) => data as T); // ✅ returns an Observable
+        }),
+        catchError(error => {
+          console.error("Error in HTTPHandlerManagement in ( get ) \n  => ", error);
+          // this.handleError(error, 'get');
+          return of();
+        })
+      );
   }
 
   create<T>(item: T, parameters?: Parameter): Observable<any> {
@@ -37,10 +44,14 @@ export class HTTPHandlerManagement {
       {
         params: this.options
       }).pipe(
-        map(data => data),
+        // map(data => data as T),
+        switchMap(() => {
+          return of((data: any) => data as T); // ✅ returns an Observable
+        }),
         catchError(error => {
-          console.error("logout => ", error)
-          return of(false);
+          console.error("Error in HTTPHandlerManagement in ( create ) \n  => ", error);
+          // this.handleError(error, 'create');
+          return of();
         })
       );
   }
@@ -58,10 +69,14 @@ export class HTTPHandlerManagement {
       {
         params: this.options
       }).pipe(
-        map(data => data),
+        // map(data => data as T),
+        switchMap(() => {
+          return of((data: any) => data as T); // ✅ returns an Observable
+        }),
         catchError(error => {
-          console.error("logout => ", error)
-          return of(false);
+          console.error("Error in HTTPHandlerManagement in ( update ) \n  => ", error)
+          // this.handleError(error, 'update');
+          return of();
         })
       );
   }
@@ -75,10 +90,14 @@ export class HTTPHandlerManagement {
       {
         params: this.options
       }).pipe(
-        map(data => data),
+        // map(data => data as T),
+        switchMap(() => {
+          return of((data: any) => data as T); // ✅ returns an Observable
+        }),
         catchError(error => {
-          console.error("logout => ", error)
-          return of(false);
+          console.error("Error in HTTPHandlerManagement in ( getById ) \n  => ", error)
+          // this.handleError(error, 'getById');
+          return of();
         })
       );
   }
@@ -92,10 +111,14 @@ export class HTTPHandlerManagement {
       {
         params: this.options
       }).pipe(
-        map(data => data),
+        // map(data => data as T),
+        switchMap(() => {
+          return of((data: any) => data as T); // ✅ returns an Observable
+        }),
         catchError(error => {
-          console.error("logout => ", error)
-          return of(false);
+          console.error("Error in HTTPHandlerManagement in ( delete ) \n  => ", error)
+          // this.handleError(error, 'delete');
+          return of();
         })
       );
   }
@@ -109,10 +132,14 @@ export class HTTPHandlerManagement {
       {
         params: this.options
       }).pipe(
-        map(data => data),
+        // map(data => data as T),
+        switchMap(() => {
+          return of((data: any) => data); // ✅ returns an Observable
+        }),
         catchError(error => {
-          console.error("logout => ", error)
-          return of(false);
+          console.error("Error in HTTPHandlerManagement in ( post ) \n  => ", error);
+          // this.handleError(error, 'post');
+          return of();
         })
       );
   }
@@ -133,10 +160,6 @@ export class HTTPHandlerManagement {
       if (obj.hasOwnProperty(key)) {
         for (const subKey in obj[key]) {
           if (obj[key].hasOwnProperty(subKey)) {
-            // if (obj[key][subKey] instanceof Array) {
-            //   //this.options = this.options.append(subKey, obj[key][subKey]); // not recommended ask mohammad?
-            //   //this.options = this.options.set(subKey, JSON.stringify(obj[key][subKey]));
-            // }
             if (!(obj[key][subKey] instanceof Object)) {
               this.options = this.options.set(subKey, obj[key][subKey]);
             }
@@ -159,5 +182,14 @@ export class HTTPHandlerManagement {
 
   clearOptions() {
     this.options = new HttpParams();
+  }
+
+  handleError<T>(error: any, metthod: string) {
+    return (error: HttpErrorResponse): Observable<T> => {
+      const message = (error.error instanceof ErrorEvent) ? `Error : ${error.error.message} in ${metthod}` : `server returned code ${error?.status} with body "${error?.error}" in ${metthod}`;
+      console.error(`handleError => ${error} \n message => ${message}`);
+      return of();
+    };
+
   }
 }

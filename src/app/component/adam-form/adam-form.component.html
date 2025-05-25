@@ -1,39 +1,8 @@
 <div class="main-screen">
 
-    <adam-lib-label class="screen-title" [text]="'app-adam-form'"></adam-lib-label>
+    <adam-lib-label class="screen-title" [text]="'Form Controle'"></adam-lib-label>
 
     <form #form="ngForm" novalidate (ngSubmit)="form.valid ">
-
-        <div class="adam-flex-row adam-row-gap">
-            <div class="adam-flex-column">
-                <adam-lib-label [text]="'Required From Date'"></adam-lib-label>
-                <lib-adam-calendar [id]="'selectedFromDate'" name="selectedFromDate" [(ngModel)]="fromDate"
-                    ngDefaultControl #selectedFromDate="ngModel" [showIcon]="true"
-                    [icon]="'pi pi-calendar text-muted bg-white'" [showTime]="false" [required]="true"
-                    [submitted]="form.submitted" [width]="'250px'" [height]="'35px'">
-                </lib-adam-calendar>
-
-                <adam-lib-label *ngIf="form.submitted && selectedFromDate?.errors?.required" class="not-valid"
-                    [text]="'Required From Date is required'"></adam-lib-label>
-            </div>
-
-            <div class="adam-flex-column">
-                <adam-lib-label [text]="'From Date'"></adam-lib-label>
-                <lib-adam-calendar [id]="'selectedFromDate'" name="selectedFromDate" [(ngModel)]="fromDate"
-                    ngDefaultControl [showIcon]="true" [icon]="'pi pi-calendar text-muted bg-white'" [showTime]="false"
-                    [width]="'250px'" [height]="'35px'">
-                </lib-adam-calendar>
-            </div>
-
-            <div class="adam-flex-column" style="width: 500px">
-                <adam-lib-label [text]="'From Date'"></adam-lib-label>
-                <lib-adam-calendar [id]="'selectedFromDate'" name="selectedFromDate" [(ngModel)]="fromDate"
-                    ngDefaultControl [showIcon]="true" [icon]="'pi pi-calendar text-muted bg-white'" [showTime]="false"
-                    [width]="'100%'" [height]="'35px'">
-                </lib-adam-calendar>
-            </div>
-
-        </div>
 
         <div class="adam-flex-row adam-row-gap">
             <div class="adam-flex-column">

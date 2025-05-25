@@ -1,11 +1,12 @@
-import { Component, ViewContainerRef } from '@angular/core';
+import { Component, ViewContainerRef, ViewEncapsulation } from '@angular/core';
 import { AdamMessageService, ComponentFactoryResolverService, ConfirmationPopupComponent } from 'adam-shared';
 import { AdamPopupComponent } from '../adam-popup/adam-popup.component';
 
 @Component({
   selector: 'app-adam-form',
   templateUrl: './adam-form.component.html',
-  styleUrl: './adam-form.component.scss'
+  styleUrl: './adam-form.component.scss',
+  encapsulation: ViewEncapsulation.None
 })
 export class AdamFormComponent {
   citiyId: number | null = null;

@@ -1,0 +1,31 @@
+<div class="main-screen">
+    <adam-lib-label class="screen-title" [text]="'Pick List'"></adam-lib-label>
+
+    <div class="adam-flex-row adam-row-gap" style="max-width: 80% !important;">
+        <div class="adam-flex-column-6">
+
+            <form #form="ngForm" (ngSubmit)="form.valid && onClicked(pickList)">
+
+                <lib-adam-pick-list #pickList [sourceHeader]="'Source'" [targetHeader]="'Target'" [source]="sources"
+                    [target]="targets" [dragdrop]="true" (moveToTarget)="onMoveToTarget($event)"
+                    (moveToSource)="onMoveToSource($event)" (moveAllToTarget)="onAllMoveToTarget($event)"
+                    (moveAllToSource)="onAllMoveToSource($event)" [pickListItem]="pickListItem"
+                    [sourceFilterPlaceholder]="'Search'" [targetFilterPlaceholder]="'Search'"
+                    (onTargetSelect)="targetSelectedChanged($event)">
+                </lib-adam-pick-list>
+
+                <ng-template #pickListItem let-dataItem="dataItem">
+                    <div fxLayout="row" fxLayoutAlign="space-between center">
+                        <div class="text-align-left label-field">{{dataItem.name}} </div>
+                    </div>
+                </ng-template>
+
+            </form>
+        </div>
+        <div class="adam-flex-column-4 obj" *ngIf="selectedObj">
+            <p>Id : {{selectedObj.id}} , Name : {{selectedObj.name}}</p>
+        </div>
+
+    </div>
+
+</div>
