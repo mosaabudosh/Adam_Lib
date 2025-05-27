@@ -43,4 +43,5 @@ export * from './lib/directive/validators/urlValidatorDirective';
 export * from './lib/directive/validators/phoneNumberValidatorDirective';
 export * from './lib/directive/validators/must-match.validator';
 
+export * from './lib/enum/enums';
 // export * from './assets/styles/_variables.scss';

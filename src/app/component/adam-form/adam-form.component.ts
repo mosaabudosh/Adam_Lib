@@ -1,5 +1,5 @@
 import { Component, ViewContainerRef, ViewEncapsulation } from '@angular/core';
-import { AdamMessageService, ComponentFactoryResolverService, ConfirmationPopupComponent } from 'adam-shared';
+import { AdamMessageService, AdamMessageType, ComponentFactoryResolverService, ConfirmationPopupComponent } from 'adam-shared';
 import { AdamPopupComponent } from '../adam-popup/adam-popup.component';
 
 @Component({
@@ -66,10 +66,7 @@ export class AdamFormComponent {
     let adamPopupComponent = <AdamPopupComponent>this.componentFactoryResolverService.createPopup(AdamPopupComponent, this.viewContainerRef);
     adamPopupComponent.open();
     let adamPopupComponentSubscription = adamPopupComponent.onSubmitted.subscribe(response => {
-      this._adamMessageService.showSuccess();
-      this._adamMessageService.showError();
-      this._adamMessageService.showWarn();
-      this._adamMessageService.showInfo();
+      this._adamMessageService.showTost(AdamMessageType.Success, 'Success', 'Success Message Content');
       adamPopupComponentSubscription.unsubscribe();
     });
   }

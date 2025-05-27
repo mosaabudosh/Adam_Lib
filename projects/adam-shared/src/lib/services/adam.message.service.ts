@@ -8,19 +8,13 @@ export class AdamMessageService {
 
     constructor(private messageService: MessageService) { }
 
-    showSuccess(severity: string = 'success', summary: string = 'Success', detail: string = 'Message Content') {
-        this.messageService.add({ severity: severity, summary: summary, detail: detail });
-    }
+    showTost(type: string, title: string, message: string, duration: number = 1000) {
+        this.messageService.add({
+            severity: type,
+            summary: title,
+            detail: message,
+            life: duration
+        });
 
-    showInfo(severity: string = 'info', summary: string = 'Info', detail: string = 'Message Content') {
-        this.messageService.add({ severity: severity, summary: summary, detail: detail });
-    }
-
-    showWarn(severity: string = 'warn', summary: string = 'Warning', detail: string = 'Message Content') {
-        this.messageService.add({ severity: severity, summary: summary, detail: detail });
-    }
-
-    showError(severity: string = 'error', summary: string = 'error', detail: string = 'Message Content') {
-        this.messageService.add({ severity: severity, summary: summary, detail: detail });
     }
 }

@@ -126,7 +126,8 @@ import { AdamTabsComponent } from './controls/adam-tabs/adam-tabs.component';
     ConfirmationPopupComponent,
     AdamTextareaComponent,
     AdamPickListComponent,
-    AdamTabsComponent
+    AdamTabsComponent,
+    TooltipModule
   ],
   providers: [MessageService, AdamMessageService, ComponentFactoryResolverService],
   schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA]
