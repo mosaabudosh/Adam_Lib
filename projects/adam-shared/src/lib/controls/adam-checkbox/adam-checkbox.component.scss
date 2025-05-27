@@ -31,19 +31,24 @@
     }
 
     &.dark {
-        @include adam-checkbox-style(var(--btn-dark), var(--white));
+        @include adam-checkbox-style(var(--main-background), var(--main-text-color));
     }
 }
 
 @mixin adam-checkbox-style($background, $border) {
-    border-color: $border !important;
-    background-color: $background !important;
-}
-
-.checkbox {
     .p-checkbox .p-checkbox-box.p-highlight {
-        @include checkbox-color;
+        border: 1px solid $border !important;
+        background-color: $background !important;
+
+        .p-checkbox-icon {
+            color: var(--main-text-color) !important;
+        }
     }
 
+}
+
+
+.checkbox {
+    @include checkbox-color;
     cursor: pointer !important;
 }

@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse, HttpParams } from "@angular/common/http";
 import { Observable, of } from "rxjs";
-import { catchError, switchMap } from "rxjs/operators";
+import { catchError, map } from "rxjs/operators";
 import { Injectable } from "@angular/core";
 import { Parameter } from "../models/adam-query-option";
 import { AppConfig } from "../models/app.config";
@@ -23,10 +23,10 @@ export class HTTPHandlerManagement {
     }
     return this.http.get<T[]>(`${this.apiUrl}/${this.endpoint}`, { params: this.options, withCredentials: true })
       .pipe(
-        // map(data => data as T),
-        switchMap(() => {
-          return of((data: any) => data as T); // ✅ returns an Observable
-        }),
+        map(data => data as T),
+        // switchMap(() => {
+        //   return of((data: any) => data as T); // ✅ returns an Observable
+        // }),
         catchError(error => {
           console.error("Error in HTTPHandlerManagement in ( get ) \n  => ", error);
           // this.handleError(error, 'get');
@@ -44,10 +44,10 @@ export class HTTPHandlerManagement {
       {
         params: this.options
       }).pipe(
-        // map(data => data as T),
-        switchMap(() => {
-          return of((data: any) => data as T); // ✅ returns an Observable
-        }),
+        map(data => data as T),
+        // switchMap(() => {
+        //   return of((data: any) => data as T); // ✅ returns an Observable
+        // }),
         catchError(error => {
           console.error("Error in HTTPHandlerManagement in ( create ) \n  => ", error);
           // this.handleError(error, 'create');
@@ -69,10 +69,10 @@ export class HTTPHandlerManagement {
       {
         params: this.options
       }).pipe(
-        // map(data => data as T),
-        switchMap(() => {
-          return of((data: any) => data as T); // ✅ returns an Observable
-        }),
+        map(data => data as T),
+        // switchMap(() => {
+        //   return of((data: any) => data as T); // ✅ returns an Observable
+        // }),
         catchError(error => {
           console.error("Error in HTTPHandlerManagement in ( update ) \n  => ", error)
           // this.handleError(error, 'update');
@@ -90,10 +90,10 @@ export class HTTPHandlerManagement {
       {
         params: this.options
       }).pipe(
-        // map(data => data as T),
-        switchMap(() => {
-          return of((data: any) => data as T); // ✅ returns an Observable
-        }),
+        map(data => data as T),
+        // switchMap(() => {
+        //   return of((data: any) => data as T); // ✅ returns an Observable
+        // }),
         catchError(error => {
           console.error("Error in HTTPHandlerManagement in ( getById ) \n  => ", error)
           // this.handleError(error, 'getById');
@@ -111,10 +111,10 @@ export class HTTPHandlerManagement {
       {
         params: this.options
       }).pipe(
-        // map(data => data as T),
-        switchMap(() => {
-          return of((data: any) => data as T); // ✅ returns an Observable
-        }),
+        map(data => data as T),
+        // switchMap(() => {
+        //   return of((data: any) => data as T); // ✅ returns an Observable
+        // }),
         catchError(error => {
           console.error("Error in HTTPHandlerManagement in ( delete ) \n  => ", error)
           // this.handleError(error, 'delete');
@@ -132,10 +132,10 @@ export class HTTPHandlerManagement {
       {
         params: this.options
       }).pipe(
-        // map(data => data as T),
-        switchMap(() => {
-          return of((data: any) => data); // ✅ returns an Observable
-        }),
+        map(data => data),
+        // switchMap(() => {
+        //   return of((data: any) => data); // ✅ returns an Observable
+        // }),
         catchError(error => {
           console.error("Error in HTTPHandlerManagement in ( post ) \n  => ", error);
           // this.handleError(error, 'post');

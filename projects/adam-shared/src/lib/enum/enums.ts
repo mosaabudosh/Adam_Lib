@@ -61,3 +61,12 @@ export enum DeletionTypes {
   Records = 1,
   Attachment = 2,
 }
+
+export enum AdamMessageType {
+  Success = 'success',
+  Info = 'info',
+  Warn = 'warn',
+  Error = 'error',
+  Contrast = 'contrast',
+  Secondary = 'secondary',
+}

@@ -1,5 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { AdamMessageService } from '../../../../projects/adam-shared/src/public-api';
+import { AdamMessageType } from 'adam-shared';
 
 @Component({
   selector: 'app-adam-toast',
@@ -14,19 +15,27 @@ export class AdamToastComponent {
   }
 
   showSuccess() {
-    this._adamMessageService.showSuccess();
+    this._adamMessageService.showTost(AdamMessageType.Success, 'Success', 'Success Message Content');
   }
 
   showInfo() {
-    this._adamMessageService.showInfo();
+    this._adamMessageService.showTost(AdamMessageType.Info, 'Info', 'Info Message Content');
   }
 
   showError() {
-    this._adamMessageService.showError();
+    this._adamMessageService.showTost(AdamMessageType.Error, 'Error', 'Error Message Content');
   }
 
   showWarn() {
-    this._adamMessageService.showWarn();
+    this._adamMessageService.showTost(AdamMessageType.Warn, 'Warn', 'Warn Message Content');
+  }
+
+  showSecondary() {
+    this._adamMessageService.showTost(AdamMessageType.Secondary, 'Secondary', 'Secondary Message Content');
+  }
+
+  showContrast() {
+    this._adamMessageService.showTost(AdamMessageType.Contrast, 'Contrast', 'Contrast Message Content');
   }
 
 }

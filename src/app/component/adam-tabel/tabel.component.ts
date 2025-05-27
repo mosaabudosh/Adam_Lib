@@ -1,7 +1,7 @@
 import { Component, ViewContainerRef, ViewEncapsulation } from '@angular/core';
 import { AdamLibTestService } from '../../service/adam-lib-test.service';
 import { AdamPopupComponent } from '../adam-popup/adam-popup.component';
-import { AdamMessageService, ComponentFactoryResolverService } from 'adam-shared';
+import { AdamMessageService, AdamMessageType, ComponentFactoryResolverService } from 'adam-shared';
 
 @Component({
   selector: 'tabel',
@@ -130,10 +130,7 @@ export class TabelComponent {
     let adamPopupComponent = <AdamPopupComponent>this.componentFactoryResolverService.createPopup(AdamPopupComponent, this.viewContainerRef);
     adamPopupComponent.open();
     let adamPopupComponentSubscription = adamPopupComponent.onSubmitted.subscribe(response => {
-      this._adamMessageService.showSuccess();
-      this._adamMessageService.showError();
-      this._adamMessageService.showWarn();
-      this._adamMessageService.showInfo();
+      this._adamMessageService.showTost(AdamMessageType.Success, 'Success', 'Success Message Content');
       adamPopupComponentSubscription.unsubscribe();
     });
   }

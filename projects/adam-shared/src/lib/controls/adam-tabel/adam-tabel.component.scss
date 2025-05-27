@@ -81,7 +81,7 @@ p-table {
 
 .p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
   margin: 0 auto !important;
-  background-color: var(--background-rgba) !important;
+  background-color: var(--main-background) !important;
   color: var(--main-text-color) !important;
   border: none !important;
   font-size: var(--small-font-size) !important;
@@ -217,4 +217,8 @@ p-table {
 .td-table-header-style,
 .table-header-style {
   min-width: 100% !important;
+}
+
+.p-paginator .p-dropdown {
+  height: 45px !important;
 }

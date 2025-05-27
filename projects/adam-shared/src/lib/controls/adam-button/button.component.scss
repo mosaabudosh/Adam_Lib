@@ -121,18 +121,6 @@
   }
 }
 
-button .ui-button,
-.ui-widget,
-.ui-state-default,
-.ui-corner-all,
-.ui-button-text-only {
-  height: 100% !important;
-}
-
-.ui-button .ui-button-text {
-  display: contents !important;
-  line-height: normal !important;
-}
 
 button {
   @include btn-color;
@@ -149,32 +137,4 @@ button {
   .p-button-label {
     margin: 10px !important;
   }
-}
-
-button .ui-widget-header .ui-button,
-.ui-widget-content .ui-button,
-.ui-widget.ui-button,
-.ui-button,
-.ui-inputgroup .ui-widget-header .ui-button,
-.ui-inputgroup .ui-widget-content .ui-button,
-.ui-inputgroup .ui-widget.ui-button,
-.ui-inputgroup .ui-button,
-.ui-inputgroup .ui-button:hover,
-.ui-widget-header .ui-button:enabled:hover,
-.ui-widget-header .ui-button:focus,
-.ui-widget-content .ui-button:enabled:hover,
-.ui-widget-content .ui-button:focus,
-.ui-widget.ui-button:enabled:hover,
-.ui-widget.ui-button:focus,
-.ui-button:enabled:hover,
-.ui-button:enabled:focus .ui-button:focus {
-  background-color: Transparent !important;
-  background-repeat: no-repeat !important;
-  color: inherit !important;
-  width: 100% !important;
-  border: none !important;
-  box-shadow: none !important;
-  cursor: pointer !important;
-  overflow: hidden !important;
-  outline: none !important;
 }
