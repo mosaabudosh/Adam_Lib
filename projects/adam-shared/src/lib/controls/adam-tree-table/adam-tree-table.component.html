@@ -1,0 +1,130 @@
+<div class="table-card">
+    <p-treeTable #dt [value]="_products" [columns]="columns" [scrollable]="scrollable" [rows]="rowsNumber"
+        [paginator]="paginator && _products && _products.length > 0" [showCurrentPageReport]="showCurrentPageReport"
+        [currentPageReportTemplate]="currentPageReportTemplate" [rowsPerPageOptions]="rowsPerPageOptions"
+        [showFirstLastIcon]="false" [paginatorPosition]="'bottom'" [responsive]="true" [first]="first" [pageLinks]="5"
+        [totalRecords]="totalRecords" [lazy]="lazy" [loading]="loading" [tableStyle]="{'min-width':'50rem'}"
+        (onRowSelect)="onRowSelect($event)" (onPage)="OnPaginateChange($event)" (onRowUnselect)="rowUnselected($event)"
+        (onHeaderCheckboxToggle)="headerCheckboxToggle($event)" (onLazyLoad)="loadLazy($event)">
+
+
+        <ng-template *ngIf="isViewHeader" pTemplate="caption">
+            <tr class="adam-flex adam-flex-row table-header-style">
+                <td class="adam-flex adam-flex-row td-table-header-style"
+                    [attr.colspan]="(columns ? getColumnLength(columns) : 0) + ( commands ? commands.length : 0) + (enableSelection ? 1 : 0)">
+                    <ng-container *ngTemplateOutlet="headerElementRef">
+                    </ng-container>
+                </td>
+            </tr>
+        </ng-template>
+
+        <ng-template pTemplate="caption" *ngIf="!isViewHeader">
+            <div class="adam-flex adam-flex-row adam-space-between caption-table-style">
+                <div class="adam-flex-column adam-start-start">
+                    <adam-search-box *ngIf="isShowSearch" [icon]="'pi pi-search'" [width]="searchWidth"
+                        [height]="searchHeight" (input)="filterGlobal($event, 'contains',dt)"
+                        [placeholder]="searchPlaceholder"></adam-search-box>
+                </div>
+                <div class="adam-flex-column adam-start-start">
+                    <adam-lib-button *ngIf="isShowaddNew" [text]="''" [class]="'pi pi-plus'" [width]="'50px'"
+                        [height]="'50px'" [color]="'dark'" [rounded]="'rounded'" [pTooltip]="tooltipAdd"
+                        tooltipPosition="top" (click)="addNew()"></adam-lib-button>
+                </div>
+            </div>
+
+        </ng-template>
+
+        <ng-template pTemplate="header" let-columns *ngIf="sort">
+            <tr>
+                @for(col of columns; track col){
+                <th [style]="{'display': col.visible == false ? 'none':'table-cel'}" [style.width]="col.width"
+                    [ttSortableColumn]="col.field">
+                    {{ col.header }}
+                    <p-treeTableSortIcon [field]="col.field" />
+                </th>
+                }
+                @for(col of commands; track col){
+                <th>
+                    {{ col.columnHeader }}
+                </th>
+                }
+
+            </tr>
+        </ng-template>
+
+        <ng-template pTemplate="header" let-columns *ngIf="!sort">
+            <tr>
+                @for(col of columns; track col){
+                <th [style]="{'display': col.visible == false ? 'none':'table-cel'}" [style.width]="col.width">
+                    {{ col.header }}
+                </th>
+                }
+                @for(col of commands; track col){
+                <th>
+                    {{ col.columnHeader }}
+                </th>
+                }
+
+            </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-rowNode let-rowData="rowData" let-columns="columns">
+            <tr [ttRow]="rowNode">
+                @for(col of columns; track col; let i = $index){
+                <td [style]="{'display': col.visible == false ?'none':'table-cel'}" [style.width]="col.width">
+                    <p-treeTableToggler [rowNode]="rowNode" *ngIf="i === 0" class="adam-flex-column" />
+                    {{ formatTableCellValue(rowData[col.field], col.dataType, col.format) }}
+
+                    <adam-image *ngIf="col.isHasImage && col.imagePath && rowData[col.imagePath]"
+                        class="image-row adam-flex-column" [src]="rowData[col.imagePath]"
+                        [previewImageSrc]="rowData[col.imagePath]" [width]="50" [height]="50" [preview]="true"
+                        [imageBorderRadius]="imageBorderRadius"></adam-image>
+
+                    <div class="adam-flex-column" [ngClass]="col?.imagesPath?.length > 0 ? ' images-column-style': ''">
+                        <div class="adam-flex-row adam-center-center"
+                            *ngIf="col.isHasMultiImage && col.imagesPath && col.imagesPath.length > 0">
+                            @for(imagesPath of rowData[col.imagesPath]; track imagesPath){
+
+                            <adam-image class="images-row adam-flex-column" [src]="imagesPath"
+                                [previewImageSrc]="imagesPath" [width]="50" [height]="50" [preview]="isPreviewImage"
+                                [imageBorderRadius]="imageBorderRadius" [style]="{'--img-width':formatTableCellValue((col.width.substring(0,col.width.length - 1) / col.imagesPath.length) + 5
+                    ,'Number','0.0-2') + '%'}"></adam-image>
+                            }
+                        </div>
+                    </div>
+                </td>
+                }
+
+                <ng-container *ngIf=" commands && commands.length> 0">
+                    @for(col of commands; track col; let i = $index){
+                    <td>
+                        <ng-container *ngTemplateOutlet=" col?.elementRef; context: { dataItem: rowData }">
+                        </ng-container>
+                    </td>
+                    }
+                </ng-container>
+
+            </tr>
+        </ng-template>
+
+        <ng-template *ngIf="isViewFooter" pTemplate="footer" let-columns>
+            <tr class="footer-style">
+                <td
+                    [attr.colspan]="(columns ? getColumnLength(columns) : 0) + ( commands ? commands.length : 0) + (enableSelection ? 1 : 0)">
+                    <ng-container *ngTemplateOutlet="footerElementRef">
+                    </ng-container>
+                </td>
+            </tr>
+        </ng-template>
+
+        <ng-template pTemplate="emptymessage" let-columns>
+            <tr *ngIf="_products != null && _products.length == 0">
+                <td class="empty-message-table"
+                    [attr.colspan]="(columns ? getColumnLength(columns) : 0) + ( commands ? commands.length : 0) + (enableSelection ? 1 : 0)">
+                    {{emptyData}}
+                </td>
+            </tr>
+        </ng-template>
+
+    </p-treeTable>
+</div>

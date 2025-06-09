@@ -1,0 +1,13 @@
+<div class="adam-flex-row adam-center-center">
+    <p-paginator 
+        [first]="first"
+        [showCurrentPageReport]="showCurrentPageReport"
+        [showPageLinks]="showPageLinks"
+        [showJumpToPageDropdown]="showJumpToPageDropdown"
+        [currentPageReportTemplate]="currentPageReportTemplate"
+        [rows]="pageSize" 
+        [totalRecords]="totalRecords" 
+        (onPageChange)="paginate($event)"
+        [rowsPerPageOptions]="rowsPerPageOptions"
+        ></p-paginator>
+</div>

@@ -264,6 +264,42 @@ export class AppComponent {
             command: (event: any) => {
               this.onMenuCommandClick(event);
             }
+          },
+          {
+            label: 'Paginator',
+            icon: 'pi pi-clone',
+            id: 'paginator',
+            parentId: 'Controles',
+            isActive: false,
+            expanded: false,
+            url: '/paginator',
+            command: (event: any) => {
+              this.onMenuCommandClick(event);
+            }
+          },
+          {
+            label: 'Image',
+            icon: 'pi pi-image',
+            id: 'image',
+            parentId: 'Controles',
+            isActive: false,
+            expanded: false,
+            url: '/image',
+            command: (event: any) => {
+              this.onMenuCommandClick(event);
+            }
+          },
+          {
+            label: 'Galleria',
+            icon: 'pi pi-images',
+            id: 'galleria',
+            parentId: 'Controles',
+            isActive: false,
+            expanded: false,
+            url: '/galleria',
+            command: (event: any) => {
+              this.onMenuCommandClick(event);
+            }
           }
         ]
       }

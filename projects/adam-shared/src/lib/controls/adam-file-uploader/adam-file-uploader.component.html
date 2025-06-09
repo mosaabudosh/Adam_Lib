@@ -30,8 +30,11 @@
                 <li class="adam-flex adam-flex-row item-row-style attachment"
                     [ngClass]="{'attachment-content': !horizontalFiles}"
                     *ngFor="let file of _uploadedFiles; let i = index">
-                    <div class="attachment-icon adam-flex-column" (click)="preview(file)">
-                        <img [src]="_DomSanitizer.bypassSecurityTrustUrl(getIcon(file))">
+                    <div class="attachment-icon adam-flex-column">
+                        <adam-image [src]="_DomSanitizer.bypassSecurityTrustUrl(getIcon(file))"
+                            [previewImageSrc]="_DomSanitizer.bypassSecurityTrustUrl(getIcon(file))" [width]="'50px'"
+                            [height]="'60px'" [preview]="allowPreview" style="display: block;" [isBorderRadius]="true"
+                            [imageBorderRadius]="'5%'"></adam-image>
                     </div>
                     <div *ngIf="isShowFileName" class="attachment-text-style adam-flex-column">
                         {{file.name}}

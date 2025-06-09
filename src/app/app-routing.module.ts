@@ -66,6 +66,27 @@ const routes: Routes = [
         "./component/adam-tabs/adam-tabs.module"
       ).then((m) => m.AdamTabsModule),
   },
+  {
+    path: "paginator",
+    loadChildren: () =>
+      import(
+        "./component/paginator/paginator.module"
+      ).then((m) => m.PaginatorModule),
+  },
+  {
+    path: "image",
+    loadChildren: () =>
+      import(
+        "./component/images/images.module"
+      ).then((m) => m.ImagesModule),
+  },
+  {
+    path: "galleria",
+    loadChildren: () =>
+      import(
+        "./component/galleria/galleria.module"
+      ).then((m) => m.GalleriaModule),
+  }
 ];
 
 

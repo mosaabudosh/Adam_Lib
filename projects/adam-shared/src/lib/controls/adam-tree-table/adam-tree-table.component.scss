@@ -1,0 +1,214 @@
+@import './../../../assets/styles/styles.scss';
+
+
+::placeholder {
+    color: var(--main-text-color) !important;
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: var(--main-text-color) !important;
+}
+
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: var(--main-text-color) !important;
+}
+
+.p-paginator-first,
+.p-paginator-prev,
+.p-paginator-next,
+.p-paginator-last {
+    color: var(--main-text-color) !important;
+
+    :dir(rtl) & {
+        rotate: 180deg !important;
+    }
+}
+
+.table-card {
+    color: var(--main-text-color) !important;
+    padding: 1rem !important;
+
+    .caption-table-style {
+        max-height: 40px !important;
+    }
+}
+
+.image-row {
+    width: 50px !important;
+    height: 50px !important;
+    margin: 0 auto !important;
+    margin-inline-start: 10px !important;
+    border-radius: 50% !important;
+    box-shadow: var(--box-shadow) !important;
+}
+
+.p-paginator-rpp-options {
+    height: 45px !important;
+    width: 80px !important;
+
+    ol,
+    ul {
+        padding: 0px !important;
+    }
+
+    .p-dropdown-panel .p-dropdown-items .p-dropdown-item:not(.p-highlight):not(.p-disabled):hover {
+        font-size: var(--small-font-size) !important;
+        font-family: var(--font-family) !important;
+        color: var(--main-text-color) !important;
+        background: var(--hover-row-color) !important;
+        min-width: max-content !important;
+        border-radius: var(--border-radius) !important;
+    }
+
+    .p-dropdown-panel .p-dropdown-items .p-dropdown-item:not(.p-disabled).p-focus {
+        font-size: var(--small-font-size) !important;
+        font-family: var(--font-family) !important;
+        color: var(--main-text-color) !important;
+        background: var(--hover-row-color) !important;
+        min-width: max-content !important;
+        border-radius: var(--border-radius) !important;
+    }
+}
+
+.empty-message-table {
+    text-align: center !important;
+    color: gray !important;
+}
+
+.td-table-header-style,
+.table-header-style {
+    min-width: 100% !important;
+    background: transparent !important;
+}
+
+.p-paginator .p-dropdown {
+    height: 45px !important;
+}
+
+.images-row {
+    width: var(--img-width) !important;
+    height: 50px !important;
+    margin: 0px 0px 0px 0px !important;
+    margin-inline-end: -10px !important;
+    border-radius: 50% !important;
+    box-shadow: var(--box-shadow) !important;
+}
+
+.images-column-style {
+    margin: -50px 0px 0px 0px !important;
+}
+
+.empty-message-table {
+    text-align: center !important;
+    color: gray !important;
+    border-bottom: 1px solid var(--main-text-color) !important;
+}
+
+.p-treetable-scrollable-body,
+.p-treetable-header {
+    background: transparent !important;
+    border: none !important;
+}
+
+.p-treetable-wrapper {
+    box-shadow: var(--secondary-box-shadow) !important;
+    font-size: var(--small-font-size) !important;
+    font-family: var(--font-family) !important;
+    min-width: 100% !important;
+    text-align: center !important;
+    background: transparent !important;
+
+    .p-treetable-thead {
+        tr>th {
+            text-align: center !important;
+            background-color: var(--background-rgba) !important;
+            color: var(--main-text-color) !important;
+            font-weight: bold !important;
+            font-size: var(--small-font-size) !important;
+            font-family: var(--font-family) !important;
+            border-bottom: 1px solid var(--main-text-color) !important;
+        }
+    }
+
+    .p-sortable-column {
+        text-align: center !important;
+        background-color: var(--background-rgba) !important;
+        color: var(--main-text-color) !important;
+        font-weight: bold !important;
+        font-size: var(--small-font-size) !important;
+        font-family: var(--font-family) !important;
+        border-bottom: 1px solid var(--main-text-color) !important;
+
+        .p-sortable-column-icon {
+            color: var(--main-text-color) !important;
+        }
+
+    }
+
+    .p-treetable-tbody {
+        border: 1px solid var(--background-rgba) !important;
+        font-size: var(--small-font-size) !important;
+        font-family: var(--font-family) !important;
+        text-align: center !important;
+        cursor: pointer !important;
+        min-width: 100% !important;
+
+        tr {
+            background-color: var(--main-background) !important;
+            border-bottom: 1px solid var(--background-rgba) !important;
+            min-width: 100% !important;
+        }
+
+        td {
+            color: var(--main-text-color) !important;
+            min-width: 100% !important;
+            text-align: center !important;
+        }
+
+        .p-treetable-toggler {
+            margin: 0px 0px 25px 0px !important;
+        }
+    }
+
+}
+
+.p-treetable .p-treetable-tbody>tr:not(.p-highlight):not(.p-disabled):hover {
+    border-radius: var(--border-radius) !important;
+    background-color: var(--hover-row-color) !important;
+}
+
+.p-treetable-tfoot {
+    background-color: var(--main-background) !important;
+    color: var(--main-text-color) !important;
+}
+
+.p-paginator {
+    background-color: transparent !important; //(--background-rgba) !important;
+    color: var(--main-text-color) !important;
+    justify-content: center !important;
+    border: none !important;
+    font-size: var(--small-font-size) !important;
+    font-family: var(--font-family) !important;
+    border-top: 1px solid var(--main-text-color) !important;
+    border-radius: 0px !important;
+}
+
+.p-paginator-bottom {
+    background: transparent !important;
+    color: var(--main-text-color) !important;
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+    margin: 0 auto !important;
+    background-color: var(--main-background) !important;
+    color: var(--main-text-color) !important;
+    font-size: var(--small-font-size) !important;
+    font-family: var(--font-family) !important;
+}
+
+.p-paginator-current {
+    color: var(--icon-color) !important;
+    font-size: var(--small-font-size) !important;
+}

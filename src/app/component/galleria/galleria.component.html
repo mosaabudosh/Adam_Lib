@@ -1,0 +1,53 @@
+<div class="main-screen">
+    <adam-lib-label class="screen-title" [text]="'Galleria'"></adam-lib-label>
+
+    <div class="adam-flex-row adam-row-gap">
+        <div class="adam-flex-column-3">
+            <adam-galleria [images]="images" [width]="'300px'"></adam-galleria>
+        </div>
+
+        <div class="adam-flex-column-3">
+            <adam-galleria [images]="images" [showThumbnails]="false" [showIndicators]="true" [isBorderRadius]="false"
+                [width]="'300px'"></adam-galleria>
+        </div>
+
+        <div class="adam-flex-column-3">
+            <adam-galleria [images]="images" [showItemNavigators]="true" [showThumbnails]="false"
+                [showIndicators]="true" [isPreviewImage]="false" [width]="'300px'"></adam-galleria>
+        </div>
+
+        <div class="adam-flex-column-3">
+            <adam-galleria [images]="images" [showItemNavigators]="true" [showThumbnails]="false"
+                [showIndicators]="false" [width]="'300px'"></adam-galleria>
+        </div>
+    </div>
+
+
+    <div class="adam-flex-row adam-row-gap">
+        <div class="adam-flex-column-3">
+            <adam-galleria [images]="images" [position]="'left'" [showThumbnails]="false" [showIndicators]="true"
+                [width]="'300px'"></adam-galleria>
+        </div>
+
+        <div class="adam-flex-column-3">
+            <adam-galleria [images]="images" [position]="'top'" [showThumbnails]="false" [showIndicators]="true"
+                [width]="'300px'"></adam-galleria>
+        </div>
+
+        <div class="adam-flex-column-3">
+            <adam-galleria [images]="images" [position]="'right'" [showThumbnails]="false" [showIndicators]="true"
+                [width]="'300px'"></adam-galleria>
+        </div>
+    </div>
+
+    <div class="adam-flex-row adam-row-gap">
+        <div class="adam-flex-column-6">
+            <adam-galleria [images]="images" [numVisible]="5" [width]="'600px'" [viewCaption]="true"></adam-galleria>
+        </div>
+
+        <div class="adam-flex-column-6">
+            <adam-galleria [images]="images" [numVisible]="5" [width]="'600px'" [showThumbnails]="false"
+                [showIndicators]="true" [viewCaption]="true"></adam-galleria>
+        </div>
+    </div>
+</div>
