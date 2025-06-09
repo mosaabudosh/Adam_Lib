@@ -56,7 +56,7 @@ export class AdamFileUploaderComponent implements OnInit, OnDestroy {
   @Input() isAllowEdit: boolean = true;
   @Input() isScanningAllowed: boolean = false;
   @Input() horizontalFiles: boolean = false;
-  @Input() allowPreview: boolean;
+  @Input() allowPreview: boolean = true;
 
   @Output() onFileEditClick = new EventEmitter();
   @Output() onFileUploaded = new EventEmitter();
@@ -168,57 +168,6 @@ export class AdamFileUploaderComponent implements OnInit, OnDestroy {
         return 'assets/file-icons/pdf.png';
       default:
         return 'assets/file-icons/unknown.png'
-    }
-  }
-
-  preview(file: any) {
-    if (!this.allowPreview) {
-      return;
-    }
-    switch (file.fileExtention) {
-      case "png":
-      case "jpg":
-      case "jpeg":
-      case "jif":
-      case "PNG":
-      case "JPEG":
-      case "webp":
-      case "WEBP":
-      case "jfif":
-      case "JFIF":
-      case "gif":
-      case "GIF":
-        let image = new Image();
-        image.src = file.fileAsBase64;
-        let w: any = window.open("", "image", "width=600,height=800,left=500,scrollbars=yes,resizable=yes");
-        w.document.write(image.outerHTML);
-        w.document.close();
-        break;
-      case "pdf":
-        var obj = document.createElement('object');
-        obj.style.width = '100%';
-        obj.style.height = '842pt';
-        obj.type = 'application/pdf';
-        obj.data = file.fileAsBase64;
-        let ws: any = window.open('', "image", "width=600,height=800,left=500,scrollbars=yes,resizable=yes");
-        ws.document.body.appendChild(obj);
-        const linkSourcePdf = file.fileAsBase64;
-        const downloadLinkPdf = document.createElement("a");
-        const fileNamePdf = `${(file.fileName ? file.fileName : new Date().toString())}.${file.fileExtention}`;
-
-        downloadLinkPdf.href = linkSourcePdf;
-        downloadLinkPdf.download = fileNamePdf;
-        downloadLinkPdf.click();
-        break;
-      default:
-        const linkSource = file.fileAsBase64;
-        const downloadLink = document.createElement("a");
-        const fileName = `${(file.fileName ? file.fileName : new Date().toString())}.${file.fileExtention}`;
-
-        downloadLink.href = linkSource;
-        downloadLink.download = fileName;
-        downloadLink.click();
-        break;
     }
   }
 

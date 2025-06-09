@@ -1,0 +1,14 @@
+ol,
+ul,
+dl {
+    margin: 0px !important;
+}
+
+.p-galleria.p-galleria-indicators-bottom .p-galleria-indicator,
+.p-galleria.p-galleria-indicators-top .p-galleria-indicator,
+.p-galleria.p-galleria-indicators-left .p-galleria-indicator,
+.p-galleria.p-galleria-indicators-right .p-galleria-indicator {
+    button {
+        border-radius: 50% !important;
+    }
+}

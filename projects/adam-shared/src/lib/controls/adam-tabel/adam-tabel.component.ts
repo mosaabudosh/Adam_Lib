@@ -8,7 +8,6 @@ import { DataTypes } from '../../enum/enums';
   templateUrl: './adam-tabel.component.html',
   styleUrl: './adam-tabel.component.scss',
   encapsulation: ViewEncapsulation.None,
-  providers: [DatePipe, DecimalPipe],
 })
 export class AdamTabelComponent implements OnInit {
   @Input() columns: Column[] = [];
@@ -16,21 +15,23 @@ export class AdamTabelComponent implements OnInit {
   @Input() set products(value: any[]) {
     this._products = value;
   }
-  @Input() rowsNumber: number = 5;
   @Input() sort: boolean = true;
-  @Input() paginator: boolean = true;
   @Input() isShowSearch: boolean = true;
   @Input() isShowaddNew: boolean = true;
-  @Input() showCurrentPageReport: boolean = true;
   @Input() rowHover: boolean = true;
+
+  @Input() rowsNumber: number = 5;
+  @Input() showCurrentPageReport: boolean = true;
+  @Input() paginator: boolean = true;
   @Input() currentPageReportTemplate: string = "Showing {first} to {last} of {totalRecords} entries";
+  @Input() rowsPerPageOptions: number[] = [5, 10, 20, 50, 100];
+
   @Input() selection: any;
   @Input() globalFilterFields: string[] = ['name'];
   @Input() enableCheckbox: boolean = true;
   @Input() isShowSummary: boolean = true;
   @Input("commands") commands: any[] = [];
 
-  @Input() rowsPerPageOptions: number[] = [5, 10, 20, 50, 100];
   @Input() export: boolean;
   @Input() enableSelection: boolean;
   @Input() enableHeaderSelection: boolean = true;
@@ -68,12 +69,11 @@ export class AdamTabelComponent implements OnInit {
   @Input() isEnableReorderRecords: boolean = false;
   @Input() isDisplayReorderColumn: boolean = false;
   @Input() tooltipAdd: string = 'Add';
-  @Output() cellClick = new EventEmitter();
+  @Input() isPreviewImage: boolean = true;
+  @Input() imageBorderRadius: string = "50%";
+
   @Output() rowSelected = new EventEmitter();
-  @Output() onRefresh? = new EventEmitter();
   @Output() onRowUnselect = new EventEmitter();
-  @Output() onAdvanceSearchClick = new EventEmitter();
-  @Output() onLoadLazyChanged = new EventEmitter();
   @Output() headerCheckboxToggleChanged = new EventEmitter();
   @Output() onClickAdd: EventEmitter<any> = new EventEmitter();
   @Output() pageChanged = new EventEmitter();
@@ -133,10 +133,10 @@ export class AdamTabelComponent implements OnInit {
     this.pageChanged.emit(this.pageInfo);
   }
 
-
   rowUnselected(event: any) {
     this.onRowUnselect.emit(event.data);
   }
+
   headerCheckboxToggle(event: any) {
     this.headerCheckboxToggleChanged.emit(event);
   }
@@ -181,4 +181,5 @@ export class AdamTabelComponent implements OnInit {
     }
     return length;
   }
+
 }

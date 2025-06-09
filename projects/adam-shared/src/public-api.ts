@@ -21,12 +21,14 @@ export * from './lib/controls/confirmation-popup/confirmation-popup.component';
 export * from './lib/controls/adam-textarea/adam-textarea.component';
 export * from './lib/controls/adam-pick-list/adam-pick-list.component';
 export * from './lib/controls/adam-tabs/adam-tabs.component';
-
+export * from './lib/controls/adam-paginator/adam-paginator.component';
+export * from './lib/controls/adam-tree-table/adam-tree-table.component';
+export * from './lib/controls/adam-image/adam-image.component';
+export * from './lib/controls/adam-galleria/adam-galleria.component';
 
 export * from './lib/services/adam.message.service';
 export * from './lib/services/math-service.service';
 export * from './lib/services/component-factory-resolver.service';
-
 
 export * from './lib/pipe/arabic-number.pipe';
 export * from './lib/pipe/numbers.pipe';

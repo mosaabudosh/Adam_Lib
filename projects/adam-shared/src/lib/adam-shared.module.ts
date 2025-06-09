@@ -32,22 +32,30 @@ import { ComponentFactoryResolverService } from './services/component-factory-re
 import { AdamSheardPopupComponent } from './controls/adam-sheard-popup/adam-sheard-popup.component';
 import { AdamFileUploaderComponent } from './controls/adam-file-uploader/adam-file-uploader.component';
 import { ConfirmationPopupComponent } from './controls/confirmation-popup/confirmation-popup.component';
-import { HttpClient } from '@angular/common/http';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateModule } from '@ngx-translate/core';
 import { AdamTextareaComponent } from './controls/adam-textarea/adam-textarea.component';
 import { BadgeModule } from 'primeng/badge';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe, DecimalPipe } from '@angular/common';
 import { CalendarModule } from 'primeng/calendar';
 import { CheckboxModule } from 'primeng/checkbox';
 import { DropdownModule } from 'primeng/dropdown';
-import { TableModule } from 'primeng/table';
+import { SortIcon, TableModule } from 'primeng/table';
 import { ToastModule } from 'primeng/toast';
 import { SideMenuFilterPipe } from './pipe/side-menu-filter.pipe';
 import { AdamPickListComponent } from './controls/adam-pick-list/adam-pick-list.component';
 import { TabViewModule } from 'primeng/tabview';
 import { PickListModule } from 'primeng/picklist';
 import { AdamTabsComponent } from './controls/adam-tabs/adam-tabs.component';
+import { PaginatorModule } from 'primeng/paginator';
+import { AdamPaginatorComponent } from './controls/adam-paginator/adam-paginator.component';
+import { AdamTreeTableComponent } from './controls/adam-tree-table/adam-tree-table.component';
+import { TreeTableModule } from 'primeng/treetable';
+import { TreeModule } from 'primeng/tree';
+import { TreeSelectModule } from 'primeng/treeselect';
+import { ImageModule } from 'primeng/image';
+import { AdamImageComponent } from './controls/adam-image/adam-image.component';
+import { AdamGalleriaComponent } from './controls/adam-galleria/adam-galleria.component';
+import { GalleriaModule } from 'primeng/galleria';
 
 @NgModule({
   declarations: [
@@ -79,7 +87,11 @@ import { AdamTabsComponent } from './controls/adam-tabs/adam-tabs.component';
     AdamSearchBoxComponent,
     AdamFileUploaderComponent,
     AdamPickListComponent,
-    AdamTabsComponent
+    AdamTabsComponent,
+    AdamPaginatorComponent,
+    AdamTreeTableComponent,
+    AdamImageComponent,
+    AdamGalleriaComponent
   ],
   imports: [
     CommonModule,
@@ -96,7 +108,13 @@ import { AdamTabsComponent } from './controls/adam-tabs/adam-tabs.component';
     ToastModule,
     PickListModule,
     TabViewModule,
-    TranslateModule
+    TranslateModule,
+    PaginatorModule,
+    TreeTableModule,
+    TreeModule,
+    TreeSelectModule,
+    ImageModule,
+    GalleriaModule
   ],
   exports: [
     IntInputDirective,
@@ -127,14 +145,13 @@ import { AdamTabsComponent } from './controls/adam-tabs/adam-tabs.component';
     AdamTextareaComponent,
     AdamPickListComponent,
     AdamTabsComponent,
-    TooltipModule
+    TooltipModule,
+    AdamPaginatorComponent,
+    AdamTreeTableComponent,
+    AdamImageComponent,
+    AdamGalleriaComponent
   ],
-  providers: [MessageService, AdamMessageService, ComponentFactoryResolverService],
+  providers: [MessageService, AdamMessageService, ComponentFactoryResolverService, SortIcon, DatePipe, DecimalPipe],
   schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA]
 })
-export class AdamSharedModule {
-
-}
-function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/');
-}
+export class AdamSharedModule { }

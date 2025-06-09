@@ -1,0 +1,14 @@
+@import './../../../assets/styles/styles.scss';
+
+:host ::ng-deep .image-border-style {
+
+    .p-image-preview-container,
+    .p-image {
+
+        img,
+        button,
+        .p-image-preview-indicator {
+            border-radius: var(--radius) !important;
+        }
+    }
+}

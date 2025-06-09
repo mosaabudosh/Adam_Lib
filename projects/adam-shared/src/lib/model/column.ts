@@ -11,4 +11,6 @@ export interface Column {
     width?: string;
     sortable?: boolean;
     class?: string;
+    isHasMultiImage?: boolean;
+    imagesPath?: any;
 }

@@ -3,11 +3,11 @@
         [columns]="columns" [globalFilterFields]="globalFilterFields" [(selection)]="selection" [rowHover]="rowHover"
         dataKey="id" [showCurrentPageReport]="showCurrentPageReport"
         [currentPageReportTemplate]="currentPageReportTemplate" [rowsPerPageOptions]="rowsPerPageOptions"
-        [showFirstLastIcon]="false" [showCurrentPageReport]="true" [paginatorPosition]="'bottom'" [responsive]="true"
-        [first]="first" [pageLinks]="5" [selectionMode]="selectionMode" [scrollable]="scrollable" crollHeight="200px"
-        [totalRecords]="totalRecords" [lazy]="lazy" [loading]="loading" (onRowSelect)="onRowSelect($event)"
-        (onPage)="OnPaginateChange($event)" (onRowUnselect)="rowUnselected($event)"
-        (onHeaderCheckboxToggle)="headerCheckboxToggle($event)" (onLazyLoad)="loadLazy($event)">
+        [showFirstLastIcon]="false" [paginatorPosition]="'bottom'" [responsive]="true" [first]="first" [pageLinks]="5"
+        [selectionMode]="selectionMode" [scrollable]="scrollable" crollHeight="200px" [totalRecords]="totalRecords"
+        [lazy]="lazy" [loading]="loading" (onRowSelect)="onRowSelect($event)" (onPage)="OnPaginateChange($event)"
+        (onRowUnselect)="rowUnselected($event)" (onHeaderCheckboxToggle)="headerCheckboxToggle($event)"
+        (onLazyLoad)="loadLazy($event)">
 
         <ng-template *ngIf="isViewHeader" pTemplate="caption">
             <tr class="adam-flex adam-flex-row table-header-style">
@@ -27,9 +27,9 @@
                         [placeholder]="searchPlaceholder"></adam-search-box>
                 </div>
                 <div class="adam-flex-column adam-start-start">
-                    <adam-lib-button *ngIf="isShowaddNew" [text]="''" [class]="'pi pi-plus add-lib-button'"
-                        [height]="'30px'" [pTooltip]="tooltipAdd" tooltipPosition="top"
-                        (click)="addNew()"></adam-lib-button>
+                    <adam-lib-button *ngIf="isShowaddNew" [text]="''" [class]="'pi pi-plus'" [class]="'pi pi-plus'"
+                        [width]="'50px'" [height]="'50px'" [color]="'dark'" [rounded]="'rounded'"
+                        [pTooltip]="tooltipAdd" tooltipPosition="top" (click)="addNew()"></adam-lib-button>
                 </div>
             </div>
 
@@ -40,14 +40,18 @@
                 <th style="width: 3rem" *ngIf="enableCheckbox">
                     <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
                 </th>
-                <th *ngFor="let col of columns" [pSortableColumn]="col.field"
-                    [style]="{'display': col.visible == false? 'none':'table-cel'}" [style.width]="col.width">
+                @for(col of columns; track col){
+                <th [pSortableColumn]="col.field" [style]="{'display': col.visible == false? 'none':'table-cel'}"
+                    [style.width]="col.width">
                     {{ col.header }}
                     <p-sortIcon [field]="col.field"></p-sortIcon>
                 </th>
-                <th *ngFor="let col of commands">
+                }
+                @for(col of commands; track col){
+                <th>
                     {{ col.columnHeader }}
                 </th>
+                }
             </tr>
         </ng-template>
 
@@ -56,13 +60,17 @@
                 <th style="width: 3rem" *ngIf="enableCheckbox">
                     <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
                 </th>
-                <th *ngFor="let col of columns" [style.width]="col.width"
-                    [style]="{'display': col.visible == false ?'none':'table-cel'}">
+                @for(col of columns; track col){
+                <th [style.width]="col.width" [style]="{'display': col.visible == false ?'none':'table-cel'}">
                     {{ col.header }}
                 </th>
-                <th *ngFor="let col of commands">
+                }
+
+                @for(col of commands; track col){
+                <th>
                     {{ col.columnHeader }}
                 </th>
+                }
             </tr>
         </ng-template>
 
@@ -71,19 +79,33 @@
                 <td *ngIf="enableCheckbox">
                     <p-tableCheckbox [value]="product"></p-tableCheckbox>
                 </td>
-                <td *ngFor="let col of columns" [style]="{'display': col.visible == false ?'none':'table-cel'}">
-                    <img *ngIf="col.isHasImage && col.imagePath && product[col.imagePath]" class="image-row"
-                        src="{{product[col.imagePath]}}">
+                @for(col of columns; track col){
+                <td [style]="{'display': col.visible == false ?'none':'table-cel'}">
+                    <adam-image *ngIf="col.isHasImage && col.imagePath && product[col.imagePath]"
+                        class="image-row adam-flex-column" [src]="product[col.imagePath]"
+                        [previewImageSrc]="product[col.imagePath]" [width]="50" [height]="50" [preview]="true"
+                        [imageBorderRadius]="imageBorderRadius"></adam-image>
                     {{ formatTableCellValue(product[col.field], col.dataType, col.format) }}
-                </td>
-                <ng-container *ngIf="commands && commands.length > 0">
-                    <td *ngFor="let col of commands">
 
+                    <div class="adam-flex-row adam-center-center"
+                        *ngIf="col.isHasMultiImage && col.imagesPath && col.imagesPath.length > 0">
+                        @for(imagesPath of product[col.imagesPath]; track imagesPath){
+                        <adam-image class="images-row adam-flex-column" [src]="imagesPath"
+                            [previewImageSrc]="imagesPath" [width]="50" [height]="50" [preview]="isPreviewImage"
+                            [imageBorderRadius]="imageBorderRadius"></adam-image>
+                        }
+                    </div>
+                </td>
+                }
+
+                <ng-container *ngIf="commands && commands.length > 0">
+                    @for(col of commands; track col){
+                    <td>
                         <ng-container *ngTemplateOutlet=" col?.elementRef; context: { dataItem: product }">
                         </ng-container>
                     </td>
+                    }
                 </ng-container>
-
             </tr>
         </ng-template>
 

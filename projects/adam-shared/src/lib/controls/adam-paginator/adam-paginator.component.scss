@@ -1,0 +1,67 @@
+@import './../../../assets/styles/styles.scss';
+
+.p-paginator {
+    background-color: transparent !important; //(--background-rgba) !important;
+    color: var(--main-text-color) !important;
+    justify-content: center !important;
+    font-size: var(--small-font-size) !important;
+    font-family: var(--font-family) !important;
+    min-width: 100% !important;
+    border: none !important;
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+    margin: 0 auto !important;
+    background-color: var(--main-background) !important;
+    color: var(--main-text-color) !important;
+    border: none !important;
+    font-size: var(--small-font-size) !important;
+    font-family: var(--font-family) !important;
+}
+
+
+.p-paginator-current {
+    color: var(--icon-color) !important;
+    font-size: var(--small-font-size) !important;
+}
+
+
+.p-paginator-first,
+.p-paginator-prev,
+.p-paginator-next,
+.p-paginator-last {
+    color: var(--main-text-color) !important;
+
+    :dir(rtl) & {
+        rotate: 180deg !important;
+    }
+}
+
+
+.p-paginator-rpp-options {
+    height: 45px !important;
+    width: 80px !important;
+
+    ol,
+    ul {
+        padding: 0px !important;
+    }
+
+    .p-dropdown-panel .p-dropdown-items .p-dropdown-item:not(.p-highlight):not(.p-disabled):hover {
+        font-size: var(--small-font-size) !important;
+        font-family: var(--font-family) !important;
+        color: var(--main-text-color) !important;
+        background: var(--hover-row-color) !important;
+        min-width: max-content !important;
+        border-radius: var(--border-radius) !important;
+    }
+
+    .p-dropdown-panel .p-dropdown-items .p-dropdown-item:not(.p-disabled).p-focus {
+        font-size: var(--small-font-size) !important;
+        font-family: var(--font-family) !important;
+        color: var(--main-text-color) !important;
+        background: var(--hover-row-color) !important;
+        min-width: max-content !important;
+        border-radius: var(--border-radius) !important;
+    }
+}

@@ -40,7 +40,7 @@
   }
 
   &.dark {
-    @include adam-btn-style(var(--btn-dark), var(--white), var(--white));
+    @include adam-btn-style(var(--btn-dark), var(--white-color), var(--white-color));
   }
 
   &.primary-reverse {
