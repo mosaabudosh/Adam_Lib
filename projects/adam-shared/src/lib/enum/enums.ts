@@ -70,3 +70,13 @@ export enum AdamMessageType {
   Contrast = 'contrast',
   Secondary = 'secondary',
 }
+
+export enum CommandType {
+  Favorite = 1,
+  Cart = 2
+}
+
+export enum OrientationCarouselType {
+  Horizontal = 'horizontal',
+  Vertical = 'vertical'
+}

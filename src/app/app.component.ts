@@ -300,6 +300,18 @@ export class AppComponent {
             command: (event: any) => {
               this.onMenuCommandClick(event);
             }
+          },
+          {
+            label: 'Carousel',
+            icon: 'pi pi-images',
+            id: 'carousel',
+            parentId: 'Controles',
+            isActive: false,
+            expanded: false,
+            url: '/carousel',
+            command: (event: any) => {
+              this.onMenuCommandClick(event);
+            }
           }
         ]
       }

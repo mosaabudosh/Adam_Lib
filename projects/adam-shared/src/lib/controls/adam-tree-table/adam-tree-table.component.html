@@ -75,18 +75,17 @@
                     <p-treeTableToggler [rowNode]="rowNode" *ngIf="i === 0" class="adam-flex-column" />
                     {{ formatTableCellValue(rowData[col.field], col.dataType, col.format) }}
 
-                    <adam-image *ngIf="col.isHasImage && col.imagePath && rowData[col.imagePath]"
-                        class="image-row adam-flex-column" [src]="rowData[col.imagePath]"
-                        [previewImageSrc]="rowData[col.imagePath]" [width]="50" [height]="50" [preview]="true"
-                        [imageBorderRadius]="imageBorderRadius"></adam-image>
+                    <adam-image *ngIf="col.isHasImage && col.imagePath && rowData[col.imagePath]" class="image-row "
+                        [src]="rowData[col.imagePath]" [previewImageSrc]="rowData[col.imagePath]" [width]="50"
+                        [height]="50" [preview]="true" [imageBorderRadius]="imageBorderRadius"></adam-image>
 
                     <div class="adam-flex-column" [ngClass]="col?.imagesPath?.length > 0 ? ' images-column-style': ''">
                         <div class="adam-flex-row adam-center-center"
                             *ngIf="col.isHasMultiImage && col.imagesPath && col.imagesPath.length > 0">
                             @for(imagesPath of rowData[col.imagesPath]; track imagesPath){
 
-                            <adam-image class="images-row adam-flex-column" [src]="imagesPath"
-                                [previewImageSrc]="imagesPath" [width]="50" [height]="50" [preview]="isPreviewImage"
+                            <adam-image class="images-row " [src]="imagesPath" [previewImageSrc]="imagesPath"
+                                [width]="50" [height]="50" [preview]="isPreviewImage"
                                 [imageBorderRadius]="imageBorderRadius" [style]="{'--img-width':formatTableCellValue((col.width.substring(0,col.width.length - 1) / col.imagesPath.length) + 5
                     ,'Number','0.0-2') + '%'}"></adam-image>
                             }

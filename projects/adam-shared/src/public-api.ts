@@ -25,6 +25,8 @@ export * from './lib/controls/adam-paginator/adam-paginator.component';
 export * from './lib/controls/adam-tree-table/adam-tree-table.component';
 export * from './lib/controls/adam-image/adam-image.component';
 export * from './lib/controls/adam-galleria/adam-galleria.component';
+export * from './lib/controls/adam-master-detail-tabel/adam-master-detail-tabel.component';
+export * from './lib/controls/adam-carousel-view/adam-carousel-view.component';
 
 export * from './lib/services/adam.message.service';
 export * from './lib/services/math-service.service';
@@ -46,4 +48,6 @@ export * from './lib/directive/validators/phoneNumberValidatorDirective';
 export * from './lib/directive/validators/must-match.validator';
 
 export * from './lib/enum/enums';
-// export * from './assets/styles/_variables.scss';
+export * from './lib/model/product-carousel-model';
+export * from './lib/model/column';
+export * from './lib/model/headerDataModel';

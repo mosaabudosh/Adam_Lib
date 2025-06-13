@@ -1,9 +1,10 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'adam-image',
   templateUrl: './adam-image.component.html',
-  styleUrl: './adam-image.component.scss'
+  styleUrl: './adam-image.component.scss',
+  encapsulation: ViewEncapsulation.None
 })
 export class AdamImageComponent {
 
@@ -14,6 +15,6 @@ export class AdamImageComponent {
   @Input() height: any = "50";
   @Input() preview: boolean = true;
   @Input() isBorderRadius: boolean = true;
-  @Input() imageBorderRadius: string = "0%";
+  @Input() imageBorderRadius: string;
 
 }

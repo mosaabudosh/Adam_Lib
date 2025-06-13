@@ -1,0 +1,45 @@
+<div class="main-screen">
+
+    <adam-lib-label class="screen-title" [text]="'Carousel'"></adam-lib-label>
+
+    <div class="adam-flex-row adam-row-gap">
+        <adam-carousel-view [verticalViewPortHeight]="'450px'" [isPreviewImage]="true" [isViewFooter]="false"
+            [products]="products"></adam-carousel-view>
+    </div>
+
+    <div class="adam-flex-row adam-row-gap">
+        <adam-carousel-view [isCircular]="false" [orientation]="orientationCarouselType.Vertical"
+            (onCardClick)="onCardClick($event)" [verticalViewPortHeight]="'450px'" [width]="'250px'"
+            [imageWidth]="'245'" [isViewStatus]="true" [isPreviewImage]="true" [isViewBorder]="true" [isViewName]="true"
+            [isViewDescription]="true" [isViewCategory]="true" [isViewHeader]="true" [isViewFooter]="true"
+            [isViewCategoryTooltip]="true" [isViewImageTooltip]="true" [isViewButtonsTooltip]="true"
+            [isViewPrice]="true" [isViewFooter]="true" [headerLabel]="'Carousel'" [products]="products"
+            [color]="'waring'" [addToCartColor]="'info'" [addToFavoriteColor]="'dark-reverse'"></adam-carousel-view>
+    </div>
+
+    <div class="adam-flex-row adam-row-gap">
+        <adam-carousel-view [numVisible]="4" [numScroll]="6" [isViewBorder]="true" [imageWidth]="'220'"
+            [imageHeight]="'150'" [isViewCarousel]="false" [width]="'1000px'" [isViewCategory]="true"
+            [isViewHeader]="true" [isViewFooter]="true" [isViewCategoryTooltip]="true" [isViewImageTooltip]="true"
+            [isViewButtonsTooltip]="true" [headerLabel]="'Carousel'" [products]="products" [color]="'info'"
+            [addToCartColor]="'info'" [addToFavoriteColor]="'dangerous-reverse'"></adam-carousel-view>
+    </div>
+
+    <div class="adam-flex-row adam-row-gap">
+        <adam-carousel-view [isViewCategory]="true" [isViewHeader]="true" [isViewFooter]="true"
+            [isViewCategoryTooltip]="true" [isViewImageTooltip]="true" [isViewButtonsTooltip]="true"
+            [headerLabel]="'Carousel'" [products]="products" [color]="'waring'" [addToCartColor]="'info'"
+            [addToFavoriteColor]="'dark-reverse'"></adam-carousel-view>
+    </div>
+
+    <div class="adam-flex-row adam-row-gap">
+        <adam-carousel-view [isViewBorder]="true" [isViewCategory]="true" [isViewStatus]="true" [isPreviewImage]="true"
+            [isViewHeader]="true" [isViewName]="true" [isViewDescription]="true" [isViewPrice]="true"
+            [isViewFooter]="true" [isAutoplayInterval]="false" [autoplayInterval]="'10000'"
+            [isViewCategoryTooltip]="true" [isViewImageTooltip]="true" [isViewButtonsTooltip]="true"
+            [headerLabel]="'Carousel'" [products]="products" [color]="'waring'" (onAddToCart)="onAddToCart($event)"
+            (onAddToFavorite)="onAddToFavorite($event)"></adam-carousel-view>
+    </div>
+
+
+</div>

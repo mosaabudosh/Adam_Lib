@@ -1,0 +1,75 @@
+<div class="carousel-view-style {{color}}" [ngClass]="isViewBorder ? 'custom-border-style': ''"
+    [style]="{'--width':width,'--border':isViewBorder ? 'solid' :'none','--numVisible':numVisible}">
+
+    <div *ngIf="_products && _products.length == 0" class="empty-message-table">
+        {{emptyData}}
+    </div>
+
+    <p-carousel [value]="_products" [numVisible]="numVisible" [numScroll]="numScroll" [circular]="isCircular"
+        [responsiveOptions]="responsiveOptions" [autoplayInterval]="isAutoplayInterval ? autoplayInterval : 0"
+        [orientation]="orientation" [verticalViewPortHeight]="verticalViewPortHeight">
+
+        <ng-template *ngIf="isViewHeader" pTemplate="header">
+            <p class="header-carousel-style">{{headerLabel}}</p>
+        </ng-template>
+
+        <ng-template *ngIf="isViewCarousel" let-product pTemplate="item">
+            <ng-container *ngTemplateOutlet="carouselElementRef">
+            </ng-container>
+        </ng-template>
+
+        <ng-template *ngIf="!isViewCarousel" let-product pTemplate="item">
+            <div class="carousel-card-style"
+                [ngClass]="orientation != 'vertical' ? 'box-shadow-style custom-border-style': ''"
+                [style]="{'--border': orientation != 'vertical' ? 'solid' :'none'}" (click)="onCardClick.emit(product)">
+
+                <div class="adam-flex-row">
+                    <adam-image class="carousel-image-item-style" [src]="product?.image"
+                        [pTooltip]="isViewImageTooltip ? product.name : ''" [tooltipPosition]="tooltipPosition"
+                        [previewImageSrc]="product.image" [width]="imageWidth" [height]="imageHeight"
+                        [preview]="isPreviewImage" [imageBorderRadius]="imageBorderRadius"
+                        [alt]="product.name"></adam-image>
+
+                    <p-tag *ngIf="isViewStatus" class="carousel-tag-style" [value]="product.inventoryStatus"
+                        [severity]="getSeverity(product.inventoryStatus)" />
+                </div>
+                <div *ngIf="isViewCategory" class="adam-flex-row carousel-descreption-item-style">
+                    <p class="category-style" [pTooltip]="isViewCategoryTooltip ? product.category : ''"
+                        [tooltipPosition]="tooltipPosition">{{ product.category }}</p>
+                </div>
+                <div *ngIf="isViewName" class="adam-flex-row carousel-descreption-item-style">
+                    <p>{{ product.name }}</p>
+                </div>
+                <div *ngIf="isViewDescription" class="adam-flex-row carousel-descreption-item-style">
+                    <p>{{product.description}}</p>
+                </div>
+                <div *ngIf="isViewFooter || isViewPrice"
+                    class="adam-flex-row adam-space-between carousel-descreption-item-style">
+                    <div *ngIf="isViewFooter" class="adam-flex-column price-item-style">
+                        <p *ngIf="isViewPrice">{{ product.price }}</p>
+                    </div>
+                    <div class="adam-flex-column footer-card-action-style">
+                        <div *ngIf="isViewFooter" class="adam-flex-row">
+                            <div class="adam-flex-column ">
+                                <adam-lib-button [color]="addToFavoriteColor" [text]="' '"
+                                    [class]="product.isInFavorite ? 'pi pi-heart-fill' : 'pi pi-heart'" [width]="'60px'"
+                                    [height]="'40px'"
+                                    [pTooltip]="isViewButtonsTooltip ? ( product.isInFavorite ? 'In my favorite' : 'Add to favorite') : ''"
+                                    [tooltipPosition]="tooltipPosition"
+                                    (click)="onButtonClick(commandType.Favorite,product)"></adam-lib-button>
+                            </div>
+                            <div class="adam-flex-column ">
+                                <adam-lib-button [color]="addToCartColor" [text]="' '" [class]="'pi pi-shopping-cart'"
+                                    [width]="'60px'" [height]="'40px'"
+                                    [pTooltip]="isViewButtonsTooltip ? 'Add to cart' : ''"
+                                    [tooltipPosition]="tooltipPosition"
+                                    (click)="onButtonClick(commandType.Cart,product)"></adam-lib-button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </ng-template>
+    </p-carousel>
+</div>

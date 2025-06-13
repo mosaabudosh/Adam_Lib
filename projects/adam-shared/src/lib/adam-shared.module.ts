@@ -56,6 +56,13 @@ import { ImageModule } from 'primeng/image';
 import { AdamImageComponent } from './controls/adam-image/adam-image.component';
 import { AdamGalleriaComponent } from './controls/adam-galleria/adam-galleria.component';
 import { GalleriaModule } from 'primeng/galleria';
+import { AdamMasterDetailTabelComponent } from './controls/adam-master-detail-tabel/adam-master-detail-tabel.component';
+import { IconFieldModule } from 'primeng/iconfield';
+import { ToggleButtonModule } from 'primeng/togglebutton';
+import { RippleModule } from 'primeng/ripple';
+import { AdamCarouselViewComponent } from './controls/adam-carousel-view/adam-carousel-view.component';
+import { TagModule } from 'primeng/tag';
+import { CarouselModule } from 'primeng/carousel';
 
 @NgModule({
   declarations: [
@@ -91,7 +98,9 @@ import { GalleriaModule } from 'primeng/galleria';
     AdamPaginatorComponent,
     AdamTreeTableComponent,
     AdamImageComponent,
-    AdamGalleriaComponent
+    AdamGalleriaComponent,
+    AdamMasterDetailTabelComponent,
+    AdamCarouselViewComponent
   ],
   imports: [
     CommonModule,
@@ -114,9 +123,40 @@ import { GalleriaModule } from 'primeng/galleria';
     TreeModule,
     TreeSelectModule,
     ImageModule,
-    GalleriaModule
+    GalleriaModule,
+    IconFieldModule,
+    ToggleButtonModule,
+    RippleModule,
+    CarouselModule,
+    TagModule
   ],
   exports: [
+    CommonModule,
+    FormsModule,
+    MenuModule,
+    TooltipModule,
+    InputSwitchModule,
+    FileUploadModule,
+    BadgeModule,
+    CalendarModule,
+    CheckboxModule,
+    DropdownModule,
+    TableModule,
+    ToastModule,
+    PickListModule,
+    TabViewModule,
+    TranslateModule,
+    PaginatorModule,
+    TreeTableModule,
+    TreeModule,
+    TreeSelectModule,
+    ImageModule,
+    GalleriaModule,
+    IconFieldModule,
+    ToggleButtonModule,
+    RippleModule,
+    TagModule,
+    CarouselModule,
     IntInputDirective,
     DecimalInputDirective,
     UrlValidatorDirective,
@@ -149,7 +189,9 @@ import { GalleriaModule } from 'primeng/galleria';
     AdamPaginatorComponent,
     AdamTreeTableComponent,
     AdamImageComponent,
-    AdamGalleriaComponent
+    AdamGalleriaComponent,
+    AdamMasterDetailTabelComponent,
+    AdamCarouselViewComponent
   ],
   providers: [MessageService, AdamMessageService, ComponentFactoryResolverService, SortIcon, DatePipe, DecimalPipe],
   schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA]

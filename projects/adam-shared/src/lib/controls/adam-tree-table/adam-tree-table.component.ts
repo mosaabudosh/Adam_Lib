@@ -12,8 +12,8 @@ import { DatePipe, DecimalPipe } from '@angular/common';
 })
 export class AdamTreeTableComponent {
 
-  @Input() sort: boolean = true;
-  @Input() enableCheckbox: boolean = true;
+  @Input() sort: boolean = false;
+  @Input() enableCheckbox: boolean = false;
   @Input("commands") commands: any[] = [];
   @Input() columns: Column[] = [];
   @Input() rowsNumber: number = 5;
@@ -48,8 +48,8 @@ export class AdamTreeTableComponent {
   @Input() set products(value: TreeNode[]) {
     this._products = value;
   }
-  @Input() isShowSearch: boolean = true;
-  @Input() isShowaddNew: boolean = true;
+  @Input() isShowSearch: boolean = false;
+  @Input() isShowaddNew: boolean = false;
   @Input() rowHover: boolean = true;
   @Input() searchPlaceholder: string = "Search ...";
   @Input() searchWidth: string = "100%";
