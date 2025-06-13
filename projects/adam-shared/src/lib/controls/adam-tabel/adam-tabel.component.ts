@@ -15,9 +15,9 @@ export class AdamTabelComponent implements OnInit {
   @Input() set products(value: any[]) {
     this._products = value;
   }
-  @Input() sort: boolean = true;
-  @Input() isShowSearch: boolean = true;
-  @Input() isShowaddNew: boolean = true;
+  @Input() sort: boolean = false;
+  @Input() isShowSearch: boolean = false;
+  @Input() isShowaddNew: boolean = false;
   @Input() rowHover: boolean = true;
 
   @Input() rowsNumber: number = 5;
@@ -28,14 +28,14 @@ export class AdamTabelComponent implements OnInit {
 
   @Input() selection: any;
   @Input() globalFilterFields: string[] = ['name'];
-  @Input() enableCheckbox: boolean = true;
-  @Input() isShowSummary: boolean = true;
+  @Input() enableCheckbox: boolean = false;
+  @Input() isShowSummary: boolean = false;
   @Input("commands") commands: any[] = [];
 
   @Input() export: boolean;
   @Input() enableSelection: boolean;
-  @Input() enableHeaderSelection: boolean = true;
-  @Input() enableSearchonly?: boolean = true;
+  @Input() enableHeaderSelection: boolean = false;
+  @Input() enableSearchonly?: boolean = false;
   @Input() enableSingleSelection: boolean;
   @Input() disabledRowSelection: boolean = false;
   @Input() selectionMode: any;
@@ -80,8 +80,7 @@ export class AdamTabelComponent implements OnInit {
 
   constructor(private datePipe: DatePipe, private decimalPipe: DecimalPipe) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   addNew() {
     this.onClickAdd.emit();

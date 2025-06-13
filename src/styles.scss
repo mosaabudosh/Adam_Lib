@@ -5,7 +5,8 @@
 @import "primeng/resources/primeng.css";
 @import "./variables.scss";
 @import "./adam.lib.scss";
-// @import "primeicons/primeicons.css";
+@import "primeicons/primeicons.css";
+@import "bootstrap/dist/css/bootstrap.css";
 @import "./responsive.scss";
 
 html,
@@ -124,16 +125,16 @@ adam-lib-label {
             margin-top: 20px !important;
             @include margin-start(25px);
         }
-
-
     }
 
     .screen-body {
         min-height: 80vh !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+        display: block !important;
+        box-sizing: border-box !important;
     }
-
 }
-
 
 // modal-sm  // modal-lg // modal-xl
 .modal-open,
@@ -193,4 +194,17 @@ adam-lib-label {
 
 .close-button-style {
     border: 1px solid white !important;
+}
+
+:host ::ng-deep .image-border-style {
+
+    .p-image-preview-container,
+    .p-image {
+
+        img,
+        button,
+        .p-image-preview-indicator {
+            border-radius: var(--radius) !important;
+        }
+    }
 }

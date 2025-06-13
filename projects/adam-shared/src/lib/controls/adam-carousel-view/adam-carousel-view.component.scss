@@ -1,0 +1,147 @@
+@import "./../../../assets/styles/styles.scss";
+
+@mixin carousel-color {
+    &.primary {
+        @include adam-carousel-style(var(--btn-primary));
+    }
+
+    &.dangerous {
+        @include adam-carousel-style(var(--btn-dangerous));
+    }
+
+    &.positive {
+        @include adam-carousel-style(var(--btn-positive));
+    }
+
+    &.blue {
+        @include adam-carousel-style(var(--btn-blue));
+    }
+
+    &.waring {
+        @include adam-carousel-style(var(--btn-warning));
+    }
+
+    &.info {
+        @include adam-carousel-style(var(--btn-info));
+    }
+
+    &.dark {
+        @include adam-carousel-style(var(--main-background));
+    }
+
+    &.primary-reverse {
+        @include adam-carousel-style(var(--btn-primary));
+    }
+
+    &.dangerous-reverse {
+        @include adam-carousel-style(var(--btn-dangerous));
+    }
+
+    &.positive-reverse {
+        @include adam-carousel-style(var(--btn-positive));
+    }
+
+    &.blue-reverse {
+        @include adam-carousel-style(var(--btn-blue));
+    }
+
+    &.waring-reverse {
+        @include adam-carousel-style(var(--btn-warning));
+    }
+
+    &.info-reverse {
+        @include adam-carousel-style(var(--btn-info));
+    }
+
+    &.dark-reverse {
+        @include adam-carousel-style(var(--btn-dark));
+    }
+
+}
+
+@mixin adam-carousel-style($background) {
+    .p-carousel .p-carousel-indicators .p-carousel-indicator.p-highlight button {
+        background-color: $background !important;
+    }
+
+    .box-shadow-style {
+        box-shadow: 0px -1px 6px 0px $background !important;
+    }
+
+    .custom-border-style {
+        border-color: $background !important;
+        border-width: 1px !important;
+        border-style: var(--border) !important;
+        border-radius: 10px !important;
+    }
+}
+
+.carousel-view-style {
+    @include carousel-color;
+    background: transparent !important;
+    color: var(--main-text-color) !important;
+    max-width: var(--width) !important;
+    min-width: var(--width) !important;
+    padding-top: 20px !important;
+
+    .p-carousel-item {
+        min-width: calc(100% / var(--numVisible)) !important;
+        max-width: calc(100% / var(--numVisible)) !important;
+        margin: 0.5% !important;
+        cursor: pointer !important;
+
+        .carousel-image-item-style {
+            margin: 3% !important;
+        }
+    }
+}
+
+.carousel-tag-style {
+    @include margin-start(-200px);
+    margin-top: 10px !important;
+    z-index: 99 !important;
+}
+
+.carousel-card-style {
+    .carousel-descreption-item-style {
+        padding: 0px 10px !important;
+
+        .category-style {
+            font-weight: bolder !important;
+        }
+    }
+}
+
+.footer-card-action-style {
+    padding: 10px !important;
+}
+
+.header-carousel-style {
+    color: var(--main-text-color) !important;
+    font-weight: bolder !important;
+    font-size: 24px !important;
+    @include margin-start(40px);
+}
+
+.box-shadow-style {
+    box-shadow: 0px -1px 6px 0px grey !important;
+}
+
+.custom-border-style {
+    border-color: var(--main-text-color) !important;
+    border-width: 1px !important;
+    border-style: var(--border) !important;
+    border-radius: 10px !important;
+}
+
+.empty-message-table {
+    text-align: center !important;
+    color: var(--main-text-color) !important;
+    margin-top: 25px !important;
+    font-weight: bolder !important;
+}
+
+.price-item-style {
+    font-weight: bolder !important;
+    margin: 15px 5px 5px 5px !important;
+}

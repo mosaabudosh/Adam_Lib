@@ -1,0 +1,226 @@
+<div class="table-card">
+    <p-table [value]="_products" dataKey="id" [expandedRowKeys]="expandedRows" (onRowExpand)="rowExpand($event)"
+        (onRowCollapse)="rowCollapse($event)" [rows]="rowsNumber" [rowExpandMode]="'single'"
+        [paginator]="paginator && _products && _products.length > 0" [columns]="columns"
+        [globalFilterFields]="globalFilterFields" [(selection)]="selection" [rowHover]="rowHover"
+        [showCurrentPageReport]="showCurrentPageReport" [currentPageReportTemplate]="currentPageReportTemplate"
+        [rowsPerPageOptions]="rowsPerPageOptions" [showFirstLastIcon]="true" [paginatorPosition]="'bottom'"
+        [responsive]="true" [first]="first" [pageLinks]="5" [selectionMode]="selectionMode" [scrollable]="scrollable"
+        crollHeight="200px" [totalRecords]="totalRecords" [lazy]="lazy" [loading]="loading"
+        (onRowSelect)="onRowSelect($event)" (onPage)="OnPaginateChange($event)" (onRowUnselect)="rowUnselected($event)"
+        (onHeaderCheckboxToggle)="headerCheckboxToggle($event)" (onLazyLoad)="loadLazy($event)">
+
+        <ng-template *ngIf="isViewHeader" pTemplate="caption">
+            <ng-container *ngTemplateOutlet="headerElementRef">
+            </ng-container>
+        </ng-template>
+
+        <ng-template pTemplate="header" *ngIf="sort">
+            <tr class="header">
+                <th style="width: 1rem"></th>
+                <th style="width: 3rem" *ngIf="enableCheckbox">
+                    <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                </th>
+                @for(col of columns; track col){
+                <th [pSortableColumn]="col.field" [style]="{'display': col.visible == false? 'none':'table-cel'}"
+                    [style.width]="col.width">
+                    {{ col.header }}
+                    <p-sortIcon [field]="col.field"></p-sortIcon>
+                </th>
+                }
+                @for(col of commands; track col){
+                <th>
+                    {{ col.columnHeader }}
+                </th>
+                }
+            </tr>
+        </ng-template>
+
+        <ng-template pTemplate="header" *ngIf="!sort">
+            <tr>
+                <th style="width: 1rem"></th>
+                <th style="width: 3rem" *ngIf="enableCheckbox">
+                    <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                </th>
+                @for(col of columns; track col){
+                <th [style.width]="col.width" [style]="{'display': col.visible == false ?'none':'table-cel'}">
+                    {{ col.header }}
+                </th>
+                }
+
+                @for(col of commands; track col){
+                <th>
+                    {{ col.columnHeader }}
+                </th>
+                }
+            </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-product let-expanded="expanded">
+            <tr class="tr-body-style">
+                <td>
+                    <div [ngClass]="'expanded-icon-style'">
+                        <span pRipple [pRowToggler]="product" [plain]="true"
+                            [class]="expanded ? 'pi pi-chevron-down' : 'pi pi-angle-right'"></span>
+                    </div>
+                </td>
+                <td *ngIf="enableCheckbox">
+                    <p-tableCheckbox [value]="product"></p-tableCheckbox>
+                </td>
+
+                @for(col of columns; track col){
+                <td [style]="{'display': col.visible == false ? 'none' : 'table-cel'}">
+                    <adam-image *ngIf="col.isHasImage && col.imagePath && product[col.imagePath]" class="image-row"
+                        [src]="product[col.imagePath]" [previewImageSrc]="product[col.imagePath]" [width]="50"
+                        [height]="50" [preview]="true" [imageBorderRadius]="imageBorderRadius"></adam-image>
+
+                    <div *ngIf="!col.isHasImage">
+                        {{ formatTableCellValue(product[col.field], col.dataType, col.format) }}
+                    </div>
+
+                    <div class="adam-flex-row adam-center-center"
+                        *ngIf="col.isHasMultiImage && col.imagesPath && col.imagesPath.length > 0">
+                        @for(imagesPath of product[col.imagesPath]; track imagesPath){
+                        <adam-image class="images-row" [src]="imagesPath" [previewImageSrc]="imagesPath" [width]="50"
+                            [height]="50" [preview]="isPreviewImage"
+                            [imageBorderRadius]="imageBorderRadius"></adam-image>
+                        }
+                    </div>
+                </td>
+                }
+                <ng-container *ngIf="commands && commands.length > 0">
+                    @for(col of commands; track col){
+                    <td>
+                        <ng-container *ngTemplateOutlet=" col?.elementRef; context: { dataItem: product }">
+                        </ng-container>
+                    </td>
+                    }
+                </ng-container>
+            </tr>
+        </ng-template>
+
+        <ng-template pTemplate="rowexpansion" let-product>
+            <adam-lib-label *ngIf="detailTitel" class="detail-title" [text]="detailTitel"></adam-lib-label>
+            <tr>
+                <td
+                    [attr.colspan]="(columns ? getColumnLength(columns) + 1 : 0) + ( commands ? commands.length : 0) + (enableSelection ? 1 : 0)">
+                    <div class="p-3">
+                        <p-table [value]="product?.details" dataKey="id" [rows]="rowsNumber"
+                            [paginator]="detailPaginator && product?.details && product?.details.length > 0"
+                            [currentPageReportTemplate]="currentPageReportTemplate"
+                            [rowsPerPageOptions]="rowsPerPageOptions" [showFirstLastIcon]="true"
+                            [paginatorPosition]="'bottom'" [responsive]="true" [first]="first" [pageLinks]="5"
+                            [scrollable]="scrollable" crollHeight="200px" [totalRecords]="detailTotalRecords"
+                            [lazy]="lazy" [loading]="loading" (onRowSelect)="onRowSelect($event)"
+                            (onPage)="OnPaginateChange($event)" (onRowUnselect)="rowUnselected($event)"
+                            (onHeaderCheckboxToggle)="headerCheckboxToggle($event)" (onLazyLoad)="loadLazy($event)">
+                            <ng-template pTemplate="header" *ngIf="sort">
+            <tr class="header">
+                <th style="width: 3rem" *ngIf="enableCheckbox">
+                    <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                </th>
+                @for(col of detailColumns; track col){
+                <th [pSortableColumn]="col.field" [style]="{'display': col.visible == false ? 'none':'table-cel'}"
+                    [style.width]="col.width">
+                    {{ col.header }}
+                    <p-sortIcon [field]="col.field"></p-sortIcon>
+                </th>
+                }
+                @for(col of detailCommands; track col){
+                <th>
+                    {{ col.columnHeader }}
+                </th>
+                }
+            </tr>
+        </ng-template>
+
+        <ng-template pTemplate="header" *ngIf="!sort">
+            <tr>
+                <th style="width: 3rem" *ngIf="enableCheckbox">
+                    <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                </th>
+                @for(col of detailColumns; track col){
+                <th [style.width]="col.width" [style]="{'display': col.visible == false ?'none':'table-cel'}">
+                    {{ col.header }}
+                </th>
+                }
+
+                @for(col of detailCommands; track col){
+                <th>
+                    {{ col.columnHeader }}
+                </th>
+                }
+            </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-detail>
+            <tr class="tr-body-style">
+                <td *ngIf="enableCheckbox">
+                    <p-tableCheckbox [value]="detail"></p-tableCheckbox>
+                </td>
+
+                @for(col of detailColumns; track col){
+                <td [style]="{'display': col.visible == false ? 'none' : 'table-cel'}">
+                    <adam-image *ngIf="col.isHasImage && col.imagePath && detail[col.imagePath]"
+                        class="image-row adam-flex-column" [src]="detail[col.imagePath]"
+                        [previewImageSrc]="detail[col.imagePath]" [width]="50" [height]="50" [preview]="true"
+                        [imageBorderRadius]="imageBorderRadius"></adam-image>
+
+                    {{ formatTableCellValue(detail[col.field], col.dataType, col.format) }}
+
+                    <div class="adam-flex-row adam-center-center"
+                        *ngIf="col.isHasMultiImage && col.imagesPath && col.imagesPath.length > 0">
+                        @for(imagesPath of detail[col.imagesPath]; track imagesPath){
+                        <adam-image class="images-row adam-flex-column" [src]="imagesPath"
+                            [previewImageSrc]="imagesPath" [width]="50" [height]="50" [preview]="isPreviewImage"
+                            [imageBorderRadius]="imageBorderRadius"></adam-image>
+                        }
+                    </div>
+                </td>
+                }
+                <ng-container *ngIf="detailCommands && detailCommands.length > 0">
+                    @for(col of detailCommands; track col){
+                    <td>
+                        <ng-container *ngTemplateOutlet=" col?.elementRef; context: { dataItem: detail }">
+                        </ng-container>
+                    </td>
+                    }
+                </ng-container>
+            </tr>
+        </ng-template>
+
+        <ng-template pTemplate="emptymessage">
+            <tr *ngIf="product.details && product.details.length == 0">
+                <td class="empty-message-table"
+                    [attr.colspan]="(detailColumns ? getColumnLength(detailColumns) : 0) + ( detailCommands ? detailCommands.length : 0) + (enableSelection ? 1 : 0)">
+                    {{emptyData}}
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+</td>
+</tr>
+</ng-template>
+
+<ng-template *ngIf="isViewFooter" pTemplate="footer" let-columns>
+    <tr class="footer-style">
+        <td
+            [attr.colspan]="(columns ? getColumnLength(columns) : 0) + ( commands ? commands.length : 0) + (enableSelection ? 1 : 0)">
+            <ng-container *ngTemplateOutlet="footerElementRef">
+            </ng-container>
+        </td>
+    </tr>
+</ng-template>
+
+<ng-template pTemplate="emptymessage">
+    <tr *ngIf="_products != null && _products.length == 0">
+        <td class="empty-message-table"
+            [attr.colspan]="(columns ? getColumnLength(columns) + 1 : 0) + ( commands ? commands.length : 0) + (enableSelection ? 1 : 0)">
+            {{emptyData}}
+        </td>
+    </tr>
+</ng-template>
+
+</p-table>
+</div>

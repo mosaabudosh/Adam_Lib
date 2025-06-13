@@ -86,6 +86,13 @@ const routes: Routes = [
       import(
         "./component/galleria/galleria.module"
       ).then((m) => m.GalleriaModule),
+  },
+  {
+    path: "carousel",
+    loadChildren: () =>
+      import(
+        "./component/adam-carousel/adam-carousel.module"
+      ).then((m) => m.AdamCarouselModule),
   }
 ];
 

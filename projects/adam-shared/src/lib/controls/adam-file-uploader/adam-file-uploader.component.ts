@@ -87,7 +87,7 @@ export class AdamFileUploaderComponent implements OnInit, OnDestroy {
 
   attachmentsHandler(event: any) {
     if (this._uploadedFiles == null || this._uploadedFiles == undefined) {
-      this._uploadedFiles = new Array();
+      this._uploadedFiles = [];
     }
     this.fileSource = event.files;
     let re: RegExp = /(?:\.([^.]+))?$/;
