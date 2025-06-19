@@ -1,3 +1,5 @@
-<button pButton pRipple icon="{{ icon }}" [disabled]="disabled" [ngStyle]="getStyles()" (click)="onButtonClick($event)"
-    type="{{type}}" label="{{ text }}" [loading]="_isLoading"
-    class="{{ size }} {{ color }} {{ action }} {{ rounded }} {{ class }}"></button>
+
+<p-button [icon]="icon" [disabled]="disabled" [raised]="raised" [rounded]="isRounded" [style]="getStyles()"
+    (click)="onButtonClick($event)" [type]="type" [label]="text" [loading]="_isLoading"
+    class="{{ size }} {{ action }} {{ class }} {{ rounded }} {{color}}  custom-button" [iconPos]="iconPos"
+    [text]="isText" [outlined]="isOutlined" [badge]="badge" />

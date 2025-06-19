@@ -63,6 +63,11 @@ import { RippleModule } from 'primeng/ripple';
 import { AdamCarouselViewComponent } from './controls/adam-carousel-view/adam-carousel-view.component';
 import { TagModule } from 'primeng/tag';
 import { CarouselModule } from 'primeng/carousel';
+import { ButtonModule } from 'primeng/button';
+import { AdamInputOtpComponent } from './controls/adam-input-otp/adam-input-otp.component';
+import { InputOtpModule } from 'primeng/inputotp';
+import { AdamStepperComponent } from './controls/adam-stepper/adam-stepper.component';
+import { StepperModule } from 'primeng/stepper';
 
 @NgModule({
   declarations: [
@@ -100,7 +105,9 @@ import { CarouselModule } from 'primeng/carousel';
     AdamImageComponent,
     AdamGalleriaComponent,
     AdamMasterDetailTabelComponent,
-    AdamCarouselViewComponent
+    AdamCarouselViewComponent,
+    AdamInputOtpComponent,
+    AdamStepperComponent
   ],
   imports: [
     CommonModule,
@@ -126,9 +133,12 @@ import { CarouselModule } from 'primeng/carousel';
     GalleriaModule,
     IconFieldModule,
     ToggleButtonModule,
+    ButtonModule,
     RippleModule,
     CarouselModule,
-    TagModule
+    TagModule,
+    InputOtpModule,
+    StepperModule
   ],
   exports: [
     CommonModule,
@@ -154,9 +164,12 @@ import { CarouselModule } from 'primeng/carousel';
     GalleriaModule,
     IconFieldModule,
     ToggleButtonModule,
+    ButtonModule,
     RippleModule,
     TagModule,
     CarouselModule,
+    InputOtpModule,
+    StepperModule,
     IntInputDirective,
     DecimalInputDirective,
     UrlValidatorDirective,
@@ -191,7 +204,9 @@ import { CarouselModule } from 'primeng/carousel';
     AdamImageComponent,
     AdamGalleriaComponent,
     AdamMasterDetailTabelComponent,
-    AdamCarouselViewComponent
+    AdamCarouselViewComponent,
+    AdamInputOtpComponent,
+    AdamStepperComponent
   ],
   providers: [MessageService, AdamMessageService, ComponentFactoryResolverService, SortIcon, DatePipe, DecimalPipe],
   schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA]

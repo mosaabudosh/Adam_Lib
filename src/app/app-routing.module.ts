@@ -93,6 +93,20 @@ const routes: Routes = [
       import(
         "./component/adam-carousel/adam-carousel.module"
       ).then((m) => m.AdamCarouselModule),
+  },
+  {
+    path: "otp",
+    loadChildren: () =>
+      import(
+        "./component/input-otp/input-otp.module"
+      ).then((m) => m.InputOtpModule),
+  },
+  {
+    path: "stepper",
+    loadChildren: () =>
+      import(
+        "./component/stepper/stepper.module"
+      ).then((m) => m.StepperModule),
   }
 ];
 

@@ -27,6 +27,8 @@ export * from './lib/controls/adam-image/adam-image.component';
 export * from './lib/controls/adam-galleria/adam-galleria.component';
 export * from './lib/controls/adam-master-detail-tabel/adam-master-detail-tabel.component';
 export * from './lib/controls/adam-carousel-view/adam-carousel-view.component';
+export * from './lib/controls/adam-input-otp/adam-input-otp.component';
+export * from './lib/controls/adam-stepper/adam-stepper.component';
 
 export * from './lib/services/adam.message.service';
 export * from './lib/services/math-service.service';

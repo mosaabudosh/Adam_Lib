@@ -3,11 +3,13 @@
     <adam-lib-label class="screen-title" [text]="'Button'"></adam-lib-label>
 
     <div class="div-demo-style">
-        <adam-lib-button [text]="'defult'" [class]="'pi pi-plus'"></adam-lib-button>
+        <adam-lib-button [text]="'defult'" [icon]="'pi pi-plus'"></adam-lib-button>
         <adam-lib-button [width]="'200px'" [height]="'40px'" [text]="'defult'"></adam-lib-button>
         <adam-lib-button [width]="'200px'" [height]="'40px'" [color]="'primary-reverse'"
             [text]="'defult'"></adam-lib-button>
-        <adam-lib-button [width]="'200px'" [height]="'40px'" [rounded]="'rounded'" [text]="'defult'"></adam-lib-button>
+        <adam-lib-button [width]="'200px'" [height]="'40px'" [text]="'defult'"></adam-lib-button>
+        <adam-lib-button [text]="'defult'" [icon]="'pi pi-plus'" [iconPos]="'right'"></adam-lib-button>
+
     </div>
 
     <div class="div-demo-style">
@@ -42,21 +44,73 @@
     </div>
 
     <div class="div-demo-style">
-        <adam-lib-button [color]="'primary'" [text]="'primary'" [rounded]="'rounded'"
-            [class]="'pi pi-plus'"></adam-lib-button>
-        <adam-lib-button [color]="'dangerous'" [text]="''" [rounded]="'rounded'"
-            [class]="'pi pi-plus'"></adam-lib-button>
-        <adam-lib-button [color]="'positive'" [text]="''" [rounded]="'rounded'"
-            [class]="'pi pi-plus'"></adam-lib-button>
-        <adam-lib-button [color]="'blue'" [text]="''" [rounded]="'rounded'" [class]="'pi pi-plus'"></adam-lib-button>
-        <adam-lib-button [color]="'waring'" [text]="''" [rounded]="'rounded'" [class]="'pi pi-plus'"></adam-lib-button>
-        <adam-lib-button [color]="'info'" [text]="''" [rounded]="'rounded'" [class]="'pi pi-search'"></adam-lib-button>
-        <adam-lib-button [color]="'dark'" [text]="''" [rounded]="'rounded'" [class]="'pi pi-search'"></adam-lib-button>
+        <adam-lib-button [color]="'primary-reverse'" [text]="'primary'" [icon]="'pi pi-plus'"></adam-lib-button>
+        <adam-lib-button [color]="'dangerous-reverse'" [icon]="'pi pi-plus'"></adam-lib-button>
+        <adam-lib-button [color]="'positive-reverse'" [icon]="'pi pi-plus'"></adam-lib-button>
+        <adam-lib-button [color]="'blue-reverse'" [icon]="'pi pi-plus'"></adam-lib-button>
+        <adam-lib-button [color]="'waring-reverse'" [icon]="'pi pi-plus'"></adam-lib-button>
+        <adam-lib-button [color]="'info-reverse'" [icon]="'pi pi-search'"></adam-lib-button>
+        <adam-lib-button [color]="'dark-reverse'" [icon]="'pi pi-search'"></adam-lib-button>
+    </div>
 
+    <div class="div-demo-style">
+        <adam-lib-button [color]="'primary'" [text]="'primary'" [rounded]="'rounded'"
+            [icon]="'pi pi-plus'"></adam-lib-button>
+        <adam-lib-button [color]="'dangerous'" [rounded]="'rounded'" [icon]="'pi pi-plus'"></adam-lib-button>
+        <adam-lib-button [color]="'positive'" [rounded]="'rounded'" [icon]="'pi pi-plus'"></adam-lib-button>
+        <adam-lib-button [color]="'blue'" [rounded]="'rounded'" [icon]="'pi pi-plus'"></adam-lib-button>
+        <adam-lib-button [color]="'waring'" [rounded]="'rounded'" [icon]="'pi pi-plus'"></adam-lib-button>
+        <adam-lib-button [color]="'info'" [rounded]="'rounded'" [icon]="'pi pi-search'"></adam-lib-button>
+        <adam-lib-button [color]="'dark'" [rounded]="'rounded'" [icon]="'pi pi-search'"></adam-lib-button>
+    </div>
+
+    <div class="div-demo-style">
+        <adam-lib-button [color]="'primary-reverse'" [rounded]="'rounded'" [icon]="'pi pi-plus'"
+            [width]="'70px'"></adam-lib-button>
+        <adam-lib-button [color]="'dangerous-reverse'" [rounded]="'rounded'" [icon]="'pi pi-plus'"></adam-lib-button>
+        <adam-lib-button [color]="'positive-reverse'" [rounded]="'rounded'" [icon]="'pi pi-plus'"></adam-lib-button>
+        <adam-lib-button [color]="'blue-reverse'" [rounded]="'rounded'" [icon]="'pi pi-plus'"></adam-lib-button>
+        <adam-lib-button [color]="'waring-reverse'" [rounded]="'rounded'" [icon]="'pi pi-plus'"></adam-lib-button>
+        <adam-lib-button [color]="'info-reverse'" [rounded]="'rounded'" [icon]="'pi pi-search'"></adam-lib-button>
+        <adam-lib-button [color]="'dark-reverse'" [rounded]="'rounded'" [icon]="'pi pi-search'"></adam-lib-button>
     </div>
 
     <div class="div-demo-style">
         <adam-lib-button [color]="'primary'" [text]="'primary'" [isLoading]="true"></adam-lib-button>
+        <adam-lib-button [color]="'primary-reverse'" [text]="'primary'" [isLoading]="true"></adam-lib-button>
+        <adam-lib-button [color]="'primary'" [text]="'primary'" [rounded]="'rounded'"
+            [isLoading]="true"></adam-lib-button>
+        <adam-lib-button [color]="'primary-reverse'" [text]="'primary'" [rounded]="'rounded'"
+            [isLoading]="true"></adam-lib-button>
+        <adam-lib-button [color]="'primary'" [text]="'primary'" [isLoading]="true" [badge]="'5'"></adam-lib-button>
+        <adam-lib-button [color]="'primary-reverse'" [text]="'primary'" [isLoading]="true"
+            [badge]="'5'"></adam-lib-button>
+
+    </div>
+
+    <div class="div-demo-style">
+        <adam-lib-button [color]="'primary-reverse'" [text]="'primary'" [rounded]="'rounded'"
+            [badge]="'5'"></adam-lib-button>
+        <adam-lib-button [color]="'dangerous-reverse'" [text]="'dangerous'" [rounded]="'rounded'"
+            [badge]="'5'"></adam-lib-button>
+        <adam-lib-button [color]="'positive-reverse'" [text]="'positive'" [rounded]="'rounded'"
+            [badge]="'5'"></adam-lib-button>
+        <adam-lib-button [color]="'blue-reverse'" [text]="'blue'" [rounded]="'rounded'" [badge]="'5'"></adam-lib-button>
+        <adam-lib-button [color]="'waring-reverse'" [text]="'waring'" [rounded]="'rounded'"
+            [badge]="'5'"></adam-lib-button>
+        <adam-lib-button [color]="'info-reverse'" [text]="'info'" [rounded]="'rounded'" [badge]="'5'"></adam-lib-button>
+        <adam-lib-button [color]="'dark-reverse'" [text]="'dark'" [rounded]="'rounded'" [badge]="'5'"></adam-lib-button>
+    </div>
+
+    <div class="div-demo-style">
+        <adam-lib-button [color]="'primary'" [text]="'primary'" [rounded]="'rounded'" [badge]="'5'"></adam-lib-button>
+        <adam-lib-button [color]="'dangerous'" [text]="'dangerous'" [rounded]="'rounded'"
+            [badge]="'5'"></adam-lib-button>
+        <adam-lib-button [color]="'positive'" [text]="'positive'" [rounded]="'rounded'" [badge]="'5'"></adam-lib-button>
+        <adam-lib-button [color]="'blue'" [text]="'blue'" [rounded]="'rounded'" [badge]="'5'"></adam-lib-button>
+        <adam-lib-button [color]="'waring'" [text]="'waring'" [rounded]="'rounded'" [badge]="'5'"></adam-lib-button>
+        <adam-lib-button [color]="'info'" [text]="'info'" [rounded]="'rounded'" [badge]="'5'"></adam-lib-button>
+        <adam-lib-button [color]="'dark'" [text]="'dark'" [rounded]="'rounded'" [badge]="'5'"></adam-lib-button>
     </div>
 
 </div>

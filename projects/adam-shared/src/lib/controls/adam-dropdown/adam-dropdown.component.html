@@ -1,10 +1,11 @@
 <div dir="{{'dir' | translate}}" class="adam-flex adam-flex-row dropdown" [ngStyle]="getContainerStyle()"
-    style="--margin-end: {{getMarginEnd()}}" [ngClass]="{'invalid-border-style': !getIsValid(),'required': required}">
+    style="--margin-end: {{getMarginEnd()}},--width:{{getWidth()}}"
+    [ngClass]="{'invalid-border-style': !getIsValid(),'required': required}">
     <p-dropdown [options]="dataSource" [placeholder]="placeholder" [readonly]="readOnly"
         (onChange)="handelChange($event)" [disabled]="dropdoenDisabled" [filter]="filter" [(ngModel)]="_selectedValue"
         [ngStyle]="getStyles()" [required]="required" (onBlur)="handleOnBlur($event)" (onFocus)="handleOnFocus($event)"
         emptyFilterMessage="{{emptyFilterMessage}}" (onShow)="handleOnShow($event)" (onHide)="handleOnHide($event)"
-        [group]="group">
+        [group]="group" appendTo="body">
 
         <ng-template let-group pTemplate="group">
             <div>
