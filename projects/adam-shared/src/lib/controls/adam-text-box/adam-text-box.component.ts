@@ -95,10 +95,23 @@ export class AdamTextBoxComponent implements OnInit, ControlValueAccessor, Valid
   }
 
   getStyles() {
-    return {
-      width: this.width,
-      height: this.height
-    };
+    let width = 0;
+    let style = {};
+    if (this.width && this.width.substring(this.width.length - 2, this.width.length) == 'px') {
+      width = Number(this.width.substring(0, this.width.length - 2));
+      style = {
+        'width': `${width + (this.required ? 25 : 50)}px`,
+        'height': this.height,
+      };
+    }
+    if (this.width && this.width.substring(this.width.length - 1, this.width.length) == '%') {
+      width = Number(this.width.substring(0, this.width.length - 1));
+      style = {
+        'width': `${width}%`,
+        'height': this.height,
+      };
+    }
+    return style;
   }
 
   onblur(event: any) {

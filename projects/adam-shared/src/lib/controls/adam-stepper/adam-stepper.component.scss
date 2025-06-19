@@ -1,0 +1,99 @@
+ @import './../../../assets/styles/styles.scss';
+
+ @mixin adam-stepper-style($color) {
+
+     .p-stepper-nav,
+     .p-stepper-header,
+     .p-stepper-number,
+     .p-stepper-title,
+     .p-stepper-action {
+         color: $color !important;
+         cursor: pointer !important;
+     }
+
+     .p-stepper-separator {
+         color: $color !important;
+         background-color: $color !important;
+     }
+
+    //  .p-stepper-action {
+    //      p-button {
+    //          border: 2px solid $color !important;
+    //          padding: 10px !important;
+    //      }
+    //  }
+ }
+
+ .stepper-style {
+     min-width: 100% !important;
+
+     .p-stepper-nav,
+     .p-stepper-header,
+     .p-stepper-number,
+     .p-stepper-title,
+     .p-stepper-action {
+         background: transparent !important;
+         color: var(--main-text-color) !important;
+     }
+
+
+
+     .p-stepper-separator {
+         color: var(--main-text-color) !important;
+         background-color: var(--main-text-color) !important;
+         height: 5px !important;
+         border-radius: 20px !important;
+     }
+
+     &.builder {
+         @include adam-stepper-style(var(--btn-builder));
+     }
+
+     &.primary {
+         @include adam-stepper-style(var(--btn-primary));
+     }
+
+     &.dangerous {
+         @include adam-stepper-style(var(--btn-dangerous));
+     }
+
+     &.positive {
+         @include adam-stepper-style(var(--btn-positive));
+     }
+
+     &.blue {
+         @include adam-stepper-style(var(--btn-blue));
+     }
+
+     &.waring {
+         @include adam-stepper-style(var(--btn-warning));
+     }
+
+     &.info {
+         @include adam-stepper-style(var(--btn-info));
+     }
+
+     &.dark {
+         @include adam-stepper-style(var(--white-color));
+     }
+ }
+
+
+ adam-stepper,
+ .p-stepper,
+ .p-stepperPanel {
+     min-width: 100% !important;
+     background: transparent !important;
+
+     ul,
+     li {
+         background: transparent !important;
+         color: var(--main-text-color) !important;
+     }
+
+     div {
+         background: transparent !important;
+         color: var(--main-text-color) !important;
+
+     }
+ }

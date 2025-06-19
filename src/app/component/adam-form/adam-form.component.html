@@ -4,7 +4,7 @@
 
     <form #form="ngForm" novalidate (ngSubmit)="form.valid ">
 
-        <div class="adam-flex-row adam-row-gap">
+        <div class="adam-flex-row adam-row-gap adam-space-between">
             <div class="adam-flex-column">
                 <adam-lib-label [text]="'Required Dropdown'"></adam-lib-label>
                 <adam-lib-dropdown name="dropdown1" [required]="true" [dropdown]="cities" [width]="'250px'"
@@ -28,7 +28,7 @@
             </div>
         </div>
 
-        <div class="adam-flex-row adam-row-gap">
+        <div class="adam-flex-row adam-row-gap adam-space-between">
             <div class="adam-flex-column">
                 <adam-lib-label [text]="'Text Box'"></adam-lib-label>
                 <adam-lib-text-box name="textBox1" [required]="true" [width]="'250px'" [height]="'35px'"
@@ -52,7 +52,7 @@
 
         </div>
 
-        <div class="adam-flex-row adam-row-gap">
+        <div class="adam-flex-row adam-row-gap adam-space-between">
             <div class="adam-flex-column">
                 <adam-lib-label [text]="'Text Box'"></adam-lib-label>
                 <adam-lib-text-box name="textBox4" [width]="'350px'" [height]="'35px'" [(ngModel)]="textBox"
@@ -60,7 +60,7 @@
             </div>
         </div>
 
-        <div class="adam-flex-row adam-row-gap">
+        <div class="adam-flex-row adam-row-gap adam-space-between">
             <div class="adam-flex-column">
                 <adam-lib-label [text]="'Text Box'"></adam-lib-label>
                 <adam-lib-text-box name="textBox5" [width]="'250px'" [height]="'35px'" [(ngModel)]="textBox"
@@ -68,28 +68,28 @@
             </div>
         </div>
 
-        <div class="adam-flex-row adam-row-gap">
+        <div class="adam-flex-row adam-row-gap adam-space-between">
             <div class="adam-flex-column">
                 <lib-adam-checkbox [value]="'Check Box1'" [label]="'adam-checkbox'" [name]="'group1'">
                 </lib-adam-checkbox>
             </div>
         </div>
 
-        <div class="adam-flex-row adam-row-gap">
+        <div class="adam-flex-row adam-row-gap adam-space-between">
             <adam-search-box [icon]="'pi pi-search'" [width]="'250px'" [height]="'35px'"
                 [placeholder]="'Search ...'"></adam-search-box>
         </div>
 
-        <div class="adam-flex-row adam-row-gap">
+        <div class="adam-flex-row adam-row-gap adam-space-between">
             <adam-search-box [icon]="'pi pi-search'" [width]="'500px'" [height]="'35px'"
                 [placeholder]="'Search ...'"></adam-search-box>
         </div>
 
-        <div class="adam-flex-row adam-row-gap">
+        <div class="adam-flex-row adam-row-gap adam-space-between">
             <lib-adam-textarea [width]="'500px'" [placeholder]="'Text area ...'"></lib-adam-textarea>
         </div>
 
-        <div class="adam-flex-row adam-row-gap">
+        <div class="adam-flex-row adam-row-gap adam-space-between">
             <div class="adam-flex-column" style="width: 350px;">
                 <adam-lib-button [type]="'submit'" [color]="'primary-reverse'" [width]="'250px'"
                     [text]="'Submited'"></adam-lib-button>
@@ -112,6 +112,6 @@
             </div> -->
 
         </div>
-     
+
     </form>
 </div>

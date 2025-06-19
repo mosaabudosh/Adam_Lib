@@ -1,0 +1,44 @@
+<div class="adam-flex-row stepper-style {{color}}">
+    <p-stepper [linear]="true" [(activeStep)]="_active" [value]="_active" [orientation]="orientation"
+        (onItemClick)="onStepperClick($event)">
+        @for(stepper of _steppers; track stepper){
+        <p-stepperPanel [header]="stepper?.header" (onClick)="onStepperClick($event)">
+            <ng-template pTemplate="content" let-nextCallback="nextCallback" let-index="index">
+                <ng-container *ngIf="commands && commands.length > 0 && buttonPos != 'top'">
+                    @for(command of commands; track command){
+                    <ng-container *ngTemplateOutlet="command?.elementRef">
+                    </ng-container>
+                    }
+                </ng-container>
+
+                <div class="adam-flex-row adam-space-between">
+                    <div class="adam-flex-column adam-start-start">
+                        <adam-lib-button
+                            *ngIf="(stepper.index != 0 || stepper.index == _steppers[_steppers.length-1]?.index) || isViewBack"
+                            [color]="color" (onClick)="prev($event,index)" [text]="backLabel"
+                            [icon]="'pi pi-arrow-left'" [color]="color +'-reverse'">
+                        </adam-lib-button>
+                    </div>
+
+                    <div class="adam-flex-column adam-end-end">
+                        <adam-lib-button
+                            *ngIf="stepper.index == 0 || stepper.index != _steppers[_steppers.length-1]?.index"
+                            [color]="color" (onClick)="next($event,index)" [text]="nextLabel"
+                            [icon]="'pi pi-arrow-right'" [iconPos]="'right'">
+                        </adam-lib-button>
+                    </div>
+                </div>
+
+                <ng-container *ngIf="commands && commands.length > 0 && buttonPos == 'top'">
+                    @for(command of commands; track command){
+                    <ng-container *ngTemplateOutlet="command?.elementRef">
+                    </ng-container>
+                    }
+                </ng-container>
+
+            </ng-template>
+        </p-stepperPanel>
+        }
+    </p-stepper>
+
+</div>

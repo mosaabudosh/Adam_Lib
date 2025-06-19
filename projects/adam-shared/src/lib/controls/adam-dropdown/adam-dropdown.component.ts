@@ -87,13 +87,26 @@ export class AdamDropdownComponent {
   constructor() { }
 
   getMarginEnd() {
-    return this.required ? '37px' : '60px';
+    return this.required ? '37px' : '70px';
+  }
+
+  getWidth() {
+    let width: any = 0;
+    if (this._width && this._width.substring(this._width.length - 2, this._width.length) == 'px') {
+      width = `${Number(this._width.substring(0, this._width.length - 2)) + (this.required ? 25 : 60)}px`;
+      return width;
+    }
+    if (this._width && this._width.substring(this._width.length - 1, this._width.length) == '%') {
+      width = `${Number(this._width.substring(0, this._width.length - 1))}%`;
+      return width;
+    }
+    return '100%';
   }
 
   getStyles() {
     return {
-      width: this._width,
-      height: this.height,
+      'width': `${this.getWidth()}`,
+      'height': this.height,
       'border-radius': this.borderRadius,
       'float': 'left'
     };
@@ -108,10 +121,23 @@ export class AdamDropdownComponent {
   }
 
   getContainerStyle() {
-    return {
-      width: this._width + this.required ? '25' : 0,
-      height: this.height
-    };
+    let width = 0;
+    let style = {};
+    if (this._width && this._width.substring(this._width.length - 2, this._width.length) == 'px') {
+      width = Number(this._width.substring(0, this._width.length - 2));
+      style = {
+        width: `${width + (this.required ? 25 : 0)}px`,
+        height: this.height
+      };
+    }
+    if (this._width && this._width.substring(this._width.length - 1, this._width.length) == '%') {
+      width = Number(this._width.substring(0, this._width.length - 1));
+      style = {
+        width: `${width}%`,
+        height: this.height
+      };
+    }
+    return style;
   }
 
   handelChange(event: any) {

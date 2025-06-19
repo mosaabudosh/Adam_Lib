@@ -267,7 +267,7 @@ export class AppComponent {
           },
           {
             label: 'Paginator',
-            icon: 'pi pi-clone',
+            icon: 'pi pi-arrows-h',
             id: 'paginator',
             parentId: 'Controles',
             isActive: false,
@@ -303,12 +303,36 @@ export class AppComponent {
           },
           {
             label: 'Carousel',
-            icon: 'pi pi-images',
+            icon: 'pi pi-th-large',
             id: 'carousel',
             parentId: 'Controles',
             isActive: false,
             expanded: false,
             url: '/carousel',
+            command: (event: any) => {
+              this.onMenuCommandClick(event);
+            }
+          },
+          {
+            label: 'Input Otp',
+            icon: 'pi pi-ellipsis-h',
+            id: 'otp',
+            parentId: 'Controles',
+            isActive: false,
+            expanded: false,
+            url: '/otp',
+            command: (event: any) => {
+              this.onMenuCommandClick(event);
+            }
+          },
+          {
+            label: 'Stepper',
+            icon: 'pi pi-sitemap',
+            id: 'stepper',
+            parentId: 'Controles',
+            isActive: false,
+            expanded: false,
+            url: '/stepper',
             command: (event: any) => {
               this.onMenuCommandClick(event);
             }
