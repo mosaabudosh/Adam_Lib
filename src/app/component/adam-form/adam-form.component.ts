@@ -11,6 +11,7 @@ import { AdamPopupComponent } from '../adam-popup/adam-popup.component';
 export class AdamFormComponent {
   citiyId: number | null = null;
   textBox: string;
+  catrDetailCount: number = 4;
   cities = [
     { label: 'New York', value: 1 },
     { label: 'Rome', value: 2 },
@@ -52,6 +53,28 @@ export class AdamFormComponent {
         console.log('send')
       }
     }
+  ];
+  catrDetailCountIcons = [
+    {
+      icon: "pi pi-minus",
+      tooltip: 'minus',
+      tooltipPosition: 'top',
+      position: 'start',
+      command: (event: any) => {
+        console.log('minus')
+        this.catrDetailCount = this.catrDetailCount - 1;
+      }
+    },
+    {
+      icon: "pi pi-plus",
+      tooltip: 'plus',
+      tooltipPosition: 'top',
+      position: 'end',
+      command: (event: any) => {
+        console.log('plus')
+        this.catrDetailCount = this.catrDetailCount + 1;
+      }
+    },
   ]
   fromDate: Date;
 

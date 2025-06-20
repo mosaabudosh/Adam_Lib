@@ -68,6 +68,7 @@ import { AdamInputOtpComponent } from './controls/adam-input-otp/adam-input-otp.
 import { InputOtpModule } from 'primeng/inputotp';
 import { AdamStepperComponent } from './controls/adam-stepper/adam-stepper.component';
 import { StepperModule } from 'primeng/stepper';
+import { KnobModule } from 'primeng/knob';
 
 @NgModule({
   declarations: [
@@ -138,7 +139,8 @@ import { StepperModule } from 'primeng/stepper';
     CarouselModule,
     TagModule,
     InputOtpModule,
-    StepperModule
+    StepperModule,
+    KnobModule
   ],
   exports: [
     CommonModule,
@@ -170,6 +172,7 @@ import { StepperModule } from 'primeng/stepper';
     CarouselModule,
     InputOtpModule,
     StepperModule,
+    KnobModule,
     IntInputDirective,
     DecimalInputDirective,
     UrlValidatorDirective,

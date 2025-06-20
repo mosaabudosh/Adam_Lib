@@ -5,7 +5,7 @@
     <form #form="ngForm" novalidate (ngSubmit)="form.valid ">
 
         <div class="adam-flex-row adam-row-gap adam-space-between">
-            <div class="adam-flex-column">
+            <div class="adam-flex-column-3">
                 <adam-lib-label [text]="'Required Dropdown'"></adam-lib-label>
                 <adam-lib-dropdown name="dropdown1" [required]="true" [dropdown]="cities" [width]="'250px'"
                     [height]="'35px'" [(ngModel)]="citiyId" [submitted]="form.submitted" ngDefaultControl
@@ -15,17 +15,18 @@
                     [text]="'Required dropdown is required'"></adam-lib-label>
             </div>
 
-            <div class="adam-flex-column">
+            <div class="adam-flex-column-3">
                 <adam-lib-label [text]="'Dropdown'"></adam-lib-label>
                 <adam-lib-dropdown name="dropdown2" [dropdown]="cities" [width]="'250px'" [height]="'35px'"
                     [(ngModel)]="citiyId" [submitted]="form.submitted" ngDefaultControl></adam-lib-dropdown>
             </div>
 
-            <div class="adam-flex-column" style="width: 500px">
+            <div class="adam-flex-column-3" style="width: 500px">
                 <adam-lib-label [text]="'Dropdown'"></adam-lib-label>
                 <adam-lib-dropdown name="dropdown3" [dropdown]="cities" [width]="'100%'" [height]="'35px'"
                     [(ngModel)]="citiyId" [submitted]="form.submitted" ngDefaultControl></adam-lib-dropdown>
             </div>
+            <div class="adam-flex-column-3"></div>
         </div>
 
         <div class="adam-flex-row adam-row-gap adam-space-between">
@@ -48,6 +49,16 @@
                 <adam-lib-label [text]="'Text Box'"></adam-lib-label>
                 <adam-lib-text-box name="textBox3" [width]="'100%'" [height]="'35px'" [(ngModel)]="textBox"
                     [isDisplayIconStart]="true" ngDefaultControl></adam-lib-text-box>
+            </div>
+            <div class="adam-flex-column-3"></div>
+        </div>
+
+        <div class="adam-flex-row adam-row-gap adam-space-between">
+            <div class="adam-flex-column">
+                <adam-lib-label [text]="'Cart Detail Count'"></adam-lib-label>
+                <adam-lib-text-box name="catrDetailCounts" [width]="'30px'" [height]="'35px'"
+                    [(ngModel)]="catrDetailCount" [icons]="catrDetailCountIcons" ngDefaultControl></adam-lib-text-box>
+
             </div>
 
         </div>

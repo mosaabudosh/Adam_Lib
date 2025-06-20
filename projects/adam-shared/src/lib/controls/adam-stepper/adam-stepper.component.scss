@@ -16,12 +16,12 @@
          background-color: $color !important;
      }
 
-    //  .p-stepper-action {
-    //      p-button {
-    //          border: 2px solid $color !important;
-    //          padding: 10px !important;
-    //      }
-    //  }
+     //  .p-stepper-action {
+     //      p-button {
+     //          border: 2px solid $color !important;
+     //          padding: 10px !important;
+     //      }
+     //  }
  }
 
  .stepper-style {
@@ -95,5 +95,16 @@
          background: transparent !important;
          color: var(--main-text-color) !important;
 
+     }
+ }
+
+ .pi-arrow-left,
+ .pi-arrow-right {
+     :dir(rtl) & {
+         rotate: 180deg !important;
+     }
+
+     :dir(ltr) & {
+         rotate: 0deg !important;
      }
  }

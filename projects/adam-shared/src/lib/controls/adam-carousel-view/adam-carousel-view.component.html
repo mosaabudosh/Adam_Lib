@@ -1,4 +1,5 @@
-<div class="carousel-view-style {{color}}" [ngClass]="isViewBorder ? 'custom-border-style': ''"
+<div dir="{{ 'dir' | translate }}" class="carousel-view-style {{color}}"
+    [ngClass]="isViewBorder ? 'custom-border-style': ''"
     [style]="{'--width':width,'--border':isViewBorder ? 'solid' :'none','--numVisible':numVisible}">
 
     <div *ngIf="_products && _products.length == 0" class="empty-message-table">
@@ -7,7 +8,8 @@
 
     <p-carousel [value]="_products" [numVisible]="numVisible" [numScroll]="numScroll" [circular]="isCircular"
         [responsiveOptions]="responsiveOptions" [autoplayInterval]="isAutoplayInterval ? autoplayInterval : 0"
-        [orientation]="orientation" [verticalViewPortHeight]="verticalViewPortHeight">
+        [orientation]="orientation" [verticalViewPortHeight]="verticalViewPortHeight"
+        [ngClass]="orientation == 'horizontal' ? 'rotate-icon-wrapper':''">
 
         <ng-template *ngIf="isViewHeader" pTemplate="header">
             <p class="header-carousel-style">{{headerLabel}}</p>
@@ -51,15 +53,15 @@
                     <div class="adam-flex-column footer-card-action-style">
                         <div *ngIf="isViewFooter" class="adam-flex-row">
                             <div class="adam-flex-column ">
-                                <adam-lib-button [color]="addToFavoriteColor" [text]="' '"
-                                    [class]="product.isInFavorite ? 'pi pi-heart-fill' : 'pi pi-heart'" [width]="'60px'"
+                                <adam-lib-button [color]="addToFavoriteColor"
+                                    [icon]="product.isInFavorite ? 'pi pi-heart-fill' : 'pi pi-heart'" [width]="'60px'"
                                     [height]="'40px'"
                                     [pTooltip]="isViewButtonsTooltip ? ( product.isInFavorite ? 'In my favorite' : 'Add to favorite') : ''"
                                     [tooltipPosition]="tooltipPosition"
                                     (click)="onButtonClick(commandType.Favorite,product)"></adam-lib-button>
                             </div>
                             <div class="adam-flex-column ">
-                                <adam-lib-button [color]="addToCartColor" [text]="' '" [class]="'pi pi-shopping-cart'"
+                                <adam-lib-button [color]="addToCartColor" [icon]="'pi pi-shopping-cart'"
                                     [width]="'60px'" [height]="'40px'"
                                     [pTooltip]="isViewButtonsTooltip ? 'Add to cart' : ''"
                                     [tooltipPosition]="tooltipPosition"

@@ -34,7 +34,7 @@ export class AdamCarouselViewComponent implements OnInit {
   @Input() isViewButtonsTooltip: boolean = false;
   @Input() tooltipPosition: string = 'top';
   @Input() isViewBorder: boolean = false;
-  @Input() isCircular: boolean = true;
+  @Input() isCircular: boolean = false;
   @Input() numVisible: number = 7;
   @Input() numScroll: number = 3;
   @Input() isAutoplayInterval: boolean = false;
