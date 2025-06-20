@@ -13,7 +13,6 @@
         color: var(--text-color) !important;
         border: 1px solid lightgray !important;
         border-radius: var(--border-radius) !important;
-        // background: var(--input-background) !important;
     }
 
     input::placeholder {
@@ -24,11 +23,12 @@
     }
 
     span {
-        border: none !important;
         padding: 10px !important;
         color: var(--icon-color) !important;
-        font-size: var(--med-font-size) !important;
-        margin-top: -3px !important;
+        font-size: 13px !important;
+        // border: 1px solid lightgray !important;
+        // border-radius: var(--border-radius) !important;
+        cursor: pointer !important;
 
         :dir(rtl) & {
             rotate: 270deg !important;
@@ -45,5 +45,11 @@
 }
 
 .icon-span {
-    @include margin-end(-10px);
+    @include margin-end(-12px);
+    height: var(--height) !important;
+    padding: 2px !important;
+}
+
+.icons-span {
+    height: var(--height) !important;
 }

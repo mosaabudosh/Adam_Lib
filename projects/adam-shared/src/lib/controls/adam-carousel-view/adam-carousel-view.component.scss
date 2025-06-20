@@ -145,3 +145,19 @@
     font-weight: bolder !important;
     margin: 15px 5px 5px 5px !important;
 }
+
+.p-icon-wrapper {
+    color: var(--main-text-color) !important;
+}
+
+.rotate-icon-wrapper {
+    .p-icon-wrapper {
+        :dir(rtl) & {
+            rotate: 180deg !important;
+        }
+
+        :dir(ltr) & {
+            rotate: 0deg !important;
+        }
+    }
+}

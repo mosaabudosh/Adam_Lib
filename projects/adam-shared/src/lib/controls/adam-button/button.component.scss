@@ -145,3 +145,11 @@ $transparentBackground: transparent;
     @include border-radius(var(--border-radius));
   }
 }
+
+.p-button .p-button-icon-right {
+  @include margin-start(0.5rem);
+}
+
+.p-button .p-button-icon-left {
+  @include margin-end(0.5rem);
+}

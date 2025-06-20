@@ -8,4 +8,10 @@ import { Component, ViewEncapsulation } from '@angular/core';
 })
 export class InputOtpComponent {
 
+  otpValue: any;
+
+
+  verifyCode(event?: any) {
+    this.otpValue = event?.value;
+  }
 }

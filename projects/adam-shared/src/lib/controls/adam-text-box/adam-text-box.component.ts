@@ -37,6 +37,8 @@ export class AdamTextBoxComponent implements OnInit, ControlValueAccessor, Valid
   @Input() minLength: string;
   @Input() maxLength: string = '50';
   @Input() icon: string | null = null;
+  @Input() iconTooltip: string;
+  @Input() iconTooltipPosition: string;
   @Input() isDisableValidationAfterSubmit: boolean = false;
   @Input() isDisplayIconStart: boolean = false;
   _submitted: boolean;
@@ -45,11 +47,21 @@ export class AdamTextBoxComponent implements OnInit, ControlValueAccessor, Valid
   };
   marginEnd: string = this.icon != null ? '50px' : '60px';
 
+  _startIcons: any[] = [];
+  _endIcons: any[] = [];
   _icons: any[] = [];
   @Input() set icons(value: any[]) {
     this._icons = value;
-    if (this._icons.length > 0)
-      this.marginEnd = `${this._icons.length * 40}px`
+    this._startIcons = value?.filter(p => p?.position == 'start');
+    this._endIcons = value?.filter(p => p?.position == 'end');
+    if (this._icons?.length > 0 && this._startIcons?.length == 0 && this.isDisplayIconStart) {
+      this._startIcons = this._icons;
+    }
+    if (this._icons?.length > 0 && this._endIcons?.length == 0 && !this.isDisplayIconStart) {
+      this._endIcons = this._icons;
+    }
+    if (this._endIcons.length > 0)
+      this.marginEnd = `${this._endIcons.length * 40}px`
   };
   @Input() readOnly?: boolean = false;
 
@@ -141,7 +153,7 @@ export class AdamTextBoxComponent implements OnInit, ControlValueAccessor, Valid
     return validatorFn ? validatorFn : {};
   }
 
-  onIconClick() {
-    this.onIconClicked.emit();
+  onIconClick(event?: any) {
+    this.onIconClicked.emit(event);
   }
 }

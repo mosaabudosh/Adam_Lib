@@ -2,33 +2,31 @@
 
     <adam-lib-label class="screen-title" [text]="'OTP'"></adam-lib-label>
 
-    <div class="adam-flex-row adam-row-gap">
+    <div class="adam-flex-row adam-row-gap adam-space-between">
         <div class="adam-flex-column">
             <adam-input-otp [isDefaultStyle]="true" [color]="'primary'"></adam-input-otp>
         </div>
 
-        <div class="adam-flex-column-1"></div>
         <div class="adam-flex-column">
             <adam-input-otp [isDefaultStyle]="true" [color]="'positive'" [variant]="'filled'"
                 [length]="5"></adam-input-otp>
         </div>
-        <div class="adam-flex-column-1"></div>
 
         <div class="adam-flex-column">
             <adam-input-otp [isDefaultStyle]="true" [color]="'dangerous'"></adam-input-otp>
         </div>
-        <div class="adam-flex-column-1"></div>
 
+    </div>
+
+    <div class="adam-flex-row adam-row-gap adam-space-between">
         <div class="adam-flex-column">
             <adam-input-otp [isDefaultStyle]="true" [color]="'blue'" [variant]="'filled'" [length]="5"></adam-input-otp>
         </div>
 
-        <div class="adam-flex-column-1"></div>
 
         <div class="adam-flex-column">
             <adam-input-otp [isDefaultStyle]="true" [color]="'builder'"></adam-input-otp>
         </div>
-        <div class="adam-flex-column-1"></div>
 
         <div class="adam-flex-column">
             <adam-input-otp [isDefaultStyle]="true" [color]="'waring'" [variant]="'filled'"
@@ -36,44 +34,40 @@
         </div>
     </div>
 
-
-    <div class="adam-flex-row adam-row-gap">
+    <div class="adam-flex-row adam-row-gap adam-space-between">
         <adam-input-otp [isDefaultStyle]="true" [length]="9"></adam-input-otp>
     </div>
 
-    <div class="adam-flex-row adam-row-gap">
+    <div class="adam-flex-row adam-row-gap adam-space-between">
         <div class="adam-flex-column">
             <adam-input-otp [color]="'primary'"></adam-input-otp>
         </div>
-
-        <div class="adam-flex-column-1"></div>
         <div class="adam-flex-column">
             <adam-input-otp [color]="'positive'" [variant]="'filled'" [length]="5"></adam-input-otp>
         </div>
-        <div class="adam-flex-column-1"></div>
-
         <div class="adam-flex-column">
             <adam-input-otp [color]="'dangerous'"></adam-input-otp>
         </div>
-        <div class="adam-flex-column-1"></div>
+    </div>
 
+    <div class="adam-flex-row adam-row-gap adam-space-between">
         <div class="adam-flex-column">
             <adam-input-otp [color]="'blue'" [variant]="'filled'" [length]="5"></adam-input-otp>
         </div>
-
-        <div class="adam-flex-column-1"></div>
-
         <div class="adam-flex-column">
             <adam-input-otp [color]="'builder'"></adam-input-otp>
         </div>
-        <div class="adam-flex-column-1"></div>
-
         <div class="adam-flex-column">
             <adam-input-otp [color]="'waring'" [variant]="'filled'" [length]="5"></adam-input-otp>
         </div>
     </div>
 
     <div class="adam-flex-row adam-row-gap">
-        <adam-input-otp [length]="9"></adam-input-otp>
+        <adam-input-otp name="otp" [(ngModel)]="otpValue" [length]="9" (onSelectChanged)="verifyCode($event)"></adam-input-otp>
+    </div>
+
+    <div class="adam-flex-row adam-row-gap adam-center-center">
+        <adam-lib-button [color]="'waring'" [width]="'150px'" [text]="'Verify'"
+            (onClick)="verifyCode()"></adam-lib-button>
     </div>
 </div>

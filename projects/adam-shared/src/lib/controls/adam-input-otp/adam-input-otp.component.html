@@ -1,5 +1,5 @@
 <div class="adam-flex-row {{color}}" [ngClass]="{'otp-style': isDefaultStyle,'custom-otp-input': !isDefaultStyle}">
-    <p-inputOtp class="{{color}}" [(ngModel)]="_value" [integerOnly]="integerOnly" [length]="length"
+    <p-inputOtp class="{{color}}" value="{{ _value }}" [integerOnly]="integerOnly" [length]="length"
         [disabled]="disabled" [invalid]="invalid" [readonly]="readonly" [variant]="variant" [tabindex]="tabindex"
         [mask]="mask" [autofocus]="autofocus" (onChange)="onChange($event)" (onFocus)="onFocus($event)"
         (onBlur)="onBlur($event)" />
