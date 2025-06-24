@@ -12,3 +12,14 @@ dl {
         border-radius: 50% !important;
     }
 }
+
+.galleria-thumbnail-container {
+    .p-galleria-thumbnail-wrapper,
+    .p-galleria-thumbnail-container {
+        max-height: var(--height) !important;
+    }
+}
+
+.p-galleria-thumbnail-items-container {
+    height: 100% !important;
+}

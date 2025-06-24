@@ -3,7 +3,7 @@
         [columns]="columns" [globalFilterFields]="globalFilterFields" [(selection)]="selection" [rowHover]="rowHover"
         dataKey="id" [showCurrentPageReport]="showCurrentPageReport"
         [currentPageReportTemplate]="currentPageReportTemplate" [rowsPerPageOptions]="rowsPerPageOptions"
-        [showFirstLastIcon]="false" [paginatorPosition]="'bottom'" [responsive]="true" [first]="first" [pageLinks]="5"
+        [showFirstLastIcon]="isShowFirstLastIcon" [paginatorPosition]="paginatorPosition" [responsive]="true" [first]="first" [pageLinks]="5"
         [selectionMode]="selectionMode" [scrollable]="scrollable" crollHeight="200px" [totalRecords]="totalRecords"
         [lazy]="lazy" [loading]="loading" (onRowSelect)="onRowSelect($event)" (onPage)="OnPaginateChange($event)"
         (onRowUnselect)="rowUnselected($event)" (onHeaderCheckboxToggle)="headerCheckboxToggle($event)"

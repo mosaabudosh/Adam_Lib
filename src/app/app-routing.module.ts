@@ -107,6 +107,13 @@ const routes: Routes = [
       import(
         "./component/stepper/stepper.module"
       ).then((m) => m.StepperModule),
+  },
+  {
+    path: "data-view",
+    loadChildren: () =>
+      import(
+        "./component/data-view/data-view.module"
+      ).then((m) => m.DataViewModule),
   }
 ];
 

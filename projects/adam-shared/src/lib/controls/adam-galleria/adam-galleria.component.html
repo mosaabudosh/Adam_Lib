@@ -1,20 +1,23 @@
-<div class="adam-flex-row">
+<div class="adam-flex-row ">
     <p-galleria [value]="_images" [showIndicators]="showIndicators" [showThumbnails]="showThumbnails"
-        [changeItemOnIndicatorHover]="changeItemOnIndicatorHover" [indicatorsPosition]="position"
-        [responsiveOptions]="responsiveOptions" [containerStyle]="{ 'max-width': width }" [numVisible]="numVisible"
-        [(visible)]="displayBasic" [circular]="circular" [fullScreen]="fullScreen"
-        [showItemNavigators]="showItemNavigators" [showIndicatorsOnItem]="showIndicatorsOnItem">
+        [thumbnailsPosition]="thumbnailsPosition" [changeItemOnIndicatorHover]="changeItemOnIndicatorHover"
+        [indicatorsPosition]="indicatorsPosition" [responsiveOptions]="responsiveOptions"
+        [containerStyle]="getContainerStyle()" [numVisible]="numVisible" [(visible)]="displayBasic"
+        [circular]="circular" [fullScreen]="fullScreen" [showItemNavigators]="showItemNavigators"
+        [showIndicatorsOnItem]="showIndicatorsOnItem" class="galleria-thumbnail-container"
+        [style]="{'--height':height ? height : 'auto'}">
 
         <ng-template pTemplate="item" let-item>
-            <adam-image [src]="item.itemImageSrc" [previewImageSrc]="item.itemImageSrc" [width]="width" [height]="width"
-                [preview]="isPreviewImage" style="display: block;" [isBorderRadius]="isBorderRadius"
-                [imageBorderRadius]="'2%'"></adam-image>
+            <adam-image [src]="item.itemImageSrc" [previewImageSrc]="item.itemImageSrc" [width]="width"
+                [height]="height ? height : width" [preview]="isPreviewImage" style="display: block;"
+                [isBorderRadius]="isBorderRadius" [imageBorderRadius]="imageBorderRadius"></adam-image>
         </ng-template>
 
         <ng-template pTemplate="thumbnail" let-item>
-            <div class="grid grid-nogutter justify-content-center">
-                <adam-image [src]="item.thumbnailImageSrc" [previewImageSrc]="item.thumbnailImageSrc" [preview]="false"
-                    [width]="100" [height]="100" [isBorderRadius]="isBorderRadius" [imageBorderRadius]="'10%'"
+            <div>
+                <adam-image [src]="item.thumbnailImageSrc" [previewImageSrc]="item.thumbnailImageSrc"
+                    [preview]="isThumbnailPreviewImage" [width]="widthThumbnailImage" [height]="heightThumbnailImage"
+                    [isBorderRadius]="isBorderRadius" [imageBorderRadius]="thumbnailImageBorderRadius"
                     style="display: block;"></adam-image>
             </div>
         </ng-template>

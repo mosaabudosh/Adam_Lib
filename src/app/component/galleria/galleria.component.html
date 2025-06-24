@@ -2,6 +2,13 @@
     <adam-lib-label class="screen-title" [text]="'Galleria'"></adam-lib-label>
 
     <div class="adam-flex-row adam-row-gap">
+        <div class="adam-flex-column-6">
+            <adam-galleria [thumbnailsPosition]="'left'" [images]="images" [numVisible]="4" [width]="'600px'"
+                [height]="'450px'" [widthThumbnailImage]="'75px'" [heightThumbnailImage]="'75px'"></adam-galleria>
+        </div>
+    </div>
+
+    <div class="adam-flex-row adam-row-gap">
         <div class="adam-flex-column-3">
             <adam-galleria [images]="images" [width]="'300px'"></adam-galleria>
         </div>
@@ -25,24 +32,25 @@
 
     <div class="adam-flex-row adam-row-gap">
         <div class="adam-flex-column-3">
-            <adam-galleria [images]="images" [position]="'left'" [showThumbnails]="false" [showIndicators]="true"
-                [width]="'300px'"></adam-galleria>
+            <adam-galleria [images]="images" [indicatorsPosition]="'left'" [showThumbnails]="false"
+                [showIndicators]="true" [width]="'300px'"></adam-galleria>
         </div>
 
         <div class="adam-flex-column-3">
-            <adam-galleria [images]="images" [position]="'top'" [showThumbnails]="false" [showIndicators]="true"
-                [width]="'300px'"></adam-galleria>
+            <adam-galleria [images]="images" [indicatorsPosition]="'top'" [showThumbnails]="false"
+                [showIndicators]="true" [width]="'300px'"></adam-galleria>
         </div>
 
         <div class="adam-flex-column-3">
-            <adam-galleria [images]="images" [position]="'right'" [showThumbnails]="false" [showIndicators]="true"
-                [width]="'300px'"></adam-galleria>
+            <adam-galleria [images]="images" [indicatorsPosition]="'right'" [showThumbnails]="false"
+                [showIndicators]="true" [width]="'300px'"></adam-galleria>
         </div>
     </div>
 
     <div class="adam-flex-row adam-row-gap">
         <div class="adam-flex-column-6">
-            <adam-galleria [images]="images" [numVisible]="5" [width]="'600px'" [viewCaption]="true"></adam-galleria>
+            <adam-galleria [images]="images" [numVisible]="5" [width]="'600px'" [viewCaption]="true"
+                [showItemNavigators]="true"></adam-galleria>
         </div>
 
         <div class="adam-flex-column-6">
@@ -50,4 +58,5 @@
                 [showIndicators]="true" [viewCaption]="true"></adam-galleria>
         </div>
     </div>
+
 </div>

@@ -4,10 +4,18 @@ export interface ProductCarouselModel {
     name?: string;
     description?: string;
     image?: string;
+    images?: any[];
     price?: number;
     category?: string;
-    quantity?: number,
+    quantity?: number;
     inventoryStatus?: string;
-    rating?: number,
-    isInFavorite?: boolean
+    rating?: number;
+    isInFavorite?: boolean;
+    shope?: string;
+    shopeId?: number;
+    discount?: number;
+    tax?: number;
+    icons?: any[];
+    units?: any[];
+    selectedUnitId?: number;
 }

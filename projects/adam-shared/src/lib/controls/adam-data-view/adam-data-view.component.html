@@ -1,0 +1,175 @@
+<div class="data-view-style">
+    <p-dataView #dv [value]="_products" [layout]="layout" [sortField]="sortField" [sortOrder]="sortOrder"
+        [rows]="rowsNumber" [paginator]="paginator && _products && _products.length > 0"
+        [showCurrentPageReport]="showCurrentPageReport" [currentPageReportTemplate]="currentPageReportTemplate"
+        [rowsPerPageOptions]="rowsPerPageOptions" [showFirstLastIcon]="isShowFirstLastIcon"
+        [paginatorPosition]="paginatorPosition" [first]="first" [pageLinks]="5" [totalRecords]="totalRecords"
+        [lazy]="lazy" [loading]="loading" (onPage)="onPaginateChange($event)" (onLazyLoad)="loadLazy($event)"
+        (onChangeLayout)="onChangeLayout($event)" [emptyMessage]="emptyMessage">
+
+        <ng-template *ngIf="!isViewCustomHeader" pTemplate="header">
+            <div *ngIf="_products && _products.length > 0" class="adam-flex-row adam-space-between">
+                <div class="adam-flex-column">
+                    <adam-lib-dropdown name="sort" placeholder="Sort By Price" [dropdown]="_sortOptions"
+                        [width]="'250px'" [height]="'35px'" [(ngModel)]="sortKey"
+                        (onSelectChanged)="onSortChange($event)"></adam-lib-dropdown>
+                </div>
+                <div class="adam-flex-column">
+                    <p-dataViewLayoutOptions [styleClass]="'dataview-layout-options ' + color" [layout]="layout" />
+                </div>
+            </div>
+        </ng-template>
+
+        <ng-template *ngIf="isViewCustomHeader" let-product pTemplate="item">
+            <ng-container *ngTemplateOutlet=" customHeaderElementRef; context: { product: product }">
+            </ng-container>
+        </ng-template>
+
+        <ng-template *ngIf="!isViewCustomListData" pTemplate="list" let-products>
+            <div class="grid grid-nogutter">
+                @for(item of products; track item){
+                <div class="adam-flex-row adam-space-between item-list-card-style" (click)="onCardClick.emit(item)">
+                    <div class="adam-flex-column-1 adam-start-start ">
+                        <adam-image class="adam-gap-1" [src]="item?.image"
+                            [pTooltip]="isViewImageTooltip ? item.name : ''" [tooltipPosition]="tooltipPosition"
+                            [previewImageSrc]="item.image" [width]="imageWidth" [height]="imageHeight"
+                            [preview]="isPreviewImage" [imageBorderRadius]="imageBorderRadius"
+                            [alt]="item.name"></adam-image>
+                    </div>
+                    <div class="adam-flex-column-1 adam-start-start adam-gap-2">
+                        <div *ngIf="isViewShope" class="adam-flex-row item-style">
+                            <p class="bolder-style" [pTooltip]="('storeDashboard.shope'|translate) + item.shope"
+                                [tooltipPosition]="tooltipPosition">
+                                {{ item.shope }}</p>
+                        </div>
+
+                        <div *ngIf="isViewRating" class="adam-flex-row item-style">
+                            <p-rating [iconOnClass]="'pi pi-star-fill'" [(ngModel)]="item.rating"
+                                [iconOnStyle]="{color:colorRating}" [readonly]="true" [cancel]="false" />
+                        </div>
+
+                        <div *ngIf="isViewCategory"
+                            [ngClass]="textAlign ? 'adam-flex-row item-style ' + textAlign : 'adam-flex-row item-style'">
+                            <p class="bolder-style"
+                                [pTooltip]="isViewCategoryTooltip ? ('storeDashboard.category'|translate) + item.category : ''"
+                                [tooltipPosition]="tooltipPosition">
+                                {{item.category }}</p>
+                        </div>
+
+                        <div *ngIf="isViewName" class="adam-flex-row item-style">
+                            <p>{{ item.name }}</p>
+                        </div>
+
+                        <div *ngIf="isViewDescription" class="adam-flex-row item-style">
+                            <p>{{item.description}}</p>
+                        </div>
+                    </div>
+                    <div class="adam-flex-column-6 adam-end-end adam-gap-1">
+                        <div *ngIf="isViewPrice" class="adam-flex-row bolder-style">
+                            <p>{{ item.price }} JD</p>
+                        </div>
+                        <div *ngIf="isViewFooter" class="adam-flex-row">
+                            <div class="adam-flex-column ">
+                                <adam-lib-button [color]="addToFavoriteColor"
+                                    [icon]="item.isInFavorite ? 'pi pi-heart-fill' : 'pi pi-heart'" [width]="'60px'"
+                                    [height]="'40px'"
+                                    [pTooltip]="isViewButtonsTooltip ? ( item.isInFavorite ? addToCartLabel : addToFavoriteLabel) : ''"
+                                    [tooltipPosition]="tooltipPosition"
+                                    (click)="onAddToFavorite.emit(item)"></adam-lib-button>
+                            </div>
+                            <div class="adam-flex-column ">
+                                <adam-lib-button [color]="addToCartColor" [icon]="'pi pi-shopping-cart'"
+                                    [width]="'60px'" [height]="'40px'"
+                                    [pTooltip]="isViewButtonsTooltip ? addToCartLabel : ''"
+                                    [tooltipPosition]="tooltipPosition"
+                                    (click)="onAddToCart.emit(item)"></adam-lib-button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                }
+            </div>
+        </ng-template>
+
+        <ng-template *ngIf="isViewCustomListData" let-product pTemplate="list" let-products>
+            <ng-container
+                *ngTemplateOutlet=" customListDataElementRef; context: { products: products,product: product }">
+            </ng-container>
+        </ng-template>
+
+        <ng-template *ngIf="!isViewCustomListData" let-product pTemplate="grid" let-products>
+            <div class="adam-flex adam-flex-row grid-style">
+                @for(item of products; track item){
+                <div class="item-card-style adam-flex-column" (click)="onCardClick.emit(item)">
+                    <div class="adam-flex-row">
+                        <adam-image class="adam-gap-1" [src]="item?.image"
+                            [pTooltip]="isViewImageTooltip ? item.name : ''" [tooltipPosition]="tooltipPosition"
+                            [previewImageSrc]="item.image" [width]="imageWidth" [height]="imageHeight"
+                            [preview]="isPreviewImage" [imageBorderRadius]="imageBorderRadius"
+                            [alt]="item.name"></adam-image>
+                    </div>
+
+                    <div *ngIf="isViewShope" class="adam-flex-row item-style">
+                        <p class="bolder-style" [pTooltip]="('storeDashboard.shope'|translate) + item.shope"
+                            [tooltipPosition]="tooltipPosition">
+                            {{ item.shope }}</p>
+                    </div>
+
+                    <div *ngIf="isViewRating" class="adam-flex-row item-style">
+                        <p-rating [iconOnClass]="'pi pi-star-fill'" [(ngModel)]="item.rating"
+                            [iconOnStyle]="{color:colorRating}" [readonly]="true" [cancel]="false" />
+                    </div>
+
+                    <div *ngIf="isViewCategory"
+                        [ngClass]="textAlign ? 'adam-flex-row item-style ' + textAlign : 'adam-flex-row item-style'">
+                        <p class="bolder-style"
+                            [pTooltip]="isViewCategoryTooltip ? ('storeDashboard.category'|translate) + item.category : ''"
+                            [tooltipPosition]="tooltipPosition">
+                            {{item.category }}</p>
+                    </div>
+
+                    <div *ngIf="isViewName" class="adam-flex-row item-style">
+                        <p>{{ item.name }}</p>
+                    </div>
+
+                    <div *ngIf="isViewDescription" class="adam-flex-row item-style">
+                        <p>{{item.description}}</p>
+                    </div>
+
+                    <div *ngIf="isViewPrice" class="adam-flex-row item-style bolder-style">
+                        <p>{{ item.price }} JD</p>
+                    </div>
+
+                    <div *ngIf="isViewFooter" class="adam-flex-row adam-space-between adam-gap-1">
+                        <div class="adam-flex-column"></div>
+                        <div class="adam-flex-column adam-end-end">
+                            <div class="adam-flex-row">
+                                <adam-lib-button [color]="addToFavoriteColor"
+                                    [icon]="item.isInFavorite ? 'pi pi-heart-fill' : 'pi pi-heart'" [width]="'60px'"
+                                    [height]="'40px'"
+                                    [pTooltip]="isViewButtonsTooltip ? ( item.isInFavorite ? addToCartLabel : addToFavoriteLabel) : ''"
+                                    [tooltipPosition]="tooltipPosition"
+                                    (click)="onAddToFavorite.emit(item)"></adam-lib-button>
+
+                                <adam-lib-button [color]="addToCartColor" [icon]="'pi pi-shopping-cart'"
+                                    [width]="'60px'" [height]="'40px'"
+                                    [pTooltip]="isViewButtonsTooltip ? addToCartLabel : ''"
+                                    [tooltipPosition]="tooltipPosition"
+                                    (click)="onAddToCart.emit(item)"></adam-lib-button>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                }
+            </div>
+        </ng-template>
+
+        <ng-template *ngIf="isViewCustomListData" let-product pTemplate="grid" let-products>
+            <ng-container
+                *ngTemplateOutlet=" customGridDataElementRef; context: {  products: products,product: product }">
+            </ng-container>
+        </ng-template>
+    </p-dataView>
+</div>

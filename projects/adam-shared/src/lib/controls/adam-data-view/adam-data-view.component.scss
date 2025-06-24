@@ -1,0 +1,144 @@
+@import "./../../../assets/styles/styles.scss";
+
+$transparentBackground: transparent;
+
+@mixin adam-btn-style($background, $foreground, $border) {
+    background-color: $background !important;
+    color: $foreground !important;
+    border: 1px solid $border !important;
+}
+
+.data-view-style {
+    background: transparent !important;
+    padding: 2rem !important;
+    border-radius: 10px !important;
+    margin-bottom: 1rem !important;
+}
+
+.p-dataview,
+.p-dataview-list,
+.p-dataview-grid,
+.p-dataview-header,
+.p-dataview-content {
+    background: transparent !important;
+    color: var(--main-text-color) !important;
+    border: none !important;
+}
+
+.dataview-layout-options {
+    button {
+        border-radius: 10px !important;
+    }
+}
+
+.p-selectbutton .p-button {
+    @include adam-btn-style(var($transparentBackground), var(--btn-warning), var(--btn-warning));
+}
+
+.p-selectbutton .p-button.p-highlight {
+    @include adam-btn-style(var(--btn-warning), var(--white), var(--btn-warning));
+}
+
+.item-list-card-style {
+    box-shadow: 0px -1px 6px 0px var(--btn-warning) !important;
+    border-radius: var(--border-radius) !important;
+    margin: 15px 0 !important;
+    width: 100% !important;
+}
+
+.item-card-style {
+    box-shadow: 0px -1px 6px 0px var(--btn-warning) !important;
+    border-radius: var(--border-radius) !important;
+    margin: 10px 7px !important;
+    width: fit-content !important;
+}
+
+.item-style {
+    @include margin-start(10px);
+
+    p {
+        font-size: 14px !important;
+        margin-bottom: 5px !important;
+    }
+}
+
+.bolder-style {
+    font-weight: bolder !important;
+}
+
+.grid-style {
+    flex-wrap: wrap !important;
+}
+
+.p-dataview-emptymessage {
+    text-align: center !important;
+    box-shadow: 0px -1px 6px 0px var(--btn-warning) !important;
+    border-radius: var(--border-radius) !important;
+}
+
+.p-paginator {
+    background-color: transparent !important;
+    color: var(--main-text-color) !important;
+    justify-content: center !important;
+    border: none !important;
+    font-size: var(--small-font-size) !important;
+    font-family: var(--font-family) !important;
+    margin-top: 20px !important;
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+    margin: 0 auto !important;
+    background-color: var(--btn-warning) !important;
+    color: var(--main-text-color) !important;
+    border: none !important;
+    font-size: var(--small-font-size) !important;
+    font-family: var(--font-family) !important;
+    border-radius: var(--border-radius) !important;
+}
+
+.p-paginator-current {
+    color: var(--icon-color) !important;
+    font-size: var(--small-font-size) !important;
+}
+
+.p-paginator-first,
+.p-paginator-prev,
+.p-paginator-next,
+.p-paginator-last {
+    color: var(--main-text-color) !important;
+
+    :dir(rtl) & {
+        rotate: 180deg !important;
+    }
+}
+
+
+.p-paginator-rpp-options {
+    height: 45px !important;
+    width: 80px !important;
+
+    ol,
+    ul {
+        padding: 0px !important;
+    }
+
+    .p-dropdown-panel .p-dropdown-items .p-dropdown-item:not(.p-highlight):not(.p-disabled):hover {
+        font-size: var(--small-font-size) !important;
+        font-family: var(--font-family) !important;
+        color: var(--main-text-color) !important;
+        background-color: var(--btn-warning) !important;
+        min-width: max-content !important;
+    }
+
+    .p-dropdown-panel .p-dropdown-items .p-dropdown-item:not(.p-disabled).p-focus {
+        font-size: var(--small-font-size) !important;
+        font-family: var(--font-family) !important;
+        color: var(--main-text-color) !important;
+        background-color: var(--btn-warning) !important;
+        min-width: max-content !important;
+    }
+}
+
+.p-paginator .p-dropdown {
+    height: 45px !important;
+}

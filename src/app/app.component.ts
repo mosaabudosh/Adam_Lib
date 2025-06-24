@@ -336,6 +336,18 @@ export class AppComponent {
             command: (event: any) => {
               this.onMenuCommandClick(event);
             }
+          },
+          {
+            label: 'Data View',
+            icon: 'pi pi-list',
+            id: 'data-view',
+            parentId: 'Controles',
+            isActive: false,
+            expanded: false,
+            url: '/data-view',
+            command: (event: any) => {
+              this.onMenuCommandClick(event);
+            }
           }
         ]
       }
