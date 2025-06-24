@@ -16,7 +16,7 @@
         </ng-template>
 
         <ng-template *ngIf="isViewCarousel" let-product pTemplate="item">
-            <ng-container *ngTemplateOutlet="carouselElementRef">
+            <ng-container *ngTemplateOutlet=" carouselElementRef; context: { product: product }">
             </ng-container>
         </ng-template>
 
@@ -71,7 +71,6 @@
                     </div>
                 </div>
             </div>
-
         </ng-template>
     </p-carousel>
 </div>

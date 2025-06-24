@@ -31,7 +31,7 @@
         cursor: pointer !important;
 
         :dir(rtl) & {
-            rotate: 270deg !important;
+            rotate: var(--rotateDeg) !important;
         }
 
         @include float-right;

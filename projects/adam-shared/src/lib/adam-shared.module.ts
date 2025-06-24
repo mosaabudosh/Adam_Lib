@@ -69,6 +69,38 @@ import { InputOtpModule } from 'primeng/inputotp';
 import { AdamStepperComponent } from './controls/adam-stepper/adam-stepper.component';
 import { StepperModule } from 'primeng/stepper';
 import { KnobModule } from 'primeng/knob';
+import { RatingModule } from 'primeng/rating';
+import { CardModule } from 'primeng/card';
+import { OrderListModule } from 'primeng/orderlist';
+import { DataViewModule } from 'primeng/dataview';
+import { SkeletonModule } from 'primeng/skeleton';
+import { AdamDataViewComponent } from './controls/adam-data-view/adam-data-view.component';
+import { MegaMenuModule } from 'primeng/megamenu';
+import { PanelMenuModule } from 'primeng/panelmenu';
+import { StepsModule } from 'primeng/steps';
+import { AvatarModule } from 'primeng/avatar';
+import { AvatarGroupModule } from 'primeng/avatargroup';
+import { ChipModule } from 'primeng/chip';
+import { SidebarModule } from 'primeng/sidebar';
+import { ToolbarModule } from 'primeng/toolbar';
+import { PanelModule } from 'primeng/panel';
+import { SplitterModule } from 'primeng/splitter';
+import { FieldsetModule } from 'primeng/fieldset';
+import { DividerModule } from 'primeng/divider';
+import { AccordionModule } from 'primeng/accordion';
+import { SpeedDialModule } from 'primeng/speeddial';
+import { SplitButtonModule } from 'primeng/splitbutton';
+import { SelectButtonModule } from 'primeng/selectbutton';
+import { RadioButtonModule } from 'primeng/radiobutton';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { ListboxModule } from 'primeng/listbox';
+import { InputIconModule } from 'primeng/inputicon';
+import { InputTextModule } from 'primeng/inputtext';
+import { FloatLabelModule } from 'primeng/floatlabel';
+import { ColorPickerModule } from 'primeng/colorpicker';
+import { ChipsModule } from 'primeng/chips';
+import { CascadeSelectModule } from 'primeng/cascadeselect';
+import { AutoCompleteModule } from 'primeng/autocomplete';
 
 @NgModule({
   declarations: [
@@ -108,7 +140,8 @@ import { KnobModule } from 'primeng/knob';
     AdamMasterDetailTabelComponent,
     AdamCarouselViewComponent,
     AdamInputOtpComponent,
-    AdamStepperComponent
+    AdamStepperComponent,
+    AdamDataViewComponent
   ],
   imports: [
     CommonModule,
@@ -140,7 +173,39 @@ import { KnobModule } from 'primeng/knob';
     TagModule,
     InputOtpModule,
     StepperModule,
-    KnobModule
+    KnobModule,
+    RatingModule,
+    CardModule,
+    DataViewModule,
+    SkeletonModule,
+    OrderListModule,
+    PanelMenuModule,
+    MegaMenuModule,
+    StepsModule,
+    AvatarModule,
+    AvatarGroupModule,
+    ChipModule,
+    SidebarModule,
+    ToolbarModule,
+    SplitterModule,
+    PanelModule,
+    FieldsetModule,
+    DividerModule,
+    AccordionModule,
+    SpeedDialModule,
+    SplitButtonModule,
+    TreeSelectModule,
+    SelectButtonModule,
+    RadioButtonModule,
+    MultiSelectModule,
+    ListboxModule,
+    InputIconModule,
+    InputTextModule,
+    FloatLabelModule,
+    ColorPickerModule,
+    ChipsModule,
+    CascadeSelectModule,
+    AutoCompleteModule,
   ],
   exports: [
     CommonModule,
@@ -173,6 +238,38 @@ import { KnobModule } from 'primeng/knob';
     InputOtpModule,
     StepperModule,
     KnobModule,
+    RatingModule,
+    CardModule,
+    DataViewModule,
+    SkeletonModule,
+    OrderListModule,
+    PanelMenuModule,
+    MegaMenuModule,
+    StepsModule,
+    AvatarModule,
+    AvatarGroupModule,
+    ChipModule,
+    SidebarModule,
+    ToolbarModule,
+    SplitterModule,
+    PanelModule,
+    FieldsetModule,
+    DividerModule,
+    AccordionModule,
+    SpeedDialModule,
+    SplitButtonModule,
+    TreeSelectModule,
+    SelectButtonModule,
+    RadioButtonModule,
+    MultiSelectModule,
+    ListboxModule,
+    InputIconModule,
+    InputTextModule,
+    FloatLabelModule,
+    ColorPickerModule,
+    ChipsModule,
+    CascadeSelectModule,
+    AutoCompleteModule,
     IntInputDirective,
     DecimalInputDirective,
     UrlValidatorDirective,
@@ -209,7 +306,8 @@ import { KnobModule } from 'primeng/knob';
     AdamMasterDetailTabelComponent,
     AdamCarouselViewComponent,
     AdamInputOtpComponent,
-    AdamStepperComponent
+    AdamStepperComponent,
+    AdamDataViewComponent
   ],
   providers: [MessageService, AdamMessageService, ComponentFactoryResolverService, SortIcon, DatePipe, DecimalPipe],
   schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA]

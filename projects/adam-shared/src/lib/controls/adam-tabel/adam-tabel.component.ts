@@ -43,11 +43,13 @@ export class AdamTabelComponent implements OnInit {
   @Input() scrollable: boolean = false;
   @Input() totalRecords: number = 0;
   @Input() lazy: boolean = false;
+  @Input() isShowFirstLastIcon: boolean = true;
   @Input() loading: boolean;
   @Input() searchPlaceholder: string = "Search ...";
   @Input() searchWidth: string = "100%";
   @Input() searchHeight: string = "35px";
   @Input() emptyData: string = "No records found";
+  @Input() paginatorPosition: 'top' | 'bottom' | 'both' = "bottom";
 
   pageInfo: any = {
     pageNumber: 0,

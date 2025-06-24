@@ -41,6 +41,8 @@ export class AdamTextBoxComponent implements OnInit, ControlValueAccessor, Valid
   @Input() iconTooltipPosition: string;
   @Input() isDisableValidationAfterSubmit: boolean = false;
   @Input() isDisplayIconStart: boolean = false;
+  @Input() rotateDeg: number = 270;
+
   _submitted: boolean;
   @Input() set submitted(value: boolean) {
     this._submitted = value

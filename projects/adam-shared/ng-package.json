@@ -9,7 +9,10 @@
     "entryFile": "src/public-api.ts",
     "styleIncludePaths": [
       "src/assets",
-      "node_modules"
+      "node_modules",
+      "node_modules/primeicons/primeicons.css",
+      "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
+      "node_modules/primeng/resources/primeng.min.css"
     ]
   }
 }
