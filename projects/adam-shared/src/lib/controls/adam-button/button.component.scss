@@ -85,11 +85,11 @@ $transparentBackground: transparent;
 
   &.none,
   &.cancel {
-    @include adam-btn-style(var(--white), var(--btn-none), var(--btn-none));
+    @include adam-btn-style(var(--none), var(--btn-none), var(--btn-none));
   }
 
   &.link {
-    @include adam-btn-style(var(--btn-gray), var(--btn-link-outline), var(--btn-link-outline));
+    @include adam-btn-style(var(--none), var(--btn-link-outline), var(--btn-link-outline));
   }
 
   &.tag {
@@ -105,23 +105,27 @@ $transparentBackground: transparent;
   }
 
   &.back {
-    display: inline-flex;
-    border: var(--none);
-    @include adam-btn-style(var(--btn-gray), var(--btn-none), var(--none));
+    display: inline-flex !important;
+    border: var(--back) !important;
+    @include adam-btn-style(var(--none), var(--back), var(--none));
+
+    .p-button {
+      box-shadow: none !important;
+    }
   }
 
   &.back::before {
-    display: inline-flex;
-    @include padding-end(15px);
-    @include padding-start(20px);
-    content: "\f060";
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    text-decoration: inherit;
-    color: var(--btn-none);
-    font-size: 18px;
-    background-color: var(--btn-gray) !important;
+    padding-top: 10px !important;
+    color: var(--back) !important;
+    font-size: 15px !important;
+    content: "\f060" !important;
+    font-family: "Font Awesome\ 5 Free" !important;
+    display: inline-block !important;
+    font-weight: 900 !important;
+
+    :dir(rtl) & {
+      rotate: 180deg !important;
+    }
   }
 
   &.rounded {
@@ -130,6 +134,10 @@ $transparentBackground: transparent;
 
   &.flat {
     @include adam-btn-style(var(--none), var(--btn-primary), var(--none));
+
+    .p-button {
+      box-shadow: none !important;
+    }
   }
 }
 

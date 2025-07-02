@@ -2,14 +2,11 @@
     [ngClass]="isViewBorder ? 'custom-border-style': ''"
     [style]="{'--width':width,'--border':isViewBorder ? 'solid' :'none','--numVisible':numVisible}">
 
-    <div *ngIf="_products && _products.length == 0" class="empty-message-table">
-        {{emptyData}}
-    </div>
-
-    <p-carousel [value]="_products" [numVisible]="numVisible" [numScroll]="numScroll" [circular]="isCircular"
-        [responsiveOptions]="responsiveOptions" [autoplayInterval]="isAutoplayInterval ? autoplayInterval : 0"
-        [orientation]="orientation" [verticalViewPortHeight]="verticalViewPortHeight"
-        [ngClass]="orientation == 'horizontal' ? 'rotate-icon-wrapper':''">
+    <p-carousel *ngIf="_products && _products.length > 0" [value]="_products" [numVisible]="numVisible"
+        [numScroll]="numScroll" [circular]="isCircular" [responsiveOptions]="responsiveOptions"
+        [autoplayInterval]="isAutoplayInterval ? autoplayInterval : 0" [orientation]="orientation"
+        [verticalViewPortHeight]="verticalViewPortHeight"
+        [ngClass]="orientation == 'horizontal' ? 'rotate-icon-wrapper':''" (onPage)="onPage($event)">
 
         <ng-template *ngIf="isViewHeader" pTemplate="header">
             <p class="header-carousel-style">{{headerLabel}}</p>
@@ -73,4 +70,26 @@
             </div>
         </ng-template>
     </p-carousel>
+
+    <div *ngIf="!_products || _products.length == 0" class="empty-message-table">
+        <div *ngIf="isViewHeader" class="adam-flex-row">
+            <p class="header-carousel-style">{{headerLabel}}</p>
+        </div>
+        <div [ngClass]="orientation == 'horizontal' ? 'adam-flex-row':'adam-flex-column'">
+            @for(item of skeletons; track item){
+            <div
+                [ngClass]="orientation == 'horizontal' ? 'adam-flex-column-2 adam-center-center':'adam-flex-row skeleton-style'">
+                <lib-adam-skeleton [skeletonWidth]="_skeletonWidth" [skeletonHeight]="_skeletonHeight"
+                    [skeletonBorderRadius]="_skeletonBorderRadius" [skeletonShap]="_skeletonShape"></lib-adam-skeleton>
+            </div>
+            }
+        </div>
+
+        <div *ngIf="orientation == 'horizontal'" class="adam-flex-row adam-center-center adam-gap-1">
+            @for(item of skeletons; track item){
+            <lib-adam-skeleton class="skeleton-dash-style" skeletonWidth="2rem" skeletonHeight="0.5rem"
+                skeletonBorderRadius="0"></lib-adam-skeleton>
+            }
+        </div>
+    </div>
 </div>

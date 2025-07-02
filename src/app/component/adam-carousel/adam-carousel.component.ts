@@ -10,16 +10,17 @@ import { OrientationCarouselType, ProductCarouselModel } from 'adam-shared';
 export class AdamCarouselComponent implements OnInit {
 
   products: ProductCarouselModel[] = [];
+  skeletonsProducts: ProductCarouselModel[] = [];
   public get orientationCarouselType(): typeof OrientationCarouselType {
     return OrientationCarouselType;
   }
   ngOnInit(): void {
     this.products = [
       {
-        id: '1000',
+        shopItemId: '1000',
         code: 'f230fh0g3',
         name: 'Bamboo Watch',
-        description: 'Product Description',
+        descreption: 'Product Description',
         image: 'https://primefaces.org/cdn/primeng/images/demo/product/bamboo-watch.jpg',
         price: 65,
         category: 'Accessories',
@@ -29,10 +30,10 @@ export class AdamCarouselComponent implements OnInit {
         isInFavorite: true
       },
       {
-        id: '1001',
+        shopItemId: '1001',
         code: 'nvklal433',
         name: 'Black Watch',
-        description: 'Product Description',
+        descreption: 'Product Description',
         image: 'https://primefaces.org/cdn/primeng/images/demo/product/black-watch.jpg',
         price: 72,
         category: 'Accessories',
@@ -42,10 +43,10 @@ export class AdamCarouselComponent implements OnInit {
         isInFavorite: false
       },
       {
-        id: '1002',
+        shopItemId: '1002',
         code: 'zz21cz3c1',
         name: 'Blue Band',
-        description: 'Product Description',
+        descreption: 'Product Description',
         image: 'https://primefaces.org/cdn/primeng/images/demo/product/blue-band.jpg',
         price: 79,
         category: 'Fitness',
@@ -55,10 +56,10 @@ export class AdamCarouselComponent implements OnInit {
         isInFavorite: true
       },
       {
-        id: '1003',
+        shopItemId: '1003',
         code: '244wgerg2',
         name: 'Blue T-Shirt',
-        description: 'Product Description',
+        descreption: 'Product Description',
         image: 'https://primefaces.org/cdn/primeng/images/demo/product/blue-t-shirt.jpg',
         price: 29,
         category: 'Clothing',
@@ -68,10 +69,10 @@ export class AdamCarouselComponent implements OnInit {
         isInFavorite: false
       },
       {
-        id: '1004',
+        shopItemId: '1004',
         code: 'h456wer53',
         name: 'Bracelet',
-        description: 'Product Description',
+        descreption: 'Product Description',
         image: 'https://primefaces.org/cdn/primeng/images/demo/product/bracelet.jpg',
         price: 15,
         category: 'Accessories',
@@ -81,10 +82,10 @@ export class AdamCarouselComponent implements OnInit {
         isInFavorite: false
       },
       {
-        id: '1005',
+        shopItemId: '1005',
         code: 'av2231fwg',
         name: 'Brown Purse',
-        description: 'Product Description',
+        descreption: 'Product Description',
         image: 'https://primefaces.org/cdn/primeng/images/demo/product/brown-purse.jpg',
         price: 120,
         category: 'Accessories',
@@ -94,10 +95,10 @@ export class AdamCarouselComponent implements OnInit {
         isInFavorite: false
       },
       {
-        id: '1006',
+        shopItemId: '1006',
         code: 'bib36pfvm',
         name: 'Chakra Bracelet',
-        description: 'Product Description',
+        descreption: 'Product Description',
         image: 'https://primefaces.org/cdn/primeng/images/demo/product/chakra-bracelet.jpg',
         price: 32,
         category: 'Accessories',
@@ -107,10 +108,10 @@ export class AdamCarouselComponent implements OnInit {
         isInFavorite: true
       },
       {
-        id: '1007',
+        shopItemId: '1007',
         code: 'mbvjkgip5',
         name: 'Galaxy Earrings',
-        description: 'Product Description',
+        descreption: 'Product Description',
         image: 'https://primefaces.org/cdn/primeng/images/demo/product/galaxy-earrings.jpg',
         price: 34,
         category: 'Accessories',
@@ -120,10 +121,10 @@ export class AdamCarouselComponent implements OnInit {
         isInFavorite: false
       },
       {
-        id: '1008',
+        shopItemId: '1008',
         code: 'vbb124btr',
         name: 'Game Controller',
-        description: 'Product Description',
+        descreption: 'Product Description',
         image: 'https://primefaces.org/cdn/primeng/images/demo/product/game-controller.jpg',
         price: 99,
         category: 'Electronics',
@@ -133,10 +134,10 @@ export class AdamCarouselComponent implements OnInit {
         isInFavorite: false
       },
       {
-        id: '1009',
+        shopItemId: '1009',
         code: 'cm230f032',
         name: 'Gaming Set',
-        description: 'Product Description',
+        descreption: 'Product Description',
         image: 'https://primefaces.org/cdn/primeng/images/demo/product/gaming-set.jpg',
         price: 299,
         category: 'Electronics',
@@ -146,10 +147,10 @@ export class AdamCarouselComponent implements OnInit {
         isInFavorite: false
       },
       {
-        id: '1010',
+        shopItemId: '1010',
         code: 'plb34234v',
         name: 'Gold Phone Case',
-        description: 'Product Description',
+        descreption: 'Product Description',
         image: 'https://primefaces.org/cdn/primeng/images/demo/product/gold-phone-case.jpg',
         price: 24,
         category: 'Accessories',
@@ -159,10 +160,10 @@ export class AdamCarouselComponent implements OnInit {
         isInFavorite: false
       },
       {
-        id: '1011',
+        shopItemId: '1011',
         code: '4920nnc2d',
         name: 'Green Earbuds',
-        description: 'Product Description',
+        descreption: 'Product Description',
         image: 'https://primefaces.org/cdn/primeng/images/demo/product/green-earbuds.jpg',
         price: 89,
         category: 'Electronics',
@@ -172,10 +173,10 @@ export class AdamCarouselComponent implements OnInit {
         isInFavorite: false
       },
       {
-        id: '1012',
+        shopItemId: '1012',
         code: '250vm23cc',
         name: 'Green T-Shirt',
-        description: 'Product Description',
+        descreption: 'Product Description',
         image: 'https://primefaces.org/cdn/primeng/images/demo/product/green-t-shirt.jpg',
         price: 49,
         category: 'Clothing',
@@ -185,10 +186,10 @@ export class AdamCarouselComponent implements OnInit {
         isInFavorite: false
       },
       {
-        id: '1013',
+        shopItemId: '1013',
         code: 'fldsmn31b',
         name: 'Grey T-Shirt',
-        description: 'Product Description',
+        descreption: 'Product Description',
         image: 'https://primefaces.org/cdn/primeng/images/demo/product/grey-t-shirt.jpg',
         price: 48,
         category: 'Clothing',
@@ -198,10 +199,10 @@ export class AdamCarouselComponent implements OnInit {
         isInFavorite: false
       },
       {
-        id: '1014',
+        shopItemId: '1014',
         code: 'waas1x2as',
         name: 'Headphones',
-        description: 'Product Description',
+        descreption: 'Product Description',
         image: 'https://primefaces.org/cdn/primeng/images/demo/product/headphones.jpg',
         price: 175,
         category: 'Electronics',
@@ -211,10 +212,10 @@ export class AdamCarouselComponent implements OnInit {
         isInFavorite: false
       },
       {
-        id: '1015',
+        shopItemId: '1015',
         code: 'vb34btbg5',
         name: 'Light Green T-Shirt',
-        description: 'Product Description',
+        descreption: 'Product Description',
         image: 'https://primefaces.org/cdn/primeng/images/demo/product/light-green-t-shirt.jpg',
         price: 49,
         category: 'Clothing',
@@ -224,10 +225,10 @@ export class AdamCarouselComponent implements OnInit {
         isInFavorite: false
       },
       {
-        id: '1000',
+        shopItemId: '1000',
         code: 'f230fh0g3',
         name: 'Bamboo Watch',
-        description: 'Product Description',
+        descreption: 'Product Description',
         image: 'https://primefaces.org/cdn/primeng/images/demo/product/bamboo-watch.jpg',
         price: 65,
         category: 'Accessories',
@@ -237,10 +238,10 @@ export class AdamCarouselComponent implements OnInit {
         isInFavorite: true
       },
       {
-        id: '1001',
+        shopItemId: '1001',
         code: 'nvklal433',
         name: 'Black Watch',
-        description: 'Product Description',
+        descreption: 'Product Description',
         image: 'https://primefaces.org/cdn/primeng/images/demo/product/black-watch.jpg',
         price: 72,
         category: 'Accessories',
@@ -250,10 +251,10 @@ export class AdamCarouselComponent implements OnInit {
         isInFavorite: false
       },
       {
-        id: '1002',
+        shopItemId: '1002',
         code: 'zz21cz3c1',
         name: 'Blue Band',
-        description: 'Product Description',
+        descreption: 'Product Description',
         image: 'https://primefaces.org/cdn/primeng/images/demo/product/blue-band.jpg',
         price: 79,
         category: 'Fitness',
@@ -263,10 +264,10 @@ export class AdamCarouselComponent implements OnInit {
         isInFavorite: true
       },
       {
-        id: '1003',
+        shopItemId: '1003',
         code: '244wgerg2',
         name: 'Blue T-Shirt',
-        description: 'Product Description',
+        descreption: 'Product Description',
         image: 'https://primefaces.org/cdn/primeng/images/demo/product/blue-t-shirt.jpg',
         price: 29,
         category: 'Clothing',
@@ -276,10 +277,10 @@ export class AdamCarouselComponent implements OnInit {
         isInFavorite: false
       },
       {
-        id: '1004',
+        shopItemId: '1004',
         code: 'h456wer53',
         name: 'Bracelet',
-        description: 'Product Description',
+        descreption: 'Product Description',
         image: 'https://primefaces.org/cdn/primeng/images/demo/product/bracelet.jpg',
         price: 15,
         category: 'Accessories',
@@ -289,10 +290,10 @@ export class AdamCarouselComponent implements OnInit {
         isInFavorite: false
       },
       {
-        id: '1005',
+        shopItemId: '1005',
         code: 'av2231fwg',
         name: 'Brown Purse',
-        description: 'Product Description',
+        descreption: 'Product Description',
         image: 'https://primefaces.org/cdn/primeng/images/demo/product/brown-purse.jpg',
         price: 120,
         category: 'Accessories',
@@ -302,10 +303,10 @@ export class AdamCarouselComponent implements OnInit {
         isInFavorite: false
       },
       {
-        id: '1006',
+        shopItemId: '1006',
         code: 'bib36pfvm',
         name: 'Chakra Bracelet',
-        description: 'Product Description',
+        descreption: 'Product Description',
         image: 'https://primefaces.org/cdn/primeng/images/demo/product/chakra-bracelet.jpg',
         price: 32,
         category: 'Accessories',
@@ -315,10 +316,10 @@ export class AdamCarouselComponent implements OnInit {
         isInFavorite: true
       },
       {
-        id: '1007',
+        shopItemId: '1007',
         code: 'mbvjkgip5',
         name: 'Galaxy Earrings',
-        description: 'Product Description',
+        descreption: 'Product Description',
         image: 'https://primefaces.org/cdn/primeng/images/demo/product/galaxy-earrings.jpg',
         price: 34,
         category: 'Accessories',
@@ -328,10 +329,10 @@ export class AdamCarouselComponent implements OnInit {
         isInFavorite: false
       },
       {
-        id: '1008',
+        shopItemId: '1008',
         code: 'vbb124btr',
         name: 'Game Controller',
-        description: 'Product Description',
+        descreption: 'Product Description',
         image: 'https://primefaces.org/cdn/primeng/images/demo/product/game-controller.jpg',
         price: 99,
         category: 'Electronics',
@@ -341,10 +342,10 @@ export class AdamCarouselComponent implements OnInit {
         isInFavorite: false
       },
       {
-        id: '1009',
+        shopItemId: '1009',
         code: 'cm230f032',
         name: 'Gaming Set',
-        description: 'Product Description',
+        descreption: 'Product Description',
         image: 'https://primefaces.org/cdn/primeng/images/demo/product/gaming-set.jpg',
         price: 299,
         category: 'Electronics',
@@ -354,10 +355,10 @@ export class AdamCarouselComponent implements OnInit {
         isInFavorite: false
       },
       {
-        id: '1010',
+        shopItemId: '1010',
         code: 'plb34234v',
         name: 'Gold Phone Case',
-        description: 'Product Description',
+        descreption: 'Product Description',
         image: 'https://primefaces.org/cdn/primeng/images/demo/product/gold-phone-case.jpg',
         price: 24,
         category: 'Accessories',
@@ -367,10 +368,10 @@ export class AdamCarouselComponent implements OnInit {
         isInFavorite: false
       },
       {
-        id: '1011',
+        shopItemId: '1011',
         code: '4920nnc2d',
         name: 'Green Earbuds',
-        description: 'Product Description',
+        descreption: 'Product Description',
         image: 'https://primefaces.org/cdn/primeng/images/demo/product/green-earbuds.jpg',
         price: 89,
         category: 'Electronics',
@@ -380,10 +381,10 @@ export class AdamCarouselComponent implements OnInit {
         isInFavorite: false
       },
       {
-        id: '1012',
+        shopItemId: '1012',
         code: '250vm23cc',
         name: 'Green T-Shirt',
-        description: 'Product Description',
+        descreption: 'Product Description',
         image: 'https://primefaces.org/cdn/primeng/images/demo/product/green-t-shirt.jpg',
         price: 49,
         category: 'Clothing',
@@ -393,10 +394,10 @@ export class AdamCarouselComponent implements OnInit {
         isInFavorite: false
       },
       {
-        id: '1013',
+        shopItemId: '1013',
         code: 'fldsmn31b',
         name: 'Grey T-Shirt',
-        description: 'Product Description',
+        descreption: 'Product Description',
         image: 'https://primefaces.org/cdn/primeng/images/demo/product/grey-t-shirt.jpg',
         price: 48,
         category: 'Clothing',
@@ -406,10 +407,10 @@ export class AdamCarouselComponent implements OnInit {
         isInFavorite: false
       },
       {
-        id: '1014',
+        shopItemId: '1014',
         code: 'waas1x2as',
         name: 'Headphones',
-        description: 'Product Description',
+        descreption: 'Product Description',
         image: 'https://primefaces.org/cdn/primeng/images/demo/product/headphones.jpg',
         price: 175,
         category: 'Electronics',
@@ -419,10 +420,10 @@ export class AdamCarouselComponent implements OnInit {
         isInFavorite: false
       },
       {
-        id: '1015',
+        shopItemId: '1015',
         code: 'vb34btbg5',
         name: 'Light Green T-Shirt',
-        description: 'Product Description',
+        descreption: 'Product Description',
         image: 'https://primefaces.org/cdn/primeng/images/demo/product/light-green-t-shirt.jpg',
         price: 49,
         category: 'Clothing',
@@ -432,6 +433,9 @@ export class AdamCarouselComponent implements OnInit {
         isInFavorite: false
       }
     ];
+    setTimeout(() => {
+      this.skeletonsProducts = this.products;
+    }, 5000);
   }
 
   onAddToCart(event: any) {
@@ -444,5 +448,9 @@ export class AdamCarouselComponent implements OnInit {
 
   onCardClick(event: any) {
     console.log('onCardClick => ', event);
+  }
+
+  onPageChange(event: any) {
+    console.log('onPageChange => ', event);
   }
 }

@@ -30,6 +30,8 @@ export * from './lib/controls/adam-carousel-view/adam-carousel-view.component';
 export * from './lib/controls/adam-input-otp/adam-input-otp.component';
 export * from './lib/controls/adam-stepper/adam-stepper.component';
 export * from './lib/controls/adam-data-view/adam-data-view.component';
+export * from './lib/controls/adam-radio-button/adam-radio-button.component';
+export * from './lib/controls/adam-skeleton/adam-skeleton.component';
 
 export * from './lib/services/adam.message.service';
 export * from './lib/services/math-service.service';

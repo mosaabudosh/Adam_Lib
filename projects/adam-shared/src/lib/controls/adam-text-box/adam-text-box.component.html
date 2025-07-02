@@ -1,5 +1,4 @@
-<div dir="{{ 'dir' | translate }}" class="adam-flex adam-flex-row text-box-style"
-    style="--margin-end: {{marginEnd}},--rotateDeg:{{rotateDeg}}deg" [ngStyle]="getStyles()"
+<div dir="{{ 'dir' | translate }}" class="adam-flex adam-flex-row text-box-style" [ngStyle]="getContainerStyle()"
     [ngClass]="{'invalid-border-style': !getIsValid(),'required': required}">
     <div *ngIf="_startIcons && _startIcons.length > 0" class="adam-flex adam-flex-row">
         <span *ngFor="let icon of _startIcons" class="{{icon.icon}} icons-span " style="--height: {{height}}"
@@ -10,7 +9,7 @@
         value="{{ textValue }}" [required]="required" (change)="handelChange($event)" placeholder="{{ placeholder }}"
         class="{{class}} {{ heightClass }} Size {{ widthClass }} Width {{(!_icons || _icons.length == 0) && icon != null ? icon  : '' }}"
         [attr.disabled]="disabled ? '' : null" (blur)="onblur($event)" (input)="onTextChanged($event)" #input
-        min="{{minValue}}" max="{{maxValue}}" [readonly]="readOnly" />
+        min="{{minValue}}" max="{{maxValue}}" [readonly]="readOnly" [ngStyle]="getStyles()" />
 
     <span *ngIf="icon != null " class="{{icon}} icon-span" style="--height: {{height}}" [pTooltip]="iconTooltip"
         [tooltipPosition]="iconTooltipPosition" (click)="onIconClick(name)"></span>

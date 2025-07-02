@@ -12,6 +12,7 @@ export class AdamFormComponent {
   citiyId: number | null = null;
   textBox: string;
   catrDetailCount: number = 4;
+  date: Date | null = null;
   cities = [
     { label: 'New York', value: 1 },
     { label: 'Rome', value: 2 },
@@ -19,7 +20,6 @@ export class AdamFormComponent {
     { label: 'Istanbul', value: 4 },
     { label: 'Paris', value: 5 }
   ];
-
   textBoxIcons = [
     {
       icon: "pi pi-send",

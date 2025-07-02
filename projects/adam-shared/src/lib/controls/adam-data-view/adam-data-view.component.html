@@ -1,17 +1,18 @@
 <div class="data-view-style">
-    <p-dataView #dv [value]="_products" [layout]="layout" [sortField]="sortField" [sortOrder]="sortOrder"
-        [rows]="rowsNumber" [paginator]="paginator && _products && _products.length > 0"
-        [showCurrentPageReport]="showCurrentPageReport" [currentPageReportTemplate]="currentPageReportTemplate"
-        [rowsPerPageOptions]="rowsPerPageOptions" [showFirstLastIcon]="isShowFirstLastIcon"
-        [paginatorPosition]="paginatorPosition" [first]="first" [pageLinks]="5" [totalRecords]="totalRecords"
-        [lazy]="lazy" [loading]="loading" (onPage)="onPaginateChange($event)" (onLazyLoad)="loadLazy($event)"
-        (onChangeLayout)="onChangeLayout($event)" [emptyMessage]="emptyMessage">
+    <p-dataView *ngIf="_products && _products.length > 0" #dv [value]="_products" [layout]="layout"
+        [sortField]="sortField" [sortOrder]="sortOrder" [rows]="rowsNumber"
+        [paginator]="paginator && _products && _products.length > 0" [showCurrentPageReport]="showCurrentPageReport"
+        [currentPageReportTemplate]="currentPageReportTemplate" [rowsPerPageOptions]="rowsPerPageOptions"
+        [showFirstLastIcon]="isShowFirstLastIcon" [paginatorPosition]="paginatorPosition" [first]="first"
+        [pageLinks]="5" [totalRecords]="totalRecords" [lazy]="lazy" [loading]="loading"
+        (onPage)="onPaginateChange($event)" (onLazyLoad)="loadLazy($event)" (onChangeLayout)="onChangeLayout($event)"
+        [emptyMessage]="emptyMessage">
 
         <ng-template *ngIf="!isViewCustomHeader" pTemplate="header">
             <div *ngIf="_products && _products.length > 0" class="adam-flex-row adam-space-between">
                 <div class="adam-flex-column">
-                    <adam-lib-dropdown name="sort" placeholder="Sort By Price" [dropdown]="_sortOptions"
-                        [width]="'250px'" [height]="'35px'" [(ngModel)]="sortKey"
+                    <adam-lib-dropdown *ngIf="isViewSortOptions" name="sort" placeholder="Sort By Price"
+                        [dropdown]="_sortOptions" [width]="'250px'" [height]="'35px'" [(ngModel)]="sortKey"
                         (onSelectChanged)="onSortChange($event)"></adam-lib-dropdown>
                 </div>
                 <div class="adam-flex-column">
@@ -98,7 +99,7 @@
         </ng-template>
 
         <ng-template *ngIf="!isViewCustomListData" let-product pTemplate="grid" let-products>
-            <div class="adam-flex adam-flex-row grid-style">
+            <div class="adam-flex adam-flex-row grid-style adam-center-center">
                 @for(item of products; track item){
                 <div class="item-card-style adam-flex-column" (click)="onCardClick.emit(item)">
                     <div class="adam-flex-row">
@@ -172,4 +173,47 @@
             </ng-container>
         </ng-template>
     </p-dataView>
+
+    <div *ngIf="!_products || _products.length == 0" class="empty-message-table">
+        <div class="adam-flex-row adam-space-between skeleton-style">
+            <div class="adam-flex-column">
+                <lib-adam-skeleton *ngIf="isViewSortOptions" [skeletonWidth]="'250px'" [skeletonHeight]="'35px'"
+                    [skeletonBorderRadius]="skeletonBorderRadius"></lib-adam-skeleton>
+            </div>
+            <div class="adam-flex-column">
+                <div class="adam-flex-row">
+                    <lib-adam-skeleton [skeletonWidth]="'50px'" [skeletonHeight]="'50px'"
+                        [skeletonBorderRadius]="'10px'"></lib-adam-skeleton>
+                    <lib-adam-skeleton [skeletonWidth]="'50px'" [skeletonHeight]="'50px'"
+                        [skeletonBorderRadius]="'10px'"></lib-adam-skeleton>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="adam-flex-row adam-center-center skeleton-style">
+            <div class="adam-flex-column adam-center-center">
+                <lib-adam-skeleton *ngIf="paginator && (paginatorPosition == 'top' || paginatorPosition == 'both')"
+                    [skeletonWidth]="'500px'" [skeletonHeight]="'50px'"
+                    [skeletonBorderRadius]="'5px'"></lib-adam-skeleton>
+            </div>
+        </div>
+
+        <div [ngClass]="layout == 'grid' ? 'adam-flex adam-flex-row grid-style adam-center-center':'adam-flex-row'">
+            @for(item of skeletons; track item){
+            <lib-adam-skeleton [skeletonWidth]="layout == 'grid' ? _skeletonWidth : '1500px'" class="skeleton-style"
+                [skeletonHeight]="layout == 'grid' ? _skeletonHeight : '200px'"
+                [skeletonBorderRadius]="_skeletonBorderRadius" [skeletonShape]="_skeletonShape"></lib-adam-skeleton>
+            }
+        </div>
+
+        <div class="adam-flex-row adam-center-center skeleton-style">
+            <div class="adam-flex-column adam-center-center">
+                <lib-adam-skeleton
+                    *ngIf="paginator && (paginatorPosition == 'bottom' || paginatorPosition == 'both')"
+                    [skeletonWidth]="'500px'" [skeletonHeight]="'50px'"
+                    [skeletonBorderRadius]="'5px'"></lib-adam-skeleton>
+            </div>
+        </div>
+    </div>
 </div>

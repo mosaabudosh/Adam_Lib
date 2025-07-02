@@ -10,6 +10,10 @@ export class AdamDataViewComponent {
   _products: any[] = [];
   @Input() set products(value: any[]) {
     this._products = value;
+    if (this._products && this._products.length > 0) {
+      this._numSkeleton = 0;
+      this.fillSkeletons();
+    }
   }
   _sortOptions!: any[];
   @Input() set sortOptions(value: any[]) {
@@ -54,19 +58,42 @@ export class AdamDataViewComponent {
   @Input() rowsPerPageOptions: number[] = [5, 6, 10, 12, 20, 24, 50, 48, 100];
   @Input() emptyMessage: string = "No records found";
   @Input() paginatorPosition: 'top' | 'bottom' | 'both' = "bottom";
+  @Input() isViewSortOptions: boolean = true;
 
   pageInfo: any = {
     pageNumber: 0,
     pageSize: 0
   }
   first = 0;
-
   @Input() isViewCustomHeader: boolean = false;
   @Input("customHeaderElementRef") customHeaderElementRef?: any;
   @Input() isViewCustomListData: boolean = false;
   @Input("customListDataElementRef") customListDataElementRef?: any;
   @Input() isViewCustomGridData: boolean = false;
   @Input("customGridDataElementRef") customGridDataElementRef?: any;
+  _skeletonWidth: string = "200px";
+  @Input() set skeletonWidth(value: string) {
+    this._skeletonWidth = value;
+  }
+  _skeletonHeight: string = "300px";
+  @Input() set skeletonHeight(value: string) {
+    this._skeletonHeight = value;
+  }
+  _skeletonBorderRadius: string = "5px";
+  @Input() set skeletonBorderRadius(value: string) {
+    this._skeletonBorderRadius = value;
+  }
+  _skeletonShape: string;
+  @Input() set _skeletonShap(value: string) {
+    this._skeletonShape = value;
+  }
+
+  skeletons: any[] = [];
+  _numSkeleton: number = 5;
+  @Input() set numSkeleton(value: number) {
+    this._numSkeleton = value;
+    this.fillSkeletons();
+  }
 
   @Output() onAddToCart = new EventEmitter();
   @Output() onAddToFavorite = new EventEmitter();
@@ -74,11 +101,14 @@ export class AdamDataViewComponent {
   @Output() onCardClick = new EventEmitter();
 
   constructor() {
-    // if (this.layout == 'grid') {
-    //   this.rowsNumber = 6;
-    //   this.rowsPerPageOptions = [6, 12, 24, 48, 96];
-    // }
+    this.fillSkeletons();
+  }
 
+  fillSkeletons() {
+    this.skeletons = [];
+    for (let index = 0; index < this._numSkeleton; index++) {
+      this.skeletons.push(index);
+    }
   }
 
   onSortChange(event: any) {
@@ -94,13 +124,6 @@ export class AdamDataViewComponent {
 
   onChangeLayout(event: any) {
     this.layout = event.layout;
-    // if (this.layout == 'grid') {
-    //   this.rowsNumber = 6;
-    //   this.rowsPerPageOptions = [6, 12, 24, 48, 96];
-    // } else {
-    //   this.rowsNumber = 5;
-    //   this.rowsPerPageOptions = [5, 10, 20, 50, 100];
-    // }
   }
 
   onPaginateChange(event: any) {

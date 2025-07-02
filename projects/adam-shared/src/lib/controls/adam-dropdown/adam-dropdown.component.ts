@@ -43,7 +43,6 @@ export class AdamDropdownComponent {
   public style: object = {};
   @Input() ngStyle: string;
   @Input() showClear?: boolean = false;
-
   @Input() isShowRefreshButton: boolean = true;
   @Input() heightMidDevices?: string;
   @Input() widthMidDevices?: string;
@@ -52,20 +51,13 @@ export class AdamDropdownComponent {
   @Input() sorting: string = 'asc';
   @Input() isSort: boolean = true;
   @Input() isDisableValidationAfterSubmit: boolean = false;
-  // @Input() panelStyleClass: string = '';
   @Input() readOnly?: boolean = false;
   @Input() emptyFilterMessage: string;
-
   @Input() group: boolean = false;
-  // @Input() virtualScroll: boolean = false;
-  // @Input() virtualScrollItemSize: number = 25;
   @Input() set dropdown(value: any[]) {
     this.dataSource = value;
     this.sortData(value);
   }
-  // get dropdown() {
-  //   return this.dataSource;
-  // }
   _isSortByValue: boolean = false;
   @Input() set isSortByValue(value: boolean) {
     this._isSortByValue = value;
@@ -74,6 +66,10 @@ export class AdamDropdownComponent {
   _submitted: boolean;
   @Input() set submitted(value: boolean) {
     this._submitted = value
+  };
+  _marginEnd: any = '0px';
+  @Input() set marginEnd(value: any) {
+    this._marginEnd = value;
   };
   invalid: boolean;
 
@@ -86,30 +82,27 @@ export class AdamDropdownComponent {
 
   constructor() { }
 
-  getMarginEnd() {
-    return this.required ? '37px' : '70px';
-  }
-
-  getWidth() {
-    let width: any = 0;
+  getStyles() {
+    let width = 0;
+    let style = {};
+    let marginEnd = Number(this._marginEnd.substring(0, this._marginEnd.length - 2));
     if (this._width && this._width.substring(this._width.length - 2, this._width.length) == 'px') {
-      width = `${Number(this._width.substring(0, this._width.length - 2)) + (this.required ? 25 : 60)}px`;
-      return width;
+      width = Number(this._width.substring(0, this._width.length - 2));
+      style = {
+        'width': `${width + 50}px`,
+        'height': this.height,
+        '--margin-end': `${marginEnd}px`,
+      };
     }
     if (this._width && this._width.substring(this._width.length - 1, this._width.length) == '%') {
-      width = `${Number(this._width.substring(0, this._width.length - 1))}%`;
-      return width;
+      width = Number(this._width.substring(0, this._width.length - 1));
+      style = {
+        'width': `${width}%`,
+        'height': this.height,
+        '--margin-end': `${marginEnd}px`,
+      };
     }
-    return '100%';
-  }
-
-  getStyles() {
-    return {
-      'width': `${this.getWidth()}`,
-      'height': this.height,
-      'border-radius': this.borderRadius,
-      'float': 'left'
-    };
+    return style;
   }
 
   getIsValid() {
@@ -126,15 +119,17 @@ export class AdamDropdownComponent {
     if (this._width && this._width.substring(this._width.length - 2, this._width.length) == 'px') {
       width = Number(this._width.substring(0, this._width.length - 2));
       style = {
-        width: `${width + (this.required ? 25 : 0)}px`,
-        height: this.height
+        'width': `${width + 50}px`,
+        'height': this.height,
+        '--margin-end': this._marginEnd,
       };
     }
     if (this._width && this._width.substring(this._width.length - 1, this._width.length) == '%') {
       width = Number(this._width.substring(0, this._width.length - 1));
       style = {
-        width: `${width}%`,
-        height: this.height
+        'width': `${width}%`,
+        'height': this.height,
+        '--margin-end': this._marginEnd,
       };
     }
     return style;
@@ -174,6 +169,7 @@ export class AdamDropdownComponent {
     else
       this._selectedValue = null;
   }
+
   propagateChange = (_: any) => { };
 
   registerOnChange(fn: any): void {
@@ -184,13 +180,10 @@ export class AdamDropdownComponent {
 
   setDisabledState?(isDisabled: boolean): void { }
 
-  ngOnInit() {
-
-  }
-
   handleOnBlur(event: any) {
     this.onBlur.emit();
   }
+  
   handleOnFocus(event: any) {
     this.onFocus.emit();
   }

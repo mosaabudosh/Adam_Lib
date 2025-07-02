@@ -1,0 +1,7 @@
+<div [ngClass]="direction == 'vertical' ? '' : 'adam-flex-row'">
+    <div *ngFor="let radio of _radios" class="radioButton-style {{color}}">
+        <p-radioButton [inputId]="radio.value" [name]="radio.id + '_radioButton'" [value]="radio.value"
+            [(ngModel)]="selectedValue" [variant]="'filled'" [disabled]="disabled" [label]="radio.label"
+            (onClick)="onRadioButtonClick(radio.value)" />
+    </div>
+</div>
