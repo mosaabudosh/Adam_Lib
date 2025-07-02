@@ -16,11 +16,11 @@
         <ng-template let-file pTemplate="toolbar">
             <div class="adam-flex adam-flex-row ">
                 <adam-lib-button *ngIf="isScanningAllowed && !isReadOnly" [disabled]="uploaderDisabled" (click)="scan()"
-                    [text]="scanText" [class]="'pi pi-plus'" [color]="'dark'">
+                    [text]="scanText" [icon]="'pi pi-plus'" [color]="'dark-reverse'">
                 </adam-lib-button>
                 <button id="submitScannedDocuments" style="display:none;" (click)="addScannedFiles()"></button>
                 <adam-lib-button *ngIf="isShowCancelButton && !isReadOnly" [disabled]="uploaderDisabled"
-                    [color]="'dark'" (click)="removeAll()" [text]="removeAllText" [class]="'pi pi-trash'">
+                    [color]="'dangerous-reverse'" (click)="removeAll()" [text]="removeAllText" [icon]="'pi pi-trash'">
                 </adam-lib-button>
             </div>
 

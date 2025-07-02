@@ -102,7 +102,10 @@ export class AdamCalendarComponent implements OnInit, ControlValueAccessor, OnDe
   @Input() set submitted(value: boolean) {
     this._submitted = value;
   };
-
+  _marginEnd: any = '0px';
+  @Input() set marginEnd(value: any) {
+    this._marginEnd = value;
+  };
   @Output() onBlur = new EventEmitter();
   @Output() onSelect = new EventEmitter();
   @Output() onTodayClick = new EventEmitter();
@@ -123,27 +126,44 @@ export class AdamCalendarComponent implements OnInit, ControlValueAccessor, OnDe
     }
   }
 
-  getMarginEnd() {
-    return this.required ? '37px' : '60px';
+  getWidth() {
+    let width: any = 0;
+    if (this._width && this._width.substring(this._width.length - 2, this._width.length) == 'px') {
+      width = `${Number(this._width.substring(0, this._width.length - 2)) + (this.required ? 25 : 0)}px`;
+      return width;
+    }
+    if (this._width && this._width.substring(this._width.length - 1, this._width.length) == '%') {
+      width = `${Number(this._width.substring(0, this._width.length - 1))}%`;
+      return width;
+    }
+    return '100%';
   }
-
 
   getStyles() {
     return {
-      'min-width': this._width,
-      'max-width': this._width,
-      'max-height': this.height,
-      'display': 'inline-flex'
+      'width': `${this.getWidth()}`,
+      'height': this.height,
     };
   }
 
-
   getContainerStyle() {
-    return {
-      'width': this.required ? `${parseInt(this.width) + 25}px` : this.width,
-      'max-height': this.height,
-      'display': 'inline-flex'
-    };
+    let width = 0;
+    let style = {};
+    if (this._width && this._width.substring(this._width.length - 2, this._width.length) == 'px') {
+      width = Number(this._width.substring(0, this._width.length - 2));
+      style = {
+        width: `${width + 50}px`,
+        height: this.height
+      };
+    }
+    if (this._width && this._width.substring(this._width.length - 1, this._width.length) == '%') {
+      width = Number(this._width.substring(0, this._width.length - 1));
+      style = {
+        width: `${width}%`,
+        height: this.height
+      };
+    }
+    return style;
   }
 
   getCalendarSetting() {

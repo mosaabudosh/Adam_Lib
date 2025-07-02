@@ -3,10 +3,21 @@
     <adam-lib-label class="screen-title" [text]="'Data View'"></adam-lib-label>
 
     <div class="div-demo-style">
-        <adam-data-view [products]="products" [sortOptions]="sortOptions" [layout]="'list'" [isViewShope]="true"
+        <adam-data-view [products]="products" [sortOptions]="sortOptions" [layout]="'grid'" [isViewShope]="true"
             [isViewRating]="true" [isViewName]="true" [isViewDescription]="true" [isViewCategory]="true"
             [isViewFooter]="true" [isViewCategoryTooltip]="true" [isViewImageTooltip]="true"
-            [isViewButtonsTooltip]="true" [isViewPrice]="true" [isViewFooter]="true"
-            [addToFavoriteColor]="'dangerous-reverse'"></adam-data-view>
+            [isViewButtonsTooltip]="true" [isViewPrice]="true" [isViewFooter]="true" [paginator]="true"
+            [addToFavoriteColor]="'dangerous-reverse'" [layout]="'grid'" [skeletonWidth]="'210px'" [rowsNumber]="12"
+            [numSkeleton]="12" [paginatorPosition]="'both'"></adam-data-view>
+    </div>
+
+    <div class="div-demo-style">
+        <adam-data-view [products]="products" [sortOptions]="sortOptions" [layout]="'grid'" [isViewShope]="true"
+            [isViewRating]="true" [isViewName]="true" [isViewDescription]="true" [isViewCategory]="true"
+            [isViewFooter]="true" [isViewCategoryTooltip]="true" [isViewImageTooltip]="true"
+            [isViewButtonsTooltip]="true" [isViewPrice]="true" [isViewFooter]="true" [paginator]="false"
+            [addToFavoriteColor]="'dangerous-reverse'" [isViewCustomHeader]="true" [numSkeleton]="20"
+            [skeletonWidth]="'210px'" [customHeaderElementRef]="
+            "></adam-data-view>
     </div>
 </div>

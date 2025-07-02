@@ -1,8 +1,8 @@
 export interface ProductCarouselModel {
-    id?: string;
+    shopItemId?: string;
     code?: string;
     name?: string;
-    description?: string;
+    descreption?: string;
     image?: string;
     images?: any[];
     price?: number;

@@ -1,0 +1,59 @@
+@import './../../../assets/styles/styles.scss';
+
+@mixin adam-radio-btn-style($background, $foreground, $border) {
+    .p-radiobutton.p-variant-filled .p-radiobutton-box.p-highlight {
+        border: 2px solid $border !important;
+        color: $foreground !important;
+        background: #fff !important;
+
+        .p-radiobutton-icon {
+            background: $background !important;
+        }
+    }
+}
+
+@mixin radio-btn-color {
+    &.builder {
+        @include adam-radio-btn-style(var(--btn-builder), var(--white), var(--btn-builder));
+    }
+
+    &.primary {
+        @include adam-radio-btn-style(var(--btn-primary), var(--white), var(--btn-primary));
+    }
+
+    &.dangerous {
+        @include adam-radio-btn-style(var(--btn-dangerous), var(--white), var(--btn-dangerous));
+    }
+
+    &.positive {
+        @include adam-radio-btn-style(var(--btn-positive), var(--white), var(--btn-positive));
+    }
+
+    &.blue {
+        @include adam-radio-btn-style(var(--btn-blue), var(--white), var(--btn-blue));
+    }
+
+    &.waring {
+        @include adam-radio-btn-style(var(--btn-warning), var(--white), var(--btn-warning));
+    }
+
+    &.info {
+        @include adam-radio-btn-style(var(--btn-info), var(--white), var(--btn-info));
+    }
+
+    &.dark {
+        @include adam-radio-btn-style(var(--btn-dark), var(--white-color), var(--white-color));
+    }
+}
+
+.radioButton-style {
+    @include radio-btn-color;
+    margin: 10px 5px !important;
+    color: var(--main-text-color) !important;
+}
+
+label,
+.p-radiobutton-label {
+    @include margin-start(10px);
+    color: var(--main-text-color) !important;
+}

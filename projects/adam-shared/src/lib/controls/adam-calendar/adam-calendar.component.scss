@@ -30,13 +30,12 @@ lib-adam-calendar {
 .calendar-panel-style {
   font-size: var(--small-font-size) !important;
   font-family: var(--font-family) !important;
-  // color: var(--main-text-color) !important;
   z-index: 99999 !important;
 }
 
 .calendar-style {
-  // width: 100% !important;
-  // height: 100% !important;
+  width: 100% !important;
+  height: 100% !important;
   font-size: var(--small-font-size) !important;
   font-family: var(--font-family) !important;
   color: var(--main-text-color) !important;

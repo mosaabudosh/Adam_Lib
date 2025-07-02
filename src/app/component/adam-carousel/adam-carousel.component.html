@@ -3,9 +3,24 @@
     <adam-lib-label class="screen-title" [text]="'Carousel'"></adam-lib-label>
 
     <div class="adam-flex-row adam-row-gap">
+        <adam-carousel-view [products]="skeletonsProducts" [color]="'waring'" [isViewCarousel]="true"
+            [skeletonWidth]="'150px'" [skeletonHeight]="'150px'" [carouselElementRef]="carouselView"
+            [isViewHeader]="true" [headerLabel]="'Category'" (onPageChange)="onPageChange($event)"></adam-carousel-view>
+
+        <ng-template #carouselView let-product="product">
+            <div class="adam-flex-row">
+                <adam-image class="carousel-image-item-style" [src]="product?.image" [pTooltip]="product?.name"
+                    [tooltipPosition]="'top'" [previewImageSrc]="product?.image" [width]="150" [height]="150"
+                    [preview]="false" [alt]="product?.name"></adam-image>
+            </div>
+        </ng-template>
+    </div>
+
+    <div class="adam-flex-row adam-row-gap">
         <adam-carousel-view [color]="'waring'" [isViewCarousel]="true" [carouselElementRef]="carouselView"
-            [products]="products" [isViewHeader]="true" [headerLabel]="'Category'"
-            [products]="products"></adam-carousel-view>
+            [products]="products" [isViewHeader]="true" [headerLabel]="'Category'" [products]="products"
+            (onPageChange)="onPageChange($event)" [skeletonWidth]="'150px'"
+            [skeletonHeight]="'150px'"></adam-carousel-view>
 
         <ng-template #carouselView let-product="product">
             <div class="adam-flex-row">
@@ -54,6 +69,5 @@
             [headerLabel]="'Carousel'" [products]="products" [color]="'waring'" (onAddToCart)="onAddToCart($event)"
             (onAddToFavorite)="onAddToFavorite($event)"></adam-carousel-view>
     </div>
-
 
 </div>

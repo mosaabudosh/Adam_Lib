@@ -12,7 +12,13 @@
                 <adam-lib-label *ngIf="form.submitted && selectedFromDate?.errors?.required" class="not-valid"
                     [text]="'Required From Date is required'"></adam-lib-label>
             </div>
-
+            <div class="adam-flex-column">
+                <adam-lib-label [text]="'Date'"></adam-lib-label>
+                <lib-adam-calendar [id]="'selectedFromDate'" name="selectedFromDate" [(ngModel)]="date"
+                    #selectedFromDate="ngModel" [showIcon]="true" [showTime]="false" [submitted]="form.submitted"
+                    [width]="'250px'" [height]="'35px'">
+                </lib-adam-calendar>
+            </div>
         </div>
 
         <div class="adam-flex-row adam-row-gap">
@@ -22,6 +28,15 @@
                     #selectedFromDate="ngModel" [showIcon]="true" [icon]="'pi pi-calendar text-muted bg-white'"
                     [showTime]="false" [width]="'250px'" [height]="'35px'">
                 </lib-adam-calendar>
+            </div>
+            <div class="adam-flex-column">
+                <adam-lib-label [text]="'Required Date'"></adam-lib-label>
+                <lib-adam-calendar [id]="'selectedFromDate'" name="selectedFromDate" [(ngModel)]="date"
+                    #selectedFromDate="ngModel" [showIcon]="true" [showTime]="false" [required]="true"
+                    [submitted]="form.submitted" [width]="'250px'" [height]="'35px'">
+                </lib-adam-calendar>
+                <adam-lib-label *ngIf="form.submitted && selectedFromDate?.errors?.required" class="not-valid"
+                    [text]="'Required From Date is required'"></adam-lib-label>
             </div>
         </div>
 

@@ -114,6 +114,13 @@ const routes: Routes = [
       import(
         "./component/data-view/data-view.module"
       ).then((m) => m.DataViewModule),
+  },
+  {
+    path: "radio-button",
+    loadChildren: () =>
+      import(
+        "./component/radio-button/radio-button.module"
+      ).then((m) => m.RadioButtonModule),
   }
 ];
 

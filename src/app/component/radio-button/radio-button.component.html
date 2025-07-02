@@ -1,0 +1,20 @@
+<div class="main-screen">
+
+    <adam-lib-label class="screen-title" [text]="'Radio Button'"></adam-lib-label>
+
+    <div class="div-demo-style">
+        <adam-radio-button [radios]="radios" [(ngModel)]="selectedRadio"
+            (onClick)="onRadioButtonClick($event)"></adam-radio-button>
+    </div>
+
+    <div class="div-demo-style">
+        <adam-radio-button [radios]="radios2" [(ngModel)]="selectedRadio2" (onClick)="onRadioButtonClick2($event)"
+            [color]="'dangerous'" [direction]="'horizontal'"></adam-radio-button>
+    </div>
+
+    <div class="div-demo-style">
+        <adam-radio-button [radios]="radios3" [(ngModel)]="selectedRadio3" (onClick)="onRadioButtonClick3($event)"
+            [color]="'waring'"></adam-radio-button>
+    </div>
+
+</div>

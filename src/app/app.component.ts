@@ -348,6 +348,18 @@ export class AppComponent {
             command: (event: any) => {
               this.onMenuCommandClick(event);
             }
+          },
+          {
+            label: 'Radio Button',
+            icon: 'pi pi-list',
+            id: 'radio-button',
+            parentId: 'Controles',
+            isActive: false,
+            expanded: false,
+            url: '/radio-button',
+            command: (event: any) => {
+              this.onMenuCommandClick(event);
+            }
           }
         ]
       }

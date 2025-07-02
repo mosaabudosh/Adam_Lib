@@ -15,6 +15,10 @@ export class AdamCarouselViewComponent implements OnInit {
   _products: ProductCarouselModel[] = [];
   @Input() set products(value: ProductCarouselModel[]) {
     this._products = value;
+    if (this._products && this._products.length > 0) {
+      this._numSkeleton = 0;
+      this.fillSkeletons();
+    }
   }
   responsiveOptions: any[] = [];
   @Input() color: string = "primary";
@@ -48,12 +52,35 @@ export class AdamCarouselViewComponent implements OnInit {
   @Input() emptyData: string = "No data found";
   @Input() imageWidth: string = "200";
   @Input() imageHeight: string = "200";
-
+  _skeletonWidth: string = "200px";
+  @Input() set skeletonWidth(value: string) {
+    this._skeletonWidth = value;
+  }
+  _skeletonHeight: string = "300px";
+  @Input() set skeletonHeight(value: string) {
+    this._skeletonHeight = value;
+  }
+  _skeletonBorderRadius: string = "5px";
+  @Input() set skeletonBorderRadius(value: string) {
+    this._skeletonBorderRadius = value;
+  }
+  _skeletonShape: string;
+  @Input() set _skeletonShap(value: string) {
+    this._skeletonShape = value;
+  }
+  skeletons: any[] = [];
+  _numSkeleton: number = 7;
+  @Input() set numSkeleton(value: number) {
+    this._numSkeleton = value;
+    this.fillSkeletons();
+  }
   @Output() onAddToCart = new EventEmitter();
   @Output() onAddToFavorite = new EventEmitter();
   @Output() onCardClick = new EventEmitter();
+  @Output() onPageChange = new EventEmitter();
 
   ngOnInit(): void {
+    this.fillSkeletons();
     this.responsiveOptions = [
       {
         breakpoint: '1199px',
@@ -71,6 +98,13 @@ export class AdamCarouselViewComponent implements OnInit {
         numScroll: 1
       }
     ];
+  }
+
+  fillSkeletons() {
+    this.skeletons = [];
+    for (let index = 0; index < this._numSkeleton; index++) {
+      this.skeletons.push(index);
+    }
   }
 
   getSeverity(status: string) {
@@ -91,5 +125,9 @@ export class AdamCarouselViewComponent implements OnInit {
     else if (type == CommandType.Favorite) {
       this.onAddToFavorite.emit(product);
     }
+  }
+
+  onPage(event: any) {
+    this.onPageChange.emit(event);
   }
 }

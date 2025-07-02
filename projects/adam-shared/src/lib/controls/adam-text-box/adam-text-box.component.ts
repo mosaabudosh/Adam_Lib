@@ -20,7 +20,12 @@ export class AdamTextBoxComponent implements OnInit, ControlValueAccessor, Valid
   @Input() id: string;
   @Input() size: string;
   @Input() height: string = "40px";
-  @Input() width: string;
+  _width: string;
+  @Input() set width(value: string) {
+    if (value) {
+      this._width = value;
+    }
+  };
   @Input() widthClass: string = "small";
   @Input() heightClass: string;
   @Input() placeholder: string = "Type here";
@@ -47,8 +52,10 @@ export class AdamTextBoxComponent implements OnInit, ControlValueAccessor, Valid
   @Input() set submitted(value: boolean) {
     this._submitted = value
   };
-  marginEnd: string = this.icon != null ? '50px' : '60px';
-
+  _marginEnd: any = '0px';
+  @Input() set marginEnd(value: any) {
+    this._marginEnd = value;
+  };
   _startIcons: any[] = [];
   _endIcons: any[] = [];
   _icons: any[] = [];
@@ -62,8 +69,9 @@ export class AdamTextBoxComponent implements OnInit, ControlValueAccessor, Valid
     if (this._icons?.length > 0 && this._endIcons?.length == 0 && !this.isDisplayIconStart) {
       this._endIcons = this._icons;
     }
-    if (this._endIcons.length > 0)
-      this.marginEnd = `${this._endIcons.length * 40}px`
+    if (this._endIcons.length > 0) {
+      this._marginEnd = `${this._endIcons.length * 40}px`
+    }
   };
   @Input() readOnly?: boolean = false;
 
@@ -111,18 +119,45 @@ export class AdamTextBoxComponent implements OnInit, ControlValueAccessor, Valid
   getStyles() {
     let width = 0;
     let style = {};
-    if (this.width && this.width.substring(this.width.length - 2, this.width.length) == 'px') {
-      width = Number(this.width.substring(0, this.width.length - 2));
+    let marginEnd = Number(this._marginEnd.substring(0, this._marginEnd.length - 2));
+    if (this._width && this._width.substring(this._width.length - 2, this._width.length) == 'px') {
+      width = Number(this._width.substring(0, this._width.length - 2));
       style = {
-        'width': `${width + (this.required ? 25 : 50)}px`,
+        'width': `${width + 50}px`,
         'height': this.height,
+        '--margin-end': `${marginEnd + (this.icon != null ? 50 : 0) + (this._endIcons.length > 0 ? this._endIcons.length * 40 : 0)}px`,
+        '--rotateDeg': this.rotateDeg + 'deg'
       };
     }
-    if (this.width && this.width.substring(this.width.length - 1, this.width.length) == '%') {
-      width = Number(this.width.substring(0, this.width.length - 1));
+    if (this._width && this._width.substring(this._width.length - 1, this._width.length) == '%') {
+      width = Number(this._width.substring(0, this._width.length - 1));
       style = {
         'width': `${width}%`,
         'height': this.height,
+        '--margin-end': `${marginEnd + (this.icon != null ? 50 : 0) + (this._endIcons.length > 0 ? this._endIcons.length * 40 : 0)}px`,
+        '--rotateDeg': this.rotateDeg + 'deg'
+      };
+    }
+    return style;
+  }
+
+  getContainerStyle() {
+    let width = 0;
+    let style = {};
+    if (this._width && this._width.substring(this._width.length - 2, this._width.length) == 'px') {
+      width = Number(this._width.substring(0, this._width.length - 2));
+      style = {
+        'width': `${width + 50}px`,
+        'height': this.height,
+        '--margin-end': this._marginEnd,
+      };
+    }
+    if (this._width && this._width.substring(this._width.length - 1, this._width.length) == '%') {
+      width = Number(this._width.substring(0, this._width.length - 1));
+      style = {
+        'width': `${width}%`,
+        'height': this.height,
+        '--margin-end': this._marginEnd,
       };
     }
     return style;

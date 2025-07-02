@@ -101,6 +101,8 @@ import { ColorPickerModule } from 'primeng/colorpicker';
 import { ChipsModule } from 'primeng/chips';
 import { CascadeSelectModule } from 'primeng/cascadeselect';
 import { AutoCompleteModule } from 'primeng/autocomplete';
+import { AdamRadioButtonComponent } from './controls/adam-radio-button/adam-radio-button.component';
+import { AdamSkeletonComponent } from './controls/adam-skeleton/adam-skeleton.component';
 
 @NgModule({
   declarations: [
@@ -141,7 +143,9 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
     AdamCarouselViewComponent,
     AdamInputOtpComponent,
     AdamStepperComponent,
-    AdamDataViewComponent
+    AdamDataViewComponent,
+    AdamRadioButtonComponent,
+    AdamSkeletonComponent
   ],
   imports: [
     CommonModule,
@@ -307,7 +311,9 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
     AdamCarouselViewComponent,
     AdamInputOtpComponent,
     AdamStepperComponent,
-    AdamDataViewComponent
+    AdamDataViewComponent,
+    AdamRadioButtonComponent,
+    AdamSkeletonComponent
   ],
   providers: [MessageService, AdamMessageService, ComponentFactoryResolverService, SortIcon, DatePipe, DecimalPipe],
   schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA]
