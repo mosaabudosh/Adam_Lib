@@ -178,8 +178,7 @@ export class AdamTextBoxComponent implements OnInit, ControlValueAccessor, Valid
       }
       let value = (control.value || '');
       let hasWhitespace = (value.length > 0 && value.trim().length === 0);
-      // return !hasWhitespace ? null : { 'whitespace': 'value is only whitespace' }
-      return {};
+      return !hasWhitespace ? {} : { 'whitespace': 'value is only whitespace' }
     };
   }
 

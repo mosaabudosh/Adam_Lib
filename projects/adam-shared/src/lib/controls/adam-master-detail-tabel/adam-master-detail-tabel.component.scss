@@ -215,6 +215,7 @@ p-table {
   color: var(--main-text-color) !important;
   font-weight: bold !important;
   margin: 5px !important;
+  min-width: 250px !important;
   @include margin-start(25px);
 }
 

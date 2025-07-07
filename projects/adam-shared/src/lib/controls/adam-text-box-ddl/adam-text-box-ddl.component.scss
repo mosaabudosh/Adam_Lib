@@ -1,0 +1,193 @@
+@import "./../../../assets/styles/styles.scss";
+
+$transparentBackground: transparent;
+
+@mixin adam-btn-style($background, $foreground, $border) {
+    .p-button {
+        border: 1px solid $border !important;
+        color: $foreground !important;
+        background-color: $background !important;
+    }
+
+    .p-button-icon {
+        margin: 0px 10px 0px 10px !important;
+    }
+}
+
+@mixin btn-color {
+    &.builder {
+        @include adam-btn-style(var(--btn-builder), var(--white), var(--btn-builder));
+    }
+
+    &.primary {
+        @include adam-btn-style(var(--btn-primary), var(--white), var(--btn-primary));
+    }
+
+    &.dangerous {
+        @include adam-btn-style(var(--btn-dangerous), var(--white), var(--btn-dangerous));
+    }
+
+    &.positive {
+        @include adam-btn-style(var(--btn-positive), var(--white), var(--btn-positive));
+    }
+
+    &.blue {
+        @include adam-btn-style(var(--btn-blue), var(--white), var(--btn-blue));
+    }
+
+    &.waring {
+        @include adam-btn-style(var(--btn-warning), var(--white), var(--btn-warning));
+    }
+
+    &.info {
+        @include adam-btn-style(var(--btn-info), var(--white), var(--btn-info));
+    }
+
+    &.dark {
+        @include adam-btn-style(var(--btn-dark), var(--white-color), var(--white-color));
+    }
+
+    &.primary-reverse {
+        @include adam-btn-style(var($transparentBackground), var(--btn-primary), var(--btn-primary));
+    }
+
+    &.dangerous-reverse {
+        @include adam-btn-style(var($transparentBackground), var(--btn-dangerous), var(--btn-dangerous));
+    }
+
+    &.positive-reverse {
+        @include adam-btn-style(var($transparentBackground), var(--btn-positive), var(--btn-positive));
+    }
+
+    &.blue-reverse {
+        @include adam-btn-style(var($transparentBackground), var(--btn-blue), var(--btn-blue));
+    }
+
+    &.waring-reverse {
+        @include adam-btn-style(var(--white), var(--btn-warning), var(--btn-warning));
+    }
+
+    &.info-reverse {
+        @include adam-btn-style(var($transparentBackground), var(--btn-info), var(--btn-info));
+    }
+
+    &.dark-reverse {
+        @include adam-btn-style(var($transparentBackground), var(--white-color), var(--white-color));
+    }
+
+    &.none,
+    &.cancel {
+        @include adam-btn-style(var(--none), var(--btn-none), var(--btn-none));
+    }
+
+    &.link {
+        @include adam-btn-style(var(--none), var(--btn-link-outline), var(--btn-link-outline));
+    }
+
+    &.tag {
+        @include adam-btn-style(var(--btn-gray), var(--btn-link-outline), var(--none));
+    }
+
+    &.makeError {
+        @include adam-btn-style(var(--white), var(--btn-dangerous), var(--btn-dangerous));
+    }
+
+    &.advance-search {
+        @include adam-btn-style(var(--btn-advance-search), var(--white), var(--btn-advance-search));
+    }
+
+    &.flat {
+        @include adam-btn-style(var(--none), var(--btn-primary), var(--none));
+
+        .p-button {
+            box-shadow: none !important;
+        }
+    }
+}
+
+::ng-deep .p-autocomplete-loader:before {
+    display: none;
+}
+
+
+::ng-deep .p-autocomplete .p-autocomplete-input {
+    width: 100% !important;
+    border-radius: 5px !important;
+}
+
+::ng-deep .p-autocomplete .p-autocomplete-panel {
+    width: 100% !important;
+}
+
+.adam-text-box-ddl-style {
+    @include btn-color;
+    width: 100% !important;
+
+    input {
+        height: 100% !important;
+        padding: 10px !important;
+        font-size: var(--small-font-size) !important;
+        font-family: var(--font-family) !important;
+        color: var(--text-color) !important;
+        border-top-left-radius: var(--border-radius) !important;
+        border-bottom-left-radius: var(--border-radius) !important;
+
+        :dir(rtl) & {
+            border-top-right-radius: var(--border-radius) !important;
+            border-bottom-right-radius: var(--border-radius) !important;
+            border-top-left-radius: 0px !important;
+            border-bottom-left-radius: 0px !important;
+        }
+    }
+
+    input::placeholder {
+        color: var(--placeholder-text-color) !important;
+        font-size: var(--small-font-size) !important;
+        font-family: var(--font-family) !important;
+    }
+
+    ul {
+        width: 100% !important;
+        border-top-left-radius: var(--border-radius) !important;
+        border-bottom-left-radius: var(--border-radius) !important;
+
+        :dir(rtl) & {
+            border-top-right-radius: var(--border-radius) !important;
+            border-bottom-right-radius: var(--border-radius) !important;
+            border-top-left-radius: 0px !important;
+            border-bottom-left-radius: 0px !important;
+        }
+    }
+
+    .p-button {
+        border-top-right-radius: var(--border-radius) !important;
+        border-bottom-right-radius: var(--border-radius) !important;
+
+        :dir(rtl) & {
+            border-top-left-radius: var(--border-radius) !important;
+            border-bottom-left-radius: var(--border-radius) !important;
+            border-top-right-radius: 0px !important;
+            border-bottom-right-radius: 0px !important;
+        }
+    }
+
+    .p-autocomplete-panel,
+    .p-autocomplete-items,
+    .p-autocomplete-item {
+        width: 100% !important;
+    }
+
+    .p-autocomplete-panel .p-autocomplete-items .p-autocomplete-item {
+        border: 0 none !important;
+        border-radius: 5px !important;
+        @include padding-start(10px);
+        width: 100% !important;
+        white-space: nowrap !important;
+        height: 40px !important;
+    }
+
+    .p-autocomplete-input-token {
+        margin-top: -7px !important;
+    }
+
+}

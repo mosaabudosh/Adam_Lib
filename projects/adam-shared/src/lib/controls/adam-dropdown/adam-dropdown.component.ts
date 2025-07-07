@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output, ViewEncapsulation, forwardRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
+import { ScrollerOptions } from 'primeng/api';
 
 @Component({
   selector: 'adam-lib-dropdown',
@@ -30,9 +31,9 @@ export class AdamDropdownComponent {
   @Input() set selectedValue(value: any) {
     this._selectedValue = value;
   }
-  dropdoenDisabled: boolean = false;
+  dropdownDisabled: boolean = false;
   @Input() set disabled(value: boolean) {
-    this.dropdoenDisabled = value;
+    this.dropdownDisabled = value;
   };
   @Input() placeholder: string = "Select one";
   @Input() borderRadius: string = '3px';
@@ -72,15 +73,43 @@ export class AdamDropdownComponent {
     this._marginEnd = value;
   };
   invalid: boolean;
+  _loading?: boolean;
+  @Input() set loading(value: boolean) {
+    this._loading = value;
+  }
+  _virtualScroll?: boolean;
+  @Input() set virtualScroll(value: boolean) {
+    this._virtualScroll = value;
+  }
+  _virtualScrollItemSize?: any;
+  @Input() set virtualScrollItemSize(value: any) {
+    this._virtualScrollItemSize = value;
+  }
+  _virtualScrollOptions: ScrollerOptions = {
+    delay: 250,
+    showLoader: true,
+    lazy: true,
+    onLazyLoad: this.lazyLoad.bind(this),
+  };
+  @Input() set virtualScrollOptions(value: ScrollerOptions) {
+    if (value) {
+      this._virtualScrollOptions = value;
+    }
+  }
+  @Input() lazy: boolean = true;
 
   @Output() onSelectChanged = new EventEmitter<any>();
   @Output() onShow = new EventEmitter();
   @Output() onHide = new EventEmitter();
   @Output() onBlur = new EventEmitter();
   @Output() onFocus = new EventEmitter();
-  @Output() onRefresh = new EventEmitter();
+  @Output() onLazyLoad = new EventEmitter();
 
   constructor() { }
+
+  lazyLoad(event: any) {
+    this.onLazyLoad.emit(event);
+  }
 
   getStyles() {
     let width = 0;
@@ -183,13 +212,9 @@ export class AdamDropdownComponent {
   handleOnBlur(event: any) {
     this.onBlur.emit();
   }
-  
+
   handleOnFocus(event: any) {
     this.onFocus.emit();
-  }
-
-  refreshData() {
-    this.onRefresh.emit();
   }
 
   handleOnShow(event: any) {
