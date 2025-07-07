@@ -1,2 +1,13 @@
 @import './../../../assets/styles/styles.scss';
 
+.image-border-style {
+
+    .p-image-preview-container,
+    .p-image {
+
+        img,
+        button {
+            border-radius: var(--radius) !important;
+        }
+    }
+}

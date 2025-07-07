@@ -26,7 +26,10 @@ export class AdamCarouselViewComponent implements OnInit {
   @Input("carouselElementRef") carouselElementRef?: any;
   @Input() width: string = "1575px";
   @Input() isPreviewImage: boolean = false;
-  @Input() imageBorderRadius: string = "5%";
+  _imageBorderRadius: string = "5%";
+  @Input() set imageBorderRadius(value: string) {
+    this._imageBorderRadius = value;
+  }
   @Input() isViewStatus: boolean = false;
   @Input() isViewCategory: boolean = false;
   @Input() isViewName: boolean = false;

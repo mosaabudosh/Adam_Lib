@@ -15,6 +15,8 @@ export class AdamImageComponent {
   @Input() height: any = "50";
   @Input() preview: boolean = true;
   @Input() isBorderRadius: boolean = true;
-  @Input() imageBorderRadius: string;
-
+  _imageBorderRadius: string;
+  @Input() set imageBorderRadius(value: string) {
+    this._imageBorderRadius = value;
+  }
 }
