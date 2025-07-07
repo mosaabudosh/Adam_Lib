@@ -1,0 +1,32 @@
+<div dir="{{ 'dir' | translate }}" class="adam-flex adam-flex-row adam-text-box-ddl-style {{color}}"
+    [ngStyle]="getContainerStyle()" style="--border-radius: {{borderRadius}}">
+    <p-autoComplete *ngIf="!multiple" [(ngModel)]="selectedObject" [suggestions]="_suggestions" [field]="'label'"
+        [placeholder]='placeholder' [disabled]="disabled" [minLength]="1" [inputStyle]="getStyles()" #autocomplete
+        [style]="getStyles()" [dropdownIcon]="dropdownIcon" [required]="required" [panelStyle]="{'width':_width}"
+        [readonly]="readonly" [showEmptyMessage]="isShowEmptyMessage" [emptyMessage]="emptyData" [delay]="1000"
+        [autofocus]="autoFocus" [ngClass]="autoFocus ? 'auto-focus':''" [multiple]="multiple"
+        [dropdown]="isShowDropdownIcon" [showClear]="showClear" (onDropdownClick)="dropdownClick()"
+        (completeMethod)="queryChanged($event)" (onSelect)="selectedChanged()"
+        (keydown.enter)="autocomplete.hide();onAutoCompleteEnter($event)" (input)="onTextChanged($event)"
+        (onClear)="clear()" [focusOnHover]="true" [unique]="multiple" [appendTo]="'body'" [name]="name" />
+
+    <p-autoComplete *ngIf="multiple" [(ngModel)]="selectedItems" [suggestions]="_suggestions" [field]="'label'"
+        [placeholder]='placeholder' [disabled]="disabled" #autocomplete [style]="getStyles()"
+        [dropdownIcon]="dropdownIcon" [required]="required" [panelStyle]="{'width':_width}" [readonly]="readonly"
+        [showEmptyMessage]="isShowEmptyMessage" [emptyMessage]="emptyData" [delay]="1000" [autofocus]="autoFocus"
+        [ngClass]="autoFocus ? 'auto-focus':''" [multiple]="multiple" [dropdown]="isShowDropdownIcon"
+        [showClear]="showClear" (onDropdownClick)="dropdownClick()" (completeMethod)="queryChanged($event)"
+        (onSelect)="selectedChanged()" (keydown.enter)="autocomplete.hide();onAutoCompleteEnter($event)"
+        (input)="onTextChanged($event)" (onClear)="clear()" [focusOnHover]="true" [unique]="multiple"
+        [appendTo]="'body'" [name]="name" [forceSelection]="true" />
+
+    <ng-template let-item pTemplate="item">
+        <div [style.color]="item.color ? item.color : null">
+            <img *ngIf="item.image" src="{{item.image.imagePath}}"
+                [attr.width]="item.image && item.image.width?item.image.width:null"
+                [attr.height]="item.image && item.image.height?item.image.height:null" />
+            {{item.label}}
+        </div>
+    </ng-template>
+
+</div>

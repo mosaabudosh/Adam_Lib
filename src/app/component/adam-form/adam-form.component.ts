@@ -10,6 +10,7 @@ import { AdamPopupComponent } from '../adam-popup/adam-popup.component';
 })
 export class AdamFormComponent {
   citiyId: number | null = null;
+  selectedItem: number | null = null;
   textBox: string;
   catrDetailCount: number = 4;
   date: Date | null = null;
@@ -77,12 +78,52 @@ export class AdamFormComponent {
     },
   ]
   fromDate: Date;
+  items: any[] = [];
+  suggestions: any[] = [];
+  options: any[] = [];
+  first: number = 0;
+  last: number = 16;
+  selectedItems: any[] | undefined;
 
   constructor(
     private componentFactoryResolverService: ComponentFactoryResolverService,
     public viewContainerRef: ViewContainerRef,
     private _adamMessageService: AdamMessageService) {
+    setTimeout(() => {
+      this.items = [];
+      for (let i = 0; i < 100; i++) {
+        this.items.push({ label: 'Item ' + (i + 1), value: (i + 1) });
+      }
+    }, 1000);
 
+    // this.items = [];
+    // for (let i = 0; i < 100; i++) {
+    //   this.items.push({ label: 'Item ' + (i + 1), value: (i + 1) });
+    // }
+  }
+  onTextChange(event: any) {
+    setTimeout(() => {
+      this.suggestions = this.items.filter(p => p.label.concat(event));
+    }, 1000);
+  }
+
+  onSelect(event: any) {
+    console.log('onSelect', event)
+    this.selectedItems = event;
+  }
+
+  onDropdownClick() {
+    console.log('onDropdownClick')
+
+  }
+
+  onLazyLoad(event: any) {
+    const { first, last } = event;
+    let items: any[] = [];
+    for (let i = first; i < last; i++) {
+      items.push(this.items[i]);
+    }
+    this.items = [...items];
   }
 
   openPopup() {

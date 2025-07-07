@@ -103,6 +103,7 @@ import { CascadeSelectModule } from 'primeng/cascadeselect';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { AdamRadioButtonComponent } from './controls/adam-radio-button/adam-radio-button.component';
 import { AdamSkeletonComponent } from './controls/adam-skeleton/adam-skeleton.component';
+import { AdamTextBoxDDLComponent } from './controls/adam-text-box-ddl/adam-text-box-ddl.component';
 
 @NgModule({
   declarations: [
@@ -145,7 +146,8 @@ import { AdamSkeletonComponent } from './controls/adam-skeleton/adam-skeleton.co
     AdamStepperComponent,
     AdamDataViewComponent,
     AdamRadioButtonComponent,
-    AdamSkeletonComponent
+    AdamSkeletonComponent,
+    AdamTextBoxDDLComponent
   ],
   imports: [
     CommonModule,
@@ -313,7 +315,8 @@ import { AdamSkeletonComponent } from './controls/adam-skeleton/adam-skeleton.co
     AdamStepperComponent,
     AdamDataViewComponent,
     AdamRadioButtonComponent,
-    AdamSkeletonComponent
+    AdamSkeletonComponent,
+    AdamTextBoxDDLComponent
   ],
   providers: [MessageService, AdamMessageService, ComponentFactoryResolverService, SortIcon, DatePipe, DecimalPipe],
   schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA]

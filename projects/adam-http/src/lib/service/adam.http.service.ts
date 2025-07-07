@@ -3,7 +3,6 @@ import { Parameter } from "../models/adam-query-option";
 import { Observable, of } from "rxjs";
 import { Injectable } from "@angular/core";
 import { HTTPHandlerManagement } from "./HTTPHandlerManagement";
-import { StorageService } from "./storage.service";
 
 @Injectable({
     providedIn: 'root'
@@ -13,7 +12,7 @@ export class AdamHTTPService {
     private serviceName: string | undefined;
     private apiUrl: string;
 
-    constructor(private _httpHandlerManagement: HTTPHandlerManagement, private storageService: StorageService) {
+    constructor(private _httpHandlerManagement: HTTPHandlerManagement) {
     }
 
     setProperties(endpoint: string, serviceName?: string, apiUrl?: string) {
