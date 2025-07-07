@@ -26,7 +26,7 @@
                     <adam-image class="carousel-image-item-style" [src]="product?.image"
                         [pTooltip]="isViewImageTooltip ? product.name : ''" [tooltipPosition]="tooltipPosition"
                         [previewImageSrc]="product.image" [width]="imageWidth" [height]="imageHeight"
-                        [preview]="isPreviewImage" [imageBorderRadius]="imageBorderRadius"
+                        [preview]="isPreviewImage" [imageBorderRadius]="_imageBorderRadius"
                         [alt]="product.name"></adam-image>
 
                     <p-tag *ngIf="isViewStatus" class="carousel-tag-style" [value]="product.inventoryStatus"
