@@ -84,9 +84,9 @@
             <div class="adam-flex-row" (click)="openClose()">
                 <div class="adam-flex-column adam-start-start ">
                     <i *ngIf="_isClosedMenu" [pTooltip]="isEnabelTooltip ? ('menu.openMenu' | translate) : ''"
-                        [class]="'pi pi-angle-double-right'"></i>
+                        [icon]="'pi pi-angle-double-right'"></i>
                     <i *ngIf="!_isClosedMenu" [pTooltip]="isEnabelTooltip ? ('menu.closeMenu' | translate):''"
-                        [class]="'pi pi-angle-double-left'"></i>
+                        [icon]="'pi pi-angle-double-left'"></i>
                 </div>
             </div>
         </div>

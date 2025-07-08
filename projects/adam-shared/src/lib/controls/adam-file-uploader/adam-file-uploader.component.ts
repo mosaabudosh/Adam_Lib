@@ -53,7 +53,7 @@ export class AdamFileUploaderComponent implements OnInit, OnDestroy {
   @Input() invalidFileSizeMessageDetail: string = "Max File Size is " + (this.maxFileSize / 1024).toString() + " MB";
   @Input() isReadOnly: boolean = false;
   @Input() multiple?: boolean = false;
-  @Input() isAllowEdit: boolean = true;
+  @Input() isAllowEdit: boolean = false;
   @Input() isScanningAllowed: boolean = false;
   @Input() horizontalFiles: boolean = false;
   @Input() allowPreview: boolean = true;
