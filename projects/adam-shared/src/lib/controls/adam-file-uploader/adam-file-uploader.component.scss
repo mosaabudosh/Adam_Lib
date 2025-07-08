@@ -15,15 +15,17 @@
     border: 1px solid var(--btn-primary) !important;
     border-radius: 15px !important;
     margin: 5px !important;
+    width: 100% !important;
 }
 
 .horizontal-files {
     display: flex !important;
     flex-direction: row !important;
     margin: 5px !important;
+    flex-wrap: wrap !important;
 }
 
-.attachment{
+.attachment {
     background-color: var(--main-background) !important;
 }
 
@@ -50,11 +52,10 @@
 }
 
 .attachment-content {
-    display: inline-block !important;
     overflow: hidden !important;
-    white-space: nowrap !important;
     cursor: pointer !important;
     height: 70px !important;
+    width: 98% !important;
 }
 
 .attachment-icon-style {
@@ -120,8 +121,9 @@ p-fileupload.adam-file-upload>div {
 
 .p-fileupload-content {
     background-color: var(--background-rgba) !important;
-    padding: 0px !important;
+    padding: 10px !important;
     min-height: 0px !important;
+    overflow: hidden !important;
 
     ul {
         padding-right: 2rem;

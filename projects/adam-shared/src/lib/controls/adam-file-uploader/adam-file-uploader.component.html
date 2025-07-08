@@ -34,7 +34,7 @@
                         <adam-image [src]="_DomSanitizer.bypassSecurityTrustUrl(getIcon(file))"
                             [previewImageSrc]="_DomSanitizer.bypassSecurityTrustUrl(getIcon(file))" [width]="'50px'"
                             [height]="'60px'" [preview]="allowPreview" style="display: block;" [isBorderRadius]="true"
-                            [imageBorderRadius]="'5%'"></adam-image>
+                            [imageBorderRadius]="'15px'"></adam-image>
                     </div>
                     <div *ngIf="isShowFileName" class="attachment-text-style adam-flex-column">
                         {{file.name}}
