@@ -150,7 +150,7 @@ export class AppComponent {
       {
         label: "Controles",
         icon: 'pi pi-folder',
-        expanded: false,
+        expanded: true,
         isActive: false,
         id: 'Controles',
         command: (event: any) => {
@@ -357,6 +357,18 @@ export class AppComponent {
             isActive: false,
             expanded: false,
             url: '/radio-button',
+            command: (event: any) => {
+              this.onMenuCommandClick(event);
+            }
+          },
+          {
+            label: 'Color Picker',
+            icon: 'pi pi-palette',
+            id: 'color-picker',
+            parentId: 'Controles',
+            isActive: false,
+            expanded: false,
+            url: '/color-picker',
             command: (event: any) => {
               this.onMenuCommandClick(event);
             }

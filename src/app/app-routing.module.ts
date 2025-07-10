@@ -121,6 +121,13 @@ const routes: Routes = [
       import(
         "./component/radio-button/radio-button.module"
       ).then((m) => m.RadioButtonModule),
+  },
+  {
+    path: "color-picker",
+    loadChildren: () =>
+      import(
+        "./component/color-picker/color-picker.module"
+      ).then((m) => m.ColorPickerModule),
   }
 ];
 
