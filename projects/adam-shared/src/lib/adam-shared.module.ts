@@ -104,6 +104,7 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
 import { AdamRadioButtonComponent } from './controls/adam-radio-button/adam-radio-button.component';
 import { AdamSkeletonComponent } from './controls/adam-skeleton/adam-skeleton.component';
 import { AdamTextBoxDDLComponent } from './controls/adam-text-box-ddl/adam-text-box-ddl.component';
+import { AdamColorPickerComponent } from './controls/adam-color-picker/adam-color-picker.component';
 
 @NgModule({
   declarations: [
@@ -147,7 +148,8 @@ import { AdamTextBoxDDLComponent } from './controls/adam-text-box-ddl/adam-text-
     AdamDataViewComponent,
     AdamRadioButtonComponent,
     AdamSkeletonComponent,
-    AdamTextBoxDDLComponent
+    AdamTextBoxDDLComponent,
+    AdamColorPickerComponent
   ],
   imports: [
     CommonModule,
@@ -316,7 +318,8 @@ import { AdamTextBoxDDLComponent } from './controls/adam-text-box-ddl/adam-text-
     AdamDataViewComponent,
     AdamRadioButtonComponent,
     AdamSkeletonComponent,
-    AdamTextBoxDDLComponent
+    AdamTextBoxDDLComponent,
+    AdamColorPickerComponent
   ],
   providers: [MessageService, AdamMessageService, ComponentFactoryResolverService, SortIcon, DatePipe, DecimalPipe],
   schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA]

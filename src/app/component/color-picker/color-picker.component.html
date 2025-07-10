@@ -1,0 +1,17 @@
+<div class="main-screen">
+
+    <adam-lib-label class="screen-title" [text]="'Color Picker'"></adam-lib-label>
+
+    <div class="adam-flex-row adam-row-gap">
+        <lib-adam-color-picker [(ngModel)]="color1" [color]="color1" [inline]="true"
+            (onColorChange)="onColorChange($event)" [format]="'hex'"></lib-adam-color-picker>
+    </div>
+    <div class="adam-flex-row adam-row-gap">
+        <lib-adam-color-picker [(ngModel)]="color2" [color]="color2" [format]="'hex'"
+            (onColorChange)="onColorChange($event)"></lib-adam-color-picker>
+    </div>
+    <div class="adam-flex-row adam-row-gap">
+        <lib-adam-color-picker [(ngModel)]="color3" [color]="color3" [format]="'hex'"
+            (onColorChange)="onColorChange($event)"></lib-adam-color-picker>
+    </div>
+</div>
