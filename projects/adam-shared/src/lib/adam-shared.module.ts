@@ -105,6 +105,7 @@ import { AdamRadioButtonComponent } from './controls/adam-radio-button/adam-radi
 import { AdamSkeletonComponent } from './controls/adam-skeleton/adam-skeleton.component';
 import { AdamTextBoxDDLComponent } from './controls/adam-text-box-ddl/adam-text-box-ddl.component';
 import { AdamColorPickerComponent } from './controls/adam-color-picker/adam-color-picker.component';
+import { ContextMenuModule } from 'primeng/contextmenu';
 
 @NgModule({
   declarations: [
@@ -214,6 +215,7 @@ import { AdamColorPickerComponent } from './controls/adam-color-picker/adam-colo
     ChipsModule,
     CascadeSelectModule,
     AutoCompleteModule,
+    ContextMenuModule
   ],
   exports: [
     CommonModule,
@@ -278,6 +280,7 @@ import { AdamColorPickerComponent } from './controls/adam-color-picker/adam-colo
     ChipsModule,
     CascadeSelectModule,
     AutoCompleteModule,
+    ContextMenuModule,
     IntInputDirective,
     DecimalInputDirective,
     UrlValidatorDirective,
@@ -288,6 +291,7 @@ import { AdamColorPickerComponent } from './controls/adam-color-picker/adam-colo
     ArabicNumberPipe,
     NumberPipe,
     MathPipe,
+    SideMenuFilterPipe,
     AdamHeaderComponent,
     ButtonComponent,
     AdamCalendarComponent,
