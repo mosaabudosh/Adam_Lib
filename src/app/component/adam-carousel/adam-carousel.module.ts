@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { AdamSharedModule } from 'adam-shared';
-import { FormsModule } from '@angular/forms';
 import { AdamCarouselComponent } from './adam-carousel.component';
 
 const routes: Routes = [
@@ -16,9 +14,7 @@ const routes: Routes = [
   declarations: [AdamCarouselComponent],
   exports: [AdamCarouselComponent],
   imports: [
-    CommonModule,
     AdamSharedModule,
-    FormsModule,
     RouterModule.forChild(routes),
   ],
 })
