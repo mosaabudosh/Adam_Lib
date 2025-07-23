@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { AdamSharedModule } from 'adam-shared';
 import { PaginatorComponent } from './paginator.component';
-import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -16,9 +14,7 @@ const routes: Routes = [
   declarations: [PaginatorComponent],
   exports: [PaginatorComponent],
   imports: [
-    CommonModule,
     AdamSharedModule,
-    FormsModule,
     RouterModule.forChild(routes),
   ],
 })
