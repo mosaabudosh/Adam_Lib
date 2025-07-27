@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation, forwardRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from "@angular/forms";
-import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'adam-search-box',
@@ -24,22 +23,21 @@ export class AdamSearchBoxComponent implements OnInit {
   @Input() textValue: any = "";
   @Input() maxlength: string = "100";
   @Input() icon: string;
-  @Output() onIconClicked = new EventEmitter();
-  @Output() onChange = new EventEmitter();
   public style: object = {};
 
-  constructor(public translateService: TranslateService) {
-    this.translateService.stream('general').subscribe(translate => {
-      this.placeholder = translate.search;
-    });
+  @Output() onIconClicked = new EventEmitter();
+  @Output() onChange = new EventEmitter();
+
+  constructor() {
+
   }
 
   ngOnInit() { }
 
   getStyles() {
     return {
-      width: this.width,
-      height: this.height
+      'min-width': this.width,
+      'height': this.height
     };
   }
   writeValue(obj: any): void {

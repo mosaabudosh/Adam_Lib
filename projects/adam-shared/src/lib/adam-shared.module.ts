@@ -106,6 +106,10 @@ import { AdamSkeletonComponent } from './controls/adam-skeleton/adam-skeleton.co
 import { AdamTextBoxDDLComponent } from './controls/adam-text-box-ddl/adam-text-box-ddl.component';
 import { AdamColorPickerComponent } from './controls/adam-color-picker/adam-color-picker.component';
 import { ContextMenuModule } from 'primeng/contextmenu';
+import { AdamAccordionComponent } from './controls/adam-accordion/adam-accordion.component';
+import { AdamRatingComponent } from './controls/adam-rating/adam-rating.component';
+import { AdamContextMenuComponent } from './controls/adam-context-menu/adam-context-menu.component';
+import { AdamMenuComponent } from './controls/adam-menu/adam-menu.component';
 
 @NgModule({
   declarations: [
@@ -150,7 +154,11 @@ import { ContextMenuModule } from 'primeng/contextmenu';
     AdamRadioButtonComponent,
     AdamSkeletonComponent,
     AdamTextBoxDDLComponent,
-    AdamColorPickerComponent
+    AdamColorPickerComponent,
+    AdamAccordionComponent,
+    AdamRatingComponent,
+    AdamContextMenuComponent,
+    AdamMenuComponent
   ],
   imports: [
     CommonModule,
@@ -323,7 +331,11 @@ import { ContextMenuModule } from 'primeng/contextmenu';
     AdamRadioButtonComponent,
     AdamSkeletonComponent,
     AdamTextBoxDDLComponent,
-    AdamColorPickerComponent
+    AdamColorPickerComponent,
+    AdamAccordionComponent,
+    AdamRatingComponent,
+    AdamContextMenuComponent,
+    AdamMenuComponent
   ],
   providers: [MessageService, AdamMessageService, ComponentFactoryResolverService, SortIcon, DatePipe, DecimalPipe],
   schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA]

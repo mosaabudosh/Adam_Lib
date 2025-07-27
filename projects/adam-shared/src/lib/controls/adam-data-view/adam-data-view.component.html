@@ -22,7 +22,7 @@
         </ng-template>
 
         <ng-template *ngIf="isViewCustomHeader" let-product pTemplate="item">
-            <ng-container *ngTemplateOutlet=" customHeaderElementRef; context: { product: product }">
+            <ng-container *ngTemplateOutlet="customHeaderElementRef; context: { product: product }">
             </ng-container>
         </ng-template>
 

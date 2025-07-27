@@ -23,7 +23,7 @@ lib-adam-calendar {
   }
 }
 
-.ng-touched.ng-pristine.ng-invalid[reqpred] {
+.ng-touched.ng-pristine.ng-invalid[required] {
   border: 1px solid var(--not-valid-color) !important;
 }
 

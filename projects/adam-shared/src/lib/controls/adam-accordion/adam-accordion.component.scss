@@ -1,0 +1,48 @@
+@import "./../../../assets/styles/styles.scss";
+
+.accordion-style {
+    padding: 10px !important;
+    border-radius: var(--border-radius) !important;
+    background: transparent !important;
+
+    .p-accordion-tab,
+    .p-accordion-tab-active,
+    .p-accordion,
+    .p-accordion-header {
+        width: 100% !important;
+        border: none !important;
+        background: transparent !important;
+    }
+
+    .p-accordion-header,
+    .p-accordion-header-text {
+        max-height: 40px !important;
+
+        a {
+            text-decoration: none !important;
+            background: transparent !important;
+            border: none !important;
+            max-height: 40px !important;
+            cursor: pointer !important;
+
+            span {
+                text-decoration: none !important;
+                font-size: 25px !important;
+                cursor: pointer !important;
+            }
+        }
+    }
+
+    .p-accordion-content {
+        @include margin-start(10px);
+        width: 98% !important;
+        border: none !important;
+        border-radius: var(--border-radius) !important;
+    }
+
+    .icon-span {
+        margin: 20px !important;
+        font-size: 20px !important;
+        cursor: pointer !important;
+    }
+}

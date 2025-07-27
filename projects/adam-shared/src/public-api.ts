@@ -34,6 +34,10 @@ export * from './lib/controls/adam-radio-button/adam-radio-button.component';
 export * from './lib/controls/adam-skeleton/adam-skeleton.component';
 export * from './lib/controls/adam-text-box-ddl/adam-text-box-ddl.component';
 export * from './lib/controls/adam-color-picker/adam-color-picker.component';
+export * from './lib/controls/adam-accordion/adam-accordion.component';
+export * from './lib/controls/adam-context-menu/adam-context-menu.component';
+export * from './lib/controls/adam-menu/adam-menu.component';
+export * from './lib/controls/adam-rating/adam-rating.component';
 
 export * from './lib/services/adam.message.service';
 export * from './lib/services/math-service.service';

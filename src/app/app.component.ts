@@ -4,6 +4,7 @@ import { HeaderDataModel } from '../../projects/adam-shared/src/lib/model/header
 import { Router } from '@angular/router';
 import { PrimeNGConfig } from 'primeng/api';
 import { Languge } from '../../projects/adam-shared/src/lib/enum/enums';
+import { ScreensURL } from './enum/enums';
 
 @Component({
   selector: 'app-root',
@@ -164,7 +165,7 @@ export class AppComponent {
             parentId: 'Controles',
             isActive: false,
             expanded: false,
-            url: '/button',
+            url: `/${ScreensURL.Button}`,
             command: (event: any) => {
               this.onMenuCommandClick(event);
             }
@@ -176,7 +177,7 @@ export class AppComponent {
             parentId: 'Controles',
             isActive: false,
             expanded: false,
-            url: '/toast',
+            url: `/${ScreensURL.Toast}`,
             command: (event: any) => {
               this.onMenuCommandClick(event);
             }
@@ -188,7 +189,7 @@ export class AppComponent {
             parentId: 'Controles',
             isActive: false,
             expanded: false,
-            url: '/form',
+            url: `/${ScreensURL.Form}`,
             command: (event: any) => {
               this.onMenuCommandClick(event);
             }
@@ -200,7 +201,7 @@ export class AppComponent {
             parentId: 'Controles',
             isActive: false,
             expanded: false,
-            url: '/tabel',
+            url: `/${ScreensURL.Tabel}`,
             command: (event: any) => {
               this.onMenuCommandClick(event);
             }
@@ -212,7 +213,7 @@ export class AppComponent {
             parentId: 'Controles',
             isActive: false,
             expanded: false,
-            url: '/calendar',
+            url: `/${ScreensURL.Calendar}`,
             command: (event: any) => {
               this.onMenuCommandClick(event);
             }
@@ -224,7 +225,7 @@ export class AppComponent {
             parentId: 'Controles',
             isActive: false,
             expanded: false,
-            url: '/checkbox',
+            url: `/${ScreensURL.Checkbox}`,
             command: (event: any) => {
               this.onMenuCommandClick(event);
             }
@@ -236,7 +237,7 @@ export class AppComponent {
             parentId: 'Controles',
             isActive: false,
             expanded: false,
-            url: '/file-uploader',
+            url: `/${ScreensURL.FileUploader}`,
             command: (event: any) => {
               this.onMenuCommandClick(event);
             }
@@ -248,7 +249,7 @@ export class AppComponent {
             parentId: 'Controles',
             isActive: false,
             expanded: false,
-            url: '/pick-list',
+            url: `/${ScreensURL.PickList}`,
             command: (event: any) => {
               this.onMenuCommandClick(event);
             }
@@ -260,7 +261,7 @@ export class AppComponent {
             parentId: 'Controles',
             isActive: false,
             expanded: false,
-            url: '/tabs',
+            url: `/${ScreensURL.Tabs}`,
             command: (event: any) => {
               this.onMenuCommandClick(event);
             }
@@ -272,7 +273,7 @@ export class AppComponent {
             parentId: 'Controles',
             isActive: false,
             expanded: false,
-            url: '/paginator',
+            url: `/${ScreensURL.Paginator}`,
             command: (event: any) => {
               this.onMenuCommandClick(event);
             }
@@ -284,7 +285,7 @@ export class AppComponent {
             parentId: 'Controles',
             isActive: false,
             expanded: false,
-            url: '/image',
+            url: `/${ScreensURL.Image}`,
             command: (event: any) => {
               this.onMenuCommandClick(event);
             }
@@ -296,7 +297,7 @@ export class AppComponent {
             parentId: 'Controles',
             isActive: false,
             expanded: false,
-            url: '/galleria',
+            url: `/${ScreensURL.Galleria}`,
             command: (event: any) => {
               this.onMenuCommandClick(event);
             }
@@ -308,7 +309,7 @@ export class AppComponent {
             parentId: 'Controles',
             isActive: false,
             expanded: false,
-            url: '/carousel',
+            url: `/${ScreensURL.Carousel}`,
             command: (event: any) => {
               this.onMenuCommandClick(event);
             }
@@ -320,7 +321,7 @@ export class AppComponent {
             parentId: 'Controles',
             isActive: false,
             expanded: false,
-            url: '/otp',
+            url: `/${ScreensURL.Otp}`,
             command: (event: any) => {
               this.onMenuCommandClick(event);
             }
@@ -332,7 +333,7 @@ export class AppComponent {
             parentId: 'Controles',
             isActive: false,
             expanded: false,
-            url: '/stepper',
+            url: `/${ScreensURL.Stepper}`,
             command: (event: any) => {
               this.onMenuCommandClick(event);
             }
@@ -344,7 +345,7 @@ export class AppComponent {
             parentId: 'Controles',
             isActive: false,
             expanded: false,
-            url: '/data-view',
+            url: `/${ScreensURL.DataView}`,
             command: (event: any) => {
               this.onMenuCommandClick(event);
             }
@@ -356,7 +357,7 @@ export class AppComponent {
             parentId: 'Controles',
             isActive: false,
             expanded: false,
-            url: '/radio-button',
+            url: `/${ScreensURL.RadioButton}`,
             command: (event: any) => {
               this.onMenuCommandClick(event);
             }
@@ -368,7 +369,55 @@ export class AppComponent {
             parentId: 'Controles',
             isActive: false,
             expanded: false,
-            url: '/color-picker',
+            url: `/${ScreensURL.ColorPicker}`,
+            command: (event: any) => {
+              this.onMenuCommandClick(event);
+            }
+          },
+          {
+            label: 'Accordion',
+            icon: 'pi pi-list',
+            id: 'accordion',
+            parentId: 'Controles',
+            isActive: false,
+            expanded: false,
+            url: `/${ScreensURL.Accordion}`,
+            command: (event: any) => {
+              this.onMenuCommandClick(event);
+            }
+          },
+          {
+            label: 'Context Menu',
+            icon: 'pi pi-list',
+            id: 'context-menu',
+            parentId: 'Controles',
+            isActive: false,
+            expanded: false,
+            url: `/${ScreensURL.ContextMenu}`,
+            command: (event: any) => {
+              this.onMenuCommandClick(event);
+            }
+          },
+          {
+            label: 'Menu',
+            icon: 'pi pi-list',
+            id: 'menu',
+            parentId: 'Controles',
+            isActive: false,
+            expanded: false,
+            url: `/${ScreensURL.Menu}`,
+            command: (event: any) => {
+              this.onMenuCommandClick(event);
+            }
+          },
+          {
+            label: 'Rating',
+            icon: 'pi pi-list',
+            id: 'rating',
+            parentId: 'Controles',
+            isActive: false,
+            expanded: false,
+            url: `/${ScreensURL.Rating}`,
             command: (event: any) => {
               this.onMenuCommandClick(event);
             }
