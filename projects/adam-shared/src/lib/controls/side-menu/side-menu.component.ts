@@ -8,6 +8,8 @@ import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angu
 })
 export class SideMenuComponent {
   searchText: any;
+  searchWidth: string;
+
   @Input() isEnabelTooltip: boolean = true;
   @Input() isSimpelMenu: boolean = false;
   @Input() emptyMessage: any = "No data available , check server connection";
@@ -33,6 +35,13 @@ export class SideMenuComponent {
     this.mainMenu = this._items;
   }
   @Output() onChangeClosedMenu = new EventEmitter();
+
+  constructor() { }
+
+  getWidth() {
+    const windowOuterWidth = window.outerWidth;
+    return `${windowOuterWidth * 0.14}px`
+  }
 
   openClose() {
     this._isClosedMenu = !this._isClosedMenu;

@@ -2,15 +2,13 @@
 
 
 .adam-search-box {
-    // min-width: 100% !important;
-    // min-height: 100% !important;
     background-color: white !important; //var(--main-background) !important;
     background-image: none !important;
     border-radius: var(--border-radius) !important;
 
     input {
         height: 100% !important;
-        min-width: 100% !important;
+        min-width: var(--width) !important;
         padding: 10px !important;
         font-size: var(--small-font-size) !important;
         font-family: var(--font-family) !important;
@@ -45,24 +43,4 @@
 
         @include float-right;
     }
-}
-
-.searchBox input {
-    font-size: 11pt !important;
-    vertical-align: middle !important;
-    line-height: 11pt !important;
-    overflow: hidden !important;
-    padding-bottom: 3px !important;
-    @include padding-start(13px);
-    @include padding-end(43px);
-    border: none !important;
-    background-color: transparent !important;
-    width: 100% !important;
-    height: 100% !important;
-    color: var(--main-text-color) !important;
-}
-
-.searchBox input::placeholder {
-    color: var(--main-text-color) !important;
-    font-size: var(--small-font-size);
 }

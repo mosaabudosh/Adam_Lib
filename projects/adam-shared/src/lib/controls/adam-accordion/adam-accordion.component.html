@@ -1,0 +1,20 @@
+<p-accordion [expandIcon]="expandIcon" [collapseIcon]="collapseIcon"
+    class="adam-flex-row accordion-style {{customClass}}" (onOpen)="onOpen.emit($event)"
+    (onClose)="onClose.emit($event)" (activeIndexChange)="activeIndexChange.emit($event)">
+    <p-accordionTab class="adam-flex-row" [iconPos]="iconPos" [selected]="_selected">
+        <ng-template *ngIf="isViewCustomHeader" let-group pTemplate="header">
+            <ng-container *ngTemplateOutlet="customHeaderElementRef; context: { group: group }">
+            </ng-container>
+        </ng-template>
+
+        <ng-template *ngIf="isViewCustomContent" let-content pTemplate="content">
+            <ng-container *ngTemplateOutlet="customContentElementRef; context: { content: content }">
+            </ng-container>
+        </ng-template>
+    </p-accordionTab>
+
+    <ng-template *ngIf="isViewCustomResult" let-result pTemplate="result">
+        <ng-container *ngTemplateOutlet="customResultElementRef; context: { result: result }">
+        </ng-container>
+    </ng-template>
+</p-accordion>

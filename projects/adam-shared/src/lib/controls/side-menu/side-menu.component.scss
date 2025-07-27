@@ -132,7 +132,7 @@
     }
 
     .adam-side-menu-row-label {
-        padding: 2% !important;
+        padding: 3% !important;
         // margin-top: 3px !important;
         width: 90% !important;
         font-size: var(--small-font-size) !important;
@@ -145,6 +145,16 @@
     cursor: pointer !important;
     border-radius: var(--border-radius) !important;
     // height: 30px !important;
+
+    :dir(rtl) & {
+        border-top-left-radius: 25px !important;
+        border-bottom-left-radius: 25px !important;
+    }
+
+    :dir(ltr) & {
+        border-top-right-radius: 25px !important;
+        border-bottom-right-radius: 25px !important;
+    }
 }
 
 .adam-side-sub-menu-panal {
@@ -161,6 +171,16 @@
     cursor: pointer !important;
     border-radius: var(--border-radius) !important;
     height: 30px !important;
+
+    :dir(rtl) & {
+        border-top-left-radius: 25px !important;
+        border-bottom-left-radius: 25px !important;
+    }
+
+    :dir(ltr) & {
+        border-top-right-radius: 25px !important;
+        border-bottom-right-radius: 25px !important;
+    }
 
     .angle-right-icon-style {
         font-size: var(--med-font-size) !important;
