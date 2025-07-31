@@ -4,5 +4,12 @@
 
     <div class="div-demo-style">
 
+        <!-- <lib-adam-menu #menu [target]="'menu'" [id]="'menu'" [models]="items"
+            [customClass]="'header-menu-item-style'"></lib-adam-menu> -->
+
+        <p-menu #menu [popup]="true" [model]="items" [styleClass]="'header-menu-item-style'"></p-menu>
+
+        <adam-lib-button id="menu" (click)="menu.toggle($event)" [text]="'User Menu'"></adam-lib-button>
+
     </div>
 </div>

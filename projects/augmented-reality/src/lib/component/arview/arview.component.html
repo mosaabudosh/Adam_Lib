@@ -1,0 +1,23 @@
+<input type="file" (change)="onImageSelected($event)" accept="image/*" />
+
+<div id="scene-container" *ngIf="imageUrl">
+  <a-scene embedded vr-mode-ui="enabled: false" arjs="trackingMethod: best; sourceType: image; sourceUrl: {{imageUrl}}">
+
+    <a-marker preset="hiro">
+      <a-entity gltf-model="assets/models/ToyotaAE86.glb" scale="0.5 0.5 0.5" position="0 0 0">
+      </a-entity>
+    </a-marker>
+
+    <a-entity camera></a-entity>
+  </a-scene>
+</div>
+
+<div id="scene-container" *ngIf="imageUrl">
+  <a-scene embedded vr-mode-ui="enabled: false" arjs="trackingMethod: best; sourceType: image; sourceUrl: {{imageUrl}}">
+    <a-marker preset="hiro">
+      <a-entity gltf-model="assets/models/Box.glb" scale="0.5 0.5 0.5" position="0 0 0"
+        animation="property: rotation; to: 0 360 0; loop: true; dur: 5000">
+      </a-entity>
+    </a-marker>
+  </a-scene>
+</div>

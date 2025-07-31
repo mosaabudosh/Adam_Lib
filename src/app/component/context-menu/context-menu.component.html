@@ -2,7 +2,12 @@
 
     <adam-lib-label class="screen-title" [text]="'Context Menu'"></adam-lib-label>
 
-    <div class="div-demo-style">
-
+    <div class="div-demo-style adam-flex-row ">
+        <div class="adam-flex-column adam-end-end">
+            <span #mainAction class="pi pi-ellipsis-v main-action-style"></span>
+        </div>
+        <lib-adam-context-menu [customClass]="'context-menu-style'" [target]="mainAction"
+            [models]="mainActions"></lib-adam-context-menu>
     </div>
+
 </div>

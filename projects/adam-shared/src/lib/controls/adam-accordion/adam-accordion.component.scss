@@ -1,8 +1,8 @@
 @import "./../../../assets/styles/styles.scss";
 
-.accordion-style {
+.adam-accordion-style {
     padding: 10px !important;
-    border-radius: var(--border-radius) !important;
+    // border-radius: var(--border-radius) !important;
     background: transparent !important;
 
     .p-accordion-tab,
@@ -25,11 +25,11 @@
             max-height: 40px !important;
             cursor: pointer !important;
 
-            span {
-                text-decoration: none !important;
-                font-size: 25px !important;
-                cursor: pointer !important;
-            }
+            // span {
+            //     text-decoration: none !important;
+            //     font-size: 25px !important;
+            //     cursor: pointer !important;
+            // }
         }
     }
 
@@ -40,9 +40,9 @@
         border-radius: var(--border-radius) !important;
     }
 
-    .icon-span {
-        margin: 20px !important;
-        font-size: 20px !important;
-        cursor: pointer !important;
-    }
+    // .icon-span {
+    //     margin: 20px !important;
+    //     font-size: 20px !important;
+    //     cursor: pointer !important;
+    // }
 }

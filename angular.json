@@ -183,6 +183,43 @@
           }
         }
       }
+    },
+    "AugmentedReality": {
+      "projectType": "library",
+      "root": "projects/augmented-reality",
+      "sourceRoot": "projects/augmented-reality/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/augmented-reality/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/augmented-reality/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/augmented-reality/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/augmented-reality/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "assets": [
+              "src/assets"
+            ],
+            "scripts": []
+          }
+        }
+      }
     }
   }
 }

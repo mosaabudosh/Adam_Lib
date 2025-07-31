@@ -99,7 +99,7 @@
         </ng-template>
 
         <ng-template *ngIf="!isViewCustomListData" let-product pTemplate="grid" let-products>
-            <div class="adam-flex adam-flex-row grid-style adam-center-center">
+            <div class="adam-flex adam-flex-row adam-flex-wrap adam-center-center">
                 @for(item of products; track item){
                 <div class="item-card-style adam-flex-column" (click)="onCardClick.emit(item)">
                     <div class="adam-flex-row">
@@ -199,7 +199,7 @@
             </div>
         </div>
 
-        <div [ngClass]="layout == 'grid' ? 'adam-flex adam-flex-row grid-style adam-center-center':'adam-flex-row'">
+        <div [ngClass]="layout == 'grid' ? 'adam-flex adam-flex-row adam-flex-wrap adam-center-center':'adam-flex-row'">
             @for(item of skeletons; track item){
             <lib-adam-skeleton [skeletonWidth]="layout == 'grid' ? _skeletonWidth : '1500px'" class="skeleton-style"
                 [skeletonHeight]="layout == 'grid' ? _skeletonHeight : '200px'"

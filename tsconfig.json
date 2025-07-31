@@ -8,6 +8,9 @@
       ],
       "AdamShared": [
         "./dist/adam-shared"
+      ],
+      "AugmentedReality": [
+        "./dist/augmented-reality"
       ]
     },
     "noImplicitReturns": false,
