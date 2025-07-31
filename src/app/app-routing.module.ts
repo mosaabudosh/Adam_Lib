@@ -155,8 +155,15 @@ const routes: Routes = [
     path: ScreensURL.Rating,
     loadChildren: () =>
       import(
-        "./component/radio-button/radio-button.module"
-      ).then((m) => m.RadioButtonModule),
+        "./component/rating/rating.module"
+      ).then((m) => m.RatingModule),
+  },
+  {
+    path: ScreensURL.AugmentedReality,
+    loadChildren: () =>
+      import(
+        "./component/adam-augmented-reality/adam-augmented-reality.module"
+      ).then((m) => m.AdamAugmentedRealityModule),
   }
 ];
 

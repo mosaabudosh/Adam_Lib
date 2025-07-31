@@ -21,4 +21,5 @@ export enum ScreensURL {
     ContextMenu = 'context-menu',
     Menu = 'menu',
     Rating = 'rating',
+    AugmentedReality = 'augmented-reality'
 }

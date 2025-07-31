@@ -2,7 +2,102 @@
 
     <adam-lib-label class="screen-title" [text]="'Accordion'"></adam-lib-label>
 
-    <div class="div-demo-style">
+    <div class="div-demo-style box-filters-style">
+        <div class="adam-flex adam-flex-row search-panel-style">
+            <adam-search-box [icon]="'pi pi-search'" [height]="'40px'" [width]="'300px'" autocomplete="off"
+                (onChange)="onSearchChange($event)"></adam-search-box>
+        </div>
 
+        <lib-adam-accordion *ngFor="let accordion of accordions| filter:[searchText,'English']; index as i;"
+            [isViewCustomHeader]="searchText == null" [customHeaderElementRef]="filterHeaderElementRef"
+            [isViewCustomContent]="true" [selected]="true" [customContentElementRef]="filterContentElementRef"
+            [customClass]="searchText ? 'filtered-style' : 'filters-style'" [isViewAccordionTab]="true">
+
+            <ng-template #filterHeaderElementRef>
+                <div class="adam-flex-row filters-group-label-style" *ngIf="searchText == null">
+                    <h6>{{ accordion?.label }}</h6>
+                </div>
+            </ng-template>
+
+            <ng-template #filterContentElementRef>
+                <div *ngIf="searchText == null">
+                    <div *ngFor="let item of accordion.items| filter:[searchText,'English']; index as i;">
+                        <lib-adam-checkbox [color]="'waring'" [value]="item.checked" [label]="item?.label"
+                            [name]="item?.label" [checked]="item.checked" (change)="item.command($event,item)">
+                        </lib-adam-checkbox>
+                    </div>
+                </div>
+                <div *ngIf="searchText != null">
+                    <div class="adam-flex-row search-result-style">
+                        <lib-adam-checkbox [color]="'waring'" [value]="accordion.checked" [label]="accordion?.label"
+                            [name]="accordion?.label" [checked]="accordion.checked">
+                        </lib-adam-checkbox>
+                    </div>
+                </div>
+
+            </ng-template>
+
+            <ng-template #filterResultElementRef>
+                {{accordion?.label}}
+                <div class="adam-flex-row search-result-style">
+                    <lib-adam-checkbox [color]="'waring'" [value]="accordion.checked" [label]="accordion?.label"
+                        [name]="accordion?.label" [checked]="accordion.checked">
+                    </lib-adam-checkbox>
+                </div>
+            </ng-template>
+        </lib-adam-accordion>
+    </div>
+
+    <div class="div-demo-style">
+        <lib-adam-accordion *ngFor="let accordion of accordions; index as i;" [isViewCustomHeader]="true"
+            [customHeaderElementRef]="customHeaderElementRef" [isViewCustomContent]="true"
+            [customContentElementRef]="customContentElementRef" [customClass]="'accordion-style'">
+
+            <ng-template #customHeaderElementRef>
+                <div class="adam-flex-row adam-space-between">
+                    <div class="adam-flex-column adam-start-start">
+                        <adam-lib-label class="notification-detail-name-style"
+                            [text]="accordion?.label"></adam-lib-label>
+                    </div>
+                    <div class="adam-flex-column adam-end-end">
+                        <adam-lib-label class="notification-detail-name-style"
+                            [text]="accordion?.date | date :'dd-MM-yyyy'"></adam-lib-label>
+                    </div>
+                </div>
+            </ng-template>
+
+            <ng-template #customContentElementRef>
+                <div class="adam-flex-row adam-space-between">
+                    <adam-lib-label class="notification-detail-name-style" [text]="accordion?.content"></adam-lib-label>
+                </div>
+            </ng-template>
+        </lib-adam-accordion>
+    </div>
+
+    <div class="div-demo-style">
+        <lib-adam-accordion *ngFor="let accordion of accordions; index as i;" [expandIcon]="'pi pi-angle-down'"
+            [collapseIcon]="'pi pi-angle-up'" [isViewCustomHeader]="true"
+            [customHeaderElementRef]="customHeaderElementRef" [isViewCustomContent]="true"
+            [customContentElementRef]="customContentElementRef" [customClass]="'accordion-style'">
+
+            <ng-template #customHeaderElementRef>
+                <div class="adam-flex-row adam-space-between">
+                    <div class="adam-flex-column adam-start-start">
+                        <adam-lib-label class="accordion-detail-name-style" [text]="accordion?.label"></adam-lib-label>
+                    </div>
+                    <div class="adam-flex-column adam-end-end">
+                        <adam-lib-label class="accordion-detail-name-style"
+                            [text]="accordion?.date | date :'dd-MM-yyyy'"></adam-lib-label>
+                    </div>
+                </div>
+            </ng-template>
+
+            <ng-template #customContentElementRef>
+                <div class="adam-flex-row adam-space-between">
+                    <adam-lib-label class="notification-detail-name-style" [text]="accordion?.content"></adam-lib-label>
+                </div>
+            </ng-template>
+
+        </lib-adam-accordion>
     </div>
 </div>

@@ -1,0 +1,57 @@
+.header-menu-item-style {
+    background-color: var(--background-rgba) !important;
+    width: 175px !important;
+    border-radius: var(--border-radius) !important;
+    margin-top: 0.65% !important;
+    padding: 0.5% !important;
+    box-shadow: var(--secondary-box-shadow) !important;
+    cursor: pointer !important;
+    color: var(--main-text-color) !important;
+
+    ol,
+    ul,
+    dl {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+
+    .p-menuitem-content {
+        color: var(--main-text-color) !important;
+        background-color: transparent !important;
+        border-radius: var(--border-radius) !important;
+
+        a {
+            text-decoration: none !important;
+            cursor: pointer !important;
+
+            span {
+                text-decoration: none !important;
+                cursor: pointer !important;
+            }
+        }
+    }
+
+    .p-menuitem-text {
+        color: var(--main-text-color) !important;
+        font-size: var(--small-font-size) !important;
+        font-family: var(--font-family) !important;
+    }
+
+    .p-menuitem-icon {
+        color: var(--main-text-color);
+        font-size: var(--small-font-size) !important;
+        cursor: pointer !important;
+        font-weight: bold !important;
+    }
+
+    .p-menuitem-link:hover {
+        color: var(--main-text-color) !important;
+        background: var(--btn-warning) !important;
+        min-width: max-content !important;
+        height: max-content !important;
+        cursor: pointer !important;
+        border-radius: var(--border-radius) !important;
+        font-weight: bold !important;
+    }
+}

@@ -15,14 +15,20 @@ export class AdamAccordionComponent {
   @Input() set selected(value: boolean) {
     this._selected = value;
   }
-  @Input() isViewCustomHeader: boolean = false;
+  _isViewCustomHeader: boolean;
+  @Input() set isViewCustomHeader(value: boolean) {
+    this._isViewCustomHeader = value;
+  }
   @Input("customHeaderElementRef") customHeaderElementRef?: any;
-  @Input() isViewCustomContent: boolean = false;
+  _isViewCustomContent: boolean;
+  @Input() set isViewCustomContent(value: boolean) {
+    this._isViewCustomContent = value;
+  }
   @Input("customContentElementRef") customContentElementRef?: any;
-  @Input() isViewCustomResult: boolean = false;
-  @Input("customResultElementRef") customResultElementRef?: any;
-
-
+  _isViewAccordionTab: boolean = true;
+  @Input() set isViewAccordionTab(value: boolean) {
+    this._isViewAccordionTab = value;
+  }
   @Output() onClose: EventEmitter<any> = new EventEmitter();
   @Output() onOpen: EventEmitter<any> = new EventEmitter();
   @Output() activeIndexChange: EventEmitter<any> = new EventEmitter();

@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { Languge } from '../../projects/adam-shared/src/lib/enum/enums';
+// import { AugmentedRealityModule } from 'AugmentedReality';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { Languge } from '../../projects/adam-shared/src/lib/enum/enums';
     AdamSharedModule,
     AppRoutingModule,
     HttpClientModule,
+    // AugmentedRealityModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

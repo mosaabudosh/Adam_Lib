@@ -1,1 +1,3 @@
-<p>adam-menu works!</p>
+<p-menu [id]="id" [target]="target" [popup]="popup" [model]="_models" [styleClass]="customClass" [appendTo]="'body'"
+    [autoZIndex]="true" (onShow)="onShow.emit($event)" (onHide)="onHide.emit($event)"
+    (toggle)="toggle.emit($event)"></p-menu>

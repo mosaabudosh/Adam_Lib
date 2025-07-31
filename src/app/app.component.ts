@@ -149,9 +149,33 @@ export class AppComponent {
   loadMenuData() {
     this.menuItem = [
       {
+        label: "Augmented Reality",
+        icon: 'pi pi-folder',
+        expanded: false,
+        isActive: false,
+        id: 'AugmentedReality',
+        command: (event: any) => {
+          this.onMenuCommandClick(event);
+        },
+        items: [
+          {
+            label: 'AR',
+            icon: 'pi pi-bookmark',
+            id: ScreensURL.AugmentedReality,
+            parentId: 'AugmentedReality',
+            isActive: false,
+            expanded: false,
+            url: `/${ScreensURL.AugmentedReality}`,
+            command: (event: any) => {
+              this.onMenuCommandClick(event);
+            }
+          },
+        ]
+      },
+      {
         label: "Controles",
         icon: 'pi pi-folder',
-        expanded: true,
+        expanded: false,
         isActive: false,
         id: 'Controles',
         command: (event: any) => {
@@ -398,30 +422,30 @@ export class AppComponent {
               this.onMenuCommandClick(event);
             }
           },
-          {
-            label: 'Menu',
-            icon: 'pi pi-list',
-            id: 'menu',
-            parentId: 'Controles',
-            isActive: false,
-            expanded: false,
-            url: `/${ScreensURL.Menu}`,
-            command: (event: any) => {
-              this.onMenuCommandClick(event);
-            }
-          },
-          {
-            label: 'Rating',
-            icon: 'pi pi-list',
-            id: 'rating',
-            parentId: 'Controles',
-            isActive: false,
-            expanded: false,
-            url: `/${ScreensURL.Rating}`,
-            command: (event: any) => {
-              this.onMenuCommandClick(event);
-            }
-          }
+          // {
+          //   label: 'Menu',
+          //   icon: 'pi pi-list',
+          //   id: 'menu',
+          //   parentId: 'Controles',
+          //   isActive: false,
+          //   expanded: false,
+          //   url: `/${ScreensURL.Menu}`,
+          //   command: (event: any) => {
+          //     this.onMenuCommandClick(event);
+          //   }
+          // },
+          // {
+          //   label: 'Rating',
+          //   icon: 'pi pi-list',
+          //   id: 'rating',
+          //   parentId: 'Controles',
+          //   isActive: false,
+          //   expanded: false,
+          //   url: `/${ScreensURL.Rating}`,
+          //   command: (event: any) => {
+          //     this.onMenuCommandClick(event);
+          //   }
+          // }
         ]
       }
     ];

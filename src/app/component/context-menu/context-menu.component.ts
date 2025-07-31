@@ -7,5 +7,19 @@ import { Component, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class ContextMenuComponent {
+  mainActions: any[] = [
+    {
+      label: 'Mark as read',
+      command: (event: any) => {
+
+      }
+    },
+    {
+      label: 'Mark as unRead',
+      command: (event: any) => {
+
+      }
+    },
+  ];
 
 }

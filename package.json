@@ -23,6 +23,7 @@
     "@ngx-translate/core": "^15.0.0",
     "@ngx-translate/http-loader": "^8.0.0",
     "@popperjs/core": "^2.11.8",
+    "adam-augmented-reality": "file:dist/augmented-reality/augmented-reality-0.0.1.tgz",
     "adam-http": "file:dist/adam-http/adam-http-0.0.1.tgz",
     "adam-shared": "file:dist/adam-shared/adam-shared-0.0.1.tgz",
     "angular-font-awesome": "3.1.2",
