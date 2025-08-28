@@ -14,7 +14,28 @@ export class AdamCarouselComponent implements OnInit {
   public get orientationCarouselType(): typeof OrientationCarouselType {
     return OrientationCarouselType;
   }
+
+  advertisings: any[] = [];
+
   ngOnInit(): void {
+    this.advertisings = [
+      {
+        advertisingId: 1,
+        image: 'assets/images/ad1.png'
+      },
+      {
+        advertisingId: 2,
+        image: 'assets/images/ad2.png'
+      },
+      {
+        advertisingId: 3,
+        image: 'assets/images/ad3.png'
+      },
+      {
+        advertisingId: 4,
+        image: 'assets/images/ad4.png'
+      },
+    ]
     this.products = [
       {
         shopItemId: '1000',

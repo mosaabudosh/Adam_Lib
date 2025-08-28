@@ -75,6 +75,7 @@ app-dropdown {
     color: var(--text-color) !important;
     border-radius: var(--border-radius) !important;
     padding: 0 !important;
+
   }
 }
 
@@ -101,4 +102,18 @@ ul,
 dl {
   margin-bottom: 0px !important;
   padding: 0px !important;
+}
+
+.image-dropdown-style {
+  margin: 1px 3px 3px 3px !important;
+}
+
+.selected-item-with-image-style {
+  span {
+    margin: 5px !important;
+  }
+
+  img {
+    margin-top: -2px !important;
+  }
 }

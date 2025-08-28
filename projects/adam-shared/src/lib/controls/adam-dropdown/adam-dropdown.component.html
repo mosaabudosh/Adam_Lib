@@ -7,6 +7,16 @@
         [group]="group" appendTo="body" [virtualScroll]="_virtualScroll" [lazy]="lazy" (onLazyLoad)="lazyLoad($event)"
         [virtualScrollItemSize]="_virtualScrollItemSize" [virtualScrollOptions]="_virtualScrollOptions">
 
+        <ng-template pTemplate="selectedItem" let-selectedItem *ngIf="withImage">
+            <div class="selected-item-with-image-style">
+                <img src="{{selectedItem?.image?.imagePath}}"
+                    [attr.width]="selectedItem?.image && selectedItem?.image?.width ? selectedItem?.image?.width : null"
+                    [attr.height]="selectedItem?.image && selectedItem?.image?.height ? selectedItem?.image?.height : null"
+                    [class]="" />
+                <span>{{ selectedItem.label }}</span>
+            </div>
+        </ng-template>
+
         <ng-template let-group pTemplate="group">
             <div>
                 <span>{{ group.label }}</span>
@@ -14,6 +24,10 @@
         </ng-template>
 
         <ng-template let-dropdown pTemplate="dropdown">
+            <img *ngIf="dropdown?.image" src="{{dropdown?.image?.imagePath}}"
+                [attr.width]="dropdown?.image && dropdown?.image?.width ? dropdown?.image?.width : null"
+                [attr.height]="dropdown?.image && dropdown?.image?.height ? dropdown?.image?.height : null"
+                [class]="'image-dropdown-style'" />
             <span class="dropdown">
                 {{ dropdown.label }}
             </span>

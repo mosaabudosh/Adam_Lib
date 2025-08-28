@@ -16,8 +16,19 @@
             [isViewRating]="true" [isViewName]="true" [isViewDescription]="true" [isViewCategory]="true"
             [isViewFooter]="true" [isViewCategoryTooltip]="true" [isViewImageTooltip]="true"
             [isViewButtonsTooltip]="true" [isViewPrice]="true" [isViewFooter]="true" [paginator]="false"
-            [addToFavoriteColor]="'dangerous-reverse'" [isViewCustomHeader]="true" [numSkeleton]="20"
-            [skeletonWidth]="'210px'" [customHeaderElementRef]="
-            "></adam-data-view>
+            [addToFavoriteColor]="'dangerous-reverse'" [numSkeleton]="20" [skeletonWidth]="'210px'"
+            [isViewLayoutOptions]="false" [isViewCustomGridData]="true" [isViewSortOptions]="false"
+            [customGridDataElementRef]="storeGridData"></adam-data-view>
+
+        <ng-template #storeGridData let-products="products">
+            <div class="adam-flex adam-flex-row adam-flex-wrap adam-center-center">
+                @for(product of products; track product){
+                <div class="custom-product-style">
+                    <p>{{product?.name}}</p>
+                </div>
+                }
+            </div>
+
+        </ng-template>
     </div>
 </div>

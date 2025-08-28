@@ -315,7 +315,7 @@ export class DataViewComponent {
         product.image = product.images[0];
       })
       this.products = [...this.products];
-    }, 5000);
+    }, 50);
 
   }
 

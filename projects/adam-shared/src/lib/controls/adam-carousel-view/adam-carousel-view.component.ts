@@ -77,6 +77,11 @@ export class AdamCarouselViewComponent implements OnInit {
     this._numSkeleton = value;
     this.fillSkeletons();
   }
+  @Input() showIndicators: boolean = true;
+  @Input() isCustomColorChevronrighticon: boolean = false;
+  @Input() isChangeLocationChevronrighticon: boolean = false;
+  @Input() showNavigators: boolean = true;
+
   @Output() onAddToCart = new EventEmitter();
   @Output() onAddToFavorite = new EventEmitter();
   @Output() onCardClick = new EventEmitter();

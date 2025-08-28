@@ -99,9 +99,26 @@
   cursor: pointer !important;
   color: var(--icon-color) !important;
 
+  ol,
+  ul,
+  dl {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
   .p-menuitem-content {
     background-color: transparent !important;
     border-radius: var(--border-radius) !important;
+
+    a {
+      text-decoration: none !important;
+      cursor: pointer !important;
+
+      span {
+        text-decoration: none !important;
+        cursor: pointer !important;
+      }
+    }
   }
 
   .p-menuitem-text {

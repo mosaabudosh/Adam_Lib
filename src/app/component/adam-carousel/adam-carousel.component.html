@@ -2,6 +2,40 @@
 
     <adam-lib-label class="screen-title" [text]="'Carousel'"></adam-lib-label>
 
+    <div class="adam-flex-row adam-center-center adam-row-gap">
+        <adam-carousel-view [products]="advertisings" [color]="'waring'" [isViewCarousel]="true"
+            [skeletonWidth]="'100%'" [skeletonHeight]="'100%'" [carouselElementRef]="carouselView"
+            [isViewHeader]="false" [headerLabel]="'Advertising'" [numVisible]="1" [numScroll]="1"
+            [isAutoplayInterval]="true" [showIndicators]="false" [autoplayInterval]="'10000'"
+            [isCustomColorChevronrighticon]="true" [isCircular]="true"
+            [isChangeLocationChevronrighticon]="true"></adam-carousel-view>
+
+        <ng-template #carouselView let-product="product">
+            <div class="adam-flex-row">
+                <adam-image class="carousel-image-item-style" [src]="product?.image" [previewImageSrc]="product?.image"
+                    [width]="'100%'" [height]="'100%'" [preview]="false" [alt]="product?.advertisingId"
+                    [isBorderRadius]="false"></adam-image>
+            </div>
+        </ng-template>
+    </div>
+
+    <div class="adam-flex-row adam-center-center adam-row-gap">
+        <adam-carousel-view [products]="advertisings" [color]="'waring'" [isViewCarousel]="true"
+            [skeletonWidth]="'100%'" [skeletonHeight]="'100%'" [carouselElementRef]="carouselView"
+            [isViewHeader]="false" [headerLabel]="'Advertising'" [numVisible]="1" [numScroll]="1"
+            [isAutoplayInterval]="true" [showIndicators]="false" [autoplayInterval]="'10000'"
+            [isCustomColorChevronrighticon]="true" [isCircular]="true" [isChangeLocationChevronrighticon]="true"
+            [showNavigators]="false"></adam-carousel-view>
+
+        <ng-template #carouselView let-product="product">
+            <div class="adam-flex-row">
+                <adam-image class="carousel-image-item-style" [src]="product?.image" [previewImageSrc]="product?.image"
+                    [width]="'100%'" [height]="'100%'" [preview]="false" [alt]="product?.advertisingId"
+                    [isBorderRadius]="false"></adam-image>
+            </div>
+        </ng-template>
+    </div>
+
     <div class="adam-flex-row adam-row-gap">
         <adam-carousel-view [products]="skeletonsProducts" [color]="'waring'" [isViewCarousel]="true"
             [skeletonWidth]="'150px'" [skeletonHeight]="'150px'" [carouselElementRef]="carouselView"
