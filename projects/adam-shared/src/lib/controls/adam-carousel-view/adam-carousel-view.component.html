@@ -5,8 +5,9 @@
     <p-carousel *ngIf="_products && _products.length > 0" [value]="_products" [numVisible]="numVisible"
         [numScroll]="numScroll" [circular]="isCircular" [responsiveOptions]="responsiveOptions"
         [autoplayInterval]="isAutoplayInterval ? autoplayInterval : 0" [orientation]="orientation"
-        [verticalViewPortHeight]="verticalViewPortHeight"
-        [ngClass]="orientation == 'horizontal' ? 'rotate-icon-wrapper':''" (onPage)="onPage($event)">
+        [verticalViewPortHeight]="verticalViewPortHeight" [showIndicators]="showIndicators" [showNavigators]="showNavigators"
+        [ngClass]="orientation == 'horizontal' ? 'rotate-icon-wrapper':''" (onPage)="onPage($event)"
+        [ngClass]="{'custom-color-chevronrighticon-style': isCustomColorChevronrighticon,'custom-location-chevronrighticon-style':isChangeLocationChevronrighticon }">
 
         <ng-template *ngIf="isViewHeader" pTemplate="header">
             <p class="header-carousel-style">{{headerLabel}}</p>
@@ -85,7 +86,7 @@
             }
         </div>
 
-        <div *ngIf="orientation == 'horizontal'" class="adam-flex-row adam-center-center adam-gap-1">
+        <div *ngIf="orientation == 'horizontal' && showIndicators" class="adam-flex-row adam-center-center adam-gap-1">
             @for(item of skeletons; track item){
             <lib-adam-skeleton class="skeleton-dash-style" skeletonWidth="2rem" skeletonHeight="0.5rem"
                 skeletonBorderRadius="0"></lib-adam-skeleton>

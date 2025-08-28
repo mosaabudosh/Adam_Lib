@@ -74,7 +74,6 @@ $transparentBackground: transparent;
 
 .p-paginator {
     background-color: transparent !important;
-    color: var(--main-text-color) !important;
     justify-content: center !important;
     border: none !important;
     font-size: var(--small-font-size) !important;
@@ -82,18 +81,30 @@ $transparentBackground: transparent;
     margin-top: 20px !important;
 }
 
+.p-paginator .p-paginator-pages .p-paginator-page {
+    background-color: white !important;
+    color: black !important;
+    border: 1px solid black !important;
+    border-radius: 5px !important;
+    margin-left: 2px !important;
+    margin-right: 2px !important;
+}
+
 .p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
     margin: 0 auto !important;
-    background-color: var(--btn-warning) !important;
-    color: var(--main-text-color) !important;
-    border: none !important;
+    background-color: black !important;
+    color: white !important;
+    border: 1px solid black !important;
+    border-radius: 5px !important;
     font-size: var(--small-font-size) !important;
     font-family: var(--font-family) !important;
     border-radius: var(--border-radius) !important;
+    margin-left: 2px !important;
+    margin-right: 2px !important;
 }
 
 .p-paginator-current {
-    color: var(--icon-color) !important;
+    color: var(--main-text-color) !important;
     font-size: var(--small-font-size) !important;
 }
 
@@ -101,7 +112,13 @@ $transparentBackground: transparent;
 .p-paginator-prev,
 .p-paginator-next,
 .p-paginator-last {
-    color: var(--main-text-color) !important;
+    color: black !important;
+    border: 1px solid black !important;
+    border-radius: 5px !important;
+    width: 80px !important;
+    background: white !important;
+    margin-left: 2px !important;
+    margin-right: 2px !important;
 
     :dir(rtl) & {
         rotate: 180deg !important;
@@ -110,34 +127,35 @@ $transparentBackground: transparent;
 
 
 .p-paginator-rpp-options {
-    height: 45px !important;
-    width: 80px !important;
+    visibility: hidden !important;
+    // height: 45px !important;
+    // width: 80px !important;
 
-    ol,
-    ul {
-        padding: 0px !important;
-    }
+    // ol,
+    // ul {
+    //     padding: 0px !important;
+    // }
 
-    .p-dropdown-panel .p-dropdown-items .p-dropdown-item:not(.p-highlight):not(.p-disabled):hover {
-        font-size: var(--small-font-size) !important;
-        font-family: var(--font-family) !important;
-        color: var(--main-text-color) !important;
-        background-color: var(--btn-warning) !important;
-        min-width: max-content !important;
-    }
+    // .p-dropdown-panel .p-dropdown-items .p-dropdown-item:not(.p-highlight):not(.p-disabled):hover {
+    //     font-size: var(--small-font-size) !important;
+    //     font-family: var(--font-family) !important;
+    //     color: var(--main-text-color) !important;
+    //     background-color: var(--btn-warning) !important;
+    //     min-width: max-content !important;
+    // }
 
-    .p-dropdown-panel .p-dropdown-items .p-dropdown-item:not(.p-disabled).p-focus {
-        font-size: var(--small-font-size) !important;
-        font-family: var(--font-family) !important;
-        color: var(--main-text-color) !important;
-        background-color: var(--btn-warning) !important;
-        min-width: max-content !important;
-    }
+    // .p-dropdown-panel .p-dropdown-items .p-dropdown-item:not(.p-disabled).p-focus {
+    //     font-size: var(--small-font-size) !important;
+    //     font-family: var(--font-family) !important;
+    //     color: var(--main-text-color) !important;
+    //     background-color: var(--btn-warning) !important;
+    //     min-width: max-content !important;
+    // }
 }
 
-.p-paginator .p-dropdown {
-    height: 45px !important;
-}
+// .p-paginator .p-dropdown {
+//     height: 45px !important;
+// }
 
 .skeleton-style {
     margin: 10px 15px !important;

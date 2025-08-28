@@ -164,6 +164,13 @@ const routes: Routes = [
       import(
         "./component/adam-augmented-reality/adam-augmented-reality.module"
       ).then((m) => m.AdamAugmentedRealityModule),
+  },
+  {
+    path: ScreensURL.Breadcrumb,
+    loadChildren: () =>
+      import(
+        "./component/breadcrumb/breadcrumb.module"
+      ).then((m) => m.BreadcrumbModule),
   }
 ];
 

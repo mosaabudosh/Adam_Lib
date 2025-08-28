@@ -97,7 +97,7 @@ export class AdamDropdownComponent {
     }
   }
   @Input() lazy: boolean = true;
-
+  @Input() withImage: boolean = false;
   @Output() onSelectChanged = new EventEmitter<any>();
   @Output() onShow = new EventEmitter();
   @Output() onHide = new EventEmitter();

@@ -43,8 +43,16 @@
             <div class="adam-flex-column">
                 <adam-lib-label [text]="'Dropdown'"></adam-lib-label>
                 <adam-lib-dropdown name="dropdown2" [dropdown]="cities" [width]="'250px'" [height]="'35px'"
-                    [(ngModel)]="citiyId" [submitted]="form.submitted" ngDefaultControl></adam-lib-dropdown>
+                    [(ngModel)]="citiyId" [submitted]="form.submitted" ngDefaultControl
+                    [marginEnd]="'25px'"></adam-lib-dropdown>
             </div>
+
+            <div class="adam-flex-column">
+                <adam-lib-label [text]="'Image Dropdown'"></adam-lib-label>
+                <adam-lib-dropdown name="dropdown3" [dropdown]="countries" [width]="'250px'" [height]="'35px'"
+                    [(ngModel)]="countryId" [withImage]="true" [selectedValue]="countries[0]"></adam-lib-dropdown>
+            </div>
+
         </div>
 
         <div class="adam-flex-row adam-row-gap">

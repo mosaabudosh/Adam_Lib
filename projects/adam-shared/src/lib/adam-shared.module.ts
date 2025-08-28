@@ -110,6 +110,10 @@ import { AdamAccordionComponent } from './controls/adam-accordion/adam-accordion
 import { AdamRatingComponent } from './controls/adam-rating/adam-rating.component';
 import { AdamContextMenuComponent } from './controls/adam-context-menu/adam-context-menu.component';
 import { AdamMenuComponent } from './controls/adam-menu/adam-menu.component';
+import { BreadcrumbModule } from 'primeng/breadcrumb';
+import { AdamBreadcrumbComponent } from './controls/adam-breadcrumb/adam-breadcrumb.component';
+import { SliderModule } from 'primeng/slider';
+import { BlockUIModule } from 'primeng/blockui';
 
 @NgModule({
   declarations: [
@@ -158,7 +162,8 @@ import { AdamMenuComponent } from './controls/adam-menu/adam-menu.component';
     AdamAccordionComponent,
     AdamRatingComponent,
     AdamContextMenuComponent,
-    AdamMenuComponent
+    AdamMenuComponent,
+    AdamBreadcrumbComponent
   ],
   imports: [
     CommonModule,
@@ -223,7 +228,10 @@ import { AdamMenuComponent } from './controls/adam-menu/adam-menu.component';
     ChipsModule,
     CascadeSelectModule,
     AutoCompleteModule,
-    ContextMenuModule
+    ContextMenuModule,
+    BreadcrumbModule,
+    SliderModule,
+    BlockUIModule
   ],
   exports: [
     CommonModule,
@@ -289,6 +297,9 @@ import { AdamMenuComponent } from './controls/adam-menu/adam-menu.component';
     CascadeSelectModule,
     AutoCompleteModule,
     ContextMenuModule,
+    BreadcrumbModule,
+    SliderModule,
+    BlockUIModule,
     IntInputDirective,
     DecimalInputDirective,
     UrlValidatorDirective,
@@ -335,7 +346,8 @@ import { AdamMenuComponent } from './controls/adam-menu/adam-menu.component';
     AdamAccordionComponent,
     AdamRatingComponent,
     AdamContextMenuComponent,
-    AdamMenuComponent
+    AdamMenuComponent,
+    AdamBreadcrumbComponent
   ],
   providers: [MessageService, AdamMessageService, ComponentFactoryResolverService, SortIcon, DatePipe, DecimalPipe],
   schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA]

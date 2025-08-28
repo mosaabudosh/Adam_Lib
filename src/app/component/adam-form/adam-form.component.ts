@@ -84,6 +84,8 @@ export class AdamFormComponent {
   first: number = 0;
   last: number = 16;
   selectedItems: any[] | undefined;
+  countries: any[] = []
+  countryId: any;
 
   constructor(
     private componentFactoryResolverService: ComponentFactoryResolverService,
@@ -100,6 +102,110 @@ export class AdamFormComponent {
     // for (let i = 0; i < 100; i++) {
     //   this.items.push({ label: 'Item ' + (i + 1), value: (i + 1) });
     // }
+
+    this.countries = [
+      {
+        value: 1,
+        label: 'Australia',
+        code: 'AU',
+        image: {
+          imagePath: 'assets/images/Flag_of_Jordan.png',
+          width: '20px',
+          height: '12px'
+        }
+      },
+      {
+        value: 2,
+        label: 'Brazil',
+        code: 'BR',
+        image: {
+          imagePath: 'assets/images/Flag_of_Jordan.png',
+          width: '20px',
+          height: '12px'
+        }
+      },
+      {
+        value: 3,
+        label: 'China',
+        code: 'CN',
+        image: {
+          imagePath: 'assets/images/Flag_of_Jordan.png',
+          width: '20px',
+          height: '12px'
+        }
+      },
+      {
+        value: 4,
+        label: 'Egypt',
+        code: 'EG',
+        image: {
+          imagePath: 'assets/images/Flag_of_Jordan.png',
+          width: '20px',
+          height: '12px'
+        }
+      },
+      {
+        value: 5,
+        label: 'France',
+        code: 'FR',
+        image: {
+          imagePath: 'assets/images/Flag_of_Jordan.png',
+          width: '20px',
+          height: '12px'
+        }
+      },
+      {
+        value: 6,
+        label: 'Germany',
+        code: 'DE',
+        image: {
+          imagePath: 'assets/images/Flag_of_Jordan.png',
+          width: '20px',
+          height: '12px'
+        }
+      },
+      {
+        value: 7,
+        label: 'India',
+        code: 'IN',
+        image: {
+          imagePath: 'assets/images/Flag_of_Jordan.png',
+          width: '20px',
+          height: '12px'
+        }
+      },
+      {
+        value: 8,
+        label: 'Japan',
+        code: 'JP',
+        image: {
+          imagePath: 'assets/images/Flag_of_Jordan.png',
+          width: '20px',
+          height: '12px'
+        }
+      },
+      {
+        value: 9,
+        label: 'Spain',
+        code: 'ES',
+        image: {
+          imagePath: 'assets/images/Flag_of_Jordan.png',
+          width: '20px',
+          height: '12px'
+        }
+      },
+      {
+        value: 10,
+        label: 'United States',
+        code: 'US',
+        image: {
+          imagePath: 'assets/images/Flag_of_Jordan.png',
+          width: '20px',
+          height: '12px'
+        }
+      }
+    ];
+    this.countryId = 1;
   }
   onTextChange(event: any) {
     setTimeout(() => {

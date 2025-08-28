@@ -422,6 +422,18 @@ export class AppComponent {
               this.onMenuCommandClick(event);
             }
           },
+           {
+            label: 'Breadcrumb',
+            icon: 'pi pi-list',
+            id: 'breadcrumb',
+            parentId: 'Controles',
+            isActive: false,
+            expanded: false,
+            url: `/${ScreensURL.Breadcrumb}`,
+            command: (event: any) => {
+              this.onMenuCommandClick(event);
+            }
+          },
           // {
           //   label: 'Menu',
           //   icon: 'pi pi-list',

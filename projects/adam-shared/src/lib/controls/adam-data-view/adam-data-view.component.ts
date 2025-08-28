@@ -94,7 +94,7 @@ export class AdamDataViewComponent {
     this._numSkeleton = value;
     this.fillSkeletons();
   }
-
+  @Input() isViewLayoutOptions: boolean = true;
   @Output() onAddToCart = new EventEmitter();
   @Output() onAddToFavorite = new EventEmitter();
   @Output() pageChanged = new EventEmitter();
