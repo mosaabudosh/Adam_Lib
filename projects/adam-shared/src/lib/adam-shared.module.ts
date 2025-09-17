@@ -114,6 +114,7 @@ import { BreadcrumbModule } from 'primeng/breadcrumb';
 import { AdamBreadcrumbComponent } from './controls/adam-breadcrumb/adam-breadcrumb.component';
 import { SliderModule } from 'primeng/slider';
 import { BlockUIModule } from 'primeng/blockui';
+import { OverlayPanelModule } from 'primeng/overlaypanel';
 
 @NgModule({
   declarations: [
@@ -231,7 +232,8 @@ import { BlockUIModule } from 'primeng/blockui';
     ContextMenuModule,
     BreadcrumbModule,
     SliderModule,
-    BlockUIModule
+    BlockUIModule,
+    OverlayPanelModule 
   ],
   exports: [
     CommonModule,
@@ -300,6 +302,7 @@ import { BlockUIModule } from 'primeng/blockui';
     BreadcrumbModule,
     SliderModule,
     BlockUIModule,
+    OverlayPanelModule,
     IntInputDirective,
     DecimalInputDirective,
     UrlValidatorDirective,

@@ -173,7 +173,11 @@
         </ng-template>
     </p-dataView>
 
-    <div *ngIf="!_products || _products.length == 0" class="empty-message-table">
+    <div *ngIf="(!_products || _products.length == 0) && isViewCustomEmptyMessage" class="empty-message-table">
+        {{emptyMessage}}
+    </div>
+
+    <div *ngIf="(!_products || _products.length == 0) && _viewSkeleton" class="empty-message-table">
         <div class="adam-flex-row adam-space-between skeleton-style">
             <div class="adam-flex-column" *ngIf="isViewSortOptions">
                 <lib-adam-skeleton [skeletonWidth]="'250px'" [skeletonHeight]="'35px'"

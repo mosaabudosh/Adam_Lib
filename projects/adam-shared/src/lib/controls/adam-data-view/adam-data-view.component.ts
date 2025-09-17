@@ -56,10 +56,10 @@ export class AdamDataViewComponent {
   @Input() loading: boolean;
   @Input() currentPageReportTemplate: string = "Showing {first} to {last} of {totalRecords} entries";
   @Input() rowsPerPageOptions: number[] = [5, 6, 10, 12, 20, 24, 50, 48, 100];
+  @Input() isViewCustomEmptyMessage: boolean;
   @Input() emptyMessage: string = "No records found";
   @Input() paginatorPosition: 'top' | 'bottom' | 'both' = "bottom";
   @Input() isViewSortOptions: boolean = true;
-
   pageInfo: any = {
     pageNumber: 0,
     pageSize: 0
@@ -87,7 +87,6 @@ export class AdamDataViewComponent {
   @Input() set _skeletonShap(value: string) {
     this._skeletonShape = value;
   }
-
   skeletons: any[] = [];
   _numSkeleton: number = 5;
   @Input() set numSkeleton(value: number) {
@@ -95,6 +94,11 @@ export class AdamDataViewComponent {
     this.fillSkeletons();
   }
   @Input() isViewLayoutOptions: boolean = true;
+  _viewSkeleton: boolean;
+  @Input() set viewSkeleton(value: boolean) {
+    this._viewSkeleton = value;
+  }
+
   @Output() onAddToCart = new EventEmitter();
   @Output() onAddToFavorite = new EventEmitter();
   @Output() pageChanged = new EventEmitter();

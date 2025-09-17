@@ -160,3 +160,11 @@ $transparentBackground: transparent;
 .skeleton-style {
     margin: 10px 15px !important;
 }
+
+
+.empty-message-table {
+    text-align: center !important;
+    color: var(--main-text-color) !important;
+    margin-top: 25px !important;
+    font-weight: bolder !important;
+}
