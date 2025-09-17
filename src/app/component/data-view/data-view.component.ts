@@ -9,6 +9,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 export class DataViewComponent {
   products: any[] = [];
   sortOptions: any[] = [];
+  emptyProducts: any[] = [];
 
   constructor() {
     this.fillProductsData();
