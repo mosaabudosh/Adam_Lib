@@ -115,6 +115,7 @@ import { AdamBreadcrumbComponent } from './controls/adam-breadcrumb/adam-breadcr
 import { SliderModule } from 'primeng/slider';
 import { BlockUIModule } from 'primeng/blockui';
 import { OverlayPanelModule } from 'primeng/overlaypanel';
+import { AdamOverlayPanelComponent } from './controls/adam-overlay-panel/adam-overlay-panel.component';
 
 @NgModule({
   declarations: [
@@ -164,7 +165,8 @@ import { OverlayPanelModule } from 'primeng/overlaypanel';
     AdamRatingComponent,
     AdamContextMenuComponent,
     AdamMenuComponent,
-    AdamBreadcrumbComponent
+    AdamBreadcrumbComponent,
+    AdamOverlayPanelComponent
   ],
   imports: [
     CommonModule,
@@ -233,7 +235,7 @@ import { OverlayPanelModule } from 'primeng/overlaypanel';
     BreadcrumbModule,
     SliderModule,
     BlockUIModule,
-    OverlayPanelModule 
+    OverlayPanelModule
   ],
   exports: [
     CommonModule,
@@ -350,7 +352,8 @@ import { OverlayPanelModule } from 'primeng/overlaypanel';
     AdamRatingComponent,
     AdamContextMenuComponent,
     AdamMenuComponent,
-    AdamBreadcrumbComponent
+    AdamBreadcrumbComponent,
+    AdamOverlayPanelComponent
   ],
   providers: [MessageService, AdamMessageService, ComponentFactoryResolverService, SortIcon, DatePipe, DecimalPipe],
   schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA]

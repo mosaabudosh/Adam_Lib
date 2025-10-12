@@ -22,5 +22,6 @@ export enum ScreensURL {
     Menu = 'menu',
     Rating = 'rating',
     AugmentedReality = 'augmented-reality',
-    Breadcrumb = 'breadcrumb'
+    Breadcrumb = 'breadcrumb',
+    OverlayPanel = 'overlay-panel'
 }

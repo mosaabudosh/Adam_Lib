@@ -32,7 +32,7 @@ export class ButtonComponent implements OnInit, OnDestroy {
   @Input() class: string;
   @Input() tooltip: string;
   @Input() tooltipPosition: string;
-
+  @Input() borderRadius: string = '5px';
   @Input() set isLoading(value: boolean) {
     this._isLoading = value;
     if (this._isLoading) {
@@ -64,7 +64,7 @@ export class ButtonComponent implements OnInit, OnDestroy {
   }
 
   getStyles() {
-    return { '--width': this.width, '--height': this.height };
+    return { '--width': this.width, '--height': this.height, '--borderRadius': this.borderRadius };
   }
 
   onButtonClick(event: any) {

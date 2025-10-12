@@ -74,6 +74,7 @@ export class AdamTextBoxComponent implements OnInit, ControlValueAccessor, Valid
     }
   };
   @Input() readOnly?: boolean = false;
+  @Input() borderRadius: string = '5px';
 
   @Output() blur = new EventEmitter();
   @Output() onTextChange = new EventEmitter();
@@ -126,7 +127,8 @@ export class AdamTextBoxComponent implements OnInit, ControlValueAccessor, Valid
         'width': `${width + 50}px`,
         'height': this.height,
         '--margin-end': `${marginEnd + (this.icon != null ? 50 : 0) + (this._endIcons.length > 0 ? this._endIcons.length * 40 : 0)}px`,
-        '--rotateDeg': this.rotateDeg + 'deg'
+        '--rotateDeg': this.rotateDeg + 'deg',
+        '--borderRadius': this.borderRadius
       };
     }
     if (this._width && this._width.substring(this._width.length - 1, this._width.length) == '%') {
@@ -135,7 +137,8 @@ export class AdamTextBoxComponent implements OnInit, ControlValueAccessor, Valid
         'width': `${width}%`,
         'height': this.height,
         '--margin-end': `${marginEnd + (this.icon != null ? 50 : 0) + (this._endIcons.length > 0 ? this._endIcons.length * 40 : 0)}px`,
-        '--rotateDeg': this.rotateDeg + 'deg'
+        '--rotateDeg': this.rotateDeg + 'deg',
+        '--borderRadius': this.borderRadius
       };
     }
     return style;

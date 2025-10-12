@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdamButtonComponent } from './adam-button.component';
-import { AdamSharedModule } from '../../../../projects/adam-shared/src/lib/adam-shared.module';
+import { AdamSharedModule } from 'adam-shared';
+// import { AdamSharedModule } from '../../../../projects/adam-shared/src/lib/adam-shared.module';
 
 const routes: Routes = [
   {

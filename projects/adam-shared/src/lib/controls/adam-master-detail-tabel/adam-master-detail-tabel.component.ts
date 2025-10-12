@@ -92,7 +92,6 @@ export class AdamMasterDetailTabelComponent {
 
   expandAll() {
     this.expandedRows = this._products.reduce((acc, p) => (acc[p.id] = true) && acc, {});
-    console.log(this.expandedRows)
   }
 
   collapseAll() {
