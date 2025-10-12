@@ -30,7 +30,6 @@ export class AdamPopupComponent extends AdamSheardPopupComponent implements OnIn
   }
 
   save() {
-    console.log('save')
     this.onSubmitted.emit();
     this.close();
   }

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdamSharedModule } from 'adam-shared';
 import { AdamFormComponent } from './adam-form.component';
+// import { AdamSharedModule } from '../../../../projects/adam-shared/src/public-api';
 
 const routes: Routes = [
   {

@@ -64,6 +64,16 @@
                 <adam-lib-label *ngIf="form.submitted && textBox1?.errors?.required" class="not-valid"
                     [text]="'Text Box is required'"></adam-lib-label>
             </div>
+
+            <div class="adam-flex-column">
+                <adam-lib-label [text]="'Text Box'"></adam-lib-label>
+                <adam-lib-text-box name="textBox1" [required]="true" [width]="'250px'" [height]="'35px'"
+                    [(ngModel)]="textBox" [submitted]="form.submitted" #textBox1="ngModel" [borderRadius]="'0'"
+                    ngDefaultControl></adam-lib-text-box>
+                <adam-lib-label *ngIf="form.submitted && textBox1?.errors?.required" class="not-valid"
+                    [text]="'Text Box is required'"></adam-lib-label>
+            </div>
+
             <div class="adam-flex-column">
                 <adam-lib-label [text]="'Text Box2'"></adam-lib-label>
                 <adam-lib-text-box name="textBox2" [width]="'250px'" [height]="'35px'" [(ngModel)]="textBox"

@@ -155,13 +155,13 @@
         :dir(ltr) & {
             position: absolute !important;
             right: 72% !important;
-            z-index: 9999 !important;
+            z-index: 999 !important;
         }
 
         :dir(rtl) & {
             position: absolute !important;
             left: 72% !important;
-            z-index: 9999 !important;
+            z-index: 999 !important;
         }
     }
 
@@ -169,13 +169,13 @@
         :dir(ltr) & {
             position: absolute !important;
             right: 17% !important;
-            z-index: 9999 !important;
+            z-index: 999 !important;
         }
 
         :dir(rtl) & {
             position: absolute !important;
             left: 17% !important;
-            z-index: 9999 !important;
+            z-index: 999 !important;
         }
     }
 }

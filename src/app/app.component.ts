@@ -422,7 +422,7 @@ export class AppComponent {
               this.onMenuCommandClick(event);
             }
           },
-           {
+          {
             label: 'Breadcrumb',
             icon: 'pi pi-list',
             id: 'breadcrumb',
@@ -430,6 +430,18 @@ export class AppComponent {
             isActive: false,
             expanded: false,
             url: `/${ScreensURL.Breadcrumb}`,
+            command: (event: any) => {
+              this.onMenuCommandClick(event);
+            }
+          },
+          {
+            label: 'Overlay Panel',
+            icon: 'pi pi-list',
+            id: 'OverlayPanel',
+            parentId: 'Controles',
+            isActive: false,
+            expanded: false,
+            url: `/${ScreensURL.OverlayPanel}`,
             command: (event: any) => {
               this.onMenuCommandClick(event);
             }

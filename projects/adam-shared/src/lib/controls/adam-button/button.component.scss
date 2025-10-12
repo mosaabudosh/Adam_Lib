@@ -47,12 +47,20 @@ $transparentBackground: transparent;
     @include adam-btn-style(var(--btn-warning), var(--white), var(--btn-warning));
   }
 
+  &.waring-black-border {
+    @include adam-btn-style(var(--btn-warning), var(--white), var(--black));
+  }
+
   &.info {
     @include adam-btn-style(var(--btn-info), var(--white), var(--btn-info));
   }
 
   &.dark {
-    @include adam-btn-style(var(--btn-dark), var(--white-color), var(--white-color));
+    @include adam-btn-style(var(--btn-dark), var(--white-color), var(--btn-dark));
+  }
+
+  &.gray {
+    @include adam-btn-style(var(--btn-gray), var(--black), var(--black));
   }
 
   &.primary-reverse {
@@ -133,7 +141,7 @@ $transparentBackground: transparent;
   }
 
   &.flat {
-    @include adam-btn-style(var(--none), var(--btn-primary), var(--none));
+    @include adam-btn-style(var(--none), var(--black), var(--none));
 
     .p-button {
       box-shadow: none !important;
@@ -144,13 +152,14 @@ $transparentBackground: transparent;
 .custom-button {
   @include btn-color;
   cursor: pointer !important;
-  font-size: var(--small-font-size) !important;
+  font-size: 16px !important;
 
   button {
     width: var(--width) !important;
     height: var(--height) !important;
-    font-size: var(--small-font-size) !important;
-    @include border-radius(var(--border-radius));
+    font-size: 16px !important;
+    font-weight: bold !important;
+    @include border-radius(var(--borderRadius));
   }
 }
 

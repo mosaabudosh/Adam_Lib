@@ -1,0 +1,12 @@
+@import './../../../assets/styles/styles.scss';
+
+.p-overlaypanel,
+.p-overlaypanel-content {
+    padding: 10px !important;
+}
+
+.p-overlaypanel-close {
+    background: transparent !important;
+    color: var(--black-color) !important;
+    margin: 20px !important;
+}

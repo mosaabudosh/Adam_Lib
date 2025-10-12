@@ -31,7 +31,7 @@ export class AdamStepperComponent {
   constructor() { }
 
   onStepperClick(event: any) {
-    console.log('onStepperClick', event)
+    // console.log('onStepperClick', event)
   }
 
   prev(event: any, index: number) {

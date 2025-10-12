@@ -171,6 +171,13 @@ const routes: Routes = [
       import(
         "./component/breadcrumb/breadcrumb.module"
       ).then((m) => m.BreadcrumbModule),
+  },
+  {
+    path: ScreensURL.OverlayPanel,
+    loadChildren: () =>
+      import(
+        "./component/overlay-panel/overlay-panel.module"
+      ).then((m) => m.OverlayPanelModule),
   }
 ];
 

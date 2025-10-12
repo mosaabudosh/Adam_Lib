@@ -39,6 +39,7 @@ export * from './lib/controls/adam-context-menu/adam-context-menu.component';
 export * from './lib/controls/adam-menu/adam-menu.component';
 export * from './lib/controls/adam-rating/adam-rating.component';
 export * from './lib/controls/adam-breadcrumb/adam-breadcrumb.component';
+export * from './lib/controls/adam-overlay-panel/adam-overlay-panel.component';
 
 export * from './lib/services/adam.message.service';
 export * from './lib/services/math-service.service';
