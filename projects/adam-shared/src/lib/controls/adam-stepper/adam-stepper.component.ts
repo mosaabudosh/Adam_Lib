@@ -23,15 +23,20 @@ export class AdamStepperComponent {
   }
 
   @Input() isViewBack: boolean = false;
+  @Input() isViewNext: boolean = true;
+  @Input() isViewNumber: boolean = true;
+  @Input() isViewTitle: boolean = true;
+
   @Input("commands") commands: any[] = [];
 
   @Output() onPrevCallBack = new EventEmitter();
   @Output() onNextCallBack = new EventEmitter();
+  @Output() onClick = new EventEmitter();
 
   constructor() { }
 
   onStepperClick(event: any) {
-    // console.log('onStepperClick', event)
+    console.log('onStepperClick', event)
   }
 
   prev(event: any, index: number) {

@@ -4,7 +4,6 @@
 
      .p-stepper-nav,
      .p-stepper-header,
-     .p-stepper-number,
      .p-stepper-title,
      .p-stepper-action {
          color: $color !important;
@@ -16,12 +15,21 @@
          background-color: $color !important;
      }
 
-     //  .p-stepper-action {
-     //      p-button {
-     //          border: 2px solid $color !important;
-     //          padding: 10px !important;
-     //      }
-     //  }
+     .hidden-stepper-number {
+         .p-stepper-number {
+             background: $color !important;
+             background-color: $color !important;
+             color: $color !important;
+         }
+     }
+
+     .visible-stepper-number {
+         .p-stepper-number {
+             background: transparent !important;
+             color: $color !important;
+         }
+     }
+
  }
 
  .stepper-style {
@@ -29,14 +37,11 @@
 
      .p-stepper-nav,
      .p-stepper-header,
-     .p-stepper-number,
      .p-stepper-title,
      .p-stepper-action {
          background: transparent !important;
          color: var(--main-text-color) !important;
      }
-
-
 
      .p-stepper-separator {
          color: var(--main-text-color) !important;
@@ -78,7 +83,6 @@
      }
  }
 
-
  adam-stepper,
  .p-stepper,
  .p-stepperPanel {
@@ -107,4 +111,138 @@
      :dir(ltr) & {
          rotate: 0deg !important;
      }
+ }
+
+ .hidden-stepper-number {
+     &.builder {
+         .p-stepper-number {
+             background: var(--btn-builder) !important;
+             border-color: var(--btn-builder) !important;
+             color: var(--btn-builder) !important;
+         }
+     }
+
+     &.primary {
+         .p-stepper-number {
+             background: var(--btn-primary) !important;
+             border-color: var(--btn-primary) !important;
+             color: var(--btn-primary) !important;
+         }
+     }
+
+     &.dangerous {
+         .p-stepper-number {
+             background: var(--btn-dangerous) !important;
+             color: var(--btn-dangerous) !important;
+             border-color: var(--btn-dangerous) !important;
+         }
+     }
+
+     &.positive {
+         .p-stepper-number {
+             background: var(--btn-positive) !important;
+             border-color: var(--btn-positive) !important;
+             color: var(--btn-positive) !important;
+         }
+     }
+
+     &.blue {
+         .p-stepper-number {
+             background: var(--btn-blue) !important;
+             border-color: var(--btn-blue) !important;
+             color: var(--btn-blue) !important;
+         }
+     }
+
+     &.waring {
+         .p-stepper-number {
+             background: var(--btn-warning) !important;
+             border-color: var(--btn-warning) !important;
+             color: var(--btn-warning) !important;
+         }
+     }
+
+     &.info {
+         .p-stepper-number {
+             background: var(--btn-info) !important;
+             border-color: var(--btn-info) !important;
+             color: var(--btn-info) !important;
+         }
+     }
+
+     &.dark {
+         .p-stepper-number {
+             background: var(--white-color) !important;
+             border-color: var(--white-color) !important;
+             color: var(--white-color) !important;
+         }
+     }
+ }
+
+
+ .visible-stepper-number {
+     &.builder {
+         .p-stepper-number {
+             background: transparent !important;
+             border-color: var(--btn-builder) !important;
+             color: var(--btn-builder) !important;
+         }
+     }
+
+     &.primary {
+         .p-stepper-number {
+             background: transparent !important;
+             border-color: var(--btn-primary) !important;
+             color: var(--btn-primary) !important;
+         }
+     }
+
+     &.dangerous {
+         .p-stepper-number {
+             background: transparent !important;
+             border-color: var(--btn-dangerous) !important;
+             border-color: var(--btn-dangerous) !important;
+         }
+     }
+
+     &.positive {
+         .p-stepper-number {
+             background: transparent !important;
+             border-color: var(--btn-positive) !important;
+             color: var(--btn-positive) !important;
+         }
+     }
+
+     &.blue {
+         .p-stepper-number {
+             background: transparent !important;
+             border-color: var(--btn-blue) !important;
+             color: var(--btn-blue) !important;
+         }
+     }
+
+     &.waring {
+         .p-stepper-number {
+             background: transparent !important;
+             border-color: var(--btn-warning) !important;
+             color: var(--btn-warning) !important;
+         }
+     }
+
+     &.info {
+         .p-stepper-number {
+             background: transparent !important;
+             border-color: var(--btn-info) !important;
+             color: var(--btn-info) !important;
+         }
+     }
+
+     &.dark {
+         .p-stepper-number {
+             background: transparent !important;
+             border-color: var(--white-color) !important;
+             color: var(--white-color) !important;
+         }
+     }
+
  }
