@@ -9,6 +9,8 @@ import { Component, ViewEncapsulation } from '@angular/core';
 export class StepperComponent {
   commands: any[] = [];
   steppers: any[] = [];
+  steppers_1: any[] = [];
+
   activeStep: number = 0
   dropdowns: any[] = [];
   constructor() {
@@ -18,6 +20,19 @@ export class StepperComponent {
       { label: 'dropdown 3', value: 3 },
       { label: 'dropdown 4', value: 4 }
     ]
+    this.steppers_1 = [
+      {
+        index: 0,
+        header: "header 1",
+      },
+      {
+        index: 1,
+        header: "header 2",
+      },
+      {
+        index: 2,
+        header: "header 3",
+      }]
     this.steppers = [
       {
         index: 0,

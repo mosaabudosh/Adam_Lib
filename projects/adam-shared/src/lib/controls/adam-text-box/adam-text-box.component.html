@@ -1,6 +1,7 @@
 <div dir="{{ 'dir' | translate }}" class="adam-flex adam-flex-row text-box-style" [ngStyle]="getContainerStyle()"
-    [ngClass]="{'invalid-border-style': !getIsValid(),'required': required}">
-    <div *ngIf="_startIcons && _startIcons.length > 0" class="adam-flex adam-flex-row">
+    [ngClass]="{'invalid-border-style': !getIsValid(),'required': required && isViewRequiredIcon}">
+    <div *ngIf="_startIcons && _startIcons.length > 0" class="adam-flex adam-flex-row"
+        [ngClass]="{'view-icon-inside-input':isViewIconInsideInput,'view-icon-outside-input':!isViewIconInsideInput}">
         <span *ngFor="let icon of _startIcons" class="{{icon.icon}} icons-span " style="--height: {{height}}"
             (click)="icon.command()" [pTooltip]="icon.tooltip" [tooltipPosition]="icon.tooltipPosition"></span>
     </div>
@@ -11,10 +12,12 @@
         [attr.disabled]="disabled ? '' : null" (blur)="onblur($event)" (input)="onTextChanged($event)" #input
         min="{{minValue}}" max="{{maxValue}}" [readonly]="readOnly" [ngStyle]="getStyles()" />
 
-    <span *ngIf="icon != null " class="{{icon}} icon-span" style="--height: {{height}}" [pTooltip]="iconTooltip"
-        [tooltipPosition]="iconTooltipPosition" (click)="onIconClick(name)"></span>
+    <span *ngIf="icon != null " class="{{icon}} icon-span" style="--height: {{height}}"
+        [ngClass]="{'view-icon-inside-input':isViewIconInsideInput,'view-icon-outside-input':!isViewIconInsideInput}"
+        [pTooltip]="iconTooltip" [tooltipPosition]="iconTooltipPosition" (click)="onIconClick(name)"></span>
 
-    <div *ngIf="_endIcons && _endIcons.length > 0" class="adam-flex adam-flex-row">
+    <div *ngIf="_endIcons && _endIcons.length > 0" class="adam-flex adam-flex-row"
+        [ngClass]="{'view-icon-inside-input':isViewIconInsideInput,'view-icon-outside-input':!isViewIconInsideInput}">
         <span *ngFor="let icon of _endIcons" class="{{icon.icon}} icons-span" (click)="icon.command()"
             style="--height: {{height}}" [pTooltip]="icon.tooltip" [tooltipPosition]="icon.tooltipPosition"></span>
     </div>

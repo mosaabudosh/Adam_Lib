@@ -59,8 +59,8 @@
             <div class="adam-flex-column">
                 <adam-lib-label [text]="'Text Box'"></adam-lib-label>
                 <adam-lib-text-box name="textBox1" [required]="true" [width]="'250px'" [height]="'35px'"
-                    [(ngModel)]="textBox" [submitted]="form.submitted" #textBox1="ngModel"
-                    ngDefaultControl></adam-lib-text-box>
+                    [(ngModel)]="textBox" [submitted]="form.submitted" #textBox1="ngModel" ngDefaultControl
+                    [isViewRequiredIcon]="false"></adam-lib-text-box>
                 <adam-lib-label *ngIf="form.submitted && textBox1?.errors?.required" class="not-valid"
                     [text]="'Text Box is required'"></adam-lib-label>
             </div>
@@ -165,6 +165,20 @@
                 <adam-lib-label [text]="'Text Box'"></adam-lib-label>
                 <adam-lib-text-box name="textBox4" [width]="'350px'" [height]="'35px'" [(ngModel)]="textBox"
                     [isDisplayIconStart]="true" [icons]="textBoxIcons" ngDefaultControl></adam-lib-text-box>
+            </div>
+
+            <div class="adam-flex-column">
+                <adam-lib-label [text]="'Text Box'"></adam-lib-label>
+                <adam-lib-text-box name="textBox4" [width]="'350px'" [height]="'45px'" [(ngModel)]="textBox"
+                    [borderRadius]="'0'" [isViewIconInsideInput]="true" [icon]="'pi pi-user'" [borderColor]="'white'"
+                    ngDefaultControl></adam-lib-text-box>
+            </div>
+
+            <div class="adam-flex-column">
+                <adam-lib-label [text]="'Text Box'"></adam-lib-label>
+                <adam-lib-text-box name="textBox4" [width]="'350px'" [height]="'40px'" [(ngModel)]="textBox"
+                    [borderRadius]="'0'" [isViewIconInsideInput]="true" [icons]="textBoxIcons" [borderColor]="'white'"
+                    ngDefaultControl></adam-lib-text-box>
             </div>
         </div>
 

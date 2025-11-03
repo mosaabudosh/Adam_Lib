@@ -169,6 +169,14 @@
 
         .p-treetable-toggler {
             margin: 0px 0px 25px 0px !important;
+            color: var(--main-text-color) !important;
+            cursor: pointer !important;
+            font-size: var(--med-font-size) !important;
+            width: 40px !important;
+            height: 40px !important;
+            background: var(--hover-row-color) !important;
+            border-radius: var(--border-radius) !important;
+            padding: 3px 12px 3px 12px !important;
         }
     }
 
@@ -211,4 +219,61 @@
 .p-paginator-current {
     color: var(--icon-color) !important;
     font-size: var(--small-font-size) !important;
+}
+
+
+
+/* Level 1 (root nodes) */
+.p-treetable tr[aria-level="1"] {
+    font-weight: bold !important;
+    @include margin-start(0px);
+
+    .p-treetable-toggler {
+        @include margin-start(0px);
+    }
+}
+
+/* Level 2 */
+.p-treetable tr[aria-level="2"] {
+    @include margin-start(20px);
+
+    .p-treetable-toggler {
+        @include margin-start(20px);
+    }
+}
+
+/* Level 3 */
+.p-treetable tr[aria-level="3"] {
+    @include margin-start(40px);
+
+    .p-treetable-toggler {
+        @include margin-start(40px);
+    }
+}
+
+/* Level 4 */
+.p-treetable tr[aria-level="4"] {
+    @include margin-start(60px);
+
+    .p-treetable-toggler {
+        @include margin-start(60px);
+    }
+}
+
+/* Level 5 */
+.p-treetable tr[aria-level="5"] {
+    @include margin-start(80px);
+
+    .p-treetable-toggler {
+        @include margin-start(80px);
+    }
+}
+
+/* Level 6 */
+.p-treetable tr[aria-level="6"] {
+    @include margin-start(100px);
+
+    .p-treetable-toggler {
+        @include margin-start(100px);
+    }
 }

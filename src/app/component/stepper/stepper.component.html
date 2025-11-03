@@ -2,10 +2,43 @@
 
     <adam-lib-label class="screen-title" [text]="'Stepper'"></adam-lib-label>
 
+    <div class="adam-flex-row adam-row-gap">
+        <adam-stepper [isViewBack]="false" [isViewNext]="false" [steppers]="steppers_1" [isViewNumber]="false"
+            [active]="activeStep" (onNextCallBack)="onNextCallBack()" (onPrevCallBack)="onPrevCallBack()"
+            [color]="'dangerous'"
+            [commands]="[{elementRef:content_1},{elementRef:content_2},{elementRef:content_3}]"></adam-stepper>
+
+        <ng-template #content_1>
+
+        </ng-template>
+        <ng-template #content_2>
+
+        </ng-template>
+        <ng-template #content_3>
+
+        </ng-template>
+    </div>
+
+    <div class="adam-flex-row adam-row-gap">
+        <adam-stepper [isViewBack]="false" [isViewNext]="false" [steppers]="steppers_1" [isViewNumber]="false"
+            [active]="activeStep" (onNextCallBack)="onNextCallBack()" (onPrevCallBack)="onPrevCallBack()"
+            [color]="'waring'"
+            [commands]="[{elementRef:content_1},{elementRef:content_2},{elementRef:content_3}]"></adam-stepper>
+
+        <ng-template #content_1>
+
+        </ng-template>
+        <ng-template #content_2>
+
+        </ng-template>
+        <ng-template #content_3>
+
+        </ng-template>
+    </div>
 
     <div class="adam-flex-row adam-row-gap">
         <adam-stepper [isViewBack]="true" [steppers]="steppers" [active]="activeStep"
-            (onNextCallBack)="onNextCallBack()" (onPrevCallBack)="onPrevCallBack()"
+            (onNextCallBack)="onNextCallBack()" (onPrevCallBack)="onPrevCallBack()" [color]="'waring'"
             [commands]="[{elementRef:content1},{elementRef:content2},{elementRef:content3},{elementRef:content4}]"></adam-stepper>
 
 

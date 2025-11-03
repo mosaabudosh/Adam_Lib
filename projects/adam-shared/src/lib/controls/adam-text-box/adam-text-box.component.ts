@@ -75,7 +75,9 @@ export class AdamTextBoxComponent implements OnInit, ControlValueAccessor, Valid
   };
   @Input() readOnly?: boolean = false;
   @Input() borderRadius: string = '5px';
-
+  @Input() isViewRequiredIcon?: boolean = true;
+  @Input() isViewIconInsideInput?: boolean = false;
+  @Input() borderColor: string = 'lightgray';
   @Output() blur = new EventEmitter();
   @Output() onTextChange = new EventEmitter();
   @Output() onIconClicked = new EventEmitter();
@@ -128,7 +130,8 @@ export class AdamTextBoxComponent implements OnInit, ControlValueAccessor, Valid
         'height': this.height,
         '--margin-end': `${marginEnd + (this.icon != null ? 50 : 0) + (this._endIcons.length > 0 ? this._endIcons.length * 40 : 0)}px`,
         '--rotateDeg': this.rotateDeg + 'deg',
-        '--borderRadius': this.borderRadius
+        '--borderRadius': this.borderRadius,
+        '--borderColor': this.borderColor
       };
     }
     if (this._width && this._width.substring(this._width.length - 1, this._width.length) == '%') {
@@ -138,7 +141,8 @@ export class AdamTextBoxComponent implements OnInit, ControlValueAccessor, Valid
         'height': this.height,
         '--margin-end': `${marginEnd + (this.icon != null ? 50 : 0) + (this._endIcons.length > 0 ? this._endIcons.length * 40 : 0)}px`,
         '--rotateDeg': this.rotateDeg + 'deg',
-        '--borderRadius': this.borderRadius
+        '--borderRadius': this.borderRadius,
+        '--borderColor': this.borderColor
       };
     }
     return style;

@@ -1,4 +1,5 @@
-<div class="adam-flex-row stepper-style {{color}}">
+<div class="adam-flex-row stepper-style {{color}}"
+    [ngClass]="{'hidden-stepper-number {{color}}':!isViewNumber,'visible-stepper-number':isViewNumber}">
     <p-stepper [linear]="true" [(activeStep)]="_active" [value]="_active" [orientation]="orientation"
         (onItemClick)="onStepperClick($event)">
         @for(stepper of _steppers; track stepper){
@@ -22,7 +23,7 @@
 
                     <div class="adam-flex-column adam-end-end">
                         <adam-lib-button
-                            *ngIf="stepper.index == 0 || stepper.index != _steppers[_steppers.length-1]?.index"
+                            *ngIf="(stepper.index == 0 || stepper.index != _steppers[_steppers.length-1]?.index) && isViewNext"
                             [color]="color" (onClick)="next($event,index)" [text]="nextLabel"
                             [icon]="'pi pi-arrow-right'" [iconPos]="'right'">
                         </adam-lib-button>
