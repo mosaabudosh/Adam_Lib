@@ -16,7 +16,7 @@
                     <div class="adam-flex-column adam-start-start">
                         <adam-lib-button
                             *ngIf="(stepper.index != 0 || stepper.index == _steppers[_steppers.length-1]?.index) || isViewBack"
-                            [color]="color" (onClick)="prev($event,index)" [text]="backLabel"
+                            [color]="color" (onClick)="prev($event,index)" [text]="_backLabel"
                             [icon]="'pi pi-arrow-left'" [color]="color +'-reverse'">
                         </adam-lib-button>
                     </div>
@@ -24,7 +24,7 @@
                     <div class="adam-flex-column adam-end-end">
                         <adam-lib-button
                             *ngIf="(stepper.index == 0 || stepper.index != _steppers[_steppers.length-1]?.index) && isViewNext"
-                            [color]="color" (onClick)="next($event,index)" [text]="nextLabel"
+                            [color]="color" (onClick)="next($event,index)" [text]="_nextLabel"
                             [icon]="'pi pi-arrow-right'" [iconPos]="'right'">
                         </adam-lib-button>
                     </div>

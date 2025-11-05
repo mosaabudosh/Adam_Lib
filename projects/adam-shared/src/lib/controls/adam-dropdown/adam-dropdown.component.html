@@ -1,5 +1,5 @@
 <div dir="{{'dir' | translate}}" class="adam-flex adam-flex-row dropdown" [ngStyle]="getContainerStyle()"
-    [ngClass]="{'invalid-border-style': !getIsValid(),'required': required}">
+    [ngClass]="{'invalid-border-style': !getIsValid(),'required': required && isViewRequiredIcon}">
     <p-dropdown [options]="dataSource" [placeholder]="placeholder" [readonly]="readOnly" [loading]="_loading"
         (onChange)="handelChange($event)" [disabled]="dropdownDisabled" [filter]="filter" [(ngModel)]="_selectedValue"
         [ngStyle]="getStyles()" [required]="required" (onBlur)="handleOnBlur($event)" (onFocus)="handleOnFocus($event)"
