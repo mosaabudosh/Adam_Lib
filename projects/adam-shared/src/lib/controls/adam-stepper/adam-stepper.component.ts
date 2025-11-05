@@ -13,8 +13,14 @@ export class AdamStepperComponent {
     this._steppers = value;
   }
   @Input() color: string;
-  @Input() nextLabel: string = 'Next';
-  @Input() backLabel: string = 'Back';
+  _nextLabel: string = 'Next';
+  @Input() set nextLabel(value: string) {
+    this._nextLabel = value;
+  }
+  _backLabel: string = 'Back';
+  @Input() set backLabel(value: string) {
+    this._backLabel = value;
+  }
   @Input() buttonPos: string;
   @Input() orientation: 'vertical' | 'horizontal' | any = 'horizontal';
   _active: number = 0;
@@ -36,7 +42,7 @@ export class AdamStepperComponent {
   constructor() { }
 
   onStepperClick(event: any) {
-    console.log('onStepperClick', event)
+    this.onClick.emit(event);
   }
 
   prev(event: any, index: number) {

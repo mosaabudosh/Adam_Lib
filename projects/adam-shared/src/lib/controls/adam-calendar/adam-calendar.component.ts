@@ -106,6 +106,8 @@ export class AdamCalendarComponent implements OnInit, ControlValueAccessor, OnDe
   @Input() set marginEnd(value: any) {
     this._marginEnd = value;
   };
+  @Input() isViewRequiredIcon?: boolean = true;
+
   @Output() onBlur = new EventEmitter();
   @Output() onSelect = new EventEmitter();
   @Output() onTodayClick = new EventEmitter();

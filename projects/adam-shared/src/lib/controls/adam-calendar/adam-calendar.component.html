@@ -1,5 +1,5 @@
 <div dir="{{ 'dir' | translate }}" class="adam-flex adam-flex-row adam-calendar"
-  [ngClass]="{'invalid-border-style': !getIsValid(),'required': required}" [ngStyle]="getContainerStyle()"
+  [ngClass]="{'invalid-border-style': !getIsValid(),'required': required && isViewRequiredIcon}" [ngStyle]="getContainerStyle()"
   style="--margin-end: {{_marginEnd}}">
   <p-calendar [(ngModel)]="date" [name]="name" [showIcon]="showIcon && !readOnly" [icon]="'pi pi-calendar'"
     [inline]="inline" [showTime]="showTime" [dateFormat]="calenderDateFormat" [timeOnly]="timeOnly"

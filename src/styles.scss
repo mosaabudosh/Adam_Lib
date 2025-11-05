@@ -9,13 +9,17 @@
 @import "bootstrap/dist/css/bootstrap.css";
 @import "./responsive.scss";
 
+:host {
+    font-family: 'Segoe UI' !important;
+}
+
 html,
 body {
     background: var(--main-background) !important;
     display: block !important;
     box-sizing: border-box !important;
     height: 100vh !important;
-    // transition: all 1s linear !important;
+    font-family: 'Segoe UI' !important;
     margin: 0 !important;
 }
 
