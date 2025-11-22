@@ -19,7 +19,7 @@ export class AdamSkeletonComponent {
     this._skeletonBorderRadius = value;
   }
   _skeletonShape: string;
-  @Input() set _skeletonShap(value: string) {
+  @Input() set skeletonShap(value: string) {
     this._skeletonShape = value;
   }
 }
