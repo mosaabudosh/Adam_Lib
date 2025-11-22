@@ -99,23 +99,20 @@
 
 .adam-side-menu-row {
     min-width: 100% !important;
-    height: 30px !important;
+    height: auto !important;
     font-weight: bold !important;
     padding: 1% !important;
 
     .menu-icon-style {
         i {
-            @include margin-end(10px);
-            @include margin-start(15px);
             font-size: var(--med-font-size) !important;
-            margin-top: 4px !important;
+            margin: 10px !important;
         }
-
     }
 
     .angle-right-icon-style {
         font-size: var(--med-font-size) !important;
-        margin-bottom: 5% !important;
+        margin: 10px !important;
 
         :dir(rtl) & {
             rotate: 180deg !important;
@@ -124,7 +121,7 @@
 
     .angle-down-icon-style {
         font-size: var(--med-font-size) !important;
-        margin-bottom: 5% !important;
+        margin: 10px !important;
 
         :dir(rtl) & {
             rotate: 360deg !important;
@@ -133,7 +130,7 @@
 
     .adam-side-menu-row-label {
         padding: 3% !important;
-        // margin-top: 3px !important;
+        margin-top: 6px !important;
         width: 90% !important;
         font-size: var(--small-font-size) !important;
     }
@@ -144,7 +141,6 @@
     background: var(--hover-row-color) !important;
     cursor: pointer !important;
     border-radius: var(--border-radius) !important;
-    // height: 30px !important;
 
     :dir(rtl) & {
         border-top-left-radius: 25px !important;
@@ -170,7 +166,7 @@
     background: var(--hover-row-color) !important;
     cursor: pointer !important;
     border-radius: var(--border-radius) !important;
-    height: 30px !important;
+    height: auto !important;
 
     :dir(rtl) & {
         border-top-left-radius: 25px !important;

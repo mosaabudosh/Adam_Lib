@@ -85,8 +85,8 @@
     padding-top: 20px !important;
 
     .p-carousel-item {
-        min-width: calc(100% / var(--numVisible)) !important;
-        max-width: calc(100% / var(--numVisible)) !important;
+        // min-width: calc(100% / var(--numVisible)) !important;
+        // max-width: calc(100% / var(--numVisible)) !important;
         margin: 0.5% !important;
         cursor: pointer !important;
 

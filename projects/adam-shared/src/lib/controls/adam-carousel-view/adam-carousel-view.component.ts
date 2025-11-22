@@ -68,7 +68,7 @@ export class AdamCarouselViewComponent implements OnInit {
     this._skeletonBorderRadius = value;
   }
   _skeletonShape: string;
-  @Input() set _skeletonShap(value: string) {
+  @Input() set skeletonShap(value: string) {
     this._skeletonShape = value;
   }
   skeletons: any[] = [];
