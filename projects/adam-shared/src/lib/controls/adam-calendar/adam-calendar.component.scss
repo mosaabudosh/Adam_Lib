@@ -1,13 +1,19 @@
 @import "./../../../assets/styles/styles.scss";
 
 .p-calendar {
-  width: 100% !important;
-  height: 100% !important;
+  width: var(--width) !important;
+  height: var(--height) !important;
   @include text-align-left;
 }
 
 .adam-calendar {
   @include margin-end(var(--margin-end));
+
+  input {
+    width: var(--width) !important;
+    height: var(--height) !important;
+    border-radius: var(--borderRadius) !important;
+  }
 }
 
 lib-adam-calendar {

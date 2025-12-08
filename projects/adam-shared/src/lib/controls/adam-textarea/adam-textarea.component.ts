@@ -29,8 +29,9 @@ export class AdamTextareaComponent implements OnInit, ControlValueAccessor {
   @Input() rowsNumber: number = 3;
   @Input() disabled: boolean;
   @Input() minLength: string;
-  @Input() maxLength: string;
+  @Input() maxLength: string = '300';
   @Input() resizable?: boolean = true;
+  @Input() borderRadius: string = '5px';
 
   @Output() blur = new EventEmitter();
   public style: object = {};

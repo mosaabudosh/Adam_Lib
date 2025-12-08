@@ -471,6 +471,30 @@ export class AppComponent {
           //   }
           // }
         ]
+      },
+      {
+        label: "Test Menu Test Menu Test Menu",
+        icon: 'pi pi-folder',
+        expanded: false,
+        isActive: false,
+        id: 'Controles',
+        command: (event: any) => {
+          this.onMenuCommandClick(event);
+        },
+        items: [
+          {
+            label: 'Button Button Button Button Button Button',
+            icon: 'pi pi-bookmark',
+            id: 'button',
+            parentId: 'Controles',
+            isActive: false,
+            expanded: false,
+            url: `/${ScreensURL.Button}`,
+            command: (event: any) => {
+              this.onMenuCommandClick(event);
+            }
+          },
+        ]
       }
     ];
 

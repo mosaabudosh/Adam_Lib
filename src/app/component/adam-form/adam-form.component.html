@@ -35,7 +35,7 @@
                 <adam-lib-dropdown name="dropdown1" [virtualScrollItemSize]="100" [required]="true" [dropdown]="items"
                     [width]="'250px'" [height]="'35px'" [(ngModel)]="selectedItem" [submitted]="form.submitted"
                     [lazy]="true" ngDefaultControl #dropdown1="ngModel" [virtualScroll]="true"
-                    (onLazyLoad)="onLazyLoad($event)"></adam-lib-dropdown>
+                    (onLazyLoad)="onLazyLoad($event)" [borderRadius]="'0'"></adam-lib-dropdown>
 
                 <adam-lib-label *ngIf="form.submitted && dropdown1?.errors?.required" class="not-valid"
                     [text]="'Required dropdown is required'"></adam-lib-label>
@@ -60,7 +60,7 @@
                 <adam-lib-label [text]="'Text Box'"></adam-lib-label>
                 <adam-lib-text-box name="textBox1" [required]="true" [width]="'250px'" [height]="'35px'"
                     [(ngModel)]="textBox" [submitted]="form.submitted" #textBox1="ngModel" ngDefaultControl
-                    [isViewRequiredIcon]="false"></adam-lib-text-box>
+                    [isViewRequiredIcon]="false" [marginEnd]="'10px'"></adam-lib-text-box>
                 <adam-lib-label *ngIf="form.submitted && textBox1?.errors?.required" class="not-valid"
                     [text]="'Text Box is required'"></adam-lib-label>
             </div>
@@ -86,7 +86,7 @@
                 <adam-lib-label [text]="'Required Date'"></adam-lib-label>
                 <lib-adam-calendar [id]="'selectedFromDate'" name="selectedFromDate" [(ngModel)]="date"
                     #selectedFromDate="ngModel" [showIcon]="true" [showTime]="false" [required]="true"
-                    [submitted]="form.submitted" [width]="'250px'" [height]="'35px'">
+                    [submitted]="form.submitted" [width]="'250px'" [height]="'35px'" [borderRadius]="'0'">
                 </lib-adam-calendar>
                 <adam-lib-label *ngIf="form.submitted && selectedFromDate?.errors?.required" class="not-valid"
                     [text]="'Required From Date is required'"></adam-lib-label>
@@ -94,10 +94,19 @@
             <div class="adam-flex-column">
                 <adam-lib-label [text]="'Date'"></adam-lib-label>
                 <lib-adam-calendar [id]="'selectedFromDate'" name="selectedFromDate" [(ngModel)]="date"
-                    #selectedFromDate="ngModel" [showIcon]="true" [showTime]="false" [submitted]="form.submitted"
-                    [width]="'250px'" [height]="'35px'">
+                    #selectedFromDate="ngModel" [showIcon]="false" [showTime]="false" [submitted]="form.submitted"
+                    [width]="'250px'" [height]="'35px'" [marginEnd]="'10px'">
                 </lib-adam-calendar>
             </div>
+
+            <div class="adam-flex-column">
+                <adam-lib-label [text]="'Date'"></adam-lib-label>
+                <lib-adam-calendar [id]="'selectedFromDate'" name="selectedFromDate" [(ngModel)]="date"
+                    #selectedFromDate="ngModel" [showIcon]="true" [showTime]="false" [submitted]="form.submitted"
+                    [width]="'500px'" [height]="'45px'">
+                </lib-adam-calendar>
+            </div>
+
         </div>
 
         <div class="adam-flex-row adam-row-gap">
@@ -139,7 +148,7 @@
             <div class="adam-flex-column">
                 <adam-lib-label [text]="'Text Box2'"></adam-lib-label>
                 <adam-lib-text-box name="textBox2" [width]="'250px'" [height]="'35px'" [(ngModel)]="textBox"
-                    [isDisplayIconStart]="true" ngDefaultControl></adam-lib-text-box>
+                    [isDisplayIconStart]="true" ngDefaultControl [marginEnd]="'10px'"></adam-lib-text-box>
             </div>
 
             <div class="adam-flex-column" style="width: 500px;">

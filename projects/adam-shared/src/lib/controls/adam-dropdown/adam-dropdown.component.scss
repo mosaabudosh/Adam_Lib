@@ -4,6 +4,7 @@
   min-width: 100% !important;
   height: 100% !important;
   color: var(--text-color) !important;
+  border-radius: var(--borderRadius) !important;
 }
 
 .p-dropdown-items-wrapper::-webkit-scrollbar {
@@ -27,6 +28,7 @@ app-dropdown {
   font-size: var(--small-font-size) !important;
   font-family: var(--font-family) !important;
   color: var(--text-color) !important;
+  border-radius: var(--borderRadius) !important;
 }
 
 .p-overlay {
