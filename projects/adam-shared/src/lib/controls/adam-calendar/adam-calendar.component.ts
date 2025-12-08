@@ -59,14 +59,14 @@ export class AdamCalendarComponent implements OnInit, ControlValueAccessor, OnDe
   @Input() timeOnly: boolean = false;
   @Input() showButtonBar: boolean = true;
   @Input() id?: string = "test";
-  _width: string;
+  _width: string = '100%';
   @Input() set width(value: string) {
     if (value) {
       this._width = value;
     }
   };
 
-  @Input() height: string;
+  @Input() height: string = '36px';
   @Input() placeholder: string = "DD/MM/YYYY";
   @Input() calenderDateFormat?: string = "dd/mm/yy";
   @Input() dateFormat?: string = "dd/MM/yyyy";
@@ -107,6 +107,7 @@ export class AdamCalendarComponent implements OnInit, ControlValueAccessor, OnDe
     this._marginEnd = value;
   };
   @Input() isViewRequiredIcon?: boolean = true;
+  @Input() borderRadius: string = '5px';
 
   @Output() onBlur = new EventEmitter();
   @Output() onSelect = new EventEmitter();
@@ -128,6 +129,14 @@ export class AdamCalendarComponent implements OnInit, ControlValueAccessor, OnDe
     }
   }
 
+  ngOnInit() {
+    if (this._yearRange?.trim().length == 0) {
+      let endYear = new Date().getFullYear();
+      this._yearRange = "1900:" + endYear;
+    }
+    this.fillPeriodsDDL();
+  }
+
   getWidth() {
     let width: any = 0;
     if (this._width && this._width.substring(this._width.length - 2, this._width.length) == 'px') {
@@ -143,8 +152,9 @@ export class AdamCalendarComponent implements OnInit, ControlValueAccessor, OnDe
 
   getStyles() {
     return {
-      'width': `${this.getWidth()}`,
-      'height': this.height,
+      '--width': `${this.getWidth()}`,
+      '--height': this.height,
+      '--borderRadius': this.borderRadius,
     };
   }
 
@@ -154,15 +164,15 @@ export class AdamCalendarComponent implements OnInit, ControlValueAccessor, OnDe
     if (this._width && this._width.substring(this._width.length - 2, this._width.length) == 'px') {
       width = Number(this._width.substring(0, this._width.length - 2));
       style = {
-        width: `${width + 50}px`,
-        height: this.height
+        '--width': `${width + 50}px`,
+        '--height': this.height
       };
     }
     if (this._width && this._width.substring(this._width.length - 1, this._width.length) == '%') {
       width = Number(this._width.substring(0, this._width.length - 1));
       style = {
-        width: `${width}%`,
-        height: this.height
+        '--width': `${width}%`,
+        '--height': this.height
       };
     }
     return style;
@@ -262,13 +272,6 @@ export class AdamCalendarComponent implements OnInit, ControlValueAccessor, OnDe
     });
   }
 
-  ngOnInit() {
-    if (this._yearRange?.trim().length == 0) {
-      let endYear = new Date().getFullYear();
-      this._yearRange = "1900:" + endYear;
-    }
-    this.fillPeriodsDDL();
-  }
 
 
   getInputStyleClass() {

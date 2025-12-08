@@ -36,7 +36,7 @@ export class AdamDropdownComponent {
     this.dropdownDisabled = value;
   };
   @Input() placeholder: string = "Select one";
-  @Input() borderRadius: string = '3px';
+  @Input() borderRadius: string = '5px';
   @Input() filter: boolean = true;
   @Input() designer: boolean = false;
   @Input() class: string;
@@ -100,7 +100,7 @@ export class AdamDropdownComponent {
   @Input() withImage: boolean = false;
   @Input() isViewRequiredIcon?: boolean = true;
 
-  
+
   @Output() onSelectChanged = new EventEmitter<any>();
   @Output() onShow = new EventEmitter();
   @Output() onHide = new EventEmitter();
@@ -124,6 +124,7 @@ export class AdamDropdownComponent {
         'width': `${width + 50}px`,
         'height': this.height,
         '--margin-end': `${marginEnd}px`,
+        '--borderRadius': this.borderRadius,
       };
     }
     if (this._width && this._width.substring(this._width.length - 1, this._width.length) == '%') {
@@ -132,6 +133,7 @@ export class AdamDropdownComponent {
         'width': `${width}%`,
         'height': this.height,
         '--margin-end': `${marginEnd}px`,
+        '--borderRadius': this.borderRadius,
       };
     }
     return style;

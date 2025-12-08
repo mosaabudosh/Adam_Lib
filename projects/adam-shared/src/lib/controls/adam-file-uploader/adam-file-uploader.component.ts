@@ -49,8 +49,8 @@ export class AdamFileUploaderComponent implements OnInit, OnDestroy {
   @Input() hasSelectedFile = true;
   @Input() isShowCancelButton: boolean = true;
   @Input() isShowFileName: boolean = true;
-  @Input() maxFileSize = 100000000;
-  @Input() invalidFileSizeMessageDetail: string = "Max File Size is " + (this.maxFileSize / 1024).toString() + " MB";
+  @Input() maxFileSize = 256000;
+  @Input() invalidFileSizeMessageDetail: string = "Max File Size is " + (this.maxFileSize / 1024).toString() + " bytes";
   @Input() isReadOnly: boolean = false;
   @Input() multiple?: boolean = false;
   @Input() isAllowEdit: boolean = false;
@@ -166,6 +166,8 @@ export class AdamFileUploaderComponent implements OnInit, OnDestroy {
         return 'assets/file-icons/notepad.png';
       case 'pdf':
         return 'assets/file-icons/pdf.png';
+      case 'mp4':
+        return 'assets/file-icons/mp4.png';
       default:
         return 'assets/file-icons/unknown.png'
     }

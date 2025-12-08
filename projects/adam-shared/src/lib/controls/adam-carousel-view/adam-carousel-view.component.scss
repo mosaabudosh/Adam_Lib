@@ -195,6 +195,17 @@
     }
 }
 
+
+:host ::ng-deep .my-carousel .p-carousel-items-container {
+    transform: none !important;
+}
+
+.p-carousel .p-carousel-items-container {
+    transform: none !important;
+}
+
+
+
 .p-carousel-next,
 .p-carousel-prev {
     .p-icon-wrapper {

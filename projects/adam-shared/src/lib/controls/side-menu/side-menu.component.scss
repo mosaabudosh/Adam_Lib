@@ -82,13 +82,13 @@
     padding: 1% !important;
     transition: all 0.5s linear !important;
     height: auto !important;
-    width: 90% !important;
+    width: 95% !important;
     margin-top: 2% !important;
     // @include margin-start(-5px);
 }
 
 .adam-side-menu {
-    width: 90% !important;
+    width: 100% !important;
     height: 70px auto !important;
     @include margin-start(5px);
 
@@ -130,9 +130,12 @@
 
     .adam-side-menu-row-label {
         padding: 3% !important;
-        margin-top: 6px !important;
-        width: 90% !important;
+        margin-top: 4px !important;
         font-size: var(--small-font-size) !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        width: 75% !important;
     }
 }
 
